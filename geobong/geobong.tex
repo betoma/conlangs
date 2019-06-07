@@ -1,0 +1,1424 @@
+\documentclass[10pt]{article}
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
+\usepackage{fontspec}
+\usepackage{amsmath} % a pretty standard package to enlarge your inventory of symbols
+\usepackage{amssymb} % another common package for symbols
+\usepackage[hidelinks]{hyperref} % enables hyperlinks in your document (no worries -- they show up only on the screen. When you print a hard copy, the colored boxes aren't there)
+\usepackage{url} % helps typeset URLs properly, typically with the command \url
+\usepackage[margin=.75in]{geometry} % page layout
+\usepackage{booktabs} % creates beautiful and professional tables
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{expex}
+\usepackage{tablefootnote}
+\usepackage{datetime2}
+
+\setlength\parindent{0pt}
+\setlength\parskip{4pt}
+
+\newfontfamily\Charis{CHARISSIL-R.TTF}
+\newcommand{\chris}[1]{{\Charis #1}}
+\newcommand{\sk}{\textsc}
+\newcommand{\shu}[1]{$#1$}
+\newcommand{\shsh}[1]{$$#1$$}
+\newcommand{\ipa}[1]{/\chris{#1}/}
+\newcommand{\phipa}[1]{[\chris{#1}]}
+\newcommand{\dao}{$\to$}
+\newcommand{\nm}{\symbol{"2205}}
+\newcommand{\ra}{\textgreater}
+\newcommand{\ipkt}{·}
+\newcommand{\til}{\textasciitilde}
+\newcommand{\langbr}{⟨}
+\newcommand{\rangbr}{⟩}
+
+\newcommand{\eng}[1]{`#1'}
+\newcommand{\gob}[1]{``#1''}
+\newcommand{\ortho}[1]{⟨#1⟩}
+
+%---LANG'S ORTHO---%
+\newcommand{\vt}{ť}
+\newcommand{\vd}{ď}
+\newcommand{\vc}{č}
+\newcommand{\vz}{ž}
+\newcommand{\vs}{š}
+\newcommand{\vr}{ř}
+\newcommand{\vl}{ľ}
+\newcommand{\vn}{ň}
+\newcommand{\vT}{Ť}
+\newcommand{\vD}{Ď}
+\newcommand{\vC}{Č}
+\newcommand{\vZ}{Ž}
+\newcommand{\vS}{Š}
+\newcommand{\vR}{Ř}
+\newcommand{\vL}{Ľ}
+\newcommand{\vN}{Ň}
+\newcommand{\Engma}{Ŋ}
+\newcommand{\dbl}{ⱡ}
+\newcommand{\dbL}{Ⱡ}
+\newcommand{\lam}{λ}
+\newcommand{\lambar}{ƛ}
+
+%---IPA---%
+%consonants
+\newcommand{\egna}{ɲ}
+\newcommand{\latfric}{ɬ}
+\newcommand{\latfrivoic}{ɮ}
+\newcommand{\paljstop}{ɟ}
+\newcommand{\paljfric}{ʝ}
+\newcommand{\glotstop}{ʔ}
+\newcommand{\alvr}{ɹ}
+\newcommand{\engma}{ŋ}
+\newcommand{\vell}{ʟ}
+\newcommand{\velr}{ʁ}
+%vowels
+\newcommand{\centra}{ɐ}
+\newcommand{\centruh}{ɜ}
+\newcommand{\unru}{ɯ}
+\newcommand{\unro}{ɤ}
+\newcommand{\bari}{ɨ}
+\newcommand{\sche}{ɘ}
+\newcommand{\ahoh}{ɒ}
+\newcommand{\frno}{ø}
+%diacritics and modifiers
+\newcommand{\asp}{ʰ}
+\newcommand{\lab}{ʷ}
+\newcommand{\pal}{ʲ}
+\newcommand{\jekt}{ʼ}
+\newcommand{\sylb}{̩}
+\newcommand{\vless}{̥}
+\newcommand{\upvless}{̊}
+\newcommand{\retr}{̠}
+\newcommand{\lamino}{̻}
+\newcommand{\apico}{̺}
+\newcommand{\lowap}{̞}
+\newcommand{\prstr}{ˈ}
+\newcommand{\scstr}{ˌ}
+\newcommand{\tiebar}{͡}
+
+
+\lingset{glstyle=nlevel,numoffset=3em,textoffset=1.5em,exskip=.75ex,belowglpreambleskip=.25ex,aboveglftskip=.25ex}
+
+\title{Geobo{\engma}}
+\author{Bethany E. Toma}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section*{Background \& Motivation}
+\addcontentsline{toc}{section}{Background \& Motivation}
+
+Geobo{\engma} is a conlang spoken by a race of goblins in my as-of-yet-unnamed conworld. As goblins are sort of an underclass, their language will always be in a semi-precarious diglossic situation, and in the future I hope to add some fun diachronic interactions with the other languages from this conworld. 
+
+This language is intended to have some deliberately weird elements (particularly with its syntactic alignment) yet still retain a veneer of quasi-naturalism---while naturalism is definitely a concern, it can be discarded for the sake of trying out something fun.
+
+\section{Phonology}
+
+\subsection{Phoneme Inventory}
+
+\begin{table}[h]
+    \centering
+\begin{tabular}{@{}rcccccccc@{}}
+\toprule
+\multicolumn{1}{c}{} & \multirow{2}{*}{Bilabial} & \multicolumn{2}{c}{Laminodental} & \multicolumn{2}{c}{Apical} & \multirow{2}{*}{Palatal} & \multirow{2}{*}{Velar} & \multirow{2}{*}{Glottal} \\
+\multicolumn{1}{l}{} &  & Non-Sibilant & Sibilant & Non-Sibilant & Sibilant &  &  &  \\ \midrule
+Nasal & \chris{m} & \chris{n\lamino} &  & \chris{n\apico} &  & \chris{\egna} & \chris{\engma} &  \\
+Stop & \chris{p b} & \chris{t{\lamino} d\lamino} & \chris{{t\tiebar s\lamino} {d\tiebar z\lamino}} &  \chris{t{\apico} d\apico} & \chris{{t\tiebar s\apico} {d\tiebar z\apico}}  & c\tiebar ç \paljstop\tiebar\paljfric & k g & \glotstop \\
+Fricative &  & \latfric\lamino & s\lamino & \latfric\apico & s\apico & ç &  &  \\
+Approximant &  & {\alvr\lamino} {l\lamino} &  & {\alvr\apico} {l\apico} &  &  &  &  \\ \bottomrule
+\end{tabular}
+    \caption{Consonants}
+    \label{tab:consonants}
+\end{table}
+
+\begin{table}[h]
+    \centering
+\begin{tabular}{@{}rccc@{}}
+\toprule
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{\multirow{2}{*}{Front}} & \multicolumn{2}{c}{Back} \\
+\multicolumn{1}{l}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{Unrounded} & \multicolumn{1}{c}{Rounded} \\ \midrule
+High & \chris{i} & \chris{\unru} & \chris{u} \\
+Mid-High & \chris{e} & \chris{\unro} & \chris{o} \\ \bottomrule
+\end{tabular}
+    \caption{Vowels}
+    \label{tab:vowels}
+\end{table}
+
+The utter lack of phonemically open vowels in Geobo{\engma} could be considered strange. Geobo{\engma} does historically possess a phonemic \ipa{a}; however, whether it can be considered a distinct phoneme in the current language is not clear, as it does occur phonetically in any position in which it contrasts with \ipa{\unro}. One could analyze Geobo{\engma} as possessing an \ipa{a} which does not appear phonetically but causes a following sonorant or continuant to serve as the syllabic nucleus of the relevant syllable. Under this analysis, \ipa{a} has merged with \ipa{\unro} when not followed by a sonorant or continuant, as its realizations \phipa{a\til\centra\til\centruh} do not meaningfully contrast with any of \ipa{\unro}'s realizations and tend to be interpreted as \ipa{\unro} by speakers.
+
+\subsection{Syllable Structure}
+
+The analysis one takes of Geobo{\engma} syllable structure depends on whether one analyzes it as possessing the underlying \ipa{a} phoneme that is never explicitly realized. If one posits the existence of this phoneme, the language's syllable structure can be analyzed as follows:
+
+\begin{center}
+    (S)(C)(R)V(R)(C)
+    
+    \begin{tabular}{rl}
+         C: & any consonant \\
+         S: & sibilant fricative  \\
+         R: & any consonant that isn't a stop
+    \end{tabular}
+\end{center}
+
+In order for the above analysis to hold, one must posit that the phoneme \ipa{a} disappears and causes any following non-stop consonant to become syllabic, while simultaneously never occuring before stops.
+
+If one does not analyze Geobo{\engma} as possessing \ipa{a}, the analysis of its syllable structure becomes necessarily more complicated to account for its bevy of syllabic consonants. In such an analysis, one must posit that, when the nucleus is a vowel, the above structure holds, but that when the nucleus is a syllabic consonant, the structure is instead (S)(C)(R)R(C).
+
+Regardless of which of these analyses one finds the most appealing, a few other constraints on both onset and coda clusters are applicable. While Geobo{\engma}'s sonority hierarchy is generally quite permissive, fricatives cannot be preceded by approximants in onset clusters, and the reverse cannot occur in coda clusters.
+
+\subsection{Allophony}
+
+\begin{enumerate}
+    \item Coronal consonants persistently assimilate in laminarity to the following consonant.
+    \begin{itemize}
+        \item syllabic consonants included
+        \item reflected in orthography
+    \end{itemize}
+    \item Sibilants become alveolopalatal after a palatal \& palatal obstruents become alveolopalatal after a sibilant
+    \begin{itemize}
+        \item syllabic consonants included
+        \item \emph{not} reflected in orthography
+    \end{itemize}
+    \item Palatals become velar when they precede a non-palatal consonant
+    \begin{itemize}
+        \item syllabic consonants \emph{not} included
+        \item \emph{not} reflected in orthography
+    \end{itemize}
+    \item Velars and non-sibilant coronals are palatalized before a palatal consonant
+    \begin{itemize}
+        \item syllabic consonants included
+        \item \emph{not} reflected in orthography
+    \end{itemize}
+    \item Obstruents persistently assimilate in voice to a following obstruent
+    \begin{itemize}
+        \item syllabic consonants included
+        \item reflected in orthography
+    \end{itemize}
+    \item Nasals assimilate in POA to a following plosive or nasal
+    \begin{itemize}
+        \item syllabic consonants \emph{not} included
+        \item reflected in orthography
+    \end{itemize}
+    \item Nasals become voiced non-nasal stops before a voiceless obstruent
+    \begin{itemize}
+        \item only applies to non-syllabic nasals
+        \item only reflected in orthography when it occurs due to productive \emph{derivational} morphology, not when it occurs within a root or due to inflection
+    \end{itemize}
+    \item Coronal obstruents assimilate in sibilancy to a following fricative. Before a non-sibilant fricative, sibilant obstruents become lateral. Before a sibilant fricative, non-affricate stops become affricates
+    \begin{itemize}
+        \item syllabic consonants \emph{not} included
+        \item reflected in orthography
+    \end{itemize}
+    \item Two of the same consonant in a row merge into a single occurrence of that consonant. Fricatives following affricates at the same place of articulation are also deleted.
+    \begin{itemize}
+        \item syllabic consonants included
+        \item reflected in orthography
+    \end{itemize}
+    \item Lateral fricatives cannot be adjacent to lateral approximants
+    \begin{itemize}
+        \item if the approximant's placement violates the sonority hierarchy (if they are in the same syllable and it occurs before the fricative in the onset or after the fricative in the coda), the approximant is deleted
+        \item if they meet at a syllable boundary, they merge and the resulting phone takes on the voicing of the latter and the manner of articulation of the former
+        \item otherwise, the lateral fricative is realized as a velar non-lateral fricative
+        \item reflected in orthography, but \phipa{\latfrivoic} and \phipa{l\vless} are still represented as clusters
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Orthography}
+
+\begin{center}
+
+Coronals
+
+\begin{tabular}{cccccccccccccccccccc}
+    \ortho{t} & \ortho{\vt} & \ortho{d} & \ortho{\vd} & \ortho{c} & \ortho{\vc} & \ortho{z} & \ortho{\vz} & \ortho{s} & \ortho{\vs} & \ortho{n} & \ortho{\vn} & \ortho{r} & \ortho{\vr} & \ortho{l} & \ortho{\vl} & \ortho{\l} & \ortho{\dbl} & \ortho{\lam} & \ortho{\lambar} \\
+   \phipa{t\lamino} & \phipa{t\apico} & \phipa{d\lamino} & \phipa{d\apico} & \phipa{t\tiebar s\lamino} & \phipa{t\tiebar s\apico} & \phipa{d\tiebar z\lamino} & \phipa{d\tiebar z\apico} & \phipa{s\lamino} & \phipa{s\apico} & \phipa{n\lamino} & \phipa{n\apico} & \phipa{\alvr\lamino} & \phipa{\alvr\apico} & \phipa{l\lamino} & \phipa{l\apico} & \phipa{\latfric\lamino} & \phipa{\latfric\apico} & \phipa{t\tiebar\latfric\lamino} & \phipa{t\tiebar\latfric\apico}
+\end{tabular}
+
+\vspace{1em}
+
+Non-Coronal Consonants
+
+\begin{tabular}{cccccccccccc}
+    \ortho{p} & \ortho{b} & \ortho{m} & \ortho{\'c} & \ortho{\'z} & \ortho{\'s} & \ortho{\'n} & \ortho{k} & \ortho{g} & \ortho{\engma} & \ortho{h} & \ortho{x} \\
+    \phipa{p} & \phipa{b} & \phipa{m} & \phipa{c\tiebar ç} & \phipa{\paljstop\tiebar\paljfric} & \phipa{ç} & \phipa{\egna} & \phipa{k} & \phipa{g} & \phipa{\engma} & \phipa{\glotstop} & \phipa{x}
+\end{tabular}
+
+\vspace{1em}
+
+Vowels
+
+\begin{tabular}{ccccccc}
+    \ortho{i} & \ortho{e} & \ortho{u} & \ortho{o} & \ortho{eu} & \ortho{eo} & \ortho{a} \\
+    \phipa{i} & \phipa{e} & \phipa{u} & \phipa{o} & \phipa{\unru} & \phipa{\unro} & \ipa{a} or \nm 
+\end{tabular}
+
+\end{center}
+
+\section{Syntax}
+
+\subsection{Animacy}
+
+Geobo{\engma} has six noun classes. Which class a noun belongs to is based almost entirely on the lexical animacy of the noun in question. These classes form an animacy hierarchy. In Geobo{\engma}'s parent language (known as \textit{Cokizbo\engma}, lit. `finish language', to the goblins) this animacy hierarchy was fairly central to much of the morphosyntax, as it was a direct-inverse language. Modern Geobo{\engma} only shows remnants of this hierarchy in the verbal morphology, but the six third-person noun classes are still very fundamentally present in the language's morphosyntax.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{@{}rl@{}}
+    \toprule
+0 & 1st \& 2nd Person \\
+1 & Natural Forces \\
+2 & Non-Goblin Intelligent Creatures \\
+3 & Goblins \\
+4 & Living Animals \\
+5 & Inanimate Objects \\
+6 & Abstract Concepts \\
+\bottomrule
+\end{tabular}
+    \caption{Animacy Hierarchy}
+    \label{tab:anim}
+\end{table}
+
+As one of the few relics of the animacy hierarchy, there are different morphemes for verbal negation depending on the noun classes of the subject and object. If the subject is equal to or higher on the animacy hierarchy than the object, the affix \textit{-(o)keo-} is placed directly after the root. If the subject is lower on the animacy hierarchy than the object, the affix \textit{-og\'z(u)-} is used instead. 
+
+\pex
+\a
+\begingl
+Geob[goblin] 
+te\vd[1]
+bol[strike]@
+-keo[-\sk{neg.dir}]@
+-g[-\sk{>3.gob}]
+\glft `I didn't hit a goblin.'
+\endgl
+\a
+\begingl
+Geob[goblin] 
+te\vd[1]
+bol[strike]@
+-og\'z[-\sk{neg.inv}]@
+-e\vd[-\sk{>1}]
+\glft `A goblin didn't hit me.'
+\endgl
+\xe
+
+\subsection{Verbal Morphology}
+
+Verbs in Geobo{\engma} are suffixed with a marker for person and animacy. These markers originate from pronouns that used to be placed after the verb and thus resemble reduced forms of those pronouns. 
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{@{}rcccccccc@{}}
+\toprule
+ & 1st & 2nd & \sk{nt-frc} & \sk{ng-int} & \sk{gob} & \sk{animl} & \sk{inan} & \sk{abstr} \\ \midrule
+Suffix\tablefootnote{When multiple suffixes are listed, the former is used when the suffix follows a non-syllabic consonant and the latter when it follows a syllabic consonant or vowel unless otherwise indicated} & \textit{-e\vd, -\vd} & \textit{-ar, -r} & \textit{-a\vn, -\vn} & \textit{-meu} & \textit{-eog, -g}\tablefootnote{If the latter suffix is used following a front vowel, that vowel is backed.} & \textit{-\vs u} & \textit{-im, -m}\tablefootnote{If the latter suffix is used following a back vowel, that vowel is fronted. Fronting of rounded vowels is allophonic and not reflected orthographically.} & \textit{-es, -s}\tablefootnote{Unlike the other listed suffixes, for the abstract noun class the latter vowelless allomorph is only used following a true vowel, and the former suffix is used following a syllabic consonant.}  \\
+Pronoun & \textit{te\vd} & \textit{kar} & \textit{teu\vn} & \textit{ameu} & \textit{eog} & \textit{\vs u} & \textit{him} & \textit{es} \\
+Reflexive\tablefootnote{Perhaps abnormally, reflexive forms for pronouns are used as subject pronouns rather than object pronouns} & \textit{tete\vd} & \textit{karkar} & \textit{teudteu\vn} & \textit{meum} & \textit{geog} & \textit{\vs u\vs} & \textit{himim} & \textit{eses} \\ \bottomrule
+\end{tabular}
+    \caption{Person/Animacy Markers}
+    \label{tab:my_label}
+\end{table}
+
+These markers agree in person and animacy with the syntactic \emph{object} rather than the subject---that is, the more patientlike P argument rather than the more agentlike A argument (though the semantic roles these syntactic roles fill can obviously vary significantly depending on both the verb in question and the context). 
+
+If both the subject and object are of the same noun class and it is thus ambiguous which entity in the sentence the agreement marking is referring to, the appropriate standalone pronoun can be placed directly after the subject. However, this is only done if the sentence would be obviously ambiguous otherwise.
+
+\ex
+\begingl
+A\l k[dog]
+\vs u[\sk{3.animl}]
+de{\vz}[cat]
+bo\vl[strike]@
+-\vs u[-\sk{>3.animl}]
+\glft `The dog hit the cat.'
+\endgl
+\xe
+
+Agreement with the syntactic P argument naturally leads to the question of what (if any) markings verbs take if the verb is intransitive. The simple answer is that Geobo{\engma} lacks true syntactic intransitives entirely. Rather, several different constructions are used as workarounds so that otherwise transitive Geobo{\engma} verbs can express typically-intransitive meanings.
+
+For verbs in which the single argument does not initiate or is not actively responsible for the action of the verb, the most common solution is to use the abstract pronoun \textit{es} as a dummy subject, similar to how English would use `there' or `it' in certain types of clauses. 
+
+\ex 
+\begingl
+Geob[goblin]
+es[3.\sk{abstr}] 
+\l emp[trip]@
+-eog[-\sk{>3.gob}]
+\glft `The goblin trips.' (lit., `It trips the goblin.')
+\endgl
+\xe
+
+There does not have to be an unspoken agent or cause of the action described by the verb for this structure to work---the purest of statives with no actual cause can also be represented by this structure.
+
+\ex
+\begingl
+Beu[berry]
+es[\sk{3.abstr}]
+ka\l[red]@
+-im[-\sk{>3.inan}]
+\glft `The berry is red.' (lit., `It reddens the berry.')
+\endgl
+\xe
+
+Many verbs, particularly those of position and motion, contrast this dummy-subject structure with another that uses reflexive pronouns. For these verbs, use of a reflexive pronoun as the subject indicates a dynamic reading, while the dummy-subject structure indicates a stative reading.
+
+\pex
+\a
+\begingl
+Geob[goblin]
+es[\sk{3.abstr}]
+ot[sit]@
+-eog[-\sk{>3.gob}]
+\glft `The goblin is sitting.' (lit., `It seats the goblin.')
+\endgl
+\a
+\begingl
+Geob[goblin]
+geog[\sk{3.gob.refl}]
+ot[sit]@
+-eog[-\sk{>3.gob}]
+\glft `The goblin sits down.' (lit., `Himself seats the goblin.')
+\endgl
+\xe
+
+As evidenced by the use of the dummy-subject strategy for a verb like `to sit', it doesn't take much for an argument to be considered sufficiently un-agent-like for that strategy. Indeed, only the most prototypical agents are not captured by this strategy.
+
+For would-be intransitive verbs where the argument explicitly represents an agent, there is yet another strategy. One can nominalize the main verb adding the suffix \textit{-stu} to the root, and then treat this nominalized verb as the object of the verb \textit{\'se} `to do, to make'.
+
+\ex
+\begingl
+\vR im[run]@
+-stu[-\sk{nmz}]
+geob[goblin]
+\'se[do]@
+-s[-\sk{>3.abstr}]
+\glft  `The goblin is running.' (lit., `The goblin does running.')
+\endgl
+\xe
+
+For certain motion verbs, both the nominalization and reflexive strategies are both appropriate. In this case, the former allows the speaker to put the action in focus in a way that cannot be done when the action is not nominalized, as in the reflexive strategy (see section \ref{focus} for more on focus marking). In addition, the former carries connotations of duration/ongoingness, while the latter is more explicitly inchoative. Compare (\lastx) with (\nextx):
+
+\ex
+\begingl
+Geob[goblin]
+geog[\sk{3.gob.refl}]
+\vr im[run]@
+-eog[-\sk{>3.gob}]
+\glft `The goblin gets himself running.'
+\endgl
+\xe
+
+The reflexive strategy is not necessarily appropriate for all would-be intransitives, however, as for many (if not most) verbs, it simply carries the expected reflexive meaning.
+
+\ex
+\begingl
+Karkar[\sk{2.refl}]
+bol[strike]@
+-ar[-\sk{>2}]
+\glft  `You're hitting yourself.' (\emph{not} `You're getting yourself to hit things.')
+\endgl
+\xe
+
+\subsection{Possession \& Quantification}
+
+As Geobo{\engma} is head-marking, in a possession scenario it is the possessed noun that is inflected. A possessive affix \textit{-(a)\l-} is added to the end of the possessed noun and then followed by a suffix that agrees in person and number with its possessor. The possessor, if specified, is placed before the possessed noun.
+
+\ex
+\begingl
+\vN u\'noh[elf]
+meo[mother]@
+-\l[-\sk{poss}]@
+-meu[-\sk{3.ngint}]
+\glft  `The elf's mother'
+\endgl
+\xe
+
+This syntactic structure is also used more broadly, however, for quantification. Perhaps counterintuitively, the quantified noun is treated as the possessor of the noun indicating the relevant quantity.
+
+\ex
+\begingl
+\vD eo\'s[tree]
+eu\'s[all]@
+-a\l[-\sk{poss}]@
+-m[-\sk{3.inan}]
+\glft `all of the trees' (lit., `the tree's everything')
+\endgl
+\xe
+
+This is not limited to more ambiguous quantifiers---it is used for numbers as well.
+
+\ex
+\begingl
+\vD eo\'s[tree]
+zlic[three]@
+-a\l[-\sk{poss}]@
+-m[-\sk{3.inan}]
+\glft `three trees' (lit., `the tree's three')
+\endgl
+\xe
+
+This use of quantifiers is one of Geobo{\engma}'s main methods of compensating for the fact that it does not mark for number whatsoever, even in pronouns. If a speaker wants to pluralize a pronoun (for instance, saying `we') that speaker can simply use the quantifier inflected for the relevant person and animacy (such as \textit{eu\'sa\dbl\vd} `all of me/us').
+
+To quantify over verbs (i.e., to say something happened `twice' or `many times'), one must quantify over the object. This is true even if the object seems to be something unquantifiable, such as an abstract noun or nominalized verb.
+
+\ex
+\begingl
+\vR im[run]@
+-stu[-\sk{nmz}]
+kle[two]@
+-\l[-\sk{poss}]@
+-es[-\sk{3.abstr}]
+te{\vd}[1]
+\'se[do]@
+-s[-\sk{>3.abstr}]
+\glft `I ran twice.' (lit., `I did two running.')
+\endgl
+\xe
+
+Distinguishing between whether a quantifier on the object semantically indicates quantification over the object or the verb is only done if context does not make it clear which is meant, but can be done using adjectives and embedding quantifiers under one another.
+
+\pex
+\a
+\begingl
+\vD er\engma[different]
+\vs\vr eo\vd[eel]
+kle[two]@
+-\l[-\sk{poss}]@
+-im[-\sk{3.inan}]
+te\vd[1]
+\vr u[cook]@
+-m[-\sk{>3.inan}]
+\glft `I cooked two different eels.'
+\endgl
+\a
+\begingl
+\vS\vr eo\vd[eel]
+da\'n[one]@
+-a\l[-\sk{poss}]@
+-m[-\sk{3.inan}]
+kle[two]@
+-\l[-\sk{poss}]@
+-es[-\sk{3.abstr}]
+te\vd[1]
+\vr u[cook]@
+-m[\sk{->3.inan}]
+\glft `I cooked one eel twice.'
+\endgl
+\xe
+
+\subsection{Postpositions}
+
+Postpositions follow their nouns and inflect to agree with their objects. Their endings are identical to those used for verbs.
+
+\ex
+\begingl
+\vT\'ne{\vl}[stick]
+\vc o[\sk{ins}]@
+-m[-\sk{3.inan}]
+\glft `with a stick'
+\endgl
+\xe
+
+If the postposition would only be preceded by a pronoun, it can be omitted and the inflected postposition used on its own as a whole phrase.
+
+\ex 
+\begingl 
+\Engma i[away.from]@
+-\vd[-1]
+\vn u\'noh[elf]
+meum[\sk{3.ngint.refl}]
+\vr im[run]@
+-eu[-\sk{>3.ngint}]
+\glft `The elf ran away from me.'
+\endgl
+\xe
+
+In addition to traditional postpositions, Geobo{\engma} demonstratives are also realized as postpositions. Since postpositional phrases cannot be embedded within each other, one cannot use an explicit demonstrative with a noun that is already part of a postpositional phrase.
+
+\pex
+\a
+\begingl
+\Engma u{\vz}[fish]
+u\vd[\sk{med}]@
+-im[-\sk{3.inan}]
+kar[2]
+bo\vs[eat]@
+-im[-\sk{>3.inan}]
+\glft `You ate that fish.'
+\endgl
+\a 
+\begingl 
+\Engma u\vz[fish]
+\vc o[\sk{ins}]@
+-m[-\sk{3.inan}]
+kar[2]
+bol[strike]@
+-e\vd[-\sk{>1}]
+\glft `You hit me with a fish.'
+\endgl
+\a \ljudge* \textit{\Engma u{\vz} u\vd im \vc om kar bole\vd} \\
+(Intended: `You hit me with that fish.')
+\a \ljudge* \textit{\Engma u{\vz} \vc om u\vd im kar bole\vd} \\
+(Intended: `You hit me with that fish.')
+\xe
+
+This does not otherwise change the syntactic behavior of the noun---if the argument in question is the object without the demonstrative postposition, it remains the syntactic object and verbal agreement still takes place.
+
+\subsection{Ditransitives}
+
+Geobo{\engma} is secundative, so for inherently ditransitive verbs like \textit{\'cneu} `to give', the syntactic object of the verb is the recipient. The theme can be included as a postpositional argument using the instrumental \textit{\vc o}.
+
+\ex
+\begingl
+Meo[mother]@
+-\l[-\sk{poss}]@
+-e{\vd}[-\sk{1}]
+geob[goblin]
+de{\vz}[cat]
+\vc o[\sk{ins}]@
+-\vs u[-\sk{3.animl}]
+\'cneu[give]@
+-meu[-\sk{>3.ngint}]
+\glft `The goblin gave my mother a cat.'
+\endgl
+\xe
+
+Benefactive ditransitives can be derived from many verbs that are not inherently ditransitive by addition of the affix \textit{-tu-} before the agreement suffix but after the negation affix (if any).
+
+\ex
+\begingl
+Meo[mother]@
+-\l[-\sk{poss}]@
+-ar[-2]
+te{\vd}[1]
+\vs\vr eo{\vd}[eel]
+\vc o[\sk{ins}]@
+-m[-\sk{3.inan}] 
+\vr u[cook]@
+-keo[-\sk{neg.dir}]@
+-tu[-\sk{ben}]@
+-g[-\sk{>3.gob}]
+\glft `I won't cook eel for your mother.'
+\endgl
+\xe
+
+Since the theme is optional in these `ditransitives', this is also an effective way of describing an action in which the theme is unknown or unspecified, effectively serving as another argument-reduction strategy.
+
+\ex
+\begingl
+Meo[mother]@
+-\l[-\sk{poss}]@
+-eog[-\sk{3.gob}]
+\vS krik[Skreek]
+eog[\sk{3.gob}]
+de\vn\vr e[sing]@
+-tu[-\sk{ben}]@
+-g[-\sk{>3.gob}]
+\glft `Skreek sings for his mother.'
+\endgl
+\xe
+
+\subsection{Adjectives}
+
+Strictly speaking, there is not a separate syntactic class known as `adjectives' in Geobo{\engma}. However, the equivalent of adjectives are realized by adverbs or uninflected verbs placed directly before the nouns they modify.
+
+\pex
+\a
+\begingl
+\'Cre\'z[alive]
+\vt\'ne\vl[stick]
+\glft  `Flourishing branch'
+\endgl
+\a 
+\begingl
+\vT\'nel[stick]
+ban[sun]
+\'cre\'z[alive]@
+-im[\sc ->3.inan]
+\glft `The sun made the branch flourish.'
+\endgl
+\xe
+
+In more complex NPs containing possession or quantification, the location of the adjective can affect the meaning of a phrase.
+
+\pex
+\a
+\begingl
+\'Cre\'z[alive]
+\vt\'ne{\vl}[stick]
+da\'n[one]@
+-a\l[-\sk{poss}]@
+-m[-\sk{3.inan}]
+\glft  `One of the flourishing branches'
+\endgl
+\a
+\begingl
+\vT\'ne{\vl}[stick]
+\'cre\'z[alive]
+da\'n[one]@
+-a\l[-\sk{poss}]@
+-m[-\sk{3.inan}]
+\glft  `The flourishing one of the branches'
+\endgl
+\xe
+
+
+As we've already seen in earlier examples, originally causative verbs can serve practically as predicative adjectives when inflected with a dummy subject
+
+\ex
+\begingl
+\Engma u\vz[fish]
+es[\sc 3.abstr]
+nono\vn[enlarge]@
+-\vs u[\sc ->3.animl]
+\glft `The fish is big.' (lit., `It enlargens the fish.')
+\endgl
+\xe
+
+Geobo{\engma} lacks separate comparative forms of the verb. In order to make predicative comparisons, the verb is turned into a benefactive ditranstive using the affix \textit{-tu-}. The `lesser' of the compared items then serves as the syntactic object of the verb, with the `greater' item as the optional instrumental argument, and the dummy pronoun remains the syntactic subject.
+
+\ex 
+\begingl
+Reu[house]@
+-\l[\sc -poss]@
+-e\vd[\sc -1]
+es[\sc 3.abstr]
+\engma u\vz[fish] 
+\vc o[\sc ins]@
+-\vs u[\sc -3.animl]
+nonon[enlarge]@
+-tu[\sc -ben]@
+-m[\sc ->3.inan]
+\glft `The fish is bigger than my house.' (lit., `It enlarges the fish for my house.')
+\endgl
+\xe
+
+Note that the verb still agrees with the syntactic object, so unlike in the non-comparative example, the verb agrees with the noun that is less well-described by the adjective in question. This means that in such comparisons, the standard of comparison cannot be omitted.
+
+\subsection{Focus \& Word Order}\label{focus}
+
+To the casual observer, Geobo{\engma} seems superficially OSV. While it is true that this pattern is certainly the most commonly seen in the language, the reality is more complicated. This typical ordering is actually due to the focus marking that lies at the core of Geobo{\engma} sentence structure.
+
+In any given sentence, whichever argument is the focus is moved to a sentence-initial position. 
+
+\ex
+\begingl
+A\l k[dog]
+\vS krik[Skreek]
+bo\vl[strike]@
+-\vs u[\sk{>3.animl}]
+\glft `It was the dog that Skreek hit.'
+\endgl
+\xe
+
+\ex
+\begingl
+\vS krik[Skreek]
+a\l k[dog]
+bo\vl[strike]@
+-\vs u[-\sk{>3.animl}]
+\glft `It was Skreek who hit the dog.'
+\endgl
+\xe
+
+Before this movement, the sentence is underlyingly SOV, so if a complement other than the subject or object is the focus, this is the order in which those arguments will appear.
+
+\ex
+\begingl
+\vT\vn e{\vl}[stick]
+\vc om[\sc ins:3.inan]
+\vS krik[Skreek]
+a\l k[dog]
+bo\vl\vs u[strike:\sk{>3.animl}]
+\glft `It was with a stick that Skreek hit the dog.'
+\endgl
+\xe
+
+Only arguments can be fronted like this, so if the verb or an adjunct is the focus, the object is moved to this position in their stead. 
+
+\pex Q: `When did Skreek hit the dog?'
+\a \ljudge*
+\begingl
+Da\'s[yesterday]
+\vS krik[Skreek]
+a\l k[dog]
+bo\vl\vs u[strike:\sk{>3.animl}]
+\endgl
+\a 
+\begingl
+A\l k[dog]
+\vS krik[Skreek] 
+da\'s[yesterday]
+bo\vl\vs u[strike:\sk{>3.animl}]
+\glft A: `Skreek hit the dog yesterday.'
+\endgl
+\xe
+
+If the object is not in focus and would be represented with a pronoun, it can be omitted from the sentence. However, this is not the case with any other argument (i.e., subjects must always be explicitly included).
+
+\ex
+\begingl
+\glpreamble A: \textit{A\l k \vS krik da\'s bo\vl\vs u.} (`Skreek hit a dog yesterday.')\\B: \textit{\'Ne\l?} (`Really?')\endpreamble
+Ip[yes]
+\vt\vn e{\vl}[stick]
+\vc om[\sc ins:3.inan]
+eog[\sk{3.gob}]
+bo\vl\vs u[strike:\sk{>3.animl}]
+\glft `Yes, it was with a stick that he hit (it).'
+\endgl
+\xe
+
+\subsection{Relative Clauses}
+
+Geobo{\engma} relative clauses are formed via adjoined clauses. The relativized noun must be fronted in both clauses, and therefore only arguments can be relativized. The complementizer \textit{deo\l} is placed clause-initially in the relativized clause, which is then directly followed by the main clause. The argument in question can be either restated in the main clause (often with a demonstrative) or replaced with a pronoun.
+
+\pex
+\a
+\begingl
+Deo{\l}[\sk{c}]
+oh[person]
+te{\vd}[1]
+\vz e\'zeog[see:\sk{>3.gob}]
+\nogloss{,}
+oh[person]
+\'no\vd eog[\sk{dist:3.gob}]
+reu[home]
+eumim[go.to:\sk{>3.inan}]
+\endgl
+\a
+\begingl
+Deo{\l}[\sk{c}]
+oh[person]
+te{\vd}[1]
+\vz e\'zeog[see:\sk{>3.gob}]
+eog[\sk{3.gob}]
+reu[home]
+eumim[go.to:\sk{>3.inan}]
+\glft `The person who I saw went home.'
+\endgl
+\xe
+
+The order of the relativized and main clause is determined by whether the relative clause is restrictive or not. In restrictive relative clauses, the relative clause precedes the main clause, while in non-restrictive relative clauses, the relative clause occurs afterwards.
+
+\ex
+\begingl
+Meo\l e\vd[mother:\sk{poss:1}]
+reu[home]
+eumim[go.to:\sk{>3.inan}]
+\nogloss{,}
+deo{\l}[\sk{c}]
+eog[\sk{3.gob}]
+geob[goblin]
+\vz eog[\sc cop:>3.gob]
+\glft `My mother, who is a goblin, went home.'
+\endgl
+\xe
+
+Content clauses, in which the subordinate clause serves as an argument of the main sentence, are expressed using relative clauses modifying the dummy noun \textit{as}. Historically, \textit{as} could be roughly translated `case, situation, affair', but in the modern language it is not used outside of the formation of content clauses
+
+\ex
+\begingl
+Deo{\l}[\sk{c}] 
+geob[goblin]
+meo\l ar[mother:\sk{poss:2}]
+\vz eog[\sc cop:>3.gob]
+\nogloss{,}
+as[\sk{c}]
+te{\vd}[1]
+\vz e\'zes[see:\sk{>3.abstr}]
+\glft `I saw that your mother is a goblin.' (lit., `I saw the fact that your mother is a goblin.')
+\endgl
+\xe
+
+Most other subordinating conjunctions in English are approximated by using the above strategy combined with various prepositions or verbs.
+
+\ex 
+\begingl
+Deo\l[\sc c]
+dizd[salt]
+\engma u\vz[fish]
+pidim[possess:\sk{>3.inan}]
+\nogloss{,}
+as[\sc c]
+euźdes[due\_to:\sk{3.abstr}]
+te\vd[\sc 1] 
+bo\vs kem[consume:\sk{neg.dir:>3.inan}]
+\glft `I didn't eat the fish because it was salty.' (lit., `Due to the fact that the fish had salt, I didn't eat it.')
+\endgl
+\xe 
+
+\section{Semantics}
+
+\subsection{TAM Particles}
+
+Geobo{\engma} is tenseless, only specifying tense if doing so is necessary in context and doing so using temporal adverbs, which are typically placed before the verb.
+
+\pex 
+\a 
+\begingl 
+bostu[eat:\sk{nmz}]
+te\vd[1]
+da\'s[yesterday]
+\'ses[do:\sk{>3.abstr}]
+\glft `I ate yesterday.'
+\endgl
+\a 
+\begingl 
+bostu[eat:\sk{nmz}]
+te\vd[1]
+\vs a\vl\vn[someday]
+\'ses[do:\sk{>3.abstr}]
+\glft `I'll eat later.'
+\endgl 
+\xe
+
+In addition to adverbs, Geobo{\engma} also possesses several particles that indicate aspect, mood, or some combination thereof. These are distinct from ordinary adverbs in that they come after the verb rather than beforehand.
+
+\subsubsection{Gnomic---\textit{go}}
+
+The gnomic particle \textit{go} is placed after the verb when the predicate describes a general truth, something that always holds true.
+
+\ex
+\begingl
+Eu\engma r[sky]
+es[\sc 3.abstr]
+peoda\vn[blue:\sk{>3.ntfrc}]
+go[\sc gno]
+\glft `The sky is blue'
+\endgl
+\xe
+
+It's also often exaggeratedly used to simply mean `always' or to describe habitual actions that still go on in the present.
+
+\ex 
+\begingl
+\Engma u\vz[fish]
+kar[\sc 2]
+\vr um[cook:\sk{>3.inan}]
+go[\sc gno]
+\nogloss{!}
+\glft `You \emph{always} cook fish!'
+\endgl
+\xe
+
+Since TAM particles scope over negation, applying \textit{go} to a sentence in containing negation turns this `always' into a `never'. If one wants to scope negation over the gnomic particle, the whole clause must be embedded under a negative verb.
+
+\pex 
+\a 
+\begingl
+\Engma u\vz[fish]
+meo[mother]
+\vr ukem[cook:\sk{neg.dir:>3.inan}]
+go[\sc gno]
+\glft `Mom never cooks fish.'
+\endgl
+\a 
+\begingl
+Deo\l[\sc c]
+\engma u\vz[fish]
+te\vd[\sc 1]
+\vr um[cook:\sk{>3.inan}]
+go[\sc gno]
+\nogloss{,}
+as[\sc c]
+es[\sc 3.abstr]
+his\engma keos[real:\sk{neg.dir:>3.abstr}]
+\glft `It's not the case that I always cook fish.'
+\endgl
+\xe
+
+\subsubsection{Completive---\textit{o\'sk}}
+
+The completive particle \textit{o\'sk} is used when discussing an eventuality that has already occurred in relation to the time being discussed. It can often be translated with the English perfect or with the word `already'.
+
+\ex 
+\begingl
+Bostu[eat:\sk{nmz}]
+te\vd[\sc 1]
+\'ses[do:\sk{>3.abstr}]
+o\'sk[\sc cmpl]
+\glft `I've already eaten/drunk.'
+\endgl
+\xe
+
+When used with a negative verb, it can be more accurately translated as `still haven't.'
+
+\ex 
+\begingl
+Bostu[eat:\sk{nmz}]
+te\vd[\sc 1]
+\'sekeos[do:\sk{neg.dir:>3.abstr}]
+o\'sk[\sc cmpl]
+\glft `You still haven't eaten.'
+\endgl
+\xe
+
+\subsubsection{Retrospective Habitual---\textit{pu}}
+
+The retrospective habitual particle \textit{pu} is used to describe an eventuality that was once generally, habitually, or always the case, but has since ceased to be. It's usually best translated with `used to', `once', or `would X' in English.
+
+\ex 
+\begingl
+\Engma u\vz[fish]
+te\vd[\sc 1]
+\vr um[cook:\sk{>3.inan}]
+pu[\sc rhab]
+\glft `I used to cook fish' (but I've since stopped for some reason)
+\endgl
+\xe
+
+This particle scopes over negation, so using it with a negative verb conveys that it used to be the case that they generally did not do a thing, but that now they do that thing (or at least have done so once). To merely negate the habituality of an action, one must embed the whole clause under a negative verb, just as one must do to force negation to scope over the gnomic particle.
+
+\pex 
+\a
+\begingl 
+\vS\vr eo\vd[snake]
+te\vd[\sc 1]
+bolkeo\vs u[strike:\sk{neg.dir:>3.animl}]
+pu[\sc rhab]
+\glft `I used to never fight snakes.' (but now I've started doing it)
+\endgl 
+\a
+\begingl
+Deo\l[\sc c]
+\vs\vr eo\vd[snake]
+te\vd[\sc 1]
+bo\vl\vs u[strike:\sk{>3.animl}]
+pu[\sc rhab]
+\nogloss{,}
+as[\sc c]
+es[\sc 3.abstr]
+his\engma keos[real:\sk{neg.dir:>3.abstr}]
+\glft `I didn't used to fight snakes.' (I never stopped fighting snakes!)
+\endgl 
+\xe
+
+\subsubsection{Change-of-state---\textit{\vl i}}
+
+The change-of-state particle \textit{\vl i} indicates that an eventuality is new or novel in some way, a change to the previous status-quo. 
+
+\ex
+\begingl
+\vS\vr eo\vd[snake]
+\'zreo\vn\vz eog[scare:\sk{>3.gob}]
+go[\sc gno]
+eo[and]
+eog[\sc 3.gob]
+zdeu\vs u[bite:\sk{>3.animl}]
+\vl i[\sc cos]
+\glft `Snakes scare him, but he bit (one)!'
+\endgl
+\xe
+
+It's often contrasted with a status quo or former status quo expressed with the gnomic or retrospective habitual particles. However, there is no requirement that they be paired together; the change-of-state particle can be used on its own to merely imply the departure from the status quo without making the status quo itself explicit.
+
+\ex
+\begingl
+\Engma u\vz[fish]
+te\vd[\sc 1]
+bo\vs im[eat:\sk{>3.inan}]
+\vl i[\sc cos]
+\glft `I eat fish now' (we both know I used to be a vegetarian)
+\endgl
+\xe
+
+In these contexts, it's often translated with `now' or `anymore'.
+
+By extension, some use this particle whenever a statement contradicts a previous statement, though the acceptability of doing this varies by region. Those who use it this way treat it as a discourse particle rather than a TAM particle, allowing it to be preceded by some other TAM particles.
+
+\ex \ljudge{?}
+\begingl
+\Engma u\vz[fish]
+\vS krik[Skreek]
+bo\vs kem[eat:\sk{neg.dir:>3.inan}]
+pu[\sc rhab]
+eo[and]
+\vs\vr eo\vd[eel]
+eog[\sc 3.gob]
+bo\vs im[eat:\sk{>3.inan}]
+go[\sc gno]
+\vl i[\sc cos]
+\glft `Skreek never used to eat fish but he's always eaten eels.'
+\endgl
+\xe
+
+This usage of \textit{\vl i} is fairly novel however and even in the regions in which it's accepted, it's seen as dialectical.
+
+\subsubsection{Possibility---\textit{\vz i}}
+
+The possibility particle \textit{\vz i} indicates that an event is possible. It generally only represents circumstantial or epistemic possibility, though it can take on a deontic flavor if combined with \textit{\vr o} (see \ref{sec:ro}). No obvious distinction is made between epistemic and circumstantial possibility in Geobo{\engma}, so which the speaker intends must be decided based on context alone.
+
+\pex 
+\a
+\begingl
+\glpreamble
+Q: What can Skreek cook?
+\endpreamble
+\nogloss{\normalfont A:}
+\Engma u\vz[fish]
+eog[\sc 3.gob]
+\vr um[cook:\sk{>3.inan}]
+\vz i[\sc psbl]
+\glft \phantom{A: }`He is able to cook fish.'
+\endgl
+\a 
+\begingl
+\glpreamble
+Q: What do you think Skreek is doing right now?
+\endpreamble
+\nogloss{\normalfont A:}
+\Engma u\vz[fish]
+eog[\sc 3.gob]
+\vr um[cook:\sk{>3.inan}]
+\vz i[\sc psbl]
+\glft \phantom{A: }`He could be cooking fish.'
+\endgl
+\xe
+
+\subsection{Discourse Particles}
+
+In addition to the particles indicating TAM, Geobo{\engma} possess a series of more discourse-focused particles which indicate the attitude of the speaker towards the propositional content of their utterance---they tend to communicate the illocutionary rather than locutionary act. They always occur sentence-finally, following even the TAM particles if any are present.
+
+\subsubsection{Question---\textit{\'ne\l}}
+
+The question particle \textit{\'ne\l} is appended to the end of a sentence when the sentence is a yes/no question. It's also used to ask what would be considered a tag question in English, wherein the speaker believes what they're saying is true and is seeking agreement. Intonation often plays a role.
+
+\ex
+\begingl
+Meo\l ar[mother:\sk{poss:2}]
+reu[home]
+eumim[go\_to:\sk{>3.inan}]
+o\'sk[\sc cmpl]
+\'ne\l[\sc q]
+\glft `Did your mother already go home?' or `Your mother already went home, right?'
+\endgl 
+\xe
+
+Note that \textit{\'ne\l} is only used if the speaker is seeking information or agreement---while yes/no questions are often used for other illocutionary acts in other languages, these are indicated by different particles in Geobo{\engma}. The above sentence would not be used, for instance, if the question was actually intended as a request for the listener to send their mother home.
+
+\textit{\'Nel} can also be used for embedded questions, serving as an equivalent to the English `whether'
+
+\ex
+\begingl
+Deo\l[\sc c]
+meo\l ar[mother:\sk{poss:2}]
+reu[home]
+eumim[go\_to:\sk{>3.inan}]
+o\'sk[\sc cmpl]
+\'ne\l[\sc q]
+\nogloss{,}
+as[\sc c]
+te\vd[\sc 1]
+\vt\vl irckeos[know:\sk{neg.dir:>3.abstr}]
+\glft `I don't know whether your mother already went home.'
+\endgl
+\xe
+
+Emphatic questions can be unambiguously asked by turning the entire clause, including \textit{\'ne\l}, into an embedded question under a verb directly questioning the truth of the utterance, essentially doubling-up on the questioning nature of the utterance.
+
+\ex
+\begingl
+Deo\l[\sc c]
+meo\l ar[mother:\sk{poss:2}]
+reu[home]
+eumim[go\_to:\sk{>3.inan}]
+o\'sk[\sc cmpl]
+\'ne\l[\sc q]
+\nogloss{,}
+as[\sc c]
+es[\sc es]
+hisnes[real:\sk{>3.abstr}]
+\'ne\l[\sc q]
+\glft `Did your mother already go home?' (lit., `Is it true whether your mother already went home?')
+\endgl 
+\xe
+
+This is generally seen as quite forceful and is thus impolite outside of very casual or very formal situations.
+
+\textit{\'Ne\l} is also often used on its own as a dialogue filler to ellicit agreement or encourage elaboration, much like the English `right?', `uh-huh?', or `really?'
+
+\subsubsection{Request---\textit{\vr o}}\label{sec:ro}
+
+The request particle is appended to the end of a sentence when the speaker wants to turn the sentence into a request or suggestion for action. Often this manifests as it being directly appended to the end of a clause describing the content of the request:
+
+\ex
+\begingl
+Disd[salt]
+\vc om[\sc ins:3.inan]
+kar[\sc 2]
+\'cneu\vd[give:\sk{>1}]
+\vr o[\sc req]
+\glft `Would you please hand me the salt?' or `How about you hand me the salt?'
+\endgl
+\xe
+
+However, it can also be used with shorter utterances, even appended simply to the end of a noun if the context is right.
+
+\ex
+\begingl
+Disd[salt]
+\vr o[\sc req]
+\glft `Salt, please?' or `How about the salt?'
+\endgl
+\xe
+
+It can be even further abstracted, used with sentences that do not directly reference the requested eventuality whatsoever and only imply what the request itself actually is.
+
+\ex
+\begingl
+Meo\l ar[mother:\sk{poss:2}]
+reu[home]
+eumim[go\_to:\sk{>3.inan}]
+\vr o[\sc req]
+\glft `Your mother went home, hint-hint.'
+\endgl
+\xe
+
+Like all discourse particles, \textit{\vr o} scopes over negation. In order to negate a request rather than turning the sentence into a request for the negative, one must negate the verb \textit{\vr o\'s} and embed the request under it.
+
+\ex
+\begingl
+Deo\l[\sc c]
+disd[salt]
+\vc om[\sc ins:3.inan]
+kar[\sc 2]
+\'cneu\vd[give:\sk{>1}]
+\vr o[\sc req]
+\nogloss{,}
+as[\sc c]
+\vc os[\sc ins:3.abstr]
+te\vd[\sc 1]
+\vr o\'sog\'zar[request:\sk{neg.inv:>2}]
+\glft `I'm not asking you to pass me the salt.'
+\endgl
+\xe
+
+\subsubsection{Command---\textit{\vd et}}
+
+The command particle \textit{\vd et} is appended to the end of a sentence to indicate that the speaker is commanding the hearer to do something. It is essentially a more forceful version of \textit{\vr o}. 
+
+\ex
+\begingl
+Disd[salt]
+\vc om[\sc ins:3.inan]
+kar[\sc 2]
+\'cneu\vd[give:\sk{>1}]
+\vd et[\sc imp]
+\glft `Hand me the salt!'
+\endgl
+\xe
+
+Unlike \textit{\vr o}, however, \textit{\vd et} cannot be used for negative commands/prohibitions.
+
+\pex 
+\a 
+\begingl
+Disd[salt]
+\vc om[\sc ins:3.inan]
+kar[\sc 2]
+\'cneukeo\vd[give:\sk{neg.dir:>1}]
+\vr o[\sc req]
+\glft `Please don't hand me the salt.'
+\endgl
+\a \ljudge{\#}
+\begingl
+Disd[salt]
+\vc om[\sc ins:3.inan]
+kar[\sc 2]
+\'cneukeo\vd[give:\sk{neg.dir:>1}]
+\vd et[\sc imp]
+\glft Intended: `Don't hand me the salt!'
+\endgl
+\xe
+
+Just like \textit{\vr o}, \textit{\vd et} can be appended to a mere noun as an order for that noun and can be appended to more opaque utterances depending on context. 
+
+\ex 
+\begingl
+Bostu[food]
+de\vz[cat]
+\dbl eo\lam okeom[have:\sk{neg.dir:>3.inan}]
+\vd et[\sc imp]
+\glft `The cat doesn't have food (Feed the cat!)'
+\endgl
+\xe
+
+Negation can scope over the command particle using the verb \textit{\vd et\'s} `to command'. However, since simply using the command particle with a negative verb doesn't necessarily lead to a prohibitive meaning as one would expect were the imperative to scope over the negation, many speakers use that construction and treat the negation as scoping over the imperative.
+
+\pex
+\a 
+\begingl
+Deo\l[\sc c]
+de\vz[cat]
+kar[\sc 2]
+arc\vs u[feed:\sk{>3.animl}]
+\vd et[\sc imp]
+\nogloss{,}
+as[\sc c]
+\vc os[\sc ins:3.abstr]
+es[\sc 3.abstr]
+\vd et\'sog\'zar[command:\sk{neg.inv:>2}]
+\endgl
+\a \ljudge{?}
+\begingl
+De\vz[cat]
+kar[\sc 2]
+arckeo\vs u[feed:\sk{neg.dir:>3.animl}]
+\vd et[\sc imp]
+\glft `You don't have to feed the cat.'
+\endgl
+\xe 
+
+The latter construction is seen as childish and `incorrect', but the former is seen as somewhat stilted and formal, so which is chosen largely depends on the context.
+
+\subsubsection{Prohibitive---\textit{iz}}
+
+The prohibitive particle \textit{iz} is appended to the end of a sentence to indicate that the speaker forbids the hearer from doing something. Usually, it'll be something referred to directly by the sentence the particle is attached to, though it doesn't necessarily have to directly be the proposition expressed by the rest of the clause.
+
+\ex 
+\begingl
+\Engma u\vz[fish]
+kar[\sc 2]
+bo\vs im[eat:\sk{>3.inan}]
+iz[\sc proh]
+\glft `Don't eat the fish!'
+\endgl
+\xe 
+
+Like the other deontic particles, it can be used with a single noun, indicating that the hearer should avoid or not interact with that particular noun (in whatever way is context appropriate). It can also be used more obliquely, prohibiting something more indirectly related to the clause it's attached to
+
+\ex
+\begingl
+\Engma u\vz[fish]
+te\vd[\sc 1]
+bo\vs im[eat:\sk{>3.inan}]
+iz[\sc proh]
+\glft `Don't make me eat fish!'
+\endgl
+\xe
+
+Related constructions formed with \textit{iz} can often approximate the meanings of other discourse particles, though usually with differences in affect or formality. Like other discourse particles, \textit{iz} scopes over negation, and therefore using it with a negative verb can be interpreted as an imperative. 
+
+\ex 
+\begingl
+\Engma u\vz[fish]
+kar[\sc 2]
+bo\vs kem[eat:\sk{neg.dir:>3.inan}]
+iz[\sc proh]
+\glft `You've got to eat the fish!' (lit., `You mustn't not eat the fish')
+\endgl
+\xe
+
+However, this construction can be seen as awkward in many contexts, as it is often blocked by \textit{\vd et}, so it's used sparingly if ever by many speakers.
+
+Negation can scope over the prohibitive using the verb \textit{i\l\'s} `to forbid', which behaves essentially like a permissive.
+
+\ex 
+\begingl
+Deo\l[\sc c]
+\engma u\vz[fish]
+kar[\sc 2]
+bo\vs im[eat:\sk{>3.inan}]
+iz[\sc proh]
+\nogloss{,}
+as[\sc c]
+\vc os[\sc ins:3.abstr]
+es[\sc 3.abstr]
+i\l\'sog\'zar[forbid:\sk{neg.inv:>2}]
+\glft `You're not forbidden from eating fish.'
+\endgl
+\xe
+
+However, unlike the permissive particle \textit{eu\vs}, this construction is highly distancing and heavily implicates that the speaker isn't the relevant one when it comes to deciding whether the thing in question is permitted or forbidden.
+
+\textit{Iz} is also used to mean `no' when the speaker is saying it in a forward-thinking context in which they want to prevent some future eventuality from happening via their `no'.
+
+\subsubsection{Permissive---\textit{eu\vs}} 
+
+The permissive particle \textit{eu\vs} is appended to the end of a sentence to indicate that the speaker is allowing the hearer to do something (typically but not always what the sentence overtly describes) but doesn't have any strong feelings one way or the other, positive or negative. It's the Geobo{\engma} equivalent of shrugging and saying `Sure, I don't really give a shit,' but is also more widely used to indicate that the hearer may do something but isn't necessarily being encouraged to do that thing.
+
+\ex
+\begingl
+\vZ leuoh[child]
+\vd eo\'s[tree]
+pogebim[climb:\sk{>3.inan}]
+eu\vs[\sc perm]
+\glft `Children (you) may climb trees.'
+\endgl
+\xe
+
+Like many of the other particles, it can be used with a simple noun in many contexts.
+
+\ex 
+\begingl
+\glpreamble
+Q: Would you like something to eat or drink?
+\endpreamble
+\nogloss{\normalfont A:}
+Teu\l b[still\_water]
+eu\vs[\sc perm]
+\glft\phantom{A: }`Water's fine.'
+\endgl
+\xe
+
+Like related particles, it can also be used with more opaque sentences if context makes it clear what's being permitted. 
+
+Scoping negation over the permissive particle is done via embedding with the verb \textit{eu\dbl\'s} `to permit.'
+
+\ex 
+\begingl
+Deo\l[\sc c]
+\vz leuoh[child]
+\vd eo\'s[tree]
+pogebim[climb:\sk{>3.inan}]
+eu\vs[\sc perm]
+\nogloss{,}
+as[\sc c]
+\vc os[\sc ins:3.abstr]
+es[\sc 3.abstr]
+eu\dbl\'sog\'zar[permit:\sk{neg.inv:>2}]
+\glft `Children (you) are not allowed to climb trees.'
+\endgl
+\xe
+
+While this may seem at first glance to be identical to the use of the prohibitive particle, it doesn't constitute a direction illocutionary prohibition the way \textit{iz} does. Instead, it comes off as a statement about the way things are and thus strongly implicates that the speaker is not the one in control of whether the hearer is permitted or prohibited from doing whatever is described.
+
+\textit{Eu\vs} is also used as an equivalent for `yes' when the speaker wants to express lethargy or apathy towards their agreement.
+
+\subsubsection{Positive Attitude---\textit{ip}}
+
+The positive attitude particle \textit{ip} is appended to the end of a sentence to indicate that the speaker has a positive outlook on the eventuality described by the sentence in question---that they believe that eventuality is/was good, fortunate, natural, and/or just.
+
+\ex
+\begingl
+\vS krik[Skreek]
+es[\sc 3.abstr]
+uheog[kill:\sk{>3.gob}]
+ip[:-{)}]
+\glft `Yay, Skreek died!'
+\endgl
+\xe
+
+\textit{Ip} is also used as an equivalent for `yes' when the speaker wants to express enthusiasm or an otherwise positive attitude toward their agreement.
+
+\subsubsection{Negative Attitude---\textit{hu\l}}
+
+The negative attitude particle \textit{hu\l} is appended to the end of a sentence to indicate that the speaker has a negative outlook on the eventuality described by the sentence in question---that they believe that the eventuality is/was bad, unfortunate, unjust, unnatural, or otherwise unnacceptable.
+
+\ex 
+\begingl
+\vS krik[Skreek]
+es[\sc 3.abstr]
+uheog[kill:\sk{>3.gob}]
+hu\l[:-{(}]
+\glft `Oh no, Skreek died!'
+\endgl
+\xe
+
+\textit{Hu\l} is also used as an equivalent for `yes' when the speaker wants to express a negative attitude toward their agreement.
+
+%\subsubsection{Desiderative---\textit{oc}}
+
+\end{document}
