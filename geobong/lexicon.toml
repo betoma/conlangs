@@ -175,3 +175,154 @@ last_edited = 2019-06-09
         word = "śestu"
         IPA = "çes̻t̻u"
         english = ["action", "behavior", "activity", "production", "happening", "happenstance", "occurance", "event", "eventuality"]
+
+[[lexicon]]
+    word = "řu"
+    IPA = "ɹ̺u"
+    english = ["to cook", "to prepare (food)"]
+    meta.date_added = 2019-06-09
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "řustu"
+        IPA = "ɹ̺us̻t̻u"
+        english = ["cooking", "cooking supplies"]
+
+[[lexicon]]
+    word = "ŋuž"
+    IPA = "ŋud͡z̺"
+    english = ["fish", "swimming thing"]
+    notes = "describes any vaguely fat-looking swimming water creature -- any swimming creature that isn't better described as a snake/eel, frog/toad, or waterbug"
+    meta.date_added = 2019-06-09
+    grammar.POS = "noun"
+    grammar.noun_class = "animal"
+
+[[lexicon]]
+    word = "šřeoď"
+    IPA = "s̺ɹ̺ɤd̺"
+    english = ["snake", "eel", "worm", "serpent", "tadpole"]
+    notes = "describes any long, slim, flexible animal -- anything snake-shaped, regardless of its home environment"
+    meta.date_added = 2019-06-09
+    grammar.POS = "noun"
+    grammar.noun_class = "animal"
+
+[[lexicon]]
+    word = "geob" 
+    IPA = "gɤb"
+    english = ["goblin"]
+    meta.date_added = 2019-06-09
+    grammar.POS = "noun"
+    grammar.noun_class = "goblin"
+
+[[lexicon]]
+    word = "geoboŋ"
+    IPA = "gɤboŋ"
+    english = ["Gebong", "the Goblin language", "goblin-speak"]
+    notes = "Often has a somewhat pejorative connotation; most goblin communities exist in some degree of di- or tri-glossia, with Geobong serving as the basolect while the local non-goblin language serves as the acrolect (with varying degrees of mixture serving as mesolect)"
+    meta.date_added = 2019-06-09
+    grammar.POS = "noun"
+    grammar.noun_class = "abstract"
+
+[[lexicon]]
+    word = "stu"
+    IPA = "s̻t̻u"
+    english = ["stuff", "things", "shit", "whatever"]
+    notes = "contextually-variable, can refer to just about anything with the proper context"
+    meta.date_added = 2019-06-09
+    grammar.POS = "noun"
+    grammar.noun_class = "any"
+
+[[lexicon]]
+    word = "že"
+    IPA = "d͡z̺e"
+    english = ["to be, to appear to be, to serve as, to seem like"]
+    notes = "nominal copula -- to more exactly approximate the difference between English \"to be\" and \"to seem\", one must use adverbs (like \"underneath\")"
+    meta.date_added = 2019-06-09
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "že"
+        IPA = "d͡z̺es̻t̻u"
+        english = ["appearance, role, seeming"]
+
+[[lexicon]]
+    word = "daś"
+    IPA = "d̻ʲç̩"
+    english = ["yesterday", "the day before", "the preceding day", "eve"]
+    notes = "the reference time of the context is what clarifies whether it truly means yesterday or whether it refers to the day that precedes some other relevant day"
+    meta.date_added = 2019-06-09
+    grammar.POS = "noun"
+    grammar.noun_class = "abstract"
+
+[[lexicon]]
+    word = "oh"
+    IPA = "oʔ"
+    english = ["person", "people", "man", "woman", "being", "one"]
+    notes = "frequently used in derivation"
+    meta.date_added = 2019-06-09
+    grammar.POS = "noun"
+    grammar.noun_class = "variable: GOB or NGINT"
+
+[[lexicon]]
+    word = "uď"
+    IPA = "ud̺"
+    english = ["that", "that near you"]
+    notes = "medial demonstrative"
+    meta.date_added = 2019-06-09
+    grammar.POS = "postposition"
+
+[[lexicon]]
+    word = "ńoď"
+    IPA = "ɲod̺"
+    english = ["that", "that over there"]
+    notes = "distal demonstrative"
+    meta.date_added = 2019-06-09
+    grammar.POS = "postposition"
+
+[[lexicon]]
+    word = "uň"
+    IPA = "un̺"
+    english = ["this", "this here"]
+    notes = "proximal demonstrative"
+    meta.date_added = 2019-06-09
+    grammar.POS = "postposition"
+
+[[lexicon]]
+    word = "žeź"
+    IPA = "d͡z̺eɟ͡ʝ"
+    english = ["to see", "to look at", "to watch"]
+    meta.date_added = 2019-06-09
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "žećstu"
+        IPA = "d͡z̺ec͡çɕt̻u"
+        english = ["seeing", "sight", "view", "show", "exhibit"]
+
+[[lexicon]]
+    word = "eum"
+    IPA = "ɯm"
+    english = ["to go to", "to arrive at", "to travel to"]
+    notes = "implies that the destination was reached"
+    meta.date_added = 2019-06-09
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "eumstu"
+        IPA = "ɯms̻t̻u"
+        english = ["goal", "destination"]
+
+[[lexicon]]
+    word = "reu"
+    IPA = "ɹ̻ɯ"
+    english = ["home", "house", "nest", "dwelling", "burrow"]
+    meta.date_added = 2019-06-09
+    grammar.POS = "noun"
+    grammar.noun_class = "inanimate"
+
+[[lexicon]]
+    word = "meo"
+    IPA = "mɤ"
+    english = ["caregiver", "wet nurse", "parent", "mother", "father", "mom", "dad", "aunt", "uncle", "grandparent", "grandmother", "grandfather", "grandma", "grandpa"]
+    notes = "used to refer to a caregiver with whom the person in question has a particularly close, affectionate relationship"
+    meta.date_added = 2019-06-09
+    grammar.POS = "noun"
+    grammar.noun_class = "variable: GOB or NGINT"
+
+ 
