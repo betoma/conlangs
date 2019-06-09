@@ -1,0 +1,177 @@
+#This is the lexicon for Bethany E. Toma's Geobong language
+[metadata]
+last_edited = 2019-06-09
+
+[[lexicon]]
+    word = "teuň"
+    IPA = "t̻ɯn̺"
+    english = ["it", "they", "them"]
+    meta.date_added = 2019-06-09
+    grammar.POS="pronoun"
+    grammar.person = "3rd"
+    grammar.noun_class="natural force"
+    [grammar.reflexive]
+        word = "teudteuň"
+        IPA = "t̻ɯd̻t̻ɯn̺"
+        english = ["itself", "they", "them"]
+        notes = "used for the subject, not the object"
+
+[[lexicon]]
+    word = "ameu"
+    IPA = "m̩ɯ"
+    english = ["he","she","it","they","him","her","them"]
+    meta.date_added = 2019-06-09
+    grammar.POS = "pronoun"
+    grammar.person = "3rd"
+    grammar.noun_class = "non-goblin intelligence"
+    [grammar.reflexive]
+        word = "meum"
+        IPA = "mɯm"
+        english = ["himself","herself","itself","themselves"]
+        notes = "used for the subject, not the object"
+
+[[lexicon]]
+    word = "eog"
+    IPA = "ɤg"
+    english = ["he","she","it","they","him","her","them"]
+    meta.date_added = 2019-06-09
+    grammar.POS = "pronoun"
+    grammar.person = "3rd"
+    grammar.noun_class = "goblin"
+    [grammar.reflexive]
+        word = "geog"
+        IPA = "gɤg"
+        english = ["himself","herself","itself","themselves"]
+        notes = "used for the subject, not the object"
+
+[[lexicon]]
+    word = "šu"
+    IPA = "s̺u"
+    english = ["he","she","it","they","him","her","them"]
+    meta.date_added = 2019-06-09
+    grammar.POS = "pronoun"
+    grammar.person = "3rd"
+    grammar.noun_class = "animal"
+    [grammar.reflexive]
+        word = "šuš"
+        IPA = "s̺us̺"
+        english = ["himself","herself","itself","themselves"]
+        notes = "used for the subject, not the object"
+
+[[lexicon]]
+    word = "him"
+    IPA = "ʔim"
+    english = ["it", "they", "them"]
+    meta.date_added = 2019-06-09
+    grammar.POS = "pronoun"
+    grammar.person = "3rd"
+    grammar.noun_class = "inanimate"
+    [grammar.reflexive]
+        word = "himim"
+        IPA = "ʔimim"
+        english = ["itself", "themselves"]
+        notes = "used for the subject, not the object"
+
+[[lexicon]]
+    word = "es"
+    IPA = "es̻"
+    english = ["it", "they", "them"]
+    meta.date_added = 2019-06-09
+    grammar.POS = "pronoun"
+    grammar.person = "3rd"
+    grammar.noun_class = "abstract"
+    [grammar.reflexive]
+        word = "ses"
+        IPA = "s̻es̻"
+        english = ["itself", "themselves"]
+        notes = "used for the subject, not the object"
+
+[[lexicon]]
+    word = "teď"
+    IPA = "t̻ed̺"
+    english = ["I","me"]
+    meta.date_added = 2019-06-09
+    grammar.POS = "pronoun"
+    grammar.person = "1st"
+    [grammar.reflexive]
+        word = "teteď"
+        IPA = "t̻et̻ed̺"
+        english = ["myself"]
+        notes = "used for the subject, not the object"
+
+[[lexicon]]
+    word = "kar"
+    IPA = "kɹ̩"
+    english = ["you"]
+    meta.date_added = 2019-06-09
+    grammar.POS = "pronoun"
+    grammar.person = "2nd"
+    [grammar.reflexive]
+        word = "karkar"
+        IPA = "kɹ̩kɹ̩"
+        english = ["yourself", "yourselves"]
+        notes = "used for the subject, not the object"
+
+[[lexicon]]
+    word = "łemp"
+    IPA = "ɬ̻eb͡p"
+    english = ["to trip", "to obstruct", "to impede", "to cause to stumble","stumbling","impeded","clumsy"]
+    meta.date_added = 2019-06-09
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "łempstu"
+        IPA = "ɬ̻eb͡ps̻t̻u"
+
+[[lexicon]]
+    word = "beu"
+    IPA = "bɯ"
+    english = ["berry", "cherry", "grape", "currant", "soft fruit"]
+    notes = "describes any fruit small enough for a number that is difficult to easily count to be held in the palm, regardless of whether they are botanically berries or not"
+    meta.date_added = 2019-06-09
+    grammar.POS = "noun"
+    grammar.noun_class = "inanimate"
+
+[[lexicon]]
+    word = "kał"
+    IPA = "kɬ̻̩"
+    english = ["red", "to redden", "to make red"]
+    meta.date_added = 2019-06-09
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "kastu"
+        IPA = "ks̻̩t̻u"
+        english = ["red", "redness", "the color red"]
+
+[[lexicon]]
+    word = "ot"
+    IPA = "ot̻"
+    english = ["to sit", "to seat", "to make sit", "to cause to sit down", "sitting", "seated"]
+    meta.date_added = 2019-06-09
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "octu"
+        IPA = "ot͡s̻t̻u"
+        english = ["sitting", "seat", "chair", "stump", "sitting-place"]
+
+[[lexicon]]
+    word = "řim"
+    IPA = "ɹ̺im"
+    english = ["to make run", "to cause to run"]
+    meta.date_added = 2019-06-09
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "řibstu"
+        IPA = "ɹ̺ib͡ps̻t̻u"
+        english = ["running", "run", "exercise"]
+
+[[lexicon]]
+    word = "śe"
+    IPA = "çe"
+    english = ["to do", "to make", "to cause", "to bring about", "to make happen", "to cause to occur", "to create", "to build"]
+    notes = "the latter meanings of \"to build, to create\" are only applicable when it comes to abstract concepts, not physical inanimate objects"
+    meta.date_added = 2019-06-09
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "śestu"
+        IPA = "çes̻t̻u"
+        english = ["action", "behavior", "activity", "production", "happening", "happenstance", "occurance", "event", "eventuality"]
