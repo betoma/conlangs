@@ -1,6 +1,6 @@
 #This is the lexicon for Bethany E. Toma's Geobong language
 [metadata]
-last_edited = 2019-06-09
+last_edited = 2019-06-10
 
 [[lexicon]]
     word = "teuň"
@@ -12,7 +12,7 @@ last_edited = 2019-06-09
     grammar.noun_class="natural force"
     [grammar.reflexive]
         word = "teudteuň"
-        IPA = "t̻ɯd̻t̻ɯn̺"
+        IPA = "t̻ɯd̻͡t̻ɯn̺"
         english = ["itself", "they", "them"]
         notes = "used for the subject, not the object"
 
@@ -239,7 +239,7 @@ last_edited = 2019-06-09
     meta.date_added = 2019-06-09
     grammar.POS = "verb"
     [grammar.nominalization]
-        word = "že"
+        word = "žestu"
         IPA = "d͡z̺es̻t̻u"
         english = ["appearance, role, seeming"]
 
@@ -259,7 +259,7 @@ last_edited = 2019-06-09
     notes = "frequently used in derivation"
     meta.date_added = 2019-06-09
     grammar.POS = "noun"
-    grammar.noun_class = "variable: GOB or NGINT"
+    grammar.noun_class = "GOB/NGINT"
 
 [[lexicon]]
     word = "uď"
@@ -323,6 +323,207 @@ last_edited = 2019-06-09
     notes = "used to refer to a caregiver with whom the person in question has a particularly close, affectionate relationship"
     meta.date_added = 2019-06-09
     grammar.POS = "noun"
-    grammar.noun_class = "variable: GOB or NGINT"
+    grammar.noun_class = "GOB/NGINT"
 
- 
+[[lexicon]]
+    word = "sleorp"
+    IPA = "s̻l̻ɤɹ̻̥p"
+    english = ["pour", "rush", "flood", "flow", "spill"]
+    meta.date_added = 2019-06-10
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "sleorpstu"
+        IPA = "s̻l̻ɤɹ̻̥ps̻t̻u"
+        english = ["pouring", "rushing", "sloshing", "deluge", "pour", "stream", "rapids", "current"]
+
+[[lexicon]]
+    word = "kłi"
+    IPA = "kɬ̻i"
+    english = ["cup", "mug", "bowl", "container", "pitcher", "jug"]
+    notes = "any container small enough to be relatively easily carried that is meant for storying liquids"
+    meta.date_added = 2019-06-10
+    grammar.POS = "noun"
+    grammar.noun_class = "inanimate"
+
+[[lexicon]]
+    word = "źan"
+    IPA = "ɟ͡ʝn̻̩"
+    english = ["in", "inside of", "within"]
+    notes = "describes being inside a container that is open at the top without sticking out of the container -- BowPed 2, 14 (maybe), 32 (re: bowl, not water), 47 if the dog were lying down"
+    meta.date_added = 2019-06-10
+    grammar.POS = "postposition"
+
+[[lexicon]]
+    word = "ałk"
+    IPA = "ɬ̻̩k"
+    english = ["dog", "canine", "wolf", "lupine", "lupid"]
+    meta.date_added = 2019-06-10
+    grammar.POS = "noun"
+    grammar.noun_class = "animal"
+
+[[lexicon]]
+    word = "dež"
+    IPA = "d̻ed͡z̺"
+    english = ["cat", "feline"]
+    meta.date_added = 2019-06-10
+    grammar.POS = "noun"
+    grammar.noun_class = "animal"
+
+[[lexicon]]
+    word = "bol"
+    IPA = "bol̻"
+    english = ["to strike", "to hit", "to smack", "to punch", "to slap"]
+    notes = "used to describe striking unarmed or with a blunt weapon"
+    meta.date_added = 2019-06-10
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "bolstu"
+        IPA = "bol̻̥s̻t̻u"
+        english = ["strike", "hit", "slap", "punch", "hitting", "fighting"]
+
+[[lexicon]]
+    word = "čo"
+    IPA = "t͡s̺o"
+    english = ["with", "by means of", "using"]
+    notes = "instrumental, also used for ditransitives due to Geobong's secundative structure"
+    meta.date_added = 2019-06-10
+    grammar.POS = "postposition"
+    [grammar.nominalization]
+        word = "čostu"
+        IPA = "t͡s̺os̻t̻u"
+        english = ["tool", "instrument", "means", "method"]
+
+[[lexicon]]
+    word = "ćneu"
+    IPA = "k͡xn̻ɯ"
+    english = ["to give", "to gift", "to deliver", "to hand over", "to provide", "to pass"]
+    notes = "inherently ditransitive -- secundative (obj. = recipient, theme marked with instrumental)"
+    meta.date_added = 2019-06-10
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "ćneustu"
+        IPA = "k͡xn̻ɯs̻t̻u"
+        english = ["gift", "delivery", "goods", "present"]
+
+[[lexicon]]
+    word = "ťńeľ"
+    IPA = "t̺ʲɲel̺"
+    english = ["stick", "branch", "twig", "staff", "cane"]
+    meta.date_added = 2019-06-10
+    grammar.POS = "noun"
+    grammar.noun_class = "inanimate"
+    [[lexicon.derivation]]
+        word = "riľkťńeľ"
+        IPA = "ɹ̻il̺̥kt̺ʲɲel̺"
+        english = ["telescope", "spyglass"]
+        literal = "search stick"
+        meta.date_added = 2019-06-10
+        grammar.POS = "noun"
+        grammar.noun_class = "inanimate"
+
+[[lexicon]]
+    word = "riľk"
+    IPA = "ɹ̻il̺̥k"
+    english = ["to seek out", "to search for", "to look for", "to hunt"]
+    notes = "takes thing being sought as an object"
+    meta.date_added = 2019-06-10
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "riľkstu"
+        IPA = "ɹ̻il̺̥ks̻t̻u"
+        english = ["search", "quest", "hunt"]
+
+[[lexicon]]
+    word = "źek"
+    IPA = "ɟ͡͡ʝek"
+    english = ["to cause to be enthusiastic (about)", "to make lively", "to make youthful" "to energize" "youthful", "young", "lively", "vigorous", "enthusiastic", "wild", "impulsive", "eager"]
+    notes = "describes someone who displays the characterisic traits of a young adolescent (at least, a subset of them -- this term is has a positive connotaiton, after all)" #think Kurt
+    meta.date_added = 2019-06-10
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "źekstu"
+        IPA = "ɟ͡͡ʝeks̻t̻u"
+        english = ["youth", "liveliness", "enthusiasm", "vigor", "impulsiveness", "eagerness"]
+    [[lexicon.derivation]]
+        word = "źekoh"
+        IPA = "ɟ͡͡ʝekoʔ"
+        english = ["youth", "young person", "adolescent", "lively one", "enthusiastic person", "wild one"]
+        meta.date_added = 2019-06-10
+        grammar.POS = "noun"
+        grammar.noun_class = "GOB/NGINT"
+
+[[lexicon]]
+    word = "ćreź"
+    IPA = "k͡xɹ̻eɟ͡ʝ"
+    english = ["to make alive", "to grow", "to cause to flourish", "to illuminate", "to shine", "to turn on, to turn smth. on", "to make beautiful", "alive", "flourishing", "wild", "beautiful", "growing", "bright", "shiny", "chaotic"]
+    meta.date_added = 2019-06-10
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "ćrećstu"
+        IPA = "k͡xɹ̻ec͡çɕt̻u"
+        english = ["life", "growth", "flourishing", "brightness", "illumination", "chaos"]
+
+[[lexicon]]
+    word = "ołb"
+    IPA = "oɮ̻b"
+    english = ["to have", "to hold", "to possess", "to physically have on one's person"]
+    notes = "marks alienable possession of a physical item, only refers to an item physically with the person or thing at present"
+    meta.date_added = 2019-06-10
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "ołpstu"
+        IPA = "oɬ̻ps̻t̻u"
+        english = ["possession", "held items", "contents", "things being brought with (you)", "luggage"]
+
+[[lexicon]]
+    word = "deoł"
+    IPA = "d̻ɤɬ̻"
+    english = ["that", "which", "who", "whom"]
+    notes = "general complementizer"
+    meta.date_added = 2019-06-10
+    grammar.POS = "complementizer"
+
+[[lexicon]]
+    word = "ⱡeř"
+    IPA = "ɬ̺eɹ̺"
+    english = ["to attend", "to be at", "to show up at", "to have shown up at", "to arrive at (an event)", "to go to (an event)"]
+    meta.date_added = 2019-06-10
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "ⱡerstu"
+        IPA = "ɬ̺eɹ̻̥s̻t̻u"
+        english = ["attendance", "arrival", "showing-up"]
+    [[lexicon.derivation]]
+        word = "ⱡeřoh"
+        IPA = "ɬ̺eɹ̺oʔ"
+        english = ["attendee", "guest", "audience member", "customer"]
+        meta.date_added = 2019-06-10
+        grammar.POS = "noun"
+        grammar.noun_class = "GOB/NGINT"
+
+[[lexicon]]
+    word = "ban"
+    IPA = "bn̩"
+    english = ["sun", "sunlight", "daytime"]
+    meta.date_added = 2019-06-10
+    grammar.POS = "noun"
+    grammar.noun_class = "natural force"
+
+[[lexicon]]
+    word = "ńeł"
+    IPA = "ɲeɬ̻"
+    english = ["right?", "isn't it?", "whether"]
+    notes = "used to mark yes or no questions (both standalone and embedded)"
+    meta.date_added = 2019-06-10
+    grammar.POS = "discourse particle"
+
+[[lexicon]]
+    word = "hisn"
+    IPA = "ʔiz̻n̻"
+    english = ["true", "right", "accurate", "actual", "real", "to make true", "to actualize", "to make real", "to realize"]
+    meta.date_added = 2019-06-10
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "hisdstu"
+        IPA = "ʔiz̻d̻͡t̻s̻t̻u"
+        english = ["truth", "reality"]
