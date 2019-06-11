@@ -527,3 +527,24 @@ last_edited = 2019-06-10
         word = "hisdstu"
         IPA = "ʔiz̻d̻͡t̻s̻t̻u"
         english = ["truth", "reality"]
+
+[[lexicon]]
+    word = "peod"
+    IPA = "pɤd̻"
+    english = ["blue", "cyan", "to make blue", "to make cyan", "to color blue", "to rise (of the sun to the sky)", "to kill (colloquial)"]
+    meta.date_added = 2019-06-11
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "peoctu"
+        IPA = "pɤt͡s̻t̻u"
+        english = ["blue", "the color blue", "blueness"]
+
+[[lexicon]]
+    word = "euŋr"
+    IPA = "ɯŋɹ̻"
+    english = ["sky", "heavens", "the sky", "the heavens", "above", "upwards", "up"]
+    notes = "rather than serving as a postposition like many positionals, this must be marked as the possessee of an object"
+    meta.date_added = 2019-06-11
+    grammar.POS = "noun"
+    grammar.noun_class = "natural force"
+
