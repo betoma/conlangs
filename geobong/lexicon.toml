@@ -1,6 +1,6 @@
 #This is the lexicon for Bethany E. Toma's Geobong language
 [metadata]
-last_edited = 2019-06-10
+last_edited = 2019-06-18
 
 [[lexicon]]
     word = "teuň"
@@ -548,3 +548,177 @@ last_edited = 2019-06-10
     grammar.POS = "noun"
     grammar.noun_class = "natural force"
 
+[[lexicon]]
+    word = "ośk"
+    IPA = "oxk"
+    english = ["already", "still haven't", "not yet"]
+    notes = "completive; indicates that an event has already occurred in relation to the time being discussed"
+    meta.date_added = 2019-06-18
+    grammar.POS = "TAM particle"
+
+[[lexicon]]
+    word = "go"
+    IPA = "go"
+    english = ["always", "never"]
+    notes = "gnomic/habitual; indicates that something always holds true and describes habitual actions that still go on in the present"
+    meta.date_added = 2019-06-18
+    grammar.POS = "TAM particle"
+
+[[lexicon]]
+    word = "boš"
+    IPA = "bos̺"
+    english = ["to eat", "to drink", "to take", "to consume", "to imbibe"]
+    meta.date_added = 2019-06-18
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "bostu"
+        IPA = "bos̻t̻u"
+        english = ["food", "drink", "vittels", "something to eat", "something to drink", "eating", "drinking"]
+
+[[lexicon]]
+    word = "euś"
+    IPA = "ɯç"
+    english = ["all", "everything", "entirety", "totality", "completeness"]
+    notes = "used as a quantifier when possessed by the quantified noun (i.e., \"my everything\" = \"all of me\")"
+    meta.date_added = 2019-06-18
+    grammar.POS = "noun"
+    grammar.noun_class = "abstract"
+
+[[lexicon]]
+    word = "ŋi"
+    IPA = "ŋi"
+    english = ["off of", "away from", "out of"]
+    notes = "describes motion away from or out of some sort of non-permanent containment or proximity that doesn't breach or break some fundamental relationship -- movement out of BowPed 1, 2, 5, 6, 7, 8, 9, 12, 14, 15, 16, 17, 19, 21, 23, 29, 31, 32, 33, 34, 37, 38, 39, 40, 43, 44, 47, 52, 53, 54, 58, 59, 60, 64, 67, 71"
+    meta.date_added = 2019-06-18
+    grammar.POS = "postposition"
+
+[[lexicon]]
+    word = "pšaľ"
+    IPA = "ps̺l̺̩"
+    english = ["leaf", "palm", "sheet", "face (of something flat)", "front", "cloth", "piece of fabric", "blanket"]
+    meta.date_added = 2019-06-18
+    grammar.POS = "noun"
+    grammar.noun_class = "inanimate"
+    [[lexicon.derivation]]
+        word = "pšaľeľ"
+        IPA = "ps̺l̺̩el̺"
+        english = ["tree", "bush", "deciduous tree", "deciduous bush"]
+        notes = "describes any large-ish plant with flat leaves"
+        meta.date_added = 2019-06-18
+        grammar.POS = "noun"
+        grammar.noun_class = "inanimate"
+
+[[lexicon]]
+    word = "ciń"
+    IPA = "t͡s̻iɲ"
+    english = ["needle", "spine", "shaft", "quill"]
+    meta.date_added = 2019-06-18
+    grammar.POS = "noun"
+    grammar.noun_class = "inanimate"
+
+[[lexicon]]
+    word = "ďeoś"
+    IPA = "d̺ɤç"
+    english = ["tree", "bush", "coniferous tree", "tree with needles", "bush with needles"]
+    notes = "is the default word for a tree or bush, but more specifically describes trees or bushes with needles rather than flat leaves"
+    meta.date_added = 2019-06-18
+    grammar.POS = "noun"
+    grammar.noun_class = "inanimate"
+
+[[lexicon]]
+    word = "zlom"
+    IPA = "d͡z̻l̻om"
+    english = ["to drop", "to fell", "to cause to fall"]
+    meta.date_added = 2019-06-18
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "zlozstu"
+        IPA = "d͡z̻l̻od͡z̻s̻t̻u"
+        english = ["fall", "drop", "falling", "dropping", "sharp increase or decrease in height"]
+
+[[lexicon]]
+    word = "dizd"
+    IPA = "d̻id͡z̻d̻"
+    english = ["salt", "saltiness"]
+    meta.date_added = 2019-06-18
+    grammar.POS = "noun"
+    grammar.noun_class = "inanimate"
+    [[lexicon.derivation]]
+        word = "dižďⱡić"
+        IPA = "d̻id͡z̺d̺ɬ̺ic͡ç"
+        english = ["to salt", "to add salt to", "to make salty", "to season", "to pickle", "salty", "salted", "well-seasoned", "pickled"]
+        meta.date_added = 2019-06-18
+        grammar.POS = "verb"
+        [grammar.nominalization]
+            word = "dižďⱡićstu"
+            IPA = "d̻id͡z̺d̺ɬ̺ic͡çɕt̻u"
+            english = ["seasoning", "brine"]
+
+[[lexicon]]
+    word = "ⱡić"
+    IPA = "ɬ̺ic͡ç"
+    english = ["to add", "to increase", "to compile", "to store up", "to gather up"]
+    meta.date_added = 2019-06-18
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "ⱡićstu"
+        IPA = "ɬ̺ic͡çɕt̻u"
+        english = ["addition", "compilation", "store", "gather", "increase"]
+
+[[lexicon]]
+    word = "řo"
+    IPA = "ɹ̺o"
+    english = ["please", "may I?"]
+    notes = "used to turn a statement into a request"
+    meta.date_added = 2019-06-18
+    grammar.POS = "discourse particle"
+
+[[lexicon]]
+    word = "łeno"
+    IPA = "ɬ̻en̻o"
+    english = ["to originate", "to birth", "to cause to come from", "original", "native", "first", "natural-born"]
+    notes = "frequently used in constructions like \"I come from X\""
+    meta.date_added = 2019-06-18
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "łenostu"
+        IPA = "ɬ̻en̻os̻t̻u"
+        english = ["place of origin", "hometown", "home village", "origin", "place you came from"]
+
+[[lexicon]]
+    word = "λi"
+    IPA = "t͡ɬ̻i"
+    english = ["where", "there", "somewhere", "location", "place"]
+    notes = "tends to be possessed by a noun or the object of a postposition"
+    meta.date_added = 2019-06-18
+    grammar.POS = "noun"
+    grammar.noun_class = "abstract"
+
+[[lexicon]]
+    word = "eom"
+    IPA = "ɤm"
+    english = ["money", "resources", "value", "goods", "that which something is worth"]
+    meta.date_added = 2019-06-18
+    grammar.POS = "noun"
+    grammar.noun_class = "inanimate"
+    [[lexicon.derivation]]
+        word = "eoďⱡić"
+        IPA = "ɤd͡t̺ɬ̺ic͡ç"
+        english = ["to be worth", "to be valued at", "worthy", "valueable", "treasured"]
+        meta.date_added = 2019-06-18
+        grammar.POS = "verb"
+        [grammar.nominalization]
+            word = "eoďⱡićstu"
+            IPA = "ɤd͡t̺ɬ̺ic͡çɕt̻u"
+            english = ["price", "value", "worth", "worthiness"]
+    [[lexicon.derivation]]
+        word = "ćeoďⱡiďⱡ"
+        IPA = "c͡ɕɤd͡t̺ɬ̺id͡t̺ɬ̺"
+        english = ["to value", "to appraise", "to set the worth of something at"]
+        notes = "causative ditransitive -- the original agent becomes object and the original object becomes instrumental"
+        meta.date_added = 2019-06-18
+        grammar.POS = "verb"
+        [grammar.nominalization]
+            word = "ćeoďⱡidstu"
+            IPA = "c͡çɤd͡t̺ɬ̺id͡t̻s̻t̻u"
+            english = ["measure", "standard", "that by which something is valued"]
