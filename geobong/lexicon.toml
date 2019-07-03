@@ -1,6 +1,6 @@
 #This is the lexicon for Bethany E. Toma's Geobong language
 [metadata]
-last_edited = 2019-06-18
+last_edited = 2019-07-02
 
 [[lexicon]]
     word = "teuň"
@@ -462,6 +462,17 @@ last_edited = 2019-06-18
         word = "ćrećstu"
         IPA = "k͡xɹ̻ec͡çɕt̻u"
         english = ["life", "growth", "flourishing", "brightness", "illumination", "chaos"]
+    [[lexicon.derivation]]
+        word = "ocćreź"
+        IPA = "ot͡s̻t̻͡ɕɹ̻eɟ͡ʝ"
+        english = ["life-bringing", "life-giving", "causing other things to flourish", "to make (smth./sme.) make (smth./sme.) alive"]
+        notes = "causative ditransitive -- the subject of the original verb is the object, and the (optional) object of the original verb is in the instrumental"
+        meta.date_added = 2019-07-03
+        grammar.POS = "verb"
+        [grammar.nominalization]
+            word = "ocćrećstu"
+            IPA = "ot͡s̻t̻͡ɕɹ̻ec͡çs̻t̻u"
+            english = ["life-bringing-ness", "kindness", "generosity", "creativity", "growth-causing-ness"]
 
 [[lexicon]]
     word = "ołb"
@@ -693,6 +704,48 @@ last_edited = 2019-06-18
     meta.date_added = 2019-06-18
     grammar.POS = "noun"
     grammar.noun_class = "abstract"
+    [[lexicon.derivation]]
+        word = "λim"
+        IPA = "t͡ɬ̻im"
+        english = ["what", "which", "what thing", "which thing", "some", "something", "thing"]
+        meta.date_added = 2019-07-03
+        grammar.POS = "noun"
+        grammar.noun_class = "inanimate"
+    [[lexicon.derivation]]
+        word = "ƛaň"
+        IPA = "t͡ɬ̺n̺̩"
+        english = ["what", "who", "which", "which force", "what force", "some", "some force", "something", "a force"]
+        meta.date_added = 2019-07-03
+        grammar.POS = "noun"
+        grammar.noun_class = "natural force"
+    [[lexicon.derivation]]
+        word = "λeog"
+        IPA = "t͡ɬ̻ɤg"
+        english = ["who", "which", "what goblin", "which goblin", "some goblin", "someone"]
+        meta.date_added = 2019-07-03
+        grammar.POS = "noun"
+        grammar.noun_class = "goblin"
+    [[lexicon.derivation]]
+        word = "λameu"
+        IPA = "t͡ɬ̻m̩ɯ"
+        english = ["who", "which", "what person", "which person", "some person", "someone"]
+        meta.date_added = 2019-07-03
+        grammar.POS = "noun"
+        grammar.noun_class = "non-goblin intelligence"
+    [[lexicon.derivation]]
+        word = "ču"
+        IPA = "t͡s̺u"
+        english = ["what", "who", "which", "what thing", "what animal", "which thing", "which animal", "which one", "some animal", "something", "someone"]
+        meta.date_added = 2019-07-03
+        grammar.POS = "noun"
+        grammar.noun_class = "animal"
+    [[lexicon.derivation]]
+        word = "λeš"
+        IPA = "t͡ɬ̻es̺"
+        english = ["what", "which", "what thing", "which thing", "which thing", "what concept", "which concept", "something", "some concept", "a concept"]
+        meta.date_added = 2019-07-03
+        grammar.POS = "noun"
+        grammar.noun_class = "abstract"
 
 [[lexicon]]
     word = "eom"
@@ -704,7 +757,8 @@ last_edited = 2019-06-18
     [[lexicon.derivation]]
         word = "eoďⱡić"
         IPA = "ɤd͡t̺ɬ̺ic͡ç"
-        english = ["to be worth", "to be valued at", "worthy", "valueable", "treasured"]
+        english = ["to be worth", "to be valued at", "validating", "valuable (in the sense of giving something value)", "worthwhile"]
+        notes = "as an adjective, describes things (usually qualities) which cause something to be more valuable or worth more, rather than any characteristics of the thing that has (or doesn't have) value directly"
         meta.date_added = 2019-06-18
         grammar.POS = "verb"
         [grammar.nominalization]
@@ -712,13 +766,145 @@ last_edited = 2019-06-18
             IPA = "ɤd͡t̺ɬ̺ic͡çɕt̻u"
             english = ["price", "value", "worth", "worthiness"]
     [[lexicon.derivation]]
-        word = "ćeoďⱡiďⱡ"
-        IPA = "c͡ɕɤd͡t̺ɬ̺id͡t̺ɬ̺"
-        english = ["to value", "to appraise", "to set the worth of something at"]
-        notes = "causative ditransitive -- the original agent becomes object and the original object becomes instrumental"
-        meta.date_added = 2019-06-18
+        word = "ceoďⱡić"
+        IPA = "t͡s̻ɤd͡t̺ɬ̺ic͡ç"
+        english = ["to value", "to appraise", "to set the worth of something at", "worthy", "valueable", "treasured"]
+        notes = "causative ditransitive -- the original agent becomes object and (optionally) the original object becomes instrumental"
+        meta.date_added = 2019-07-03
         grammar.POS = "verb"
         [grammar.nominalization]
-            word = "ćeoďⱡidstu"
-            IPA = "c͡çɤd͡t̺ɬ̺id͡t̻s̻t̻u"
+            word = "ceoďⱡićstu"
+            IPA = "t͡s̻ɤd͡t̺ɬ̺ic͡çs̻t̻u"
             english = ["measure", "standard", "that by which something is valued"]
+
+[[lexicon]]
+    word = "bog"
+    IPA = "bog"
+    english = ["to be in charge of", "to head", "to govern", "to dominate", "to be important (regarding some context)", "governed", "ruled", "civilized", "dominated"]
+    meta.date_added = 2019-07-02
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "bokstu"
+        IPA = "boks̻t̻u"
+        english = ["importance", "leadership", "seriousness", "supremacy", "governance", "dominance"]
+    [[lexicon.derivation]]
+        word = "bog"
+        IPA = "bog"
+        english = ["top", "the top", "the highest point", "head", "crown", "top of the head"]
+        meta.date_added = 2019-07-02
+        grammar.POS = "noun"
+        grammar.noun_class = "abstract"
+    [[lexicon.derivation]]
+        word = "bogoh"
+        IPA = "bogoʔ"
+        english = ["leader", "boss", "head", "king", "queen", "mayor", "supreme person"]
+        meta.date_added = 2019-07-02
+        grammar.POS = "noun"
+        grammar.noun_class = "GOB/NGINT"
+    [[lexicon.derivation]]
+        word = "ozbog"
+        IPA = "od͡z̻bog"
+        english = ["to put in charge of", "to install as leader", "to make important", "to make the head of", "to flatter", "to butter up", "to promote", "to take seriously", "serious", "important", "in charge", "leaderly"]
+        meta.date_added = 2017-07-02
+        grammar.POS = "verb"
+        [grammar.nominalization]
+            word = "ozbokstu"
+            IPA = "od͡z̻boks̻t̻u"
+            english = ["coronation", "promotion", "flattery", "pulling of the strings in the background", "scheming"]
+
+[[lexicon]]
+    word = "uh"
+    IPA = "uʔ"
+    english = ["to cause to die", "to kill", "to make dead", "dead"]
+    meta.date_added = 2019-07-03
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "uhstu"
+        IPA = "uʔs̻t̻u"
+        english = ["death", "dying"]
+    [[lexicon.derivation]]
+        word = "uhoh"
+        IPA = "uʔoʔ"
+        english = ["dead person", "one who has died", "corpse", "deceased"]
+        meta.date_added = 2019-07-03
+        grammar.POS = "noun"
+        grammar.noun_class = "GOB/NGINT"
+    [[lexicon.derivation]]
+        word = "cuh"
+        IPA = "t͡s̻uʔ"
+        english = ["to cause to kill", "to make (smth./sme.) cause (smth./sme.) to die"]
+        meta.date_added = 2019-07-03
+        grammar.POS = "verb"
+        [grammar.nominalization]
+            word = "cuhstu"
+            IPA = "t͡s̻uʔs̻t̻u"
+            english = ["killing", "murder"]
+    [[lexicon.derivation]]
+        word = "cuhoh"
+        IPA = "t͡s̻uʔoʔ"
+        english = ["killer", "murderer", "one who kills"]
+        meta.date_added = 2019-07-03
+        grammar.POS = "noun"
+        grammar.noun_class = "GOB/NGINT"
+
+[[lexicon]]
+    word = "teun"
+    IPA = "t̻ɯn̻"
+    english = ["to desire", "to want", "to crave", "to wish for", "desirable", "attractive"]
+    meta.date_added = 2019-07-03
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "teudstu"
+        IPA = "t̻ɯd͡t̻s̻t̻u"
+        english = ["desire", "craving", "wish", "want", "longing", "thing that is desired"]
+    [[lexicon.derivation]]
+        word = "octeun"
+        IPA = "ot͡s̻t̻ɯn̻"
+        english = ["to cause (smth./sme.) to desire (smth./sme.)", "to draw", "to attract", "to point towards", "to cause to crave", "longing", "desiring", "wanting", "craving", "horny", "hungry", "jealous", "envious"]
+        meta.date_added = 2019-07-03
+        grammar.POS = "verb"
+        [grammar.nominalization]
+            word = "octeudstu"
+            IPA = "ot͡s̻t̻ɯd͡t̻s̻t̻u"
+            english = ["desire", "craving", "feelings of desire", "horniness", "hunger", "the abstract concept of desire"]
+
+[[lexicon]]
+    word = "ńełip"
+    IPA = "ɲeɬ̻ip"
+    english = ["to ask (smth.)", "to question (smth.)", "to doubt (a fact/statement)", "to wonder about", "uncertain", "dubious", "questionable", "suspicious", "unclear"]
+    notes = "as adjective, describes doubing facts/statements; cannot be used with a recipient -- optionally ditransitive version must be used instead in that case"
+    meta.date_added = 2019-07-03
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "ńełipstu"
+        IPA = "ɲeɬ̻ips̻t̻u"
+        english = ["question", "doubt", "wonder"]
+    [[lexicon.derivation]]
+    word = "ńełiptu"
+    IPA = "ɲeɬ̻ipt̻u"
+    english = ["to ask (sme.)", "to question (sme.)", "to doubt (a person)", "to interrogate", "suspicious", "unclear", "dubious", "questioned"]
+    notes = "as adjective, describes doubting a person (though, presumably, the facts/statements they make); optionally ditransitive -- the fact that is being asked about can be attached as an instrumental"
+    meta.date_added = 2019-07-03
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "ńełiptustu"
+        IPA = "ɲeɬ̻ipt̻us̻t̻u"
+        english = ["interrogation", "questioning", "doubt", "suspicion"]
+    [[lexicon.derivation]]
+    word = "cńełip"
+    IPA = "t͡s̻ɲeɬ̻ip"
+    english = ["to cause to question", "to cause to wonder", "to sow seeds of doubt (about)", "to make uncertain", "curious", "confused", "questioning", "doubting", "uncertain"]
+    notes = "as adjective, describes a person who questions/doubts things; causative ditransitive -- the subject of the original verb is the object, and the (optional) object of the original verb is in the instrumental"
+    meta.date_added = 2019-07-03
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "cńełipstu"
+        IPA = "t͡s̻ɲeɬ̻ips̻t̻u"
+        english = ["curiosity", "confusion", "doubt", "questioning"]
+
+[[lexicon]]
+    word = "ľeśk"
+    IPA = "l̺exk"
+    english = ["again", "newly", "once more", "another", "new", "a second"]
+    meta.date_added = 2019-07-03
+    grammar.POS = "adverb"
