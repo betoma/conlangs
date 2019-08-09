@@ -1,6 +1,6 @@
 #This is the lexicon for Bethany E. Toma's Geobong language
 [metadata]
-last_edited = 2019-07-02
+last_edited = 2019-08-08
 
 [[lexicon]]
     word = "teuň"
@@ -212,15 +212,14 @@ last_edited = 2019-07-02
     meta.date_added = 2019-06-09
     grammar.POS = "noun"
     grammar.noun_class = "goblin"
-
-[[lexicon]]
-    word = "geoboŋ"
-    IPA = "gɤboŋ"
-    english = ["Gebong", "the Goblin language", "goblin-speak"]
-    notes = "Often has a somewhat pejorative connotation; most goblin communities exist in some degree of di- or tri-glossia, with Geobong serving as the basolect while the local non-goblin language serves as the acrolect (with varying degrees of mixture serving as mesolect)"
-    meta.date_added = 2019-06-09
-    grammar.POS = "noun"
-    grammar.noun_class = "abstract"
+    [[lexicon.derivation]]
+        word = "geoboŋ"
+        IPA = "gɤboŋ"
+        english = ["Gebong", "the Goblin language", "goblin-speak"]
+        notes = "Often has a somewhat pejorative connotation; most goblin communities exist in some degree of di- or tri-glossia, with Geobong serving as the basolect while the local non-goblin language serves as the acrolect (with varying degrees of mixture serving as mesolect)"
+        meta.date_added = 2019-06-09
+        grammar.POS = "noun"
+        grammar.noun_class = "abstract"
 
 [[lexicon]]
     word = "stu"
@@ -908,3 +907,125 @@ last_edited = 2019-07-02
     english = ["again", "newly", "once more", "another", "new", "a second"]
     meta.date_added = 2019-07-03
     grammar.POS = "adverb"
+
+[[lexicon]]
+    word = "boŋ"
+    IPA = "boŋ"
+    english = ["mouth", "throat", "speech", "language"]
+    meta.date_added = 2019-07-08
+    grammar.POS = "noun"
+    grammar.noun_class = "GOB/NGINT"
+
+[[lexicon]]
+    word = "eo"
+    IPA = "ɤ"
+    english = ["and", "but", "then"]
+    notes = "used as a generic sentence connector"
+    meta.date_added = 2019-07-08
+    grammar.POS = "connective particle"
+
+[[lexicon]]
+    word = "prameš"
+    IPA = "pɹ̻m̩es̺"
+    english = ["to make stinky", "to contaminate", "to cause to be flawed", "to fill with errors", "to fuck up", "to stink up", "stinky", "malodorous", "flawed", "full of errors"]
+    meta.date_added = 2019-07-08
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "pramestu"
+        IPA = "pɹ̻m̩es̻t̻u"
+        english = ["stench", "stinkiness", "flaw", "error", "issue", "problem"]
+
+[[lexicon]]
+    word = "ƛoc"
+    IPA = "t͡ɬ̺ot͡s̻"
+    english = ["genitals", "genitalia", "dick", "balls", "vulva", "vagina"]
+    meta.date_added = 2019-08-08
+    grammar.POS = "noun"
+    grammar.noun_class = "GOB/NGINT"
+
+[[lexicon]]
+    word = "čřeo"
+    IPA = "t͡s̺ɹ̺ɤ"
+    english = ["with", "along with", "together"]
+    notes = "also used in place of nominal conjunction"
+    meta.date_added = 2019-08-08
+    grammar.POS = "postposition"
+
+[[lexicon]]
+    word = "nreo"
+    IPA = "n̻ɹ̻ɤ"
+    english = ["fat", "lard", "oil"]
+    meta.date_added = 2019-08-08
+    grammar.POS = "noun"
+    grammar.noun_class = "inanimate"
+
+[[lexicon]]
+    word = "arc"
+    IPA = "ɹ̻̩t͡s̻"
+    english = ["to feed", "to provide food for", "to give food to", "well-fed", "full", "sated", "not hungry"]
+    notes = "optionally ditransitive, secundative (takes the recipient as object and the theme as an optional instrumental"
+    meta.date_added = 2019-08-08
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "arctu"
+        IPA = "ɹ̻̩t͡s̻t̻u"
+        english = ["feeding", "meal", "potluck", "feast"]
+
+[[lexicon]]
+    word = "sgeo"
+    IPA = "z̻gɤ"
+    english = ["to nauseate", "to make nauseous", "to sicken", "to make queasy", "nauseous", "nauseated", "queasy"]
+    meta.date_added = 2019-08-08
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "sgeostu"
+        IPA = "z̻gɤs̻t̻u"
+        english = ["nausea", "queasiness", "sickness", "vomit"]
+
+[[lexicon]]
+    word = "iłś"
+    IPA = "iɬ̻ʲç"
+    english = ["to forbid", "to prohibit", "to disallow", "forbidden", "prohibited", "disallow"]
+    notes = "used either for a single theme (the forbidden thing) or to embed a clause"
+    meta.date_added = 2019-08-08
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "iłśstu"
+        IPA = "iɬ̻ʲçɕt̻u"
+        english = ["prohibition", "rule", "disallowance", "constraint", "injunction", "proscription"]
+
+[[lexicon]]
+    word = "ďetś"
+    IPA = "d̺et̻ʲç"
+    english = ["to require", "to force (to do)", "to command", "to demand", "required", "commanded", "forced", "demanded"]
+    notes = "used either for a single theme (the required thing) or to embed a clause"
+    meta.date_added = 2019-08-08
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "ďetśstu"
+        IPA = "d̺et̻ʲçɕt̻u"
+        english = ["requirement", "necessity", "command", "demand"]
+
+[[lexicon]]
+    word = "řoś"
+    IPA = "ɹ̺oç"
+    english = ["to ask to do", "to ask for", "to request", "requested", "desired"]
+    notes = "used either for a single thing (the requested thing) or to embed a clause"
+    meta.date_added = 2019-08-08
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "řośstu"
+        IPA = "ɹ̺oçɕt̻u"
+        english = ["request", "desire"]
+
+[[lexicon]]
+    word = "euⱡś"
+    IPA = "ɯɬ̺ʲç"
+    english = ["to allow", "to permit", "to release", "to condone", "allowed", "permitted", "condoned"]
+    meta.date_added = 2019-08-08
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "euⱡśstu"
+        IPA = "ɯɬ̺ʲçɕt̻u"
+        english = ["thing which is allowed", "possibility", "option"]
+
