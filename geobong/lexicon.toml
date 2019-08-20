@@ -1,6 +1,6 @@
 #This is the lexicon for Bethany E. Toma's Geobong language
 [metadata]
-last_edited = 2019-08-08
+last_edited = 2019-08-19
 
 [[lexicon]]
     word = "teuň"
@@ -1029,3 +1029,115 @@ last_edited = 2019-08-08
         IPA = "ɯɬ̺ʲçɕt̻u"
         english = ["thing which is allowed", "possibility", "option"]
 
+[[lexicon]]
+    word = "žľeu"
+    IPA = "d͡z̺l̺ɯ"
+    english = ["to belittle", "to patronize", "to treat like a child", "to make small", "little", "tiny", "small", "infantile", "childish", "baby-ish", "childlike"]
+    meta.date_added = 2019-08-19
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "žľeustu"
+        IPA = "d͡z̺l̺ɯs̻t̻u"
+        english = ["childishness, helplessness, smallness, tininess"]
+    [[lexicon.derivation]]
+        word = "žľeuoh"
+        IPA = "d͡z̺l̺ɯoʔ"
+        english = ["child", "baby", "infant", "toddler", "one who is too young to look after themselves"]
+        meta.date_added = 2019-08-19
+        grammar.POS = "noun"
+        grammar.noun_class = "GOB/NGINT"
+
+[[lexicon]]
+    word = "pogeb"
+    IPA = "pogeb"
+    english = ["to climb", "to scale", "to scramble up", "to go to the top of", "to surmount", "to overcome", "climbed", "scaled", "surmounted"]
+    meta.date_added = 2019-08-19
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "pogepstu"
+        IPA = "pogeps̻t̻u"
+        english = ["obstacle", "that which must be surmounted", "that which must be overcome"]
+
+[[lexicon]]
+    word = "ip"
+    IPA = "ip"
+    english = ["yes", "indeed", "agreed", "good"]
+    notes = "expresses agreement with/assertion of attached utterance with a positive attitude towards the described circumstances"
+    meta.date_added = 2019-08-19
+    grammar.POS = "discourse particle"
+
+[[lexicon]]
+    word = "huł"
+    IPA = "ʔuɬ̻"
+    english = ["yes", "unfortunately"]
+    notes = "expresses agreement with/assertion of attached utterance with a negative attitude towards the described circumstances"
+    meta.date_added = 2019-08-19
+    grammar.POS = "discourse particle"
+
+[[lexicon]]
+    word = "teułb"
+    IPA = "t̻ɯɮ̻b"
+    english = ["still water", "murky water", "water that isn't moving"]
+    notes = "does not carry implications of drinkability, prototypically describes the type of water mosquitos like to breed in"
+    meta.date_added = 2019-08-19
+    grammar.POS = "noun"
+    grammar.noun_class = "inanimate"
+
+[[lexicon]]
+    word = "sokuuš"
+    IPA = "s̻okuus̺"
+    english = ["wall", "door", "barrier", "fence", "dike", "dam"]
+    meta.date_added = 2019-08-19
+    grammar.POS = "noun"
+    grammar.noun_class = "inanimate"
+
+[[lexicon]]
+    word = "źrio"
+    IPA = "g͡ɣɹ̻io"
+    english = ["to lock", "to bar", "to barricade", "locked", "barred", "barricaded"]
+    meta.date_added = 2019-08-19
+    grammar.POS = "verb"
+    [grammar.nominalization]
+        word = "źriostu"
+        IPA = "g͡ɣɹ̻ios̻t̻u"
+        english = ["that which is locked", "safe", "blocked-off area", "barricaded place", "inaccessible place"]
+
+[[lexicon]]
+    word = "euš"
+    IPA = "ɯs̺"
+    english = ["yeah", "I guess", "sure", "whatever", "I'll permit it", "that's allowed"]
+    notes = "expresses agreement/allowance of something without any particularly strong positive or negative feelings"
+    meta.date_added = 2019-08-19
+    grammar.POS = "discourse particle"
+
+[[lexicon]]
+    word = "iz"
+    IPA = "id͡z̻"
+    english = ["no", "absolutely not", "I won't allow it", "I refuse", "I forbid it"]
+    notes = "expresses a prohibition of the described circumstances"
+    meta.date_added = 2019-08-19
+    grammar.POS = "discourse particle"
+
+[[lexicon]]
+    word = "ńeł"
+    IPA = "ɲeɬ̻"
+    english = ["yeah?", "alright?", "huh?", "really?", "uh-huh"]
+    notes = "marks polar questions and tag questions, also often used to illicit agreement or encourage elaboration in a conversation"
+    meta.date_added = 2019-08-19
+    grammar.POS = "discourse particle"
+
+[[lexicon]]
+    word = "hep"
+    IPA = "ʔep"
+    english = ["now", "right now", "immediately"]
+    meta.date_added = 2019-08-19
+    grammar.POS = "adverb"
+
+[[lexicon]]
+    word = "heban"
+    IPA = "ʔebn̻̩"
+    english = ["today"]
+    notes = "only includes the proper daytime, when the sun is out"
+    meta.date_added = 2019-08-19
+    grammar.POS = "noun"
+    grammar.noun_class = "abstract"
