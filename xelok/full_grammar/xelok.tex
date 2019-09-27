@@ -10,7 +10,7 @@
 \usepackage{textcomp}
 \usepackage{expex}
 \usepackage{tablefootnote}
-\usepackage{datetime2}
+\usepackage[calc,english]{datetime2}
 \usepackage{bookmark}
 
 \setmainfont{Charis SIL}[CharacterVariant=43:1]
@@ -94,6 +94,17 @@
 \newcommand{\tiebar}{͡} %or \t{} for tiebar
 
 \lingset{glstyle=nlevel,numoffset=3em,textoffset=1.5em,exskip=.75ex,belowglpreambleskip=.25ex,aboveglftskip=.25ex}
+
+\DTMnewdatestyle{eurodate}{%
+    \renewcommand{\DTMdisplaydate}[4]{%
+        \number##3.\nobreakspace%           day
+        \DTMmonthname{##2}\nobreakspace%    month
+        \number##1%                         year
+    }%
+    \renewcommand{\DTMDisplaydate}{\DTMdisplaydate}%
+}
+
+\DTMsetdatestyle{eurodate}
 
 %---TITLEPAGE---%
 \newlength{\drop}% for my convenience
