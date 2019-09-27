@@ -1,6 +1,4 @@
-\documentclass[10pt]{article}
-\usepackage{libertine}
-\usepackage[libertine]{newtxmath}
+\documentclass[a4paper,11pt,oneside,openany]{memoir}
 \usepackage{fontspec}
 \usepackage{amsmath} % a pretty standard package to enlarge your inventory of symbols
 \usepackage{amssymb} % another common package for symbols
@@ -12,18 +10,15 @@
 \usepackage{textcomp}
 \usepackage{expex}
 \usepackage{tablefootnote}
-\usepackage{datetime2}
+\usepackage[calc,english]{datetime2}
+\usepackage{bookmark}
 
-\setlength\parindent{0pt}
-\setlength\parskip{4pt}
+\setmainfont{Charis SIL}[CharacterVariant=43:1]
 
-\newfontfamily\Charis{CHARISSIL-R.TTF}
-\newcommand{\chris}[1]{{\Charis #1}}
-\newcommand{\sk}{\textsc}
-\newcommand{\shu}[1]{$#1$}
-\newcommand{\shsh}[1]{$$#1$$}
-\newcommand{\ipa}[1]{/\chris{#1}/}
-\newcommand{\phipa}[1]{[\chris{#1}]}
+%\setlength{\parindent}{2em}
+\setlength{\parskip}{1ex}
+%\linespread{1.1}
+%---generic symbols---%
 \newcommand{\dao}{$\to$}
 \newcommand{\nm}{\symbol{"2205}}
 \newcommand{\ra}{\textgreater}
@@ -32,9 +27,12 @@
 \newcommand{\langbr}{⟨}
 \newcommand{\rangbr}{⟩}
 
+\newcommand{\ortho}[1]{$\langle$#1$\rangle$}
+\newcommand{\bripa}[1]{[#1]}
+\newcommand{\phipa}[1]{/#1/}
 \newcommand{\eng}[1]{`#1'}
 \newcommand{\gob}[1]{``#1''}
-\newcommand{\ortho}[1]{⟨#1⟩}
+%\newcommand{\ortho2}[1]{⟨#1⟩}
 
 %---LANG'S ORTHO---%
 \newcommand{\vt}{ť}
@@ -61,30 +59,48 @@
 
 %---IPA---%
 %consonants
-\newcommand{\egna}{ɲ}
+\newcommand{\bilaf}{ɸ}
+\newcommand{\bilav}{β}
+\newcommand{\labrox}{ʋ}
 \newcommand{\latfric}{ɬ}
 \newcommand{\latfrivoic}{ɮ}
+\newcommand{\alvr}{ɹ}
+\newcommand{\alvrap}{ɾ}
+\newcommand{\alvlap}{ɺ}
+\newcommand{\esh}{ʃ}
+\newcommand{\ezh}{ʒ}
 \newcommand{\paljstop}{ɟ}
 \newcommand{\paljfric}{ʝ}
-\newcommand{\glotstop}{ʔ}
-\newcommand{\alvr}{ɹ}
+\newcommand{\egna}{ɲ}
+\newcommand{\retesh}{ʂ}
+\newcommand{\retezh}{ʐ}
+\newcommand{\retna}{ɳ}
+\newcommand{\egh}{ɣ}
 \newcommand{\engma}{ŋ}
 \newcommand{\vell}{ʟ}
 \newcommand{\velr}{ʁ}
+\newcommand{\glotstop}{ʔ}
 %vowels
-\newcommand{\centra}{ɐ}
-\newcommand{\centruh}{ɜ}
+\newcommand{\frno}{ø}
+\newcommand{\bari}{ɨ}
 \newcommand{\unru}{ɯ}
 \newcommand{\unro}{ɤ}
-\newcommand{\bari}{ɨ}
+\newcommand{\eps}{ɛ}
+\newcommand{\oeps}{œ}
 \newcommand{\sche}{ɘ}
+\newcommand{\schwa}{ə}
+\newcommand{\centruh}{ɜ}
+\newcommand{\opno}{ɔ}
+\newcommand{\aesh}{æ}
+\newcommand{\oesh}{ɶ}
+\newcommand{\centra}{ɐ}
 \newcommand{\ahoh}{ɒ}
-\newcommand{\frno}{ø}
 %diacritics and modifiers
 \newcommand{\asp}{ʰ}
 \newcommand{\lab}{ʷ}
 \newcommand{\pal}{ʲ}
 \newcommand{\jekt}{ʼ}
+\newcommand{\rhot}{˞}
 \newcommand{\sylb}{̩}
 \newcommand{\vless}{̥}
 \newcommand{\upvless}{̊}
@@ -96,29 +112,63 @@
 \newcommand{\scstr}{ˌ}
 \newcommand{\tiebar}{͡}
 
-
 \lingset{glstyle=nlevel,numoffset=3em,textoffset=1.5em,exskip=.75ex,belowglpreambleskip=.25ex,aboveglftskip=.25ex}
 
-\title{Geobo{\engma}}
-\author{Sparksbet}
-\date{\today}
+\DTMnewdatestyle{eurodate}{%
+    \renewcommand{\DTMdisplaydate}[4]{%
+        \number##3.\nobreakspace%           day
+        \DTMmonthname{##2}\nobreakspace%    month
+        \number##1%                         year
+    }%
+    \renewcommand{\DTMDisplaydate}{\DTMdisplaydate}%
+}
+
+\DTMsetdatestyle{eurodate}
+
+\newlength{\drop}% for my convenience
+\newcommand*{\titleP}{\begingroup%
+%\FSfont{5bo} % FontSite Bergamo (Bembo)
+\drop = 0.12\textheight
+\vspace*{\drop}
+\hspace*{0.3\textwidth}
+{\HUGE\sc Geobo\engma}\\[\baselineskip]
+\hspace*{0.33\textwidth}
+{\huge A Grammar}\par
+\vspace*{3\drop}
+{\large By {\sc Bethany E. Toma}}
+\vfill
+{\today}
+\vspace*{0.5\drop}
+\endgroup}
+
+\maxsecnumdepth{subsection}
 
 \begin{document}
 
-\maketitle
+\begin{titlingpage}
+\titleP
+%\clearpage
+\end{titlingpage}
+\frontmatter
 
+\chapter{Background \& Motivation}
+
+Geobo{\engma} is a conlang spoken by a race of goblins in my as-of-yet-unnamed conworld. As goblins are sort of an underclass, their language will always be in a semi-precarious diglossic situation, and in the future I hope to add some fun sociolinguistics and diachronics based on interactions with the other languages from this conworld.
+
+This language is intended to have some deliberately weird elements yet still retain a veneer of quasi-naturalism---while naturalism is definitely a concern, it can be discarded for the sake of trying out something fun.
+
+\clearpage
 \tableofcontents
 
-\section*{Background \& Motivation}
-\addcontentsline{toc}{section}{Background \& Motivation}
+\chapter{World \& Culture}
 
-Geobo{\engma} is a conlang spoken by a race of goblins in my as-of-yet-unnamed conworld. As goblins are sort of an underclass, their language will always be in a semi-precarious diglossic situation, and in the future I hope to add some fun diachronic interactions with the other languages from this conworld. 
+To-do.
 
-This language is intended to have some deliberately weird elements (particularly with its syntactic alignment) yet still retain a veneer of quasi-naturalism---while naturalism is definitely a concern, it can be discarded for the sake of trying out something fun.
+\mainmatter
 
-\section{Phonology}
+\chapter{Phonology}
 
-\subsection{Phoneme Inventory}
+\section{Phoneme Inventory}
 
 \begin{table}[h]
     \centering
@@ -126,8 +176,8 @@ This language is intended to have some deliberately weird elements (particularly
 \toprule
 \multicolumn{1}{c}{} & \multirow{2}{*}{Bilabial} & \multicolumn{2}{c}{Laminodental} & \multicolumn{2}{c}{Apical} & \multirow{2}{*}{Palatal} & \multirow{2}{*}{Velar} & \multirow{2}{*}{Glottal} \\
 \multicolumn{1}{l}{} &  & Non-Sibilant & Sibilant & Non-Sibilant & Sibilant &  &  &  \\ \midrule
-Nasal & \chris{m} & \chris{n\lamino} &  & \chris{n\apico} &  & \chris{\egna} & \chris{\engma} &  \\
-Stop & \chris{p b} & \chris{t{\lamino} d\lamino} & \chris{{t\tiebar s\lamino} {d\tiebar z\lamino}} &  \chris{t{\apico} d\apico} & \chris{{t\tiebar s\apico} {d\tiebar z\apico}}  & c\tiebar ç \paljstop\tiebar\paljfric & k g & \glotstop \\
+Nasal & m & n\lamino &  & n\apico &  & \egna & \engma &  \\
+Stop & p b & t{\lamino} d\lamino & {t\tiebar s\lamino} {d\tiebar z\lamino} &  t{\apico} d\apico & {t\tiebar s\apico} {d\tiebar z\apico}  & c\tiebar ç \paljstop\tiebar\paljfric & k g & \glotstop \\
 Fricative &  & \latfric\lamino & s\lamino & \latfric\apico & s\apico & ç &  &  \\
 Approximant &  & {\alvr\lamino} {l\lamino} &  & {\alvr\apico} {l\apico} &  &  &  &  \\ \bottomrule
 \end{tabular}
@@ -139,20 +189,21 @@ Approximant &  & {\alvr\lamino} {l\lamino} &  & {\alvr\apico} {l\apico} &  &  & 
     \centering
 \begin{tabular}{@{}rccc@{}}
 \toprule
-\multicolumn{1}{l}{} & \multicolumn{1}{c}{\multirow{2}{*}{Front}} & \multicolumn{2}{c}{Back} \\
-\multicolumn{1}{l}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{Unrounded} & \multicolumn{1}{c}{Rounded} \\ \midrule
-High & \chris{i} & \chris{\unru} & \chris{u} \\
-Mid-High & \chris{e} & \chris{\unro} & \chris{o} \\ \bottomrule
+ & \multicolumn{1}{c}{\multirow{2}{*}{Front}} & \multicolumn{2}{c}{Back} \\
+ & \multicolumn{1}{c}{} & \multicolumn{1}{c}{Unrounded} & \multicolumn{1}{c}{Rounded} \\ \midrule
+High & i & \unru & u \\
+Mid-High & e & \unro & o \\ 
+ & \multicolumn{3}{c}{\nm{} or \bripa{\schwa}} \\ \bottomrule
 \end{tabular}
     \caption{Vowels}
     \label{tab:vowels}
 \end{table}
 
-The utter lack of phonemically open vowels in Geobo{\engma} could be considered strange. Geobo{\engma} does historically possess a phonemic \ipa{a}; however, whether it can be considered a distinct phoneme in the current language is not clear, as it does occur phonetically in any position in which it contrasts with \ipa{\unro}. One could analyze Geobo{\engma} as possessing an \ipa{a} which does not appear phonetically but causes a following sonorant or continuant to serve as the syllabic nucleus of the relevant syllable. Under this analysis, \ipa{a} has merged with \ipa{\unro} when not followed by a sonorant or continuant, as its realizations \phipa{a\til\centra\til\centruh} do not meaningfully contrast with any of \ipa{\unro}'s realizations and tend to be interpreted as \ipa{\unro} by speakers.
+The utter lack of phonemically open vowels in Geobo{\engma} could be considered strange. Geobo{\engma} does historically possess a phonemic \phipa{a}; however, whether it can be considered a distinct phoneme in the current language is not clear, as it does occur phonetically in any position in which it contrasts with \phipa{\unro}. One could analyze Geobo{\engma} as possessing an \phipa{a} which does not appear phonetically but causes a following sonorant or continuant to serve as the syllabic nucleus of the relevant syllable. Under this analysis, \phipa{a} has merged with \phipa{\unro} when not followed by a sonorant or continuant, as its realizations \bripa{a\til\centra\til\centruh} do not meaningfully contrast with any of \phipa{\unro}'s realizations and tend to be interpreted as \phipa{\unro} by speakers.
 
-\subsection{Syllable Structure}
+\section{Syllable Structure}
 
-The analysis one takes of Geobo{\engma} syllable structure depends on whether one analyzes it as possessing the underlying \ipa{a} phoneme that is never explicitly realized. If one posits the existence of this phoneme, the language's syllable structure can be analyzed as follows:
+The analysis one takes of Geobo{\engma} syllable structure depends on whether one analyzes it as possessing the underlying \phipa{a} phoneme that is never explicitly realized. If one posits the existence of this phoneme, the language's syllable structure can be analyzed as follows:
 
 \begin{center}
     (S)(C)(R)V(R)(C)
@@ -164,13 +215,13 @@ The analysis one takes of Geobo{\engma} syllable structure depends on whether on
     \end{tabular}
 \end{center}
 
-In order for the above analysis to hold, one must posit that the phoneme \ipa{a} disappears and causes any following non-stop consonant to become syllabic, while simultaneously never occuring before stops.
+In order for the above analysis to hold, one must posit that the phoneme \phipa{a} disappears and causes any following non-stop consonant to become syllabic, while simultaneously never occuring before stops.
 
-If one does not analyze Geobo{\engma} as possessing \ipa{a}, the analysis of its syllable structure becomes necessarily more complicated to account for its bevy of syllabic consonants. In such an analysis, one must posit that, when the nucleus is a vowel, the above structure holds, but that when the nucleus is a syllabic consonant, the structure is instead (S)(C)(R)R(C).
+If one does not analyze Geobo{\engma} as possessing \phipa{a}, the analysis of its syllable structure becomes necessarily more complicated to account for its bevy of syllabic consonants. In such an analysis, one must posit that, when the nucleus is a vowel, the above structure holds, but that when the nucleus is a syllabic consonant, the structure is instead (S)(C)(R)R(C).
 
 Regardless of which of these analyses one finds the most appealing, a few other constraints on both onset and coda clusters are applicable. While Geobo{\engma}'s sonority hierarchy is generally quite permissive, fricatives cannot be preceded by approximants in onset clusters, and the reverse cannot occur in coda clusters.
 
-\subsection{Allophony}
+\section{Allophony}
 
 \begin{enumerate}
     \item Coronal consonants persistently assimilate in laminarity to the following consonant.
@@ -223,11 +274,11 @@ Regardless of which of these analyses one finds the most appealing, a few other 
         \item if the approximant's placement violates the sonority hierarchy (if they are in the same syllable and it occurs before the fricative in the onset or after the fricative in the coda), the approximant is deleted
         \item if they meet at a syllable boundary, they merge and the resulting phone takes on the voicing of the latter and the manner of articulation of the former
         \item otherwise, the lateral fricative is realized as a velar non-lateral fricative
-        \item reflected in orthography, but \phipa{\latfrivoic} and \phipa{l\vless} are still represented as clusters
+        \item reflected in orthography, but \bripa{\latfrivoic} and \bripa{l\vless} are still represented as clusters
     \end{itemize}
 \end{enumerate}
 
-\subsection{Orthography}
+\section{Orthography}
 
 \begin{center}
 
@@ -235,7 +286,7 @@ Coronals
 
 \begin{tabular}{cccccccccccccccccccc}
     \ortho{t} & \ortho{\vt} & \ortho{d} & \ortho{\vd} & \ortho{c} & \ortho{\vc} & \ortho{z} & \ortho{\vz} & \ortho{s} & \ortho{\vs} & \ortho{n} & \ortho{\vn} & \ortho{r} & \ortho{\vr} & \ortho{l} & \ortho{\vl} & \ortho{\l} & \ortho{\dbl} & \ortho{\lam} & \ortho{\lambar} \\
-   \phipa{t\lamino} & \phipa{t\apico} & \phipa{d\lamino} & \phipa{d\apico} & \phipa{t\tiebar s\lamino} & \phipa{t\tiebar s\apico} & \phipa{d\tiebar z\lamino} & \phipa{d\tiebar z\apico} & \phipa{s\lamino} & \phipa{s\apico} & \phipa{n\lamino} & \phipa{n\apico} & \phipa{\alvr\lamino} & \phipa{\alvr\apico} & \phipa{l\lamino} & \phipa{l\apico} & \phipa{\latfric\lamino} & \phipa{\latfric\apico} & \phipa{t\tiebar\latfric\lamino} & \phipa{t\tiebar\latfric\apico}
+   \bripa{t\lamino} & \bripa{t\apico} & \bripa{d\lamino} & \bripa{d\apico} & \bripa{t\tiebar s\lamino} & \bripa{t\tiebar s\apico} & \bripa{d\tiebar z\lamino} & \bripa{d\tiebar z\apico} & \bripa{s\lamino} & \bripa{s\apico} & \bripa{n\lamino} & \bripa{n\apico} & \bripa{\alvr\lamino} & \bripa{\alvr\apico} & \bripa{l\lamino} & \bripa{l\apico} & \bripa{\latfric\lamino} & \bripa{\latfric\apico} & \bripa{t\tiebar\latfric\lamino} & \bripa{t\tiebar\latfric\apico}
 \end{tabular}
 
 \vspace{1em}
@@ -244,7 +295,7 @@ Non-Coronal Consonants
 
 \begin{tabular}{cccccccccccc}
     \ortho{p} & \ortho{b} & \ortho{m} & \ortho{\'c} & \ortho{\'z} & \ortho{\'s} & \ortho{\'n} & \ortho{k} & \ortho{g} & \ortho{\engma} & \ortho{h} & \ortho{x} \\
-    \phipa{p} & \phipa{b} & \phipa{m} & \phipa{c\tiebar ç} & \phipa{\paljstop\tiebar\paljfric} & \phipa{ç} & \phipa{\egna} & \phipa{k} & \phipa{g} & \phipa{\engma} & \phipa{\glotstop} & \phipa{x}
+    \bripa{p} & \bripa{b} & \bripa{m} & \bripa{c\tiebar ç} & \bripa{\paljstop\tiebar\paljfric} & \bripa{ç} & \bripa{\egna} & \bripa{k} & \bripa{g} & \bripa{\engma} & \bripa{\glotstop} & \bripa{x}
 \end{tabular}
 
 \vspace{1em}
@@ -253,14 +304,14 @@ Vowels
 
 \begin{tabular}{ccccccc}
     \ortho{i} & \ortho{e} & \ortho{u} & \ortho{o} & \ortho{eu} & \ortho{eo} & \ortho{a} \\
-    \phipa{i} & \phipa{e} & \phipa{u} & \phipa{o} & \phipa{\unru} & \phipa{\unro} & \ipa{a} or \nm 
+    \bripa{i} & \bripa{e} & \bripa{u} & \bripa{o} & \bripa{\unru} & \bripa{\unro} & \phipa{a} or \nm 
 \end{tabular}
 
 \end{center}
 
-\section{Syntax}
+\chapter{Syntax}
 
-\subsection{Animacy}
+\section{Animacy}
 
 Geobo{\engma} has six noun classes. Which class a noun belongs to is based almost entirely on the lexical animacy of the noun in question. These classes form an animacy hierarchy. In Geobo{\engma}'s parent language (known as \textit{Cokizbo\engma}, lit. `finish language', to the goblins) this animacy hierarchy was fairly central to much of the morphosyntax, as it was a direct-inverse language. Modern Geobo{\engma} only shows remnants of this hierarchy in the verbal morphology, but the six third-person noun classes are still very fundamentally present in the language's morphosyntax.
 
@@ -289,8 +340,8 @@ As one of the few relics of the animacy hierarchy, there are different morphemes
 Geob[goblin] 
 te\vd[1]
 bol[strike]@
--keo[-\sk{neg.dir}]@
--g[-\sk{>3.gob}]
+-keo[-{\sc neg.dir}]@
+-g[-{\sc >3.gob}]
 \glft `I didn't hit a goblin.'
 \endgl
 \a
@@ -298,13 +349,13 @@ bol[strike]@
 Geob[goblin] 
 te\vd[1]
 bol[strike]@
--og\'z[-\sk{neg.inv}]@
--e\vd[-\sk{>1}]
+-og\'z[-{\sc neg.inv}]@
+-e\vd[-{\sc >1}]
 \glft `A goblin didn't hit me.'
 \endgl
 \xe
 
-\subsection{Verbal Morphology}
+\section{Verbal Morphology}
 
 Verbs in Geobo{\engma} are suffixed with a marker for person and animacy. These markers originate from pronouns that used to be placed after the verb and thus resemble reduced forms of those pronouns. 
 
@@ -312,7 +363,7 @@ Verbs in Geobo{\engma} are suffixed with a marker for person and animacy. These 
     \centering
     \begin{tabular}{@{}rcccccccc@{}}
 \toprule
- & 1st & 2nd & \sk{nt-frc} & \sk{ng-int} & \sk{gob} & \sk{animl} & \sk{inan} & \sk{abstr} \\ \midrule
+ & 1st & 2nd & {\sc nt-frc} & {\sc ng-int} & {\sc gob} & {\sc animl} & {\sc inan} & {\sc abstr} \\ \midrule
 Suffix\tablefootnote{When multiple suffixes are listed, the former is used when the suffix follows a non-syllabic consonant and the latter when it follows a syllabic consonant or vowel unless otherwise indicated} & \textit{-e\vd, -\vd} & \textit{-ar, -r} & \textit{-a\vn, -\vn} & \textit{-meu} & \textit{-eog, -g}\tablefootnote{If the latter suffix is used following a front vowel, that vowel is backed.} & \textit{-\vs u} & \textit{-im, -m}\tablefootnote{If the latter suffix is used following a back vowel, that vowel is fronted. Fronting of rounded vowels is allophonic and not reflected orthographically.} & \textit{-es, -s}\tablefootnote{Unlike the other listed suffixes, for the abstract noun class the latter vowelless allomorph is only used following a true vowel, and the former suffix is used following a syllabic consonant.}  \\
 Pronoun & \textit{te\vd} & \textit{kar} & \textit{teu\vn} & \textit{ameu} & \textit{eog} & \textit{\vs u} & \textit{him} & \textit{es} \\
 Reflexive\tablefootnote{Perhaps abnormally, reflexive forms for pronouns are used as subject pronouns rather than object pronouns} & \textit{tete\vd} & \textit{karkar} & \textit{teudteu\vn} & \textit{meum} & \textit{geog} & \textit{\vs u\vs} & \textit{himim} & \textit{ses} \\ \bottomrule
@@ -328,10 +379,10 @@ If both the subject and object are of the same noun class and it is thus ambiguo
 \ex
 \begingl
 A\l k[dog]
-\vs u[\sk{3.animl}]
+\vs u[{\sc 3.animl}]
 de{\vz}[cat]
 bo\vl[strike]@
--\vs u[-\sk{>3.animl}]
+-\vs u[-{\sc >3.animl}]
 \glft `The dog hit the cat.'
 \endgl
 \xe
@@ -343,9 +394,9 @@ For verbs in which the single argument does not initiate or is not actively resp
 \ex 
 \begingl
 Geob[goblin]
-es[3.\sk{abstr}] 
+es[3.{\sc abstr}] 
 \l emp[trip]@
--eog[-\sk{>3.gob}]
+-eog[-{\sc >3.gob}]
 \glft `The goblin trips.' (lit., `It trips the goblin.')
 \endgl
 \xe
@@ -355,9 +406,9 @@ There does not have to be an unspoken agent or cause of the action described by 
 \ex
 \begingl
 Beu[berry]
-es[\sk{3.abstr}]
+es[{\sc 3.abstr}]
 ka\l[red]@
--im[-\sk{>3.inan}]
+-im[-{\sc >3.inan}]
 \glft `The berry is red.' (lit., `It reddens the berry.')
 \endgl
 \xe
@@ -368,17 +419,17 @@ Many verbs, particularly those of position and motion, contrast this dummy-subje
 \a
 \begingl
 Geob[goblin]
-es[\sk{3.abstr}]
+es[{\sc 3.abstr}]
 ot[sit]@
--eog[-\sk{>3.gob}]
+-eog[-{\sc >3.gob}]
 \glft `The goblin is sitting.' (lit., `It seats the goblin.')
 \endgl
 \a
 \begingl
 Geob[goblin]
-geog[\sk{3.gob.refl}]
+geog[{\sc 3.gob.refl}]
 ot[sit]@
--eog[-\sk{>3.gob}]
+-eog[-{\sc >3.gob}]
 \glft `The goblin sits down.' (lit., `Himself seats the goblin.')
 \endgl
 \xe
@@ -390,10 +441,10 @@ For would-be intransitive verbs where the argument explicitly represents an agen
 \ex
 \begingl
 \vR im[run]@
--stu[-\sk{nmz}]
+-stu[-{\sc nmz}]
 geob[goblin]
 \'se[do]@
--s[-\sk{>3.abstr}]
+-s[-{\sc >3.abstr}]
 \glft  `The goblin is running.' (lit., `The goblin does running.')
 \endgl
 \xe
@@ -403,9 +454,9 @@ For certain motion verbs, both the nominalization and reflexive strategies are b
 \ex
 \begingl
 Geob[goblin]
-geog[\sk{3.gob.refl}]
+geog[{\sc 3.gob.refl}]
 \vr im[run]@
--eog[-\sk{>3.gob}]
+-eog[-{\sc >3.gob}]
 \glft `The goblin gets himself running.'
 \endgl
 \xe
@@ -414,14 +465,14 @@ The reflexive strategy is not necessarily appropriate for all would-be intransit
 
 \ex
 \begingl
-Karkar[\sk{2.refl}]
+Karkar[{\sc 2.refl}]
 bol[strike]@
--ar[-\sk{>2}]
+-ar[-{\sc >2}]
 \glft  `You're hitting yourself.' (\emph{not} `You're getting yourself to hit things.')
 \endgl
 \xe
 
-\subsection{Possession \& Quantification}
+\section{Possession \& Quantification}
 
 As Geobo{\engma} is head-marking, in a possession scenario it is the possessed noun that is inflected. A possessive affix \textit{-(a)\l-} is added to the end of the possessed noun and then followed by a suffix that agrees in person and number with its possessor. The possessor, if specified, is placed before the possessed noun.
 
@@ -429,8 +480,8 @@ As Geobo{\engma} is head-marking, in a possession scenario it is the possessed n
 \begingl
 \vN u\'noh[elf]
 meo[mother]@
--\l[-\sk{poss}]@
--meu[-\sk{3.ngint}]
+-\l[-{\sc poss}]@
+-meu[-{\sc 3.ngint}]
 \glft  `The elf's mother'
 \endgl
 \xe
@@ -441,8 +492,8 @@ This syntactic structure is also used more broadly, however, for quantification.
 \begingl
 \vD eo\'s[tree]
 eu\'s[all]@
--a\l[-\sk{poss}]@
--m[-\sk{3.inan}]
+-a\l[-{\sc poss}]@
+-m[-{\sc 3.inan}]
 \glft `all of the trees' (lit., `the tree's everything')
 \endgl
 \xe
@@ -453,8 +504,8 @@ This is not limited to more ambiguous quantifiers---it is used for numbers as we
 \begingl
 \vD eo\'s[tree]
 zlic[three]@
--a\l[-\sk{poss}]@
--m[-\sk{3.inan}]
+-a\l[-{\sc poss}]@
+-m[-{\sc 3.inan}]
 \glft `three trees' (lit., `the tree's three')
 \endgl
 \xe
@@ -466,13 +517,13 @@ To quantify over verbs (i.e., to say something happened `twice' or `many times')
 \ex
 \begingl
 \vR im[run]@
--stu[-\sk{nmz}]
+-stu[-{\sc nmz}]
 kle[two]@
--\l[-\sk{poss}]@
--es[-\sk{3.abstr}]
+-\l[-{\sc poss}]@
+-es[-{\sc 3.abstr}]
 te{\vd}[1]
 \'se[do]@
--s[-\sk{>3.abstr}]
+-s[-{\sc >3.abstr}]
 \glft `I ran twice.' (lit., `I did two running.')
 \endgl
 \xe
@@ -485,38 +536,38 @@ Distinguishing between whether a quantifier on the object semantically indicates
 \vD er\engma[different]
 \vs\vr eo\vd[eel]
 kle[two]@
--\l[-\sk{poss}]@
--im[-\sk{3.inan}]
+-\l[-{\sc poss}]@
+-im[-{\sc 3.inan}]
 te\vd[1]
 \vr u[cook]@
--m[-\sk{>3.inan}]
+-m[-{\sc >3.inan}]
 \glft `I cooked two different eels.'
 \endgl
 \a
 \begingl
 \vS\vr eo\vd[eel]
 da\'n[one]@
--a\l[-\sk{poss}]@
--m[-\sk{3.inan}]
+-a\l[-{\sc poss}]@
+-m[-{\sc 3.inan}]
 kle[two]@
--\l[-\sk{poss}]@
--es[-\sk{3.abstr}]
+-\l[-{\sc poss}]@
+-es[-{\sc 3.abstr}]
 te\vd[1]
 \vr u[cook]@
--m[\sk{->3.inan}]
+-m[{\sc ->3.inan}]
 \glft `I cooked one eel twice.'
 \endgl
 \xe
 
-\subsection{Postpositions}
+\section{Postpositions}
 
 Postpositions follow their nouns and inflect to agree with their objects. Their endings are identical to those used for verbs.
 
 \ex
 \begingl
 \vT\'ne{\vl}[stick]
-\vc o[\sk{ins}]@
--m[-\sk{3.inan}]
+\vc o[{\sc ins}]@
+-m[-{\sc 3.inan}]
 \glft `with a stick'
 \endgl
 \xe
@@ -528,9 +579,9 @@ If the postposition would only be preceded by a pronoun, it can be omitted and t
 \Engma i[away.from]@
 -\vd[-1]
 \vn u\'noh[elf]
-meum[\sk{3.ngint.refl}]
+meum[{\sc 3.ngint.refl}]
 \vr im[run]@
--eu[-\sk{>3.ngint}]
+-eu[-{\sc >3.ngint}]
 \glft `The elf ran away from me.'
 \endgl
 \xe
@@ -541,21 +592,21 @@ In addition to traditional postpositions, Geobo{\engma} demonstratives are also 
 \a
 \begingl
 \Engma u{\vz}[fish]
-u\vd[\sk{med}]@
--im[-\sk{3.inan}]
+u\vd[{\sc med}]@
+-im[-{\sc 3.inan}]
 kar[2]
 bo\vs[eat]@
--im[-\sk{>3.inan}]
+-im[-{\sc >3.inan}]
 \glft `You ate that fish.'
 \endgl
 \a 
 \begingl 
 \Engma u\vz[fish]
-\vc o[\sk{ins}]@
--m[-\sk{3.inan}]
+\vc o[{\sc ins}]@
+-m[-{\sc 3.inan}]
 kar[2]
 bol[strike]@
--e\vd[-\sk{>1}]
+-e\vd[-{\sc >1}]
 \glft `You hit me with a fish.'
 \endgl
 \a \ljudge* \textit{\Engma u{\vz} u\vd im \vc om kar bole\vd} \\
@@ -566,21 +617,21 @@ bol[strike]@
 
 This does not otherwise change the syntactic behavior of the noun---if the argument in question is the object without the demonstrative postposition, it remains the syntactic object and verbal agreement still takes place.
 
-\subsection{Ditransitives}
+\section{Ditransitives}
 
 Geobo{\engma} is secundative, so for inherently ditransitive verbs like \textit{\'cneu} `to give', the syntactic object of the verb is the recipient. The theme can be included as a postpositional argument using the instrumental \textit{\vc o}.
 
 \ex
 \begingl
 Meo[mother]@
--\l[-\sk{poss}]@
--e{\vd}[-\sk{1}]
+-\l[-{\sc poss}]@
+-e{\vd}[-{\sc 1}]
 geob[goblin]
 de{\vz}[cat]
-\vc o[\sk{ins}]@
--\vs u[-\sk{3.animl}]
+\vc o[{\sc ins}]@
+-\vs u[-{\sc 3.animl}]
 \'cneu[give]@
--meu[-\sk{>3.ngint}]
+-meu[-{\sc >3.ngint}]
 \glft `The goblin gave my mother a cat.'
 \endgl
 \xe
@@ -590,16 +641,16 @@ Benefactive ditransitives can be derived from many verbs that are not inherently
 \ex
 \begingl
 Meo[mother]@
--\l[-\sk{poss}]@
+-\l[-{\sc poss}]@
 -ar[-2]
 te{\vd}[1]
 \vs\vr eo{\vd}[eel]
-\vc o[\sk{ins}]@
--m[-\sk{3.inan}] 
+\vc o[{\sc ins}]@
+-m[-{\sc 3.inan}] 
 \vr u[cook]@
--keo[-\sk{neg.dir}]@
--tu[-\sk{ben}]@
--g[-\sk{>3.gob}]
+-keo[-{\sc neg.dir}]@
+-tu[-{\sc ben}]@
+-g[-{\sc >3.gob}]
 \glft `I won't cook eel for your mother.'
 \endgl
 \xe
@@ -609,18 +660,18 @@ Since the theme is optional in these `ditransitives', this is also an effective 
 \ex
 \begingl
 Meo[mother]@
--\l[-\sk{poss}]@
--eog[-\sk{3.gob}]
+-\l[-{\sc poss}]@
+-eog[-{\sc 3.gob}]
 \vS krik[Skreek]
-eog[\sk{3.gob}]
+eog[{\sc 3.gob}]
 de\vn\vr e[sing]@
--tu[-\sk{ben}]@
--g[-\sk{>3.gob}]
+-tu[-{\sc ben}]@
+-g[-{\sc >3.gob}]
 \glft `Skreek sings for his mother.'
 \endgl
 \xe
 
-\subsection{`Adjectives'}
+\section{`Adjectives'}
 
 Strictly speaking, there is not a separate syntactic class known as `adjectives' in Geobo{\engma}. However, the equivalent of adjectives are realized by adverbs or uninflected verbs placed directly before the nouns they modify.
 
@@ -649,8 +700,8 @@ In more complex NPs containing possession or quantification, the location of the
 \'Cre\'z[alive]
 \vt\'ne{\vl}[stick]
 da\'n[one]@
--a\l[-\sk{poss}]@
--m[-\sk{3.inan}]
+-a\l[-{\sc poss}]@
+-m[-{\sc 3.inan}]
 \glft  `One of the flourishing branches'
 \endgl
 \a
@@ -658,8 +709,8 @@ da\'n[one]@
 \vT\'ne{\vl}[stick]
 \'cre\'z[alive]
 da\'n[one]@
--a\l[-\sk{poss}]@
--m[-\sk{3.inan}]
+-a\l[-{\sc poss}]@
+-m[-{\sc 3.inan}]
 \glft  `The flourishing one of the branches'
 \endgl
 \xe
@@ -698,7 +749,7 @@ nonon[enlarge]@
 
 Note that the verb still agrees with the syntactic object, so unlike in the non-comparative example, the verb agrees with the noun that is less well-described by the adjective in question. This means that in such comparisons, the standard of comparison cannot be omitted.
 
-\subsection{Focus \& Word Order}\label{focus}
+\section{Focus \& Word Order}\label{focus}
 
 To the casual observer, Geobo{\engma} seems superficially OSV. While it is true that this pattern is certainly the most commonly seen in the language, the reality is more complicated. This typical ordering is actually due to the focus marking that lies at the core of Geobo{\engma} sentence structure.
 
@@ -709,7 +760,7 @@ In any given sentence, whichever argument is the focus is moved to a sentence-in
 A\l k[dog]
 \vS krik[Skreek]
 bo\vl[strike]@
--\vs u[\sk{>3.animl}]
+-\vs u[{\sc >3.animl}]
 \glft `It was the dog that Skreek hit.'
 \endgl
 \xe
@@ -719,7 +770,7 @@ bo\vl[strike]@
 \vS krik[Skreek]
 a\l k[dog]
 bo\vl[strike]@
--\vs u[-\sk{>3.animl}]
+-\vs u[-{\sc >3.animl}]
 \glft `It was Skreek who hit the dog.'
 \endgl
 \xe
@@ -732,7 +783,7 @@ Before this movement, the sentence is underlyingly SOV, so if a complement other
 \vc om[\sc ins:3.inan]
 \vS krik[Skreek]
 a\l k[dog]
-bo\vl\vs u[strike:\sk{>3.animl}]
+bo\vl\vs u[strike:{\sc >3.animl}]
 \glft `It was with a stick that Skreek hit the dog.'
 \endgl
 \xe
@@ -745,14 +796,14 @@ Only arguments can be fronted like this, so if the verb or an adjunct is the foc
 Da\'s[yesterday]
 \vS krik[Skreek]
 a\l k[dog]
-bo\vl\vs u[strike:\sk{>3.animl}]
+bo\vl\vs u[strike:{\sc >3.animl}]
 \endgl
 \a 
 \begingl
 A\l k[dog]
 \vS krik[Skreek] 
 da\'s[yesterday]
-bo\vl\vs u[strike:\sk{>3.animl}]
+bo\vl\vs u[strike:{\sc >3.animl}]
 \glft A: `Skreek hit the dog yesterday.'
 \endgl
 \xe
@@ -765,38 +816,38 @@ If the object is not in focus and would be represented with a pronoun, it can be
 Ip[yes]
 \vt\vn e{\vl}[stick]
 \vc om[\sc ins:3.inan]
-eog[\sk{3.gob}]
-bo\vl\vs u[strike:\sk{>3.animl}]
+eog[{\sc 3.gob}]
+bo\vl\vs u[strike:{\sc >3.animl}]
 \glft `Yes, it was with a stick that he hit (it).'
 \endgl
 \xe
 
-\subsection{Relative Clauses}
+\section{Relative Clauses}
 
 Geobo{\engma} relative clauses are formed via adjoined clauses. The relativized noun must be fronted in both clauses, and therefore only arguments can be relativized. The complementizer \textit{deo\l} is placed clause-initially in the relativized clause, which is then directly followed by the main clause. The argument in question can be either restated in the main clause (often with a demonstrative) or replaced with a pronoun.
 
 \pex
 \a
 \begingl
-Deo{\l}[\sk{c}]
+Deo{\l}[{\sc c}]
 oh[person]
 te{\vd}[1]
-\vz e\'zeog[see:\sk{>3.gob}]
+\vz e\'zeog[see:{\sc >3.gob}]
 \nogloss{,}
 oh[person]
-\'no\vd eog[\sk{dist:3.gob}]
+\'no\vd eog[{\sc dist:3.gob}]
 reu[home]
-eumim[go.to:\sk{>3.inan}]
+eumim[go.to:{\sc >3.inan}]
 \endgl
 \a
 \begingl
-Deo{\l}[\sk{c}]
+Deo{\l}[{\sc c}]
 oh[person]
 te{\vd}[1]
-\vz e\'zeog[see:\sk{>3.gob}]
-eog[\sk{3.gob}]
+\vz e\'zeog[see:{\sc >3.gob}]
+eog[{\sc 3.gob}]
 reu[home]
-eumim[go.to:\sk{>3.inan}]
+eumim[go.to:{\sc >3.inan}]
 \glft `The person who I saw went home.'
 \endgl
 \xe
@@ -805,12 +856,12 @@ The order of the relativized and main clause is determined by whether the relati
 
 \ex
 \begingl
-Meo\l e\vd[mother:\sk{poss:1}]
+Meo\l e\vd[mother:{\sc poss:1}]
 reu[home]
-eumim[go.to:\sk{>3.inan}]
+eumim[go.to:{\sc >3.inan}]
 \nogloss{,}
-deo{\l}[\sk{c}]
-eog[\sk{3.gob}]
+deo{\l}[{\sc c}]
+eog[{\sc 3.gob}]
 geob[goblin]
 \vz eog[\sc cop:>3.gob]
 \glft `My mother, who is a goblin, went home.'
@@ -821,14 +872,14 @@ Content clauses, in which the subordinate clause serves as an argument of the ma
 
 \ex
 \begingl
-Deo{\l}[\sk{c}] 
+Deo{\l}[{\sc c}] 
 geob[goblin]
-meo\l ar[mother:\sk{poss:2}]
+meo\l ar[mother:{\sc poss:2}]
 \vz eog[\sc cop:>3.gob]
 \nogloss{,}
-as[\sk{c}]
+as[{\sc c}]
 te{\vd}[1]
-\vz e\'zes[see:\sk{>3.abstr}]
+\vz e\'zes[see:{\sc >3.abstr}]
 \glft `I saw that your mother is a goblin.' (lit., `I saw the fact that your mother is a goblin.')
 \endgl
 \xe
@@ -840,37 +891,37 @@ Most other subordinating conjunctions in English are approximated by using the a
 Deo\l[\sc c]
 dizd[salt]
 \engma u\vz[fish]
-pidim[possess:\sk{>3.inan}]
+pidim[possess:{\sc >3.inan}]
 \nogloss{,}
 as[\sc c]
-euźdes[due\_to:\sk{3.abstr}]
+euźdes[due\_to:{\sc 3.abstr}]
 te\vd[\sc 1] 
-bo\vs kem[consume:\sk{neg.dir:>3.inan}]
+bo\vs kem[consume:{\sc neg.dir:>3.inan}]
 \glft `I didn't eat the fish because it was salty.' (lit., `Due to the fact that the fish had salt, I didn't eat it.')
 \endgl
 \xe 
 
-\section{Semantics}
+\chapter{Semantics}
 
-\subsection{TAM Particles}
+\section{TAM Particles}
 
 Geobo{\engma} is tenseless, only specifying tense if doing so is necessary in context and doing so using temporal adverbs, which are typically placed before the verb.
 
 \pex 
 \a 
 \begingl 
-bostu[eat:\sk{nmz}]
+bostu[eat:{\sc nmz}]
 te\vd[1]
 da\'s[yesterday]
-\'ses[do:\sk{>3.abstr}]
+\'ses[do:{\sc >3.abstr}]
 \glft `I ate yesterday.'
 \endgl
 \a 
 \begingl 
-bostu[eat:\sk{nmz}]
+bostu[eat:{\sc nmz}]
 te\vd[1]
 \vs a\vl\vn[someday]
-\'ses[do:\sk{>3.abstr}]
+\'ses[do:{\sc >3.abstr}]
 \glft `I'll eat later.'
 \endgl 
 \xe
@@ -885,7 +936,7 @@ The gnomic particle \textit{go} is placed after the verb when the predicate desc
 \begingl
 Eu\engma r[sky]
 es[\sc 3.abstr]
-peoda\vn[blue:\sk{>3.ntfrc}]
+peoda\vn[blue:{\sc >3.ntfrc}]
 go[\sc gno]
 \glft `The sky is blue'
 \endgl
@@ -897,7 +948,7 @@ It's also often exaggeratedly used to simply mean `always' or to describe habitu
 \begingl
 \Engma u\vz[fish]
 kar[\sc 2]
-\vr um[cook:\sk{>3.inan}]
+\vr um[cook:{\sc >3.inan}]
 go[\sc gno]
 \nogloss{!}
 \glft `You \emph{always} cook fish!'
@@ -911,7 +962,7 @@ Since TAM particles scope over negation, applying \textit{go} to a sentence in c
 \begingl
 \Engma u\vz[fish]
 meo[mother]
-\vr ukem[cook:\sk{neg.dir:>3.inan}]
+\vr ukem[cook:{\sc neg.dir:>3.inan}]
 go[\sc gno]
 \glft `Mom never cooks fish.'
 \endgl
@@ -920,12 +971,12 @@ go[\sc gno]
 Deo\l[\sc c]
 \engma u\vz[fish]
 te\vd[\sc 1]
-\vr um[cook:\sk{>3.inan}]
+\vr um[cook:{\sc >3.inan}]
 go[\sc gno]
 \nogloss{,}
 as[\sc c]
 es[\sc 3.abstr]
-his\engma keos[real:\sk{neg.dir:>3.abstr}]
+his\engma keos[real:{\sc neg.dir:>3.abstr}]
 \glft `It's not the case that I always cook fish.'
 \endgl
 \xe
@@ -936,9 +987,9 @@ The completive particle \textit{o\'sk} is used when discussing an eventuality th
 
 \ex 
 \begingl
-Bostu[eat:\sk{nmz}]
+Bostu[eat:{\sc nmz}]
 te\vd[\sc 1]
-\'ses[do:\sk{>3.abstr}]
+\'ses[do:{\sc >3.abstr}]
 o\'sk[\sc cmpl]
 \glft `I've already eaten/drunk.'
 \endgl
@@ -948,9 +999,9 @@ When used with a negative verb, it can be more accurately translated as `still h
 
 \ex 
 \begingl
-Bostu[eat:\sk{nmz}]
+Bostu[eat:{\sc nmz}]
 te\vd[\sc 1]
-\'sekeos[do:\sk{neg.dir:>3.abstr}]
+\'sekeos[do:{\sc neg.dir:>3.abstr}]
 o\'sk[\sc cmpl]
 \glft `You still haven't eaten.'
 \endgl
@@ -964,7 +1015,7 @@ The retrospective habitual particle \textit{pu} is used to describe an eventuali
 \begingl
 \Engma u\vz[fish]
 te\vd[\sc 1]
-\vr um[cook:\sk{>3.inan}]
+\vr um[cook:{\sc >3.inan}]
 pu[\sc rhab]
 \glft `I used to cook fish' (but I've since stopped for some reason)
 \endgl
@@ -977,7 +1028,7 @@ This particle scopes over negation, so using it with a negative verb conveys tha
 \begingl 
 \vS\vr eo\vd[snake]
 te\vd[\sc 1]
-bolkeo\vs u[strike:\sk{neg.dir:>3.animl}]
+bolkeo\vs u[strike:{\sc neg.dir:>3.animl}]
 pu[\sc rhab]
 \glft `I used to never fight snakes.' (but now I've started doing it)
 \endgl 
@@ -986,12 +1037,12 @@ pu[\sc rhab]
 Deo\l[\sc c]
 \vs\vr eo\vd[snake]
 te\vd[\sc 1]
-bo\vl\vs u[strike:\sk{>3.animl}]
+bo\vl\vs u[strike:{\sc >3.animl}]
 pu[\sc rhab]
 \nogloss{,}
 as[\sc c]
 es[\sc 3.abstr]
-his\engma keos[real:\sk{neg.dir:>3.abstr}]
+his\engma keos[real:{\sc neg.dir:>3.abstr}]
 \glft `I didn't used to fight snakes.' (I never stopped fighting snakes!)
 \endgl 
 \xe
@@ -1003,11 +1054,11 @@ The change-of-state particle \textit{\vl i} indicates that an eventuality is new
 \ex
 \begingl
 \vS\vr eo\vd[snake]
-\'zreo\vn\vz eog[scare:\sk{>3.gob}]
+\'zreo\vn\vz eog[scare:{\sc >3.gob}]
 go[\sc gno]
 eo[and]
 eog[\sc 3.gob]
-zdeu\vs u[bite:\sk{>3.animl}]
+zdeu\vs u[bite:{\sc >3.animl}]
 \vl i[\sc cos]
 \glft `Snakes scare him, but he bit (one)!'
 \endgl
@@ -1019,7 +1070,7 @@ It's often contrasted with a status quo or former status quo expressed with the 
 \begingl
 \Engma u\vz[fish]
 te\vd[\sc 1]
-bo\vs im[eat:\sk{>3.inan}]
+bo\vs im[eat:{\sc >3.inan}]
 \vl i[\sc cos]
 \glft `I eat fish now' (we both know I used to be a vegetarian)
 \endgl
@@ -1033,12 +1084,12 @@ By extension, some use this particle whenever a statement contradicts a previous
 \begingl
 \Engma u\vz[fish]
 \vS krik[Skreek]
-bo\vs kem[eat:\sk{neg.dir:>3.inan}]
+bo\vs kem[eat:{\sc neg.dir:>3.inan}]
 pu[\sc rhab]
 eo[and]
 \vs\vr eo\vd[eel]
 eog[\sc 3.gob]
-bo\vs im[eat:\sk{>3.inan}]
+bo\vs im[eat:{\sc >3.inan}]
 go[\sc gno]
 \vl i[\sc cos]
 \glft `Skreek never used to eat fish but he's always eaten eels.'
@@ -1060,7 +1111,7 @@ Q: What can Skreek cook?
 \nogloss{\normalfont A:}
 \Engma u\vz[fish]
 eog[\sc 3.gob]
-\vr um[cook:\sk{>3.inan}]
+\vr um[cook:{\sc >3.inan}]
 \vz i[\sc psbl]
 \glft \phantom{A: }`He is able to cook fish.'
 \endgl
@@ -1072,13 +1123,13 @@ Q: What do you think Skreek is doing right now?
 \nogloss{\normalfont A:}
 \Engma u\vz[fish]
 eog[\sc 3.gob]
-\vr um[cook:\sk{>3.inan}]
+\vr um[cook:{\sc >3.inan}]
 \vz i[\sc psbl]
 \glft \phantom{A: }`He could be cooking fish.'
 \endgl
 \xe
 
-\subsection{Discourse Particles}
+\section{Discourse Particles}
 
 In addition to the particles indicating TAM, Geobo{\engma} possess a series of more discourse-focused particles which indicate the attitude of the speaker towards the propositional content of their utterance---they tend to communicate the illocutionary rather than locutionary act. They always occur sentence-finally, following even the TAM particles if any are present.
 
@@ -1088,9 +1139,9 @@ The question particle \textit{\'ne\l} is appended to the end of a sentence when 
 
 \ex
 \begingl
-Meo\l ar[mother:\sk{poss:2}]
+Meo\l ar[mother:{\sc poss:2}]
 reu[home]
-eumim[go\_to:\sk{>3.inan}]
+eumim[go\_to:{\sc >3.inan}]
 o\'sk[\sc cmpl]
 \'ne\l[\sc q]
 \glft `Did your mother already go home?' or `Your mother already went home, right?'
@@ -1104,15 +1155,15 @@ Note that \textit{\'ne\l} is only used if the speaker is seeking information or 
 \ex
 \begingl
 Deo\l[\sc c]
-meo\l ar[mother:\sk{poss:2}]
+meo\l ar[mother:{\sc poss:2}]
 reu[home]
-eumim[go\_to:\sk{>3.inan}]
+eumim[go\_to:{\sc >3.inan}]
 o\'sk[\sc cmpl]
 \'ne\l[\sc q]
 \nogloss{,}
 as[\sc c]
 te\vd[\sc 1]
-\vt\vl irckeos[know:\sk{neg.dir:>3.abstr}]
+\vt\vl irckeos[know:{\sc neg.dir:>3.abstr}]
 \glft `I don't know whether your mother already went home.'
 \endgl
 \xe
@@ -1122,15 +1173,15 @@ Emphatic questions can be unambiguously asked by turning the entire clause, incl
 \ex
 \begingl
 Deo\l[\sc c]
-meo\l ar[mother:\sk{poss:2}]
+meo\l ar[mother:{\sc poss:2}]
 reu[home]
-eumim[go\_to:\sk{>3.inan}]
+eumim[go\_to:{\sc >3.inan}]
 o\'sk[\sc cmpl]
 \'ne\l[\sc q]
 \nogloss{,}
 as[\sc c]
 es[\sc es]
-hisnes[real:\sk{>3.abstr}]
+hisnes[real:{\sc >3.abstr}]
 \'ne\l[\sc q]
 \glft `Did your mother already go home?' (lit., `Is it true whether your mother already went home?')
 \endgl 
@@ -1149,7 +1200,7 @@ The request particle is appended to the end of a sentence when the speaker wants
 Disd[salt]
 \vc om[\sc ins:3.inan]
 kar[\sc 2]
-\'cneu\vd[give:\sk{>1}]
+\'cneu\vd[give:{\sc >1}]
 \vr o[\sc req]
 \glft `Would you please hand me the salt?' or `How about you hand me the salt?'
 \endgl
@@ -1169,9 +1220,9 @@ It can be even further abstracted, used with sentences that do not directly refe
 
 \ex
 \begingl
-Meo\l ar[mother:\sk{poss:2}]
+Meo\l ar[mother:{\sc poss:2}]
 reu[home]
-eumim[go\_to:\sk{>3.inan}]
+eumim[go\_to:{\sc >3.inan}]
 \vr o[\sc req]
 \glft `Your mother went home, hint-hint.'
 \endgl
@@ -1185,13 +1236,13 @@ Deo\l[\sc c]
 disd[salt]
 \vc om[\sc ins:3.inan]
 kar[\sc 2]
-\'cneu\vd[give:\sk{>1}]
+\'cneu\vd[give:{\sc >1}]
 \vr o[\sc req]
 \nogloss{,}
 as[\sc c]
 \vc os[\sc ins:3.abstr]
 te\vd[\sc 1]
-\vr o\'sog\'zar[request:\sk{neg.inv:>2}]
+\vr o\'sog\'zar[request:{\sc neg.inv:>2}]
 \glft `I'm not asking you to pass me the salt.'
 \endgl
 \xe
@@ -1205,7 +1256,7 @@ The command particle \textit{\vd et} is appended to the end of a sentence to ind
 Disd[salt]
 \vc om[\sc ins:3.inan]
 kar[\sc 2]
-\'cneu\vd[give:\sk{>1}]
+\'cneu\vd[give:{\sc >1}]
 \vd et[\sc imp]
 \glft `Hand me the salt!'
 \endgl
@@ -1219,7 +1270,7 @@ Unlike \textit{\vr o}, however, \textit{\vd et} cannot be used for negative comm
 Disd[salt]
 \vc om[\sc ins:3.inan]
 kar[\sc 2]
-\'cneukeo\vd[give:\sk{neg.dir:>1}]
+\'cneukeo\vd[give:{\sc neg.dir:>1}]
 \vr o[\sc req]
 \glft `Please don't hand me the salt.'
 \endgl
@@ -1228,7 +1279,7 @@ kar[\sc 2]
 Disd[salt]
 \vc om[\sc ins:3.inan]
 kar[\sc 2]
-\'cneukeo\vd[give:\sk{neg.dir:>1}]
+\'cneukeo\vd[give:{\sc neg.dir:>1}]
 \vd et[\sc imp]
 \glft Intended: `Don't hand me the salt!'
 \endgl
@@ -1240,7 +1291,7 @@ Just like \textit{\vr o}, \textit{\vd et} can be appended to a mere noun as an o
 \begingl
 Bostu[food]
 de\vz[cat]
-\dbl eo\lam okeom[have:\sk{neg.dir:>3.inan}]
+\dbl eo\lam okeom[have:{\sc neg.dir:>3.inan}]
 \vd et[\sc imp]
 \glft `The cat doesn't have food (Feed the cat!)'
 \endgl
@@ -1254,19 +1305,19 @@ Negation can scope over the command particle using the verb \textit{\vd et\'s} `
 Deo\l[\sc c]
 de\vz[cat]
 kar[\sc 2]
-arc\vs u[feed:\sk{>3.animl}]
+arc\vs u[feed:{\sc >3.animl}]
 \vd et[\sc imp]
 \nogloss{,}
 as[\sc c]
 \vc os[\sc ins:3.abstr]
 es[\sc 3.abstr]
-\vd et\'sog\'zar[command:\sk{neg.inv:>2}]
+\vd et\'sog\'zar[command:{\sc neg.inv:>2}]
 \endgl
 \a \ljudge{?}
 \begingl
 De\vz[cat]
 kar[\sc 2]
-arckeo\vs u[feed:\sk{neg.dir:>3.animl}]
+arckeo\vs u[feed:{\sc neg.dir:>3.animl}]
 \vd et[\sc imp]
 \glft `You don't have to feed the cat.'
 \endgl
@@ -1282,7 +1333,7 @@ The prohibitive particle \textit{iz} is appended to the end of a sentence to ind
 \begingl
 \Engma u\vz[fish]
 kar[\sc 2]
-bo\vs im[eat:\sk{>3.inan}]
+bo\vs im[eat:{\sc >3.inan}]
 iz[\sc proh]
 \glft `Don't eat the fish!'
 \endgl
@@ -1294,7 +1345,7 @@ Like the other deontic particles, it can be used with a single noun, indicating 
 \begingl
 \Engma u\vz[fish]
 te\vd[\sc 1]
-bo\vs im[eat:\sk{>3.inan}]
+bo\vs im[eat:{\sc >3.inan}]
 iz[\sc proh]
 \glft `Don't make me eat fish!'
 \endgl
@@ -1306,7 +1357,7 @@ Related constructions formed with \textit{iz} can often approximate the meanings
 \begingl
 \Engma u\vz[fish]
 kar[\sc 2]
-bo\vs kem[eat:\sk{neg.dir:>3.inan}]
+bo\vs kem[eat:{\sc neg.dir:>3.inan}]
 iz[\sc proh]
 \glft `You've got to eat the fish!' (lit., `You mustn't not eat the fish')
 \endgl
@@ -1321,13 +1372,13 @@ Negation can scope over the prohibitive using the verb \textit{i\l\'s} `to forbi
 Deo\l[\sc c]
 \engma u\vz[fish]
 kar[\sc 2]
-bo\vs im[eat:\sk{>3.inan}]
+bo\vs im[eat:{\sc >3.inan}]
 iz[\sc proh]
 \nogloss{,}
 as[\sc c]
 \vc os[\sc ins:3.abstr]
 es[\sc 3.abstr]
-i\l\'sog\'zar[forbid:\sk{neg.inv:>2}]
+i\l\'sog\'zar[forbid:{\sc neg.inv:>2}]
 \glft `You're not forbidden from eating fish.'
 \endgl
 \xe
@@ -1344,7 +1395,7 @@ The permissive particle \textit{eu\vs} is appended to the end of a sentence to i
 \begingl
 \vZ leuoh[child]
 \vd eo\'s[tree]
-pogebim[climb:\sk{>3.inan}]
+pogebim[climb:{\sc >3.inan}]
 eu\vs[\sc perm]
 \glft `Children (you) may climb trees.'
 \endgl
@@ -1373,13 +1424,13 @@ Scoping negation over the permissive particle is done via embedding with the ver
 Deo\l[\sc c]
 \vz leuoh[child]
 \vd eo\'s[tree]
-pogebim[climb:\sk{>3.inan}]
+pogebim[climb:{\sc >3.inan}]
 eu\vs[\sc perm]
 \nogloss{,}
 as[\sc c]
 \vc os[\sc ins:3.abstr]
 es[\sc 3.abstr]
-eu\dbl\'sog\'zar[permit:\sk{neg.inv:>2}]
+eu\dbl\'sog\'zar[permit:{\sc neg.inv:>2}]
 \glft `Children (you) are not allowed to climb trees.'
 \endgl
 \xe
@@ -1396,7 +1447,7 @@ The positive attitude particle \textit{ip} is appended to the end of a sentence 
 \begingl
 \vS krik[Skreek]
 es[\sc 3.abstr]
-uheog[kill:\sk{>3.gob}]
+uheog[kill:{\sc >3.gob}]
 ip[:-{)}]
 \glft `Yay, Skreek died!'
 \endgl
@@ -1412,7 +1463,7 @@ The negative attitude particle \textit{hu\l} is appended to the end of a sentenc
 \begingl
 \vS krik[Skreek]
 es[\sc 3.abstr]
-uheog[kill:\sk{>3.gob}]
+uheog[kill:{\sc >3.gob}]
 hu\l[:-{(}]
 \glft `Oh no, Skreek died!'
 \endgl
