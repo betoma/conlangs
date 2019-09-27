@@ -1,4 +1,5 @@
-#This is the lexicon for Bethany E. Toma's Geobong language
+# This is the lexicon for Bethany E. Toma's Geobong language
+
 [metadata]
 last_edited = 2019-08-19
 
@@ -10,7 +11,7 @@ last_edited = 2019-08-19
     grammar.POS="pronoun"
     grammar.person = "3rd"
     grammar.noun_class="natural force"
-    [grammar.reflexive]
+    [lexicon.grammar.reflexive]
         word = "teudteuň"
         IPA = "t̻ɯd̻͡t̻ɯn̺"
         english = ["itself", "they", "them"]
@@ -24,7 +25,7 @@ last_edited = 2019-08-19
     grammar.POS = "pronoun"
     grammar.person = "3rd"
     grammar.noun_class = "non-goblin intelligence"
-    [grammar.reflexive]
+    [lexicon.grammar.reflexive]
         word = "meum"
         IPA = "mɯm"
         english = ["himself","herself","itself","themselves"]
@@ -38,7 +39,7 @@ last_edited = 2019-08-19
     grammar.POS = "pronoun"
     grammar.person = "3rd"
     grammar.noun_class = "goblin"
-    [grammar.reflexive]
+    [lexicon.grammar.reflexive]
         word = "geog"
         IPA = "gɤg"
         english = ["himself","herself","itself","themselves"]
@@ -52,7 +53,7 @@ last_edited = 2019-08-19
     grammar.POS = "pronoun"
     grammar.person = "3rd"
     grammar.noun_class = "animal"
-    [grammar.reflexive]
+    [lexicon.grammar.reflexive]
         word = "šuš"
         IPA = "s̺us̺"
         english = ["himself","herself","itself","themselves"]
@@ -66,7 +67,7 @@ last_edited = 2019-08-19
     grammar.POS = "pronoun"
     grammar.person = "3rd"
     grammar.noun_class = "inanimate"
-    [grammar.reflexive]
+    [lexicon.grammar.reflexive]
         word = "himim"
         IPA = "ʔimim"
         english = ["itself", "themselves"]
@@ -80,7 +81,7 @@ last_edited = 2019-08-19
     grammar.POS = "pronoun"
     grammar.person = "3rd"
     grammar.noun_class = "abstract"
-    [grammar.reflexive]
+    [lexicon.grammar.reflexive]
         word = "ses"
         IPA = "s̻es̻"
         english = ["itself", "themselves"]
@@ -93,7 +94,7 @@ last_edited = 2019-08-19
     meta.date_added = 2019-06-09
     grammar.POS = "pronoun"
     grammar.person = "1st"
-    [grammar.reflexive]
+    [lexicon.grammar.reflexive]
         word = "teteď"
         IPA = "t̻et̻ed̺"
         english = ["myself"]
@@ -106,7 +107,7 @@ last_edited = 2019-08-19
     meta.date_added = 2019-06-09
     grammar.POS = "pronoun"
     grammar.person = "2nd"
-    [grammar.reflexive]
+    [lexicon.grammar.reflexive]
         word = "karkar"
         IPA = "kɹ̩kɹ̩"
         english = ["yourself", "yourselves"]
@@ -118,9 +119,10 @@ last_edited = 2019-08-19
     english = ["to trip", "to obstruct", "to impede", "to cause to stumble","stumbling","impeded","clumsy"]
     meta.date_added = 2019-06-09
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "łempstu"
         IPA = "ɬ̻eb͡ps̻t̻u"
+        english = ["obstructee"]
 
 [[lexicon]]
     word = "beu"
@@ -137,7 +139,7 @@ last_edited = 2019-08-19
     english = ["red", "to redden", "to make red"]
     meta.date_added = 2019-06-09
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "kastu"
         IPA = "ks̻̩t̻u"
         english = ["red", "redness", "the color red"]
@@ -148,7 +150,7 @@ last_edited = 2019-08-19
     english = ["to sit", "to seat", "to make sit", "to cause to sit down", "sitting", "seated"]
     meta.date_added = 2019-06-09
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "octu"
         IPA = "ot͡s̻t̻u"
         english = ["sitting", "seat", "chair", "stump", "sitting-place"]
@@ -159,7 +161,7 @@ last_edited = 2019-08-19
     english = ["to make run", "to cause to run"]
     meta.date_added = 2019-06-09
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "řibstu"
         IPA = "ɹ̺ib͡ps̻t̻u"
         english = ["running", "run", "exercise"]
@@ -171,7 +173,7 @@ last_edited = 2019-08-19
     notes = "the latter meanings of \"to build, to create\" are only applicable when it comes to abstract concepts, not physical inanimate objects"
     meta.date_added = 2019-06-09
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "śestu"
         IPA = "çes̻t̻u"
         english = ["action", "behavior", "activity", "production", "happening", "happenstance", "occurance", "event", "eventuality"]
@@ -182,7 +184,7 @@ last_edited = 2019-08-19
     english = ["to cook", "to prepare (food)"]
     meta.date_added = 2019-06-09
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "řustu"
         IPA = "ɹ̺us̻t̻u"
         english = ["cooking", "cooking supplies"]
@@ -237,7 +239,7 @@ last_edited = 2019-08-19
     notes = "nominal copula -- to more exactly approximate the difference between English \"to be\" and \"to seem\", one must use adverbs (like \"underneath\")"
     meta.date_added = 2019-06-09
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "žestu"
         IPA = "d͡z̺es̻t̻u"
         english = ["appearance, role, seeming"]
@@ -290,7 +292,7 @@ last_edited = 2019-08-19
     english = ["to see", "to look at", "to watch"]
     meta.date_added = 2019-06-09
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "žećstu"
         IPA = "d͡z̺ec͡çɕt̻u"
         english = ["seeing", "sight", "view", "show", "exhibit"]
@@ -302,7 +304,7 @@ last_edited = 2019-08-19
     notes = "implies that the destination was reached"
     meta.date_added = 2019-06-09
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "eumstu"
         IPA = "ɯms̻t̻u"
         english = ["goal", "destination"]
@@ -330,7 +332,7 @@ last_edited = 2019-08-19
     english = ["pour", "rush", "flood", "flow", "spill"]
     meta.date_added = 2019-06-10
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "sleorpstu"
         IPA = "s̻l̻ɤɹ̻̥ps̻t̻u"
         english = ["pouring", "rushing", "sloshing", "deluge", "pour", "stream", "rapids", "current"]
@@ -375,7 +377,7 @@ last_edited = 2019-08-19
     notes = "used to describe striking unarmed or with a blunt weapon"
     meta.date_added = 2019-06-10
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "bolstu"
         IPA = "bol̻̥s̻t̻u"
         english = ["strike", "hit", "slap", "punch", "hitting", "fighting"]
@@ -387,7 +389,7 @@ last_edited = 2019-08-19
     notes = "instrumental, also used for ditransitives due to Geobong's secundative structure"
     meta.date_added = 2019-06-10
     grammar.POS = "postposition"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "čostu"
         IPA = "t͡s̺os̻t̻u"
         english = ["tool", "instrument", "means", "method"]
@@ -399,7 +401,7 @@ last_edited = 2019-08-19
     notes = "inherently ditransitive -- secundative (obj. = recipient, theme marked with instrumental)"
     meta.date_added = 2019-06-10
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "ćneustu"
         IPA = "k͡xn̻ɯs̻t̻u"
         english = ["gift", "delivery", "goods", "present"]
@@ -427,7 +429,7 @@ last_edited = 2019-08-19
     notes = "takes thing being sought as an object"
     meta.date_added = 2019-06-10
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "riľkstu"
         IPA = "ɹ̻il̺̥ks̻t̻u"
         english = ["search", "quest", "hunt"]
@@ -435,11 +437,11 @@ last_edited = 2019-08-19
 [[lexicon]]
     word = "źek"
     IPA = "ɟ͡͡ʝek"
-    english = ["to cause to be enthusiastic (about)", "to make lively", "to make youthful" "to energize" "youthful", "young", "lively", "vigorous", "enthusiastic", "wild", "impulsive", "eager"]
+    english = ["to cause to be enthusiastic (about)", "to make lively", "to make youthful", "to energize", "youthful", "young", "lively", "vigorous", "enthusiastic", "wild", "impulsive", "eager"]
     notes = "describes someone who displays the characterisic traits of a young adolescent (at least, a subset of them -- this term is has a positive connotaiton, after all)" #think Kurt
     meta.date_added = 2019-06-10
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "źekstu"
         IPA = "ɟ͡͡ʝeks̻t̻u"
         english = ["youth", "liveliness", "enthusiasm", "vigor", "impulsiveness", "eagerness"]
@@ -457,7 +459,7 @@ last_edited = 2019-08-19
     english = ["to make alive", "to grow", "to cause to flourish", "to illuminate", "to shine", "to turn on, to turn smth. on", "to make beautiful", "alive", "flourishing", "wild", "beautiful", "growing", "bright", "shiny", "chaotic"]
     meta.date_added = 2019-06-10
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "ćrećstu"
         IPA = "k͡xɹ̻ec͡çɕt̻u"
         english = ["life", "growth", "flourishing", "brightness", "illumination", "chaos"]
@@ -468,7 +470,7 @@ last_edited = 2019-08-19
         notes = "causative ditransitive -- the subject of the original verb is the object, and the (optional) object of the original verb is in the instrumental"
         meta.date_added = 2019-07-03
         grammar.POS = "verb"
-        [grammar.nominalization]
+        [lexicon.derivation.grammar.nominalization]
             word = "ocćrećstu"
             IPA = "ot͡s̻t̻͡ɕɹ̻ec͡çs̻t̻u"
             english = ["life-bringing-ness", "kindness", "generosity", "creativity", "growth-causing-ness"]
@@ -480,7 +482,7 @@ last_edited = 2019-08-19
     notes = "marks alienable possession of a physical item, only refers to an item physically with the person or thing at present"
     meta.date_added = 2019-06-10
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "ołpstu"
         IPA = "oɬ̻ps̻t̻u"
         english = ["possession", "held items", "contents", "things being brought with (you)", "luggage"]
@@ -499,7 +501,7 @@ last_edited = 2019-08-19
     english = ["to attend", "to be at", "to show up at", "to have shown up at", "to arrive at (an event)", "to go to (an event)"]
     meta.date_added = 2019-06-10
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "ⱡerstu"
         IPA = "ɬ̺eɹ̻̥s̻t̻u"
         english = ["attendance", "arrival", "showing-up"]
@@ -533,7 +535,7 @@ last_edited = 2019-08-19
     english = ["true", "right", "accurate", "actual", "real", "to make true", "to actualize", "to make real", "to realize"]
     meta.date_added = 2019-06-10
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "hisdstu"
         IPA = "ʔiz̻d̻͡t̻s̻t̻u"
         english = ["truth", "reality"]
@@ -544,7 +546,7 @@ last_edited = 2019-08-19
     english = ["blue", "cyan", "to make blue", "to make cyan", "to color blue", "to rise (of the sun to the sky)", "to kill (colloquial)"]
     meta.date_added = 2019-06-11
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "peoctu"
         IPA = "pɤt͡s̻t̻u"
         english = ["blue", "the color blue", "blueness"]
@@ -580,7 +582,7 @@ last_edited = 2019-08-19
     english = ["to eat", "to drink", "to take", "to consume", "to imbibe"]
     meta.date_added = 2019-06-18
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "bostu"
         IPA = "bos̻t̻u"
         english = ["food", "drink", "vittels", "something to eat", "something to drink", "eating", "drinking"]
@@ -641,7 +643,7 @@ last_edited = 2019-08-19
     english = ["to drop", "to fell", "to cause to fall"]
     meta.date_added = 2019-06-18
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "zlozstu"
         IPA = "d͡z̻l̻od͡z̻s̻t̻u"
         english = ["fall", "drop", "falling", "dropping", "sharp increase or decrease in height"]
@@ -659,7 +661,7 @@ last_edited = 2019-08-19
         english = ["to salt", "to add salt to", "to make salty", "to season", "to pickle", "salty", "salted", "well-seasoned", "pickled"]
         meta.date_added = 2019-06-18
         grammar.POS = "verb"
-        [grammar.nominalization]
+        [lexicon.grammar.nominalization]
             word = "dižďⱡićstu"
             IPA = "d̻id͡z̺d̺ɬ̺ic͡çɕt̻u"
             english = ["seasoning", "brine"]
@@ -670,7 +672,7 @@ last_edited = 2019-08-19
     english = ["to add", "to increase", "to compile", "to store up", "to gather up"]
     meta.date_added = 2019-06-18
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "ⱡićstu"
         IPA = "ɬ̺ic͡çɕt̻u"
         english = ["addition", "compilation", "store", "gather", "increase"]
@@ -690,7 +692,7 @@ last_edited = 2019-08-19
     notes = "frequently used in constructions like \"I come from X\""
     meta.date_added = 2019-06-18
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "łenostu"
         IPA = "ɬ̻en̻os̻t̻u"
         english = ["place of origin", "hometown", "home village", "origin", "place you came from"]
@@ -760,7 +762,7 @@ last_edited = 2019-08-19
         notes = "as an adjective, describes things (usually qualities) which cause something to be more valuable or worth more, rather than any characteristics of the thing that has (or doesn't have) value directly"
         meta.date_added = 2019-06-18
         grammar.POS = "verb"
-        [grammar.nominalization]
+        [lexicon.grammar.nominalization]
             word = "eoďⱡićstu"
             IPA = "ɤd͡t̺ɬ̺ic͡çɕt̻u"
             english = ["price", "value", "worth", "worthiness"]
@@ -771,7 +773,7 @@ last_edited = 2019-08-19
         notes = "causative ditransitive -- the original agent becomes object and (optionally) the original object becomes instrumental"
         meta.date_added = 2019-07-03
         grammar.POS = "verb"
-        [grammar.nominalization]
+        [lexicon.derivation.grammar.nominalization]
             word = "ceoďⱡićstu"
             IPA = "t͡s̻ɤd͡t̺ɬ̺ic͡çs̻t̻u"
             english = ["measure", "standard", "that by which something is valued"]
@@ -782,7 +784,7 @@ last_edited = 2019-08-19
     english = ["to be in charge of", "to head", "to govern", "to dominate", "to be important (regarding some context)", "governed", "ruled", "civilized", "dominated"]
     meta.date_added = 2019-07-02
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "bokstu"
         IPA = "boks̻t̻u"
         english = ["importance", "leadership", "seriousness", "supremacy", "governance", "dominance"]
@@ -806,7 +808,7 @@ last_edited = 2019-08-19
         english = ["to put in charge of", "to install as leader", "to make important", "to make the head of", "to flatter", "to butter up", "to promote", "to take seriously", "serious", "important", "in charge", "leaderly"]
         meta.date_added = 2017-07-02
         grammar.POS = "verb"
-        [grammar.nominalization]
+        [lexicon.derivation.grammar.nominalization]
             word = "ozbokstu"
             IPA = "od͡z̻boks̻t̻u"
             english = ["coronation", "promotion", "flattery", "pulling of the strings in the background", "scheming"]
@@ -817,7 +819,7 @@ last_edited = 2019-08-19
     english = ["to cause to die", "to kill", "to make dead", "dead"]
     meta.date_added = 2019-07-03
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "uhstu"
         IPA = "uʔs̻t̻u"
         english = ["death", "dying"]
@@ -834,7 +836,7 @@ last_edited = 2019-08-19
         english = ["to cause to kill", "to make (smth./sme.) cause (smth./sme.) to die"]
         meta.date_added = 2019-07-03
         grammar.POS = "verb"
-        [grammar.nominalization]
+        [lexicon.derivation.grammar.nominalization]
             word = "cuhstu"
             IPA = "t͡s̻uʔs̻t̻u"
             english = ["killing", "murder"]
@@ -852,7 +854,7 @@ last_edited = 2019-08-19
     english = ["to desire", "to want", "to crave", "to wish for", "desirable", "attractive"]
     meta.date_added = 2019-07-03
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "teudstu"
         IPA = "t̻ɯd͡t̻s̻t̻u"
         english = ["desire", "craving", "wish", "want", "longing", "thing that is desired"]
@@ -862,7 +864,7 @@ last_edited = 2019-08-19
         english = ["to cause (smth./sme.) to desire (smth./sme.)", "to draw", "to attract", "to point towards", "to cause to crave", "longing", "desiring", "wanting", "craving", "horny", "hungry", "jealous", "envious"]
         meta.date_added = 2019-07-03
         grammar.POS = "verb"
-        [grammar.nominalization]
+        [lexicon.derivation.grammar.nominalization]
             word = "octeudstu"
             IPA = "ot͡s̻t̻ɯd͡t̻s̻t̻u"
             english = ["desire", "craving", "feelings of desire", "horniness", "hunger", "the abstract concept of desire"]
@@ -874,32 +876,32 @@ last_edited = 2019-08-19
     notes = "as adjective, describes doubing facts/statements; cannot be used with a recipient -- optionally ditransitive version must be used instead in that case"
     meta.date_added = 2019-07-03
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "ńełipstu"
         IPA = "ɲeɬ̻ips̻t̻u"
         english = ["question", "doubt", "wonder"]
     [[lexicon.derivation]]
-    word = "ńełiptu"
-    IPA = "ɲeɬ̻ipt̻u"
-    english = ["to ask (sme.)", "to question (sme.)", "to doubt (a person)", "to interrogate", "suspicious", "unclear", "dubious", "questioned"]
-    notes = "as adjective, describes doubting a person (though, presumably, the facts/statements they make); optionally ditransitive -- the fact that is being asked about can be attached as an instrumental"
-    meta.date_added = 2019-07-03
-    grammar.POS = "verb"
-    [grammar.nominalization]
-        word = "ńełiptustu"
-        IPA = "ɲeɬ̻ipt̻us̻t̻u"
-        english = ["interrogation", "questioning", "doubt", "suspicion"]
+        word = "ńełiptu"
+        IPA = "ɲeɬ̻ipt̻u"
+        english = ["to ask (sme.)", "to question (sme.)", "to doubt (a person)", "to interrogate", "suspicious", "unclear", "dubious", "questioned"]
+        notes = "as adjective, describes doubting a person (though, presumably, the facts/statements they make); optionally ditransitive -- the fact that is being asked about can be attached as an instrumental"
+        meta.date_added = 2019-07-03
+        grammar.POS = "verb"
+        [lexicon.derivation.grammar.nominalization]
+            word = "ńełiptustu"
+            IPA = "ɲeɬ̻ipt̻us̻t̻u"
+            english = ["interrogation", "questioning", "doubt", "suspicion"]
     [[lexicon.derivation]]
-    word = "cńełip"
-    IPA = "t͡s̻ɲeɬ̻ip"
-    english = ["to cause to question", "to cause to wonder", "to sow seeds of doubt (about)", "to make uncertain", "curious", "confused", "questioning", "doubting", "uncertain"]
-    notes = "as adjective, describes a person who questions/doubts things; causative ditransitive -- the subject of the original verb is the object, and the (optional) object of the original verb is in the instrumental"
-    meta.date_added = 2019-07-03
-    grammar.POS = "verb"
-    [grammar.nominalization]
-        word = "cńełipstu"
-        IPA = "t͡s̻ɲeɬ̻ips̻t̻u"
-        english = ["curiosity", "confusion", "doubt", "questioning"]
+        word = "cńełip"
+        IPA = "t͡s̻ɲeɬ̻ip"
+        english = ["to cause to question", "to cause to wonder", "to sow seeds of doubt (about)", "to make uncertain", "curious", "confused", "questioning", "doubting", "uncertain"]
+        notes = "as adjective, describes a person who questions/doubts things; causative ditransitive -- the subject of the original verb is the object, and the (optional) object of the original verb is in the instrumental"
+        meta.date_added = 2019-07-03
+        grammar.POS = "verb"
+        [lexicon.derivation.grammar.nominalization]
+            word = "cńełipstu"
+            IPA = "t͡s̻ɲeɬ̻ips̻t̻u"
+            english = ["curiosity", "confusion", "doubt", "questioning"]
 
 [[lexicon]]
     word = "ľeśk"
@@ -930,7 +932,7 @@ last_edited = 2019-08-19
     english = ["to make stinky", "to contaminate", "to cause to be flawed", "to fill with errors", "to fuck up", "to stink up", "stinky", "malodorous", "flawed", "full of errors"]
     meta.date_added = 2019-07-08
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "pramestu"
         IPA = "pɹ̻m̩es̻t̻u"
         english = ["stench", "stinkiness", "flaw", "error", "issue", "problem"]
@@ -966,7 +968,7 @@ last_edited = 2019-08-19
     notes = "optionally ditransitive, secundative (takes the recipient as object and the theme as an optional instrumental"
     meta.date_added = 2019-08-08
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "arctu"
         IPA = "ɹ̻̩t͡s̻t̻u"
         english = ["feeding", "meal", "potluck", "feast"]
@@ -977,7 +979,7 @@ last_edited = 2019-08-19
     english = ["to nauseate", "to make nauseous", "to sicken", "to make queasy", "nauseous", "nauseated", "queasy"]
     meta.date_added = 2019-08-08
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "sgeostu"
         IPA = "z̻gɤs̻t̻u"
         english = ["nausea", "queasiness", "sickness", "vomit"]
@@ -989,7 +991,7 @@ last_edited = 2019-08-19
     notes = "used either for a single theme (the forbidden thing) or to embed a clause"
     meta.date_added = 2019-08-08
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "iłśstu"
         IPA = "iɬ̻ʲçɕt̻u"
         english = ["prohibition", "rule", "disallowance", "constraint", "injunction", "proscription"]
@@ -1001,7 +1003,7 @@ last_edited = 2019-08-19
     notes = "used either for a single theme (the required thing) or to embed a clause"
     meta.date_added = 2019-08-08
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "ďetśstu"
         IPA = "d̺et̻ʲçɕt̻u"
         english = ["requirement", "necessity", "command", "demand"]
@@ -1013,7 +1015,7 @@ last_edited = 2019-08-19
     notes = "used either for a single thing (the requested thing) or to embed a clause"
     meta.date_added = 2019-08-08
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "řośstu"
         IPA = "ɹ̺oçɕt̻u"
         english = ["request", "desire"]
@@ -1024,7 +1026,7 @@ last_edited = 2019-08-19
     english = ["to allow", "to permit", "to release", "to condone", "allowed", "permitted", "condoned"]
     meta.date_added = 2019-08-08
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "euⱡśstu"
         IPA = "ɯɬ̺ʲçɕt̻u"
         english = ["thing which is allowed", "possibility", "option"]
@@ -1035,7 +1037,7 @@ last_edited = 2019-08-19
     english = ["to belittle", "to patronize", "to treat like a child", "to make small", "little", "tiny", "small", "infantile", "childish", "baby-ish", "childlike"]
     meta.date_added = 2019-08-19
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "žľeustu"
         IPA = "d͡z̺l̺ɯs̻t̻u"
         english = ["childishness, helplessness, smallness, tininess"]
@@ -1053,7 +1055,7 @@ last_edited = 2019-08-19
     english = ["to climb", "to scale", "to scramble up", "to go to the top of", "to surmount", "to overcome", "climbed", "scaled", "surmounted"]
     meta.date_added = 2019-08-19
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "pogepstu"
         IPA = "pogeps̻t̻u"
         english = ["obstacle", "that which must be surmounted", "that which must be overcome"]
@@ -1097,7 +1099,7 @@ last_edited = 2019-08-19
     english = ["to lock", "to bar", "to barricade", "locked", "barred", "barricaded"]
     meta.date_added = 2019-08-19
     grammar.POS = "verb"
-    [grammar.nominalization]
+    [lexicon.grammar.nominalization]
         word = "źriostu"
         IPA = "g͡ɣɹ̻ios̻t̻u"
         english = ["that which is locked", "safe", "blocked-off area", "barricaded place", "inaccessible place"]
