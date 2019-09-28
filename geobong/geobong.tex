@@ -5,6 +5,9 @@
 \usepackage[hidelinks]{hyperref} % enables hyperlinks in your document (no worries -- they show up only on the screen. When you print a hard copy, the colored boxes aren't there)
 \usepackage{url} % helps typeset URLs properly, typically with the command \url
 \usepackage[margin=.75in]{geometry} % page layout
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usepackage{wrapfig}
 \usepackage{booktabs} % creates beautiful and professional tables
 \usepackage{multirow}
 \usepackage{textcomp}
@@ -12,6 +15,8 @@
 \usepackage{tablefootnote}
 \usepackage[calc,english]{datetime2}
 \usepackage{bookmark}
+\usepackage{blindtext}
+%\usepackage{textgreek}
 
 \setmainfont{Charis SIL}[CharacterVariant=43:1]
 
@@ -170,6 +175,10 @@ To-do.
 
 \section{Phoneme Inventory}
 
+With an inventory of 29 consonants and 6-7 vowels (depending on analysis, Geobo\engma's inventory isn't particularly noteworthy in its size. The distribution of its phonemes, however, could be seen as a bit abnormal, particularly when it comes to the vowels.
+
+\subsection{Consonant Inventory}
+
 \begin{table}[h]
     \centering
 \begin{tabular}{@{}rcccccccc@{}}
@@ -185,6 +194,12 @@ Approximant &  & {\alvr\lamino} {l\lamino} &  & {\alvr\apico} {l\apico} &  &  & 
     \label{tab:consonants}
 \end{table}
 
+Geobo\engma's consonant inventory is on the larger size, and distinguishes between six places of articulation. Notably, there is a distinction between laminodental and apicoalveolar coronal consonants, as well as a distinction between sibilant and non-sibilant coronal stops/affricates and fricatives. The result remains, however, a very balanced inventory, and Geobo\engma{} is thus not notable for its consonants.
+
+It should be noted that Geobo\engma{} orthography possesses distinct symbols for \bripa{t\tiebar\latfric\lamino}, \bripa{t\tiebar\latfric\apico}, and \bripa{x}. However, due to their distributions, these are generally not analyzed as distinct phonemes but rather as allophonic realizations of other phonemes/clusters of phonemes. This is elaborated on in Section \ref{sec:allophony}. 
+
+\subsection{Vowel Inventory}
+
 \begin{table}[h]
     \centering
 \begin{tabular}{@{}rccc@{}}
@@ -193,35 +208,57 @@ Approximant &  & {\alvr\lamino} {l\lamino} &  & {\alvr\apico} {l\apico} &  &  & 
  & \multicolumn{1}{c}{} & \multicolumn{1}{c}{Unrounded} & \multicolumn{1}{c}{Rounded} \\ \midrule
 High & i & \unru & u \\
 Mid-High & e & \unro & o \\ 
- & \multicolumn{3}{c}{\nm{} or \bripa{\schwa}} \\ \bottomrule
+ & \multicolumn{3}{c}{\nm{} or \schwa} \\ \bottomrule
 \end{tabular}
     \caption{Vowels}
     \label{tab:vowels}
 \end{table}
 
-The utter lack of phonemically open vowels in Geobo{\engma} could be considered strange. Geobo{\engma} does historically possess a phonemic \phipa{a}; however, whether it can be considered a distinct phoneme in the current language is not clear, as it does occur phonetically in any position in which it contrasts with \phipa{\unro}. One could analyze Geobo{\engma} as possessing an \phipa{a} which does not appear phonetically but causes a following sonorant or continuant to serve as the syllabic nucleus of the relevant syllable. Under this analysis, \phipa{a} has merged with \phipa{\unro} when not followed by a sonorant or continuant, as its realizations \bripa{a\til\centra\til\centruh} do not meaningfully contrast with any of \phipa{\unro}'s realizations and tend to be interpreted as \phipa{\unro} by speakers.
+Geobo\engma's vowel inventory is where it is particularly strange. While its size is fairly average, at six or seven vowels, their distribution is strikingly abnormal, with no low vowels whatsoever and six at mid-high or higher. If presented with vowels lower than the canonical six, Goblins will tend to analyze them as though they were mid-high vowels of equivalent front- and roundedness. 
+
+The existence of a seventh vowel, typically analyzed as \phipa{schwa}, is fairly contentious. If this consonant exists, it only surfaces on a phonetic level in a very small subset of phonological contexts and is otherwise realized as syllabification\footnote{Though the term `syllabification' is itself a bit of a generalization, since this is realized in various ways depending on the consonant in question.} of the following consonant. 
+Many argue that these syllables are better analyzed as vowelless, with \bripa{\schwa} being epenthetic when it occurs. If this is the case, Geobo\engma{} could be said to have no vowels lower than mid-high whatsoever. Geobo\engma{} orthography, however, uses seven-vowel analysis and writes \phipa{\schwa} as \ortho{a}.
+
+%The utter lack of phonemically open vowels in Geobo{\engma} could be considered strange. Geobo{\engma} does historically possess a phonemic \phipa{a}; however, whether it can be considered a distinct phoneme in the current language is not clear, as it does occur phonetically in any position in which it contrasts with \phipa{\unro}. One could analyze Geobo{\engma} as possessing an \phipa{a} which does not appear phonetically but causes a following sonorant or continuant to serve as the syllabic nucleus of the relevant syllable. Under this analysis, \phipa{a} has merged with \phipa{\unro} when not followed by a sonorant or continuant, as its realizations \bripa{a\til\centra\til\centruh} do not meaningfully contrast with any of \phipa{\unro}'s realizations and tend to be interpreted as \phipa{\unro} by speakers.
 
 \section{Syllable Structure}
 
-The analysis one takes of Geobo{\engma} syllable structure depends on whether one analyzes it as possessing the underlying \phipa{a} phoneme that is never explicitly realized. If one posits the existence of this phoneme, the language's syllable structure can be analyzed as follows:
+There are two competing analyses of Geobo\engma{} syllable structure, which depend upon one's analysis of so-called vowelless syllables. One analysis posits the widespread permissability of vowelless syllables, in which the first consonant in the rime `takes over' as the nucleus of a vowelless syllable. Others, as previously discussed, posit the existence of a seventh seldom-realized phonemic vowel \phipa{\schwa} to avoid vowelless syllables entirely. Below we discuss both analyses and their implications.
 
-\begin{center}
-    (S)(C)(R)V(R)(C)
-    
-    \begin{tabular}{rl}
-         C: & any consonant \\
-         S: & sibilant fricative  \\
-         R: & any consonant that isn't a stop
-    \end{tabular}
-\end{center}
+In both analyses, the onset of a syllable in Geobo\engma{} is optional, at least on a phonemic level, and can consist of any consonant optionally preceded by a sibilant fricative (represented in this section by S) and/or followed by a sonorant or continuant. In Geobo\engma{}, sonorants and continuants (i.e., all non-stop consonants) form a natural class, indicated in this section with the symbol R whenever relevant.
 
-In order for the above analysis to hold, one must posit that the phoneme \phipa{a} disappears and causes any following non-stop consonant to become syllabic, while simultaneously never occuring before stops.
+\subsection{Vowelless Analysis}
 
-If one does not analyze Geobo{\engma} as possessing \phipa{a}, the analysis of its syllable structure becomes necessarily more complicated to account for its bevy of syllabic consonants. In such an analysis, one must posit that, when the nucleus is a vowel, the above structure holds, but that when the nucleus is a syllabic consonant, the structure is instead (S)(C)(R)R(C).
+\begin{wrapfigure}{r}{0.35\textwidth}
+    \centering
+    \begin{tikzpicture}
+        \Tree [.$\sigma$ [.$\omega$ S* C* R* ] [.$\rho$ [.$\nu^{+}$ V* R* ] [.$\kappa$ C* ] ] ]
+    \end{tikzpicture}
+    \caption{Syllable Structure in Vowelless Analysis}
+    \label{fig:sylb-struc-vless}
+\end{wrapfigure}
 
-Regardless of which of these analyses one finds the most appealing, a few other constraints on both onset and coda clusters are applicable. While Geobo{\engma}'s sonority hierarchy is generally quite permissive, fricatives cannot be preceded by approximants in onset clusters, and the reverse cannot occur in coda clusters.
+In the `vowelless analysis' of Geobo\engma{} syllable structure, the nucleus of the syllable is analyzed as potentially containing both a vowel and a continuant or sonorant, but with each being optional. However, the nucleus itself is not optional and thus at least one segment, be it a consonant or vowel, must occur therein. The coda is analyzed as optional and consisting of any single consonant.
 
-\section{Allophony}
+This syllable structure can also be expressed in Recursive Baerian Phonotactic Notation\footnote{insert link to the github when you've got internet sparky} as follows:
+$$
+[_{\sigma}\left[_{\omega}\begin{matrix} \begin{matrix}\textrm{S}\\\nm\end{matrix} \cdot \textrm{C} \cdot \begin{matrix}\textrm{R}\\\nm\end{matrix}\\\nm\end{matrix}\right]\left[_{\nu}\begin{matrix}\textrm{V}\cdot\begin{matrix}\textrm{R}\\\nm\end{matrix}\\\textrm{R}\end{matrix}\right]\left[_{\kappa}\begin{matrix}\textrm{C}\\\nm\end{matrix}\right]]
+$$
+
+\subsection{\phipa{\schwa} Analysis}
+
+\begin{wrapfigure}{l}{0.35\textwidth}
+    \centering
+    \begin{tikzpicture}
+        \Tree [.$\sigma$ [.$\omega$ S* C* R* ] [.$\rho$ [.$\nu$ V$^{+}$ ] [.$\kappa$ R* C* ] ] ]
+    \end{tikzpicture}
+    \caption{Syllable Structure in Vowelless Analysis}
+    \label{fig:sylb-struc-schwa}
+\end{wrapfigure}
+
+Among those who don't subscribe to an analysis of Geobo\engma{} as possessing vowelless syllables, the dominant approach is to analyze the syllable structure as underlyingly something fairly simple and regular, such as that shown in Figure \ref{fig:sylb-struc-schwa}, with 
+
+\section{Phonotactics \& Allophony}\label{sec:allophony}
 
 \begin{enumerate}
     \item Coronal consonants persistently assimilate in laminarity to the following consonant.
