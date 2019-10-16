@@ -16,7 +16,7 @@
 \usepackage[calc,english]{datetime2}
 \usepackage{bookmark}
 \usepackage{blindtext}
-%\usepackage{textgreek}
+\usepackage{phonrule}
 
 \setmainfont{Charis SIL}[CharacterVariant=43:1]
 
@@ -74,6 +74,8 @@
 \newcommand{\alvlap}{ɺ}
 \newcommand{\esh}{ʃ}
 \newcommand{\ezh}{ʒ}
+\newcommand{\alvpalesh}{ɕ}
+\newcommand{\alvpalezh}{ʑ}
 \newcommand{\paljstop}{ɟ}
 \newcommand{\paljfric}{ʝ}
 \newcommand{\egna}{ɲ}
@@ -216,7 +218,7 @@ Mid-High & e & \unro & o \\
 
 Geobo\engma's vowel inventory is where it is particularly strange. While its size is fairly average, at six or seven vowels, their distribution is strikingly abnormal, with no low vowels whatsoever and six at mid-high or higher. If presented with vowels lower than the canonical six, Goblins will tend to analyze them as though they were mid-high vowels of equivalent front- and roundedness. 
 
-The existence of a seventh vowel, typically analyzed as \phipa{schwa}, is fairly contentious. If this consonant exists, it only surfaces on a phonetic level in a very small subset of phonological contexts and is otherwise realized as syllabification\footnote{Though the term `syllabification' is itself a bit of a generalization, since this is realized in various ways depending on the consonant in question.} of the following consonant. 
+The existence of a seventh vowel, typically analyzed as \phipa{\schwa}, is fairly contentious. If this consonant exists, it only surfaces on a phonetic level in a very small subset of phonological contexts and is otherwise realized as syllabification\footnote{Though the term `syllabification' is itself a bit of a generalization, since this is realized in various ways depending on the consonant in question.} of the following consonant. 
 Many argue that these syllables are better analyzed as vowelless, with \bripa{\schwa} being epenthetic when it occurs. If this is the case, Geobo\engma{} could be said to have no vowels lower than mid-high whatsoever. Geobo\engma{} orthography, however, uses seven-vowel analysis and writes \phipa{\schwa} as \ortho{a}.
 
 %The utter lack of phonemically open vowels in Geobo{\engma} could be considered strange. Geobo{\engma} does historically possess a phonemic \phipa{a}; however, whether it can be considered a distinct phoneme in the current language is not clear, as it does occur phonetically in any position in which it contrasts with \phipa{\unro}. One could analyze Geobo{\engma} as possessing an \phipa{a} which does not appear phonetically but causes a following sonorant or continuant to serve as the syllabic nucleus of the relevant syllable. Under this analysis, \phipa{a} has merged with \phipa{\unro} when not followed by a sonorant or continuant, as its realizations \bripa{a\til\centra\til\centruh} do not meaningfully contrast with any of \phipa{\unro}'s realizations and tend to be interpreted as \phipa{\unro} by speakers.
@@ -240,14 +242,14 @@ In both analyses, the onset of a syllable in Geobo\engma{} is optional, at least
 
 In the `vowelless analysis' of Geobo\engma{} syllable structure, the nucleus of the syllable is analyzed as potentially containing both a vowel and a continuant or sonorant, but with each being optional. However, the nucleus itself is not optional and thus at least one segment, be it a consonant or vowel, must occur therein. The coda is analyzed as optional and consisting of any single consonant.
 
-This syllable structure can also be expressed in Recursive Baerian Phonotactic Notation\footnote{insert link to the github when you've got internet sparky} as follows:
-$$
-[_{\sigma}\left[_{\omega}\begin{matrix} \begin{matrix}\textrm{S}\\\nm\end{matrix} \cdot \textrm{C} \cdot \begin{matrix}\textrm{R}\\\nm\end{matrix}\\\nm\end{matrix}\right]\left[_{\nu}\begin{matrix}\textrm{V}\cdot\begin{matrix}\textrm{R}\\\nm\end{matrix}\\\textrm{R}\end{matrix}\right]\left[_{\kappa}\begin{matrix}\textrm{C}\\\nm\end{matrix}\right]]
-$$
+This syllable structure can also be expressed in Recursive Baerian Phonotactic Notation\footnote{Described in \url{https://llblumire.github.io/recursive-baerian-phonotactics-notation/Recursive_Baerian_Syntax_Notation.pdf}. Here we make some minor changes to the notation, moving the labels for the blocks to subscripted after the final bracket for readability. We also use $\lambda$ for word-level blocks such that $\omega$ can be freed to be used for the syllable-onset block, in keeping with traditional syllable notation.} as follows:
+\begin{equation*}
+\# \left[\left[\left[\:\begin{matrix}\,\begin{matrix}\textrm{S}\\\nm\end{matrix} \: \textrm{C} \: \begin{matrix}\textrm{R}\\\nm\end{matrix}\\\nm\end{matrix}\right]_\omega\left[\:\begin{matrix}\:\textrm{V} \: \begin{matrix}\textrm{R}\\\nm\end{matrix}\\\textrm{R}\end{matrix}\right]_\nu\left[\begin{matrix}\textrm{C}\\\nm\end{matrix}\right]_\kappa\:\begin{matrix}\sigma\\\nm\end{matrix}\right]_\sigma\:\right]_\lambda \#
+\end{equation*}
 
 \subsection{\phipa{\schwa} Analysis}
 
-\begin{wrapfigure}{l}{0.35\textwidth}
+\begin{wrapfigure}{L}{0.35\textwidth}
     \centering
     \begin{tikzpicture}
         \Tree [.$\sigma$ [.$\omega$ S* C* R* ] [.$\rho$ [.$\nu$ V$^{+}$ ] [.$\kappa$ R* C* ] ] ]
@@ -256,9 +258,72 @@ $$
     \label{fig:sylb-struc-schwa}
 \end{wrapfigure}
 
-Among those who don't subscribe to an analysis of Geobo\engma{} as possessing vowelless syllables, the dominant approach is to analyze the syllable structure as underlyingly something fairly simple and regular, such as that shown in Figure \ref{fig:sylb-struc-schwa}, with 
+Among those who don't subscribe to an analysis of Geobo\engma{} as possessing vowelless syllables, the dominant approach is to analyze the syllable structure as underlyingly more symmetric and regular, such as that shown in Figure \ref{fig:sylb-struc-schwa}, with a mandatory vowel nucleus and both onset and coda allowing any consonant to cluster with a non-stop. Within this analysis, what phonetically surface as syllabic consonants are really just allophonous realizations of \phipa{\schwa} + consonant clusters. 
+
+This structure is expressed in Baerian notation as follows:
+
+\begin{equation*}
+\# \left[\left[\left[\:\begin{matrix}\,\begin{matrix}\textrm{S}\\\nm\end{matrix} \: \textrm{C} \: \begin{matrix}\textrm{R}\\\nm\end{matrix}\\\nm\end{matrix}\right]_\omega \textrm{V}\,\: \left[\begin{matrix}\,\begin{matrix}\textrm{R}\\\nm\end{matrix} \: \textrm{C}\\\nm\end{matrix}\right]_\kappa\:\begin{matrix}\sigma\\\nm\end{matrix}\right]_\sigma\:\right]_\lambda \#
+\end{equation*}
+
+Those who champion this vowelless analysis tend to point to the relative symmetry of this structure compared to the more complicated analysis that allows for vowelless nuclei. However, those who oppose this analysis tend to point to the lack of similarity to surface forms as a point against this analysis. 
+
+In practice, both analyses generally can capture Geobo\engma{} phenomena. In this paper, we will point out where differences between these two analyses become relevant and refer to both analyses in those cases, but by and large we will focus on the actual changes in the surface forms rather than on their theoretical syllabic structure. Where phonemic representations of relevant Geobo\engma{} words are given, a schwa will be included for clarity, but this should not be taken as being wed to the schwa analysis by any means.
 
 \section{Phonotactics \& Allophony}\label{sec:allophony}
+
+\subsection{Laminarity in Clusters}
+
+Geobo\engma{} coronals can be divided into two distinct places of articulation---one lamino-dental, the other apicoalveolar. While laminarity is certainly phonemically contrastive (see, for example, \textit{k\vl e} \bripa{kl\apico e} `arm' vs. \textit{kle} \bripa{kl\lamino e} `two'), laminal and apical consonant cannot be adjacent to one another. Thus, coronals in clusters persistently assimilate in laminarity to the following consonant. 
+
+This change is productive and does occur when compounding or inflection would result in adjacent coronals. In addition, syllabic consonants are considered adjacent to the onsets of their syllables---e.g., \textit{kla\vr} \bripa{kl\lamino\alvr\apico\sylb} would not be a legal syllable in Geobo\engma{}, and a word \phipa{kl\lamino\schwa\alvr\apico} would surface as \bripa{kl\apico\alvr\apico\sylb} and be indistinguishable from \textit{k\vl a\vr} \phipa{kl\apico\schwa\alvr\apico}. In the vowelless analysis, this is the natural extension of the restrictions on clusters, since the syllabic consonant is analyzed as being directly adjacant to the onset, and it serves as a major point in that analysis's favor. In the schwa analysis, this behavior is described as a limited form of laminal harmony. 
+
+\setlength{\tabcolsep}{1pt}
+\begin{center}
+\phonc{\phonfeat[cl]{+&consonantal}}{\phonfeat[cl]{$\alpha$&distributed}}{\phold\phonfeat[cl]{+&consonantal\\$\alpha$&distributed}}
+\end{center}
+
+\subsection{Palatals and their Interactions}
+
+When sibilant coronals are preceded by palatals, they become palatalized into alveolopalatal sibilants. 
+
+\begin{center}
+    \phonc{\phonfeat[cl]{+&consonantal\\+&anterior\\+&strident}}{\phonfeat[cl]{+&dorsal\\+&high\\-&low\\+&front\\-&back}}{\phonfeat[cl]{+&dorsal\\+&high\\-&low\\+&front\\-&back}\phold}
+\end{center}
+
+Likewise, when palatal consonants are preceded by alveolar sibilants (including alveolopalatals), they themselves become alveolopalatal sibilants.
+
+\begin{center}
+    \phonc{\phonfeat[cl]{+&consonantal\\+&coronal\\+&dorsal\\+&front}}{\phonfeat[cl]{+&anterior\\+&strident}}{\phonfeat[cl]{+&anterior\\+&strident}\phold}
+\end{center}
+
+Palatal consonants themselves are realized as velars when they precede a non-palatal consonant. Alveolopalatals are considered palatal for these purposes. 
+
+\begin{center}
+    \phonc{\phonfeat[cl]{+&consonantal\\+&coronal\\+&dorsal\\+&front}}{\phonfeat[cl]{-&coronal}}{\phold\phonfeat[cl]{+&consonantal\\$\alpha$&dorsal\\-$\alpha$&front}}
+\end{center}
+\noindent Unlike the other changes in this section, syllabic consonants are not considered adjacent to the last consonant in the onset. So in a word like \textit{\'sas} \phipa{ç\schwa s\lamino}, while the presence of \phipa{ç} triggers realization of \phipa{s\lamino} as \bripa{\alvpalesh}, in a word like \textit{\'sa\l} \phipa{ç\schwa\latfric\lamino} the presence of \phipa{\latfric\lamino} doesn't trigger realization of \phipa{ç} as \bripa{x}.
+
+Palatals also condition a regressive sound change when they follow any consonantal phone that is neither labial nor glottal. Sibilant coronals become alveolopalatal in this context, while non-sibilant coronals and velar consonants are palatalized at their current place of articulation. This palatalization also occurs when these phones follow the vowel \phipa{i} as well.
+
+\begin{center}
+    \phonc{\phonfeat[cl]{+&consonantal\\-&labial\\-&constricted~glottis}}{\phonfeat[cl]{+&dorsal\\+&high\\-&low\\+&front\\-&back}}{\phold\phonfeat[cl]{+&dorsal\\+&high\\-&low\\+&front\\-&back}}
+\end{center}
+\noindent Palatalized coronals are all laminal, so the usual distinction between laminal and apical coronals is not maintained in environments where these phones are palatalized. This is the only aspect of these palatalization changes that is evident from the orthography, as these coronals are written using the laminal symbols---both \phipa{e\latfric\lamino ç} and \phipa{e\latfric\apico ç} would be written as \textit{e\l\'s} and realized as \bripa{e\latfric\lamino\pal ç}.
+
+\subsection{Obstruent Voicing Assimilation}
+
+\subsection{Nasals}
+
+\subsection{Sibilants and Laterals}
+
+\subsection{Changes at Vowel Hiatus}
+
+\subsection{Onsets and Codas with Syllabic Consonants}
+
+\subsection{Syllabic Consonants Before Onset-Less Syllables}
+
+\subsubsection{\phipa{\glotstop} or \bripa{\glotstop}?}
 
 \begin{enumerate}
     \item Coronal consonants persistently assimilate in laminarity to the following consonant.
@@ -316,7 +381,7 @@ Among those who don't subscribe to an analysis of Geobo\engma{} as possessing vo
 \end{enumerate}
 
 \section{Orthography}
-
+\setlength{\tabcolsep}{6pt}
 \begin{center}
 
 Coronals
