@@ -1,0 +1,197 @@
+\documentclass[a4paper,11pt,oneside,openany]{memoir}
+\usepackage{fontspec}
+\usepackage{amsmath} % a pretty standard package to enlarge your inventory of symbols
+\usepackage{amssymb} % another common package for symbols
+\usepackage[hidelinks]{hyperref} % enables hyperlinks in your document (no worries -- they show up only on the screen. When you print a hard copy, the colored boxes aren't there)
+\usepackage{url} % helps typeset URLs properly, typically with the command \url
+\usepackage[margin=.75in]{geometry} % page layout
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usepackage{wrapfig}
+\usepackage{booktabs} % creates beautiful and professional tables
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{expex}
+\usepackage{tablefootnote}
+\usepackage[calc,english]{datetime2}
+\usepackage{bookmark}
+\usepackage{blindtext}
+\usepackage{phonrule}
+
+\setmainfont{Charis SIL}[CharacterVariant=43:1]
+
+%\setlength{\parindent}{2em}
+\setlength{\parskip}{1ex}
+%\linespread{1.1}
+%---generic symbols---%
+\newcommand{\dao}{$\to$}
+\newcommand{\nm}{\symbol{"2205}}
+\newcommand{\ra}{\textgreater}
+\newcommand{\ipkt}{·}
+\newcommand{\til}{\textasciitilde}
+\newcommand{\langbr}{⟨}
+\newcommand{\rangbr}{⟩}
+
+\newcommand{\ortho}[1]{$\langle$#1$\rangle$}
+\newcommand{\bripa}[1]{[#1]}
+\newcommand{\phipa}[1]{/#1/}
+\newcommand{\eng}[1]{`#1'}
+\newcommand{\enl}[1]{«~#1~»}
+\newcommand{\proto}[1]{\textit{*#1}}
+
+%---Lang Romanization---%
+\newcommand{\ph}{φ}
+\newcommand{\te}{ϑ}
+\newcommand{\tht}{θ}
+\newcommand{\kh}{χ}
+\newcommand{\pp}{π}
+\newcommand{\ta}{τ}
+\newcommand{\kk}{κ}
+
+%---IPA---%
+%consonants
+\newcommand{\bilaf}{ɸ}
+\newcommand{\bilav}{β}
+\newcommand{\labrox}{ʋ}
+\newcommand{\latfric}{ɬ}
+\newcommand{\latfrivoic}{ɮ}
+\newcommand{\alvr}{ɹ}
+\newcommand{\alvrap}{ɾ}
+\newcommand{\alvlap}{ɺ}
+\newcommand{\esh}{ʃ}
+\newcommand{\ezh}{ʒ}
+\newcommand{\alvpalesh}{ɕ}
+\newcommand{\alvpalezh}{ʑ}
+\newcommand{\paljstop}{ɟ}
+\newcommand{\paljfric}{ʝ}
+\newcommand{\egna}{ɲ}
+\newcommand{\retesh}{ʂ}
+\newcommand{\retezh}{ʐ}
+\newcommand{\retna}{ɳ}
+\newcommand{\egh}{ɣ}
+\newcommand{\engma}{ŋ}
+\newcommand{\vell}{ʟ}
+\newcommand{\velr}{ʁ}
+\newcommand{\glotstop}{ʔ}
+%vowels
+\newcommand{\frno}{ø}
+\newcommand{\bari}{ɨ}
+\newcommand{\unru}{ɯ}
+\newcommand{\unro}{ɤ}
+\newcommand{\eps}{ɛ}
+\newcommand{\oeps}{œ}
+\newcommand{\sche}{ɘ}
+\newcommand{\schwa}{ə}
+\newcommand{\centruh}{ɜ}
+\newcommand{\opno}{ɔ}
+\newcommand{\aesh}{æ}
+\newcommand{\oesh}{ɶ}
+\newcommand{\centra}{ɐ}
+\newcommand{\ahoh}{ɒ}
+%diacritics and modifiers
+\newcommand{\asp}{ʰ}
+\newcommand{\lab}{ʷ}
+\newcommand{\pal}{ʲ}
+\newcommand{\jekt}{ʼ}
+\newcommand{\rhot}{˞}
+\newcommand{\sylb}{̩}
+\newcommand{\vless}{̥}
+\newcommand{\upvless}{̊}
+\newcommand{\retr}{̠}
+\newcommand{\lamino}{̻}
+\newcommand{\apico}{̺}
+\newcommand{\lowap}{̞}
+\newcommand{\prstr}{ˈ}
+\newcommand{\scstr}{ˌ}
+\newcommand{\tiebar}{͡}
+\newcommand{\lgth}{ː}
+
+\lingset{glstyle=nlevel,numoffset=3em,textoffset=1.5em,exskip=.75ex,belowglpreambleskip=.25ex,aboveglftskip=.25ex}
+
+\DTMnewdatestyle{eurodate}{%
+    \renewcommand{\DTMdisplaydate}[4]{%
+        \number##3.\nobreakspace%           day
+        \DTMmonthname{##2}\nobreakspace%    month
+        \number##1%                         year
+    }%
+    \renewcommand{\DTMDisplaydate}{\DTMdisplaydate}%
+}
+
+\DTMsetdatestyle{eurodate}
+
+\newlength{\drop}% for my convenience
+\newcommand*{\titleP}{\begingroup%
+%\FSfont{5bo} % FontSite Bergamo (Bembo)
+\drop = 0.12\textheight
+\vspace*{\drop}
+\begin{center}
+{\huge A Grammar of}\\[\baselineskip]
+{\HUGE\sc \lang}\par
+\end{center}
+\vspace*{3\drop}
+{\large By {\sc Bethany E. Toma}}
+\vfill
+{\today}
+\vspace*{0.5\drop}
+\endgroup}
+
+\maxsecnumdepth{subsection}
+
+\newcommand{\lang}{Enłalen}
+\newcommand{\parentlang}{Old Elvish}
+
+\begin{document}
+
+\begin{titlingpage}
+\titleP
+%\clearpage
+\end{titlingpage}
+\frontmatter
+
+\chapter{Background \& Motivation}
+\clearpage
+\tableofcontents
+
+\chapter{List of Glossing Abbreviations}
+
+\mainmatter
+
+\chapter{World \& Culture}
+
+The term `\lang{}' reportedly comes from the \parentlang{} word \proto{ʔiːnalamaːlahiːno}, a word which roughly means `a long time ago we talked like this'. This perception of the language, as some ancient thing that has endured through countless generations unchanged, is common among speakers of \lang{}. However, the language itself and the culture of its speakers has varied dramatically throughout the years, more than its speakers tend to be willing to openly acknowledge.
+
+\chapter{Phonology}
+
+\section{Modern \lang{} Phonology}
+
+\subsection{Phoneme Inventory}
+
+\subsection{Allophony \& Phonotactics}
+
+\subsection{Romanization}
+
+\section{\parentlang{} \& the \lang{} Orthography}
+
+\subsection{Phonology of \parentlang{}}
+
+\subsection{Orthographic Reform}
+
+\chapter{Morphosyntax}
+
+\section{`Parts of Speech'}
+
+\section{Nominalization}
+
+\section{Word Order \& Sentence Structure}
+
+\chapter{Semantics}
+
+\section{Definiteness \& Specificity in Nominalizers}
+
+%\part{Dictionary}
+
+%\part{Texts \& Translations}
+
+%\backmatter
+
+\end{document}
