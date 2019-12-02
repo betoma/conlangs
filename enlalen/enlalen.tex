@@ -8,6 +8,7 @@
 \usepackage{tikz}
 \usepackage{tikz-qtree}
 \usepackage{wrapfig}
+\usepackage{subcaption}
 \usepackage{booktabs} % creates beautiful and professional tables
 \usepackage{multirow}
 \usepackage{textcomp}
@@ -19,6 +20,8 @@
 \usepackage{phonrule}
 
 \setmainfont{Charis SIL}[CharacterVariant=43:1]
+\newfontfamily\libert{Linux Libertine}
+\DeclareTextFontCommand{\textlibert}{\libert}
 
 %\setlength{\parindent}{2em}
 \setlength{\parskip}{1ex}
@@ -36,13 +39,13 @@
 \newcommand{\bripa}[1]{[#1]}
 \newcommand{\phipa}[1]{/#1/}
 \newcommand{\eng}[1]{`#1'}
-\newcommand{\enl}[1]{«~#1~»}
+\newcommand{\enl}[1]{\textlibert{#1}}
+\newcommand{\enlq}[1]{«~\enl{#1}~»}
 \newcommand{\proto}[1]{\textit{*#1}}
 
 %---Lang Romanization---%
 \newcommand{\ph}{φ}
 \newcommand{\te}{ϑ}
-\newcommand{\tht}{θ}
 \newcommand{\kh}{χ}
 \newcommand{\pp}{π}
 \newcommand{\ta}{τ}
@@ -52,6 +55,7 @@
 %consonants
 \newcommand{\bilaf}{ɸ}
 \newcommand{\bilav}{β}
+\newcommand{\tht}{θ}
 \newcommand{\labrox}{ʋ}
 \newcommand{\latfric}{ɬ}
 \newcommand{\latfrivoic}{ɮ}
@@ -72,6 +76,9 @@
 \newcommand{\engma}{ŋ}
 \newcommand{\vell}{ʟ}
 \newcommand{\velr}{ʁ}
+\newcommand{\velprox}{ɰ}
+\newcommand{\uvux}{χ}
+\newcommand{\pharox}{ʕ}
 \newcommand{\glotstop}{ʔ}
 %vowels
 \newcommand{\frno}{ø}
@@ -93,11 +100,12 @@
 \newcommand{\lab}{ʷ}
 \newcommand{\pal}{ʲ}
 \newcommand{\jekt}{ʼ}
+\newcommand{\nav}{̃}
 \newcommand{\rhot}{˞}
 \newcommand{\sylb}{̩}
 \newcommand{\vless}{̥}
 \newcommand{\upvless}{̊}
-\newcommand{\retr}{̠}
+\newcommand{\bck}{̠}
 \newcommand{\lamino}{̻}
 \newcommand{\apico}{̺}
 \newcommand{\lowap}{̞}
@@ -105,6 +113,7 @@
 \newcommand{\scstr}{ˌ}
 \newcommand{\tiebar}{͡}
 \newcommand{\lgth}{ː}
+\newcommand{\linglab}{̼}
 
 \lingset{glstyle=nlevel,numoffset=3em,textoffset=1.5em,exskip=.75ex,belowglpreambleskip=.25ex,aboveglftskip=.25ex}
 
@@ -158,23 +167,94 @@
 
 \chapter{World \& Culture}
 
-The term `\lang{}' reportedly comes from the \parentlang{} word \proto{ʔiːnalamaːlahiːno}, a word which roughly means `a long time ago we talked like this'. This perception of the language, as some ancient thing that has endured through countless generations unchanged, is common among speakers of \lang{}. However, the language itself and the culture of its speakers has varied dramatically throughout the years, more than its speakers tend to be willing to openly acknowledge.
+The term `\lang{}' reportedly comes from the \parentlang{} word \proto{hiːnolamaːlaʔiːna}, a word which roughly means `a long time ago (we) talked like this'. This perception of the language, as some ancient thing that has endured through countless generations unchanged, is common among speakers of \lang{}. However, the language itself and the culture of its speakers has varied dramatically throughout the years, more than its speakers tend to be willing to openly acknowledge.
 
 \chapter{Phonology}
 
-\section{Modern \lang{} Phonology}
+\section{Modern \lang{} phonology}
 
-\subsection{Phoneme Inventory}
+\subsection{Phoneme inventory}
 
-\subsection{Allophony \& Phonotactics}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{@{}rcccc@{}}
+                    & Labial & Alveolar & Palatal &    Back    \\ \cmidrule(l){2-5}
+     Lenis Stop     &   p    &    t     &         &   k\bck    \\
+     Aspirated Stop & p\asp  &  t\asp   &         & k\bck\asp  \\
+     Ejective Stop  & p\jekt &  t\jekt  &         & k\bck\jekt \\
+     Fricative      &   f    &    s     &         &   \uvux    \\
+     Nasal          &   m    &    n     &         &            \\
+     Lateral        &        &    l     &         &   ʟ\bck    \\
+     Glide          &   w    &          &    j    &     ʕ      \\
+     Vowel          &   o    &          &    i    &     a      
+    \end{tabular}
+    \caption{\lang{} Phoneme Inventory}
+    \label{tab:phon-inv}
+\end{table}
+
+\subsection{Allophony \& phonotactics}
+
+\begin{itemize}
+    \item Vowels \phipa{i, o, a} become nasal \bripa{e\nav, o\nav, a\nav} when they precede a nasal
+    \item Front vowels and semivowels \bripa{i, e\nav, j} become central \bripa{\bari, \sche\nav, \velprox} before dorsal sonorants \bripa{\vell\bck, w, \pharox, a} and after dorsal obstruents \bripa{k\bck, k\bck\asp, k\bck\jekt, \uvux}
+    \item Back vowel \bripa{o} becomes central \bripa{\sche} before \bripa{j, i}
+    \item Mid, non-front vowels \bripa{\sche, \sche\nav, o, o\nav} become high \bripa{\bari, \bari\nav, u, u\nav} after a high semivowel \bripa{j, w, \velprox}
+    \item Mid vowels \bripa{o, o\nav, e\nav, \sche, \sche\nav} become low lax \bripa{\ahoh, \ahoh\nav, æ\nav, a, a\nav}
+    \item Aspirated stops \phipa{p\asp, t\asp, k\bck\asp} become unaspirated \bripa{p, t, k\bck} before a nasal vowel.
+    \item Nasal and lateral consonants \phipa{m, n, l, \vell\bck} assimilate in place-of-articulation to a following obstruent -- before labials, \phipa{l} becomes \bripa{l\linglab} and \phipa{\vell\bck} remains \bripa{\vell\bck}.
+    \item \phipa{lw, \vell w} become \bripa{\alvr\lab, \velr\lab}.
+    \item Fricatives \phipa{f, s, \uvux} are voiced \bripa{v, z, \velr} intervocalically and when following a voiced consonant.
+    \item Unaspirated stops \phipa{p, t, k\bck} are voiced \bripa{b, d, g} intervocalically.
+    \item Aspirated stops \phipa{p\asp, t\asp, k\bck\asp} become voiceless fricatives \bripa{f, \tht\bck, \uvux} intervocalically 
+    \item Ejectives \phipa{p\jekt, t\jekt, k\bck\jekt} become unaspirated voiceless stops \bripa{p, t, k\bck} intervocalically 
+\end{itemize}
 
 \subsection{Romanization}
 
-\section{\parentlang{} \& the \lang{} Orthography}
+The `romanization' of \lang{} is a near-phonemic representation, with the exception of using \ortho{e} to represent \phipa{i} when it occurs before a nasal (where it is allophonically lowered).
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{@{}ccccccccccccccccccccccc@{}}
+        p & t & k\bck & p\asp & t\asp & k\bck\asp & p\jekt & t\jekt & k\bck\jekt & f & s & \uvux & m & n & l & \vell\bck & w & j & \pharox & o & i & a & \bripa{e\nav} \\
+        \enl{p} & \enl{t} & \enl{k} & \enl{\ph} & \enl{\te} & \enl{\kh} & \enl{\pp} & \enl{\ta} & \enl{\kk} & \enl{f} & \enl{s} & \enl{h} & \enl{m} & \enl{n} & \enl{l} & \enl{ł} & \enl{w} & \enl{y} & \enl{q} & \enl{o} & \enl{i} & \enl{a} & \enl{e}
+    \end{tabular}
+\end{table}
+
+\section{\parentlang{} \& the \lang{} orthography}
 
 \subsection{Phonology of \parentlang{}}
 
-\subsection{Orthographic Reform}
+\begin{table}[ht]
+    \begin{minipage}[b]{.55\linewidth}
+    \centering
+    \begin{tabular}{@{}rcccc@{}}
+                  & Labial & Alveolar & Dorsal & Glottal  \\
+        Stops     &   p    &    t     &   k    & \glotstop \\
+        Non-Stops &   m    &   n  l   &        &    h      
+    \end{tabular}
+    \subcaption{Consonants}\label{tab:oldlang_cons}
+    \end{minipage}
+    \begin{minipage}[b]{.4\linewidth}
+    \centering
+    \begin{tabular}{@{}rcc@{}}
+             &  Front   &   Back   \\
+        High & i i\lgth & o o\lgth \\
+        Low  & \multicolumn{2}{c}{a a\lgth}
+    \end{tabular}
+    \subcaption{Vowels}\label{tab:oldlang_vow}
+    \end{minipage}
+    \caption{\parentlang{} Phoneme Inventory}
+    \label{tab:oldlang_phon}
+\end{table}
+
+\subsection{Sound changes and their effects on the orthography}
+
+\begin{itemize}
+    \item 
+\end{itemize}
+
+\subsection{Orthographic reform}
 
 \chapter{Morphosyntax}
 
@@ -182,11 +262,11 @@ The term `\lang{}' reportedly comes from the \parentlang{} word \proto{ʔiːnala
 
 \section{Nominalization}
 
-\section{Word Order \& Sentence Structure}
+\section{Word order \& sentence structure}
 
 \chapter{Semantics}
 
-\section{Definiteness \& Specificity in Nominalizers}
+\section{Definiteness \& specificity in nominalizers}
 
 %\part{Dictionary}
 
