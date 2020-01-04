@@ -19,8 +19,9 @@
 \usepackage{blindtext}
 \usepackage{phonrule}
 
-\setmainfont{Charis SIL}[CharacterVariant=43:1]
-\newfontfamily\libert{Linux Libertine}
+\setmainfont{Brill}
+%\setmainfont{Charis SIL}[CharacterVariant=43:1]
+\newfontfamily\libert{Libertinus Serif}
 \DeclareTextFontCommand{\textlibert}{\libert}
 
 %\setlength{\parindent}{2em}
@@ -39,8 +40,8 @@
 \newcommand{\bripa}[1]{[#1]}
 \newcommand{\phipa}[1]{/#1/}
 \newcommand{\eng}[1]{`#1'}
-\newcommand{\enl}[1]{\textlibert{#1}}
-\newcommand{\enlq}[1]{«~\enl{#1}~»}
+\newcommand{\enl}[1]{\textlibert{\small#1}}
+\newcommand{\enlq}[1]{\enl{«~#1»}}
 \newcommand{\proto}[1]{\textit{*#1}}
 
 %---Lang Romanization---%
@@ -220,6 +221,8 @@ The `romanization' of \lang{} is a near-phonemic representation, with the except
         \enl{p} & \enl{t} & \enl{k} & \enl{\ph} & \enl{\te} & \enl{\kh} & \enl{\pp} & \enl{\ta} & \enl{\kk} & \enl{f} & \enl{s} & \enl{h} & \enl{m} & \enl{n} & \enl{l} & \enl{ł} & \enl{w} & \enl{y} & \enl{q} & \enl{o} & \enl{i} & \enl{a} & \enl{e}
     \end{tabular}
 \end{table}
+
+blablabla \enlq{balakana\kh an en olipa\l ika\ta o i\pp anoli ka\ph enpan en\te ilpati a\kk iten } blabla 
 
 \section{\parentlang{} \& the \lang{} orthography}
 
