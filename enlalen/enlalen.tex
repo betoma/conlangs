@@ -10,11 +10,15 @@
 \usepackage{wrapfig}
 \usepackage{subcaption}
 \usepackage{booktabs} % creates beautiful and professional tables
+\usepackage{multicol}
 \usepackage{multirow}
 \usepackage{textcomp}
 \usepackage{expex}
+\usepackage{enumitem}
 \usepackage{tablefootnote}
 \usepackage[calc,english]{datetime2}
+\usepackage{suffix}
+\usepackage{afterpage}
 \usepackage{bookmark}
 \usepackage{blindtext}
 \usepackage{phonrule}
@@ -145,6 +149,55 @@
 \vspace*{0.5\drop}
 \endgroup}
 
+%-----DICT COMMANDS------
+%------------------------
+
+\makeatletter
+\@beginparpenalty=10000
+\makeatother
+
+\newcounter{dictwordcount}
+\newcounter{definition}
+
+\newenvironment{dictroot}[1]%
+    {%
+    \subsection{#1}
+    \begin{description}[leftmargin=*]
+    }{%
+    \end{description}
+    }%
+
+\newcommand{\dictsubtitle}[1]{%
+    \end{description}
+    \subsubsection*{#1}
+    \begin{description}[leftmargin=*]
+}%
+
+\newenvironment{dictentry}[2]%
+    {%
+    \item[\textit{\enl{#1}}] $\bullet$ \textit{#2}\hfill
+    \setcounter{definition}{0}%
+    \refstepcounter{dictwordcount}%
+    \begin{description}[align=right,labelwidth=*,font=\normalfont]
+    }{%
+    \end{description}
+    }%
+
+\newcommand{\dictdef}[1]{\refstepcounter{definition}%
+\item[\thedefinition.] #1
+}%
+
+\WithSuffix\newcommand\dictdef*[1]{%
+    \item[] #1
+}
+
+\newcommand{\newentry}[2]{%
+\item[#1] $\bullet$ \textit{#2}\hfill
+}%
+
+%----------------------------
+%----------------------------
+
 \maxsecnumdepth{subsection}
 
 \newcommand{\lang}{Enłalen}
@@ -166,9 +219,11 @@
 
 \mainmatter
 
+\part{Grammar}
+
 \chapter{World \& Culture}
 
-The term `\lang{}' reportedly comes from the \parentlang{} word \proto{hiːnolamaːlaʔiːna}, a word which roughly means `a long time ago (we) talked like this'. This perception of the language, as some ancient thing that has endured through countless generations unchanged, is common among speakers of \lang{}. However, the language itself and the culture of its speakers has varied dramatically throughout the years, more than its speakers tend to be willing to openly acknowledge.
+The word `\lang{}' reportedly comes from the \parentlang{} word \proto{hiːnolamaːlaʔiːna}, a word which roughly means `a long time ago (we) talked like this'. This perception of the language, as some ancient thing that has endured through countless generations unchanged, is common among speakers of \lang{}. However, the language itself and the culture of its speakers has varied dramatically throughout the years, more than its speakers tend to be willing to openly acknowledge.
 
 \chapter{Phonology}
 
@@ -271,9 +326,11 @@ blablabla \enlq{balakana\kh an en olipa\l ika\ta o i\pp anoli ka\ph enpan en\te 
 
 \section{Definiteness \& specificity in nominalizers}
 
-%\part{Dictionary}
+\part{Dictionary}
 
-%\part{Texts \& Translations}
+\include{dictionary}
+
+\part{Texts \& Translations}
 
 %\backmatter
 
