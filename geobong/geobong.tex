@@ -8,12 +8,17 @@
 \usepackage{tikz}
 \usepackage{tikz-qtree}
 \usepackage{wrapfig}
+\usepackage{subcaption}
 \usepackage{booktabs} % creates beautiful and professional tables
+\usepackage{multicol}
 \usepackage{multirow}
 \usepackage{textcomp}
 \usepackage{expex}
+\usepackage{enumitem}
 \usepackage{tablefootnote}
 \usepackage[calc,english]{datetime2}
+\usepackage{suffix}
+\usepackage{afterpage}
 \usepackage{bookmark}
 \usepackage{blindtext}
 \usepackage{phonrule}
@@ -132,6 +137,41 @@
 
 \DTMsetdatestyle{eurodate}
 
+%-----DICT COMMANDS------
+%------------------------
+
+\makeatletter
+\@beginparpenalty=10000
+\makeatother
+
+\newcounter{dictwordcount}
+\newcounter{definition}
+
+\newenvironment{dictentry}[2]%
+    {%
+    \item[#1]\:\bripa{#2}\hfill
+    \setcounter{definition}{0}%
+    \refstepcounter{dictwordcount}%
+    \begin{description}[align=right,labelwidth=*,font=\normalfont]
+    }{%
+    \end{description}
+    }%
+
+\newcommand{\dictdef}[2]{\refstepcounter{definition}%
+\item[\thedefinition.] \textit{#1} $\bullet$ #2
+}%
+
+\WithSuffix\newcommand\dictdef*[2]{%
+    \item[] $\text{\textit{#1}}\;\bullet\;$#2
+}
+
+\newcommand{\newentry}[2]{%
+\item[#1] $\bullet$ \textit{#2}\hfill
+}%
+
+%----------------------------
+%----------------------------
+
 \newlength{\drop}% for my convenience
 \newcommand*{\titleP}{\begingroup%
 %\FSfont{5bo} % FontSite Bergamo (Bembo)
@@ -150,6 +190,8 @@
 
 \maxsecnumdepth{subsection}
 
+\setlength{\columnsep}{2em}
+
 \begin{document}
 
 \begin{titlingpage}
@@ -157,6 +199,8 @@
 %\clearpage
 \end{titlingpage}
 \frontmatter
+
+\pagestyle{headings}
 
 \chapter{Background \& Motivation}
 
@@ -172,6 +216,8 @@ This language is intended to have some deliberately weird elements yet still ret
 To-do.
 
 \mainmatter
+
+\part{Grammar}
 
 \chapter{Phonology}
 
@@ -1574,5 +1620,14 @@ hu\l[:-{(}]
 \textit{Hu\l} is also used as an equivalent for `yes' when the speaker wants to express a negative attitude toward their agreement.
 
 %\subsubsection{Desiderative---\textit{oc}}
+
+\part{Dictionary}
+
+\pagestyle{headings}
+\nouppercaseheads
+
+\include{dictionary}
+
+\part{Sample Texts \& Translations}
 
 \end{document}
