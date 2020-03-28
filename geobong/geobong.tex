@@ -459,19 +459,47 @@ Vowels
 
 \chapter{Syntax}
 
-\section{Animacy}
+\section{Noun Classes}
 
-Geobo{\engma} has six noun classes. Which class a noun belongs to is based almost entirely on the lexical animacy of the noun in question. These classes form an animacy hierarchy. In Geobo{\engma}'s parent language (known as \textit{Cokizbo\engma}, lit. `finish language', to the goblins) this animacy hierarchy was fairly central to much of the morphosyntax, as it was a direct-inverse language. Modern Geobo{\engma} only shows remnants of this hierarchy in the verbal morphology, but the six third-person noun classes are still very fundamentally present in the language's morphosyntax.
+Geobo{\engma} has six noun classes. The assignment of nouns to a particular noun class is largely semantic, and the descriptions of these classes is as follows
+
+\paragraph{Class I: Dominant Forces}
+
+This class contains anything that is `animate' and so much more powerful than a goblin that an individual goblin can't do much but annoy it at best. This includes natural forces like celestial bodies, weather events, fire, explosions, etc., but also non-goblin humanoids, mythical beasts, particularly enormous or unfamiliar predators, massive moving structures like ships, and later particularly powerful weapons such as cannons. This class could also be described as `dangerous things,' but given the goblin notion of danger, the label `dominant' is a bit easier for most to parse
+
+\paragraph{Class II: Goblins}
+
+This class is pretty self-explanatory---it includes goblins, parts of goblins, and anything else sufficiently intelligent and goblin-like to be considered a person by goblins. This generally does not include so-called `tall people,' who usually fall in Class I, but goblins have been heard referring to elf or human children who are old enough to talk and communicate but young enough to not pose a threat using this class.
+
+\paragraph{Class III: Animals}
+
+This class includes all non-intelligent animals, as well as any parts thereof. This includes parts of a dead animal's body that are being used for things---for instance, a pelt or a piece of meat.
+
+\paragraph{Class IV: Quasi-animate/Useful Things}
+
+This class contains things that aren't considered `alive' per se, but which are more alive than things considered inanimate by nature of being made by intelligent/living creatures, or by otherwise being useful or consumable. Plants are in this class, but not all parts thereof are---the usefulness or quasi-livingness of the individual part is taken into account.
+
+\paragraph{Class V: Inanimate Objects}
+
+This class contains the remainder of all inanimate objects---anything that's part of the physical world but not animate-esque enough to get into Class IV falls here.
+
+\paragraph{Class VI: Abstract Concepts}
+
+This class is generally limited to words formed through particular grammatical operations, such as nominalized verbs and other such matters. Some things traditionally considered abstract concepts, like `chaos,' are notably not in this class, but generally speaking this class captures most things that can't be said to have a physical form.
+
+\subsection{Animacy Hierarchy}
+
+Geobo{\engma}'s parent language (known as \textit{Cokizbo\engma}, lit. `finish language', to the goblins) was a direct-inverse language, and as such had an animacy hierarchy among what are now the noun classes. Modern Geobo{\engma} only shows remnants of this hierarchy in the verbal morphology.
 
 \begin{table}[h]
     \centering
     \begin{tabular}{@{}rl@{}}
     \toprule
 0 & 1st \& 2nd Person \\
-1 & Natural Forces \\
-2 & Non-Goblin Intelligent Creatures \\
-3 & Goblins \\
-4 & Living Animals \\
+1 & Dominant Forces \\
+2 & Goblins \\
+3 & Animals \\
+4 & Quasi-animate/Useful Things \\
 5 & Inanimate Objects \\
 6 & Abstract Concepts \\
 \bottomrule
@@ -480,71 +508,51 @@ Geobo{\engma} has six noun classes. Which class a noun belongs to is based almos
     \label{tab:anim}
 \end{table}
 
-As one of the few relics of the animacy hierarchy, there are different morphemes for verbal negation depending on the noun classes of the subject and object. If the subject is equal to or higher on the animacy hierarchy than the object, the affix \textit{-(o)keo-} is placed directly after the root. If the subject is lower on the animacy hierarchy than the object, the affix \textit{-og\'z(u)-} is used instead. 
 
-\pex
-\a
-\begingl
-Geob[goblin] 
-te\vd[1]
-bol[strike]@
--keo[-{\sc neg.dir}]@
--g[-{\sc >3.gob}]
-\glft `I didn't hit a goblin.'
-\endgl
-\a
-\begingl
-Geob[goblin] 
-te\vd[1]
-bol[strike]@
--og\'z[-{\sc neg.inv}]@
--e\vd[-{\sc >1}]
-\glft `A goblin didn't hit me.'
-\endgl
-\xe
+\subsection{Verbal Agreement}
 
-\section{Verbal Morphology}
-
-Verbs in Geobo{\engma} are suffixed with a marker for person and animacy. These markers originate from pronouns that used to be placed after the verb and thus resemble reduced forms of those pronouns. 
+Verbs in Geoboŋ are marked with a suffix that agrees with the syntactic object in person/noun class. These markers originate from pronouns that used to be placed after the verb and thus resemble reduced forms of those pronouns. 
 
 \begin{table}[ht]
     \centering
     \begin{tabular}{@{}rcccccccc@{}}
 \toprule
- & 1st & 2nd & {\sc nt-frc} & {\sc ng-int} & {\sc gob} & {\sc animl} & {\sc inan} & {\sc abstr} \\ \midrule
-Suffix\tablefootnote{When multiple suffixes are listed, the former is used when the suffix follows a non-syllabic consonant and the latter when it follows a syllabic consonant or vowel unless otherwise indicated} & \textit{-e\vd, -\vd} & \textit{-ar, -r} & \textit{-a\vn, -\vn} & \textit{-meu} & \textit{-eog, -g}\tablefootnote{If the latter suffix is used following a front vowel, that vowel is backed.} & \textit{-\vs u} & \textit{-im, -m}\tablefootnote{If the latter suffix is used following a back vowel, that vowel is fronted. Fronting of rounded vowels is allophonic and not reflected orthographically.} & \textit{-es, -s}\tablefootnote{Unlike the other listed suffixes, for the abstract noun class the latter vowelless allomorph is only used following a true vowel, and the former suffix is used following a syllabic consonant.}  \\
-Pronoun & \textit{te\vd} & \textit{kar} & \textit{teu\vn} & \textit{ameu} & \textit{eog} & \textit{\vs u} & \textit{him} & \textit{es} \\
-Reflexive\tablefootnote{Perhaps abnormally, reflexive forms for pronouns are used as subject pronouns rather than object pronouns} & \textit{tete\vd} & \textit{karkar} & \textit{teudteu\vn} & \textit{meum} & \textit{geog} & \textit{\vs u\vs} & \textit{himim} & \textit{ses} \\ \bottomrule
+ & 1st & 2nd & \textsc{dom} & \textsc{gob} & \textsc{anim} & \textsc{quas} & \textsc{inan} & \textsc{abst} \\ \midrule
+Suffix\tablefootnote{When multiple suffixes are listed, the former is used when the suffix follows a non-syllabic consonant and the latter when it follows a syllabic consonant or vowel unless otherwise indicated} & \textit{-e\vd, -\vd} & \textit{-ar, -r} & \textit{-meu} & \textit{-eog, -g}\tablefootnote{If the latter suffix is used following a front vowel, that vowel is backed.} & \textit{-\vs u} & \textit{-a\vn, -\vn} & \textit{-im, -m}\tablefootnote{If the latter suffix is used following a back vowel, that vowel is fronted. Fronting of rounded vowels is allophonic and not reflected orthographically.} & \textit{-es, -s}\tablefootnote{Unlike the other listed suffixes, for the abstract noun class the latter vowelless allomorph is only used following a true vowel, and the former suffix is used following a syllabic consonant.}  \\
+Pronoun & \textit{te\vd} & \textit{kar} & \textit{ameu} & \textit{eog} & \textit{\vs u} & \textit{\vn o\vn} & \textit{him} & \textit{es} \\
+Reflexive & \textit{tete\vd} & \textit{karkar} & \textit{meum} & \textit{geog} & \textit{\vs u\vs} & \textit{\vn o\vn a\vn} & \textit{hiŋim} & \textit{ses} \\ \bottomrule
 \end{tabular}
     \caption{Person/Animacy Markers}
     \label{tab:my_label}
 \end{table}
 
-These markers agree in person and animacy with the syntactic \emph{object} rather than the subject---that is, the more patientlike P argument rather than the more agentlike A argument (though the semantic roles these syntactic roles fill can obviously vary significantly depending on both the verb in question and the context). 
+These markers agree in person and animacy with the syntactic \emph{object} rather than the subject---that is, generally the more patientlike P argument rather than the more agentlike A argument (though the semantic roles these syntactic roles fill can obviously vary significantly depending on both the verb in question and the context). The reflexive pronouns shown here occur in the subject position, never in the object position, when the subject and object are the same entity.
 
 If both the subject and object are of the same noun class and it is thus ambiguous which entity in the sentence the agreement marking is referring to, the appropriate standalone pronoun can be placed directly after the subject. However, this is only done if the sentence would be obviously ambiguous otherwise.
 
 \ex
 \begingl
 A\l k[dog]
-\vs u[{\sc 3.animl}]
+\vs u[\sc 3.anim]
 de{\vz}[cat]
 bo\vl[strike]@
--\vs u[-{\sc >3.animl}]
+-\vs u[\sc ->3.anim]
 \glft `The dog hit the cat.'
 \endgl
 \xe
 
-Agreement with the syntactic P argument naturally leads to the question of what (if any) markings verbs take if the verb is intransitive. The simple answer is that Geobo{\engma} lacks true syntactic intransitives entirely. Rather, several different constructions are used as workarounds so that otherwise transitive Geobo{\engma} verbs can express typically-intransitive meanings.
+\section{Verbs \& Transitivity}
+
+Agreement with the syntactic P argument naturally leads to the question of what (if any) markings verbs take if the verb is intransitive. The simple answer is that Geoboŋ lacks true syntactic intransitives entirely. Rather, several different constructions are used as workarounds so that otherwise transitive Geoboŋ verbs can express typically-intransitive meanings.
 
 For verbs in which the single argument does not initiate or is not actively responsible for the action of the verb, the most common solution is to use the abstract pronoun \textit{es} as a dummy subject, similar to how English would use `there' or `it' in certain types of clauses. 
 
 \ex 
 \begingl
 Geob[goblin]
-es[3.{\sc abstr}] 
+es[\sc 3.abst] 
 \l emp[trip]@
--eog[-{\sc >3.gob}]
+-eog[\sc ->3.gob]
 \glft `The goblin trips.' (lit., `It trips the goblin.')
 \endgl
 \xe
@@ -554,9 +562,9 @@ There does not have to be an unspoken agent or cause of the action described by 
 \ex
 \begingl
 Beu[berry]
-es[{\sc 3.abstr}]
+es[\sc 3.abst]
 ka\l[red]@
--im[-{\sc >3.inan}]
+-a\vn[\sc ->3.quas]
 \glft `The berry is red.' (lit., `It reddens the berry.')
 \endgl
 \xe
@@ -567,32 +575,32 @@ Many verbs, particularly those of position and motion, contrast this dummy-subje
 \a
 \begingl
 Geob[goblin]
-es[{\sc 3.abstr}]
+es[\sc 3.abst]
 ot[sit]@
--eog[-{\sc >3.gob}]
+-eog[\sc ->3.gob]
 \glft `The goblin is sitting.' (lit., `It seats the goblin.')
 \endgl
 \a
 \begingl
 Geob[goblin]
-geog[{\sc 3.gob.refl}]
+geog[\sc 3.gob.refl]
 ot[sit]@
--eog[-{\sc >3.gob}]
+-eog[\sc ->3.gob]
 \glft `The goblin sits down.' (lit., `Himself seats the goblin.')
 \endgl
 \xe
 
 As evidenced by the use of the dummy-subject strategy for a verb like `to sit', it doesn't take much for an argument to be considered sufficiently un-agent-like for that strategy. Indeed, only the most prototypical agents are not captured by this strategy.
 
-For would-be intransitive verbs where the argument explicitly represents an agent, there is yet another strategy. One can nominalize the main verb adding the suffix \textit{-stu} to the root, and then treat this nominalized verb as the object of the verb \textit{\'se} `to do, to make'.
+For would-be intransitive verbs where the argument explicitly represents an agent (known as unergative verbs in English grammar), there is yet another strategy. One can nominalize the main verb adding the nominalizing suffix \textit{-stu} to the root, and then treat this nominalized verb as the object of the verb \textit{\'se} `to do, to make'.
 
 \ex
 \begingl
 \vR im[run]@
--stu[-{\sc nmz}]
+-stu[\sc -nmz]
 geob[goblin]
 \'se[do]@
--s[-{\sc >3.abstr}]
+-s[\sc ->3.abst]
 \glft  `The goblin is running.' (lit., `The goblin does running.')
 \endgl
 \xe
@@ -602,9 +610,9 @@ For certain motion verbs, both the nominalization and reflexive strategies are b
 \ex
 \begingl
 Geob[goblin]
-geog[{\sc 3.gob.refl}]
+geog[\sc 3.gob.refl]
 \vr im[run]@
--eog[-{\sc >3.gob}]
+-eog[\sc ->3.gob]
 \glft `The goblin gets himself running.'
 \endgl
 \xe
@@ -613,9 +621,9 @@ The reflexive strategy is not necessarily appropriate for all would-be intransit
 
 \ex
 \begingl
-Karkar[{\sc 2.refl}]
+Karkar[\sc 2.refl]
 bol[strike]@
--ar[-{\sc >2}]
+-ar[\sc ->2]
 \glft  `You're hitting yourself.' (\emph{not} `You're getting yourself to hit things.')
 \endgl
 \xe
@@ -628,8 +636,8 @@ As Geobo{\engma} is head-marking, in a possession scenario it is the possessed n
 \begingl
 \vN u\'noh[elf]
 meo[mother]@
--\l[-{\sc poss}]@
--meu[-{\sc 3.ngint}]
+-\l[\sc -poss]@
+-meu[\sc -3.dom]
 \glft  `The elf's mother'
 \endgl
 \xe
@@ -640,8 +648,8 @@ This syntactic structure is also used more broadly, however, for quantification.
 \begingl
 \vD eo\'s[tree]
 eu\'s[all]@
--a\l[-{\sc poss}]@
--m[-{\sc 3.inan}]
+-a\dbl[\sc -poss]@
+-\vn[\sc -3.quas]
 \glft `all of the trees' (lit., `the tree's everything')
 \endgl
 \xe
@@ -652,8 +660,8 @@ This is not limited to more ambiguous quantifiers---it is used for numbers as we
 \begingl
 \vD eo\'s[tree]
 zlic[three]@
--a\l[-{\sc poss}]@
--m[-{\sc 3.inan}]
+-a\dbl[\sc -poss]@
+-\vn[\sc -3.quas]
 \glft `three trees' (lit., `the tree's three')
 \endgl
 \xe
@@ -665,13 +673,13 @@ To quantify over verbs (i.e., to say something happened `twice' or `many times')
 \ex
 \begingl
 \vR im[run]@
--stu[-{\sc nmz}]
+-stu[\sc -nmz]
 kle[two]@
--\l[-{\sc poss}]@
--es[-{\sc 3.abstr}]
+-\l[\sc -poss]@
+-es[\sc -3.abst]
 te{\vd}[1]
 \'se[do]@
--s[-{\sc >3.abstr}]
+-s[\sc ->3.abst]
 \glft `I ran twice.' (lit., `I did two running.')
 \endgl
 \xe
@@ -684,25 +692,25 @@ Distinguishing between whether a quantifier on the object semantically indicates
 \vD er\engma[different]
 \vs\vr eo\vd[eel]
 kle[two]@
--\l[-{\sc poss}]@
--im[-{\sc 3.inan}]
+-\dbl[-{\sc poss}]@
+-\vs u[\sc -3.anim]
 te\vd[1]
 \vr u[cook]@
--m[-{\sc >3.inan}]
+-\vs u[\sc ->3.anim]
 \glft `I cooked two different eels.'
 \endgl
 \a
 \begingl
 \vS\vr eo\vd[eel]
 da\'n[one]@
--a\l[-{\sc poss}]@
--m[-{\sc 3.inan}]
+-a\l[\sc -poss]@
+-\vs u[\sc -3.anim]
 kle[two]@
--\l[-{\sc poss}]@
--es[-{\sc 3.abstr}]
+-\l[\sc -poss]@
+-es[\sc -3.abst]
 te\vd[1]
 \vr u[cook]@
--m[{\sc ->3.inan}]
+-\vs u[\sc ->3.anim]
 \glft `I cooked one eel twice.'
 \endgl
 \xe
@@ -714,8 +722,8 @@ Postpositions follow their nouns and inflect to agree with their objects. Their 
 \ex
 \begingl
 \vT\'ne{\vl}[stick]
-\vc o[{\sc ins}]@
--m[-{\sc 3.inan}]
+\vc o[\sc ins]@
+-m[\sc -3.inan]
 \glft `with a stick'
 \endgl
 \xe
@@ -724,12 +732,12 @@ If the postposition would only be preceded by a pronoun, it can be omitted and t
 
 \ex 
 \begingl 
-\Engma i[away.from]@
+Ŋi[away.from]@
 -\vd[-1]
 \vn u\'noh[elf]
-meum[{\sc 3.ngint.refl}]
+meum[\sc 3.dom.refl]
 \vr im[run]@
--eu[-{\sc >3.ngint}]
+-eu[\sc ->3.dom]
 \glft `The elf ran away from me.'
 \endgl
 \xe
@@ -740,26 +748,26 @@ In addition to traditional postpositions, Geobo{\engma} demonstratives are also 
 \a
 \begingl
 \Engma u{\vz}[fish]
-u\vd[{\sc med}]@
--im[-{\sc 3.inan}]
+u\vt[\sc med]@
+-\vs u[\sc -3.anim]
 kar[2]
 bo\vs[eat]@
--im[-{\sc >3.inan}]
+-\vs u[\sc ->3.anim]
 \glft `You ate that fish.'
 \endgl
 \a 
 \begingl 
 \Engma u\vz[fish]
-\vc o[{\sc ins}]@
--m[-{\sc 3.inan}]
+\vc o[\sc ins]@
+-\vs u[\sc -3.anim]
 kar[2]
 bol[strike]@
--e\vd[-{\sc >1}]
+-e\vd[\sc ->1]
 \glft `You hit me with a fish.'
 \endgl
-\a \ljudge* \textit{\Engma u{\vz} u\vd im \vc om kar bole\vd} \\
+\a \ljudge* \textit{\Engma u{\vz} u\vt\vs u \vc o\vs u kar bole\vd} \\
 (Intended: `You hit me with that fish.')
-\a \ljudge* \textit{\Engma u{\vz} \vc om u\vd im kar bole\vd} \\
+\a \ljudge* \textit{\Engma u{\vz} \vc o\vs u u\vt\vs u kar bole\vd} \\
 (Intended: `You hit me with that fish.')
 \xe
 
@@ -772,14 +780,14 @@ Geobo{\engma} is secundative, so for inherently ditransitive verbs like \textit{
 \ex
 \begingl
 Meo[mother]@
--\l[-{\sc poss}]@
--e{\vd}[-{\sc 1}]
+-\l[\sc -poss]@
+-e{\vd}[\sc -1]
 geob[goblin]
 de{\vz}[cat]
-\vc o[{\sc ins}]@
--\vs u[-{\sc 3.animl}]
+\vc o[\sc ins]@
+-\vs u[\sc -3.anim]
 \'cneu[give]@
--meu[-{\sc >3.ngint}]
+-meu[\sc ->3.dom]
 \glft `The goblin gave my mother a cat.'
 \endgl
 \xe
@@ -789,12 +797,12 @@ Benefactive ditransitives can be derived from many verbs that are not inherently
 \ex
 \begingl
 Meo[mother]@
--\l[-{\sc poss}]@
+-\l[\sc -poss]@
 -ar[-2]
 te{\vd}[1]
 \vs\vr eo{\vd}[eel]
-\vc o[{\sc ins}]@
--m[-{\sc 3.inan}] 
+\vc o[\sc ins]@
+-\vs u[\sc -3.anim] 
 \vr u[cook]@
 -keo[-{\sc neg.dir}]@
 -tu[-{\sc ben}]@
@@ -808,13 +816,13 @@ Since the theme is optional in these `ditransitives', this is also an effective 
 \ex
 \begingl
 Meo[mother]@
--\l[-{\sc poss}]@
--eog[-{\sc 3.gob}]
+-\l[\sc -poss]@
+-eog[\sc -3.gob]
 \vS krik[Skreek]
-eog[{\sc 3.gob}]
+eog[\sc 3.gob]
 de\vn\vr e[sing]@
--tu[-{\sc ben}]@
--g[-{\sc >3.gob}]
+-tu[\sc -ben]@
+-g[\sc ->3.gob]
 \glft `Skreek sings for his mother.'
 \endgl
 \xe
@@ -1631,3 +1639,26 @@ hu\l[:-{(}]
 \part{Sample Texts \& Translations}
 
 \end{document}
+
+As one of the few relics of the animacy hierarchy, there are different morphemes for verbal negation depending on the noun classes of the subject and object. If the subject is equal to or higher on the animacy hierarchy than the object, the affix \textit{-(o)keo-} is placed directly after the root. If the subject is lower on the animacy hierarchy than the object, the affix \textit{-og\'z(u)-} is used instead. 
+
+\pex
+\a
+\begingl
+Geob[goblin] 
+te\vd[1]
+bol[strike]@
+-keo[-{\sc neg.dir}]@
+-g[-{\sc >3.gob}]
+\glft `I didn't hit a goblin.'
+\endgl
+\a
+\begingl
+Geob[goblin] 
+te\vd[1]
+bol[strike]@
+-og\'z[-{\sc neg.inv}]@
+-e\vd[-{\sc >1}]
+\glft `A goblin didn't hit me.'
+\endgl
+\xe
