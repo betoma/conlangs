@@ -15,7 +15,7 @@
 \usepackage{textcomp}
 \usepackage{expex}
 \usepackage{enumitem}
-\usepackage{tablefootnote}
+\usepackage{threeparttable}
 \usepackage[calc,english]{datetime2}
 \usepackage{suffix}
 \usepackage{afterpage}
@@ -489,7 +489,7 @@ This class is generally limited to words formed through particular grammatical o
 
 \subsection{Animacy Hierarchy}
 
-Geobo{\engma}'s parent language (known as \textit{Cokizbo\engma}, lit. `finish language', to the goblins) was a direct-inverse language, and as such had an animacy hierarchy among what are now the noun classes. Modern Geobo{\engma} only shows remnants of this hierarchy in the verbal morphology.
+Geobo{\engma}'s parent language (known as \textit{Cokizbo\engma}, lit. `finished language', to the goblins) was a direct-inverse language, and as such had an animacy hierarchy among what are now the noun classes. Modern Geobo{\engma} only shows remnants of this hierarchy in the verbal morphology.
 
 \begin{table}[h]
     \centering
@@ -515,13 +515,21 @@ Verbs in Geoboŋ are marked with a suffix that agrees with the syntactic object 
 
 \begin{table}[ht]
     \centering
+    \begin{threeparttable}
     \begin{tabular}{@{}rcccccccc@{}}
 \toprule
  & 1st & 2nd & \textsc{dom} & \textsc{gob} & \textsc{anim} & \textsc{quas} & \textsc{inan} & \textsc{abst} \\ \midrule
-Suffix\tablefootnote{When multiple suffixes are listed, the former is used when the suffix follows a non-syllabic consonant and the latter when it follows a syllabic consonant or vowel unless otherwise indicated} & \textit{-e\vd, -\vd} & \textit{-ar, -r} & \textit{-meu} & \textit{-eog, -g}\tablefootnote{If the latter suffix is used following a front vowel, that vowel is backed.} & \textit{-\vs u} & \textit{-a\vn, -\vn} & \textit{-im, -m}\tablefootnote{If the latter suffix is used following a back vowel, that vowel is fronted. Fronting of rounded vowels is allophonic and not reflected orthographically.} & \textit{-es, -s}\tablefootnote{Unlike the other listed suffixes, for the abstract noun class the latter vowelless allomorph is only used following a true vowel, and the former suffix is used following a syllabic consonant.}  \\
+Suffix\tnote{1} & \textit{-e\vd, -\vd} & \textit{-ar, -r} & \textit{-meu} & \textit{-eog, -g}\tnote{2} & \textit{-\vs u} & \textit{-a\vn, -\vn} & \textit{-im, -m}\tnote{3} & \textit{-es, -s}\tnote{4}  \\
 Pronoun & \textit{te\vd} & \textit{kar} & \textit{ameu} & \textit{eog} & \textit{\vs u} & \textit{\vn o\vn} & \textit{him} & \textit{es} \\
 Reflexive & \textit{tete\vd} & \textit{karkar} & \textit{meum} & \textit{geog} & \textit{\vs u\vs} & \textit{\vn o\vn a\vn} & \textit{hiŋim} & \textit{ses} \\ \bottomrule
 \end{tabular}
+\begin{tablenotes}
+    \item[1] When multiple suffixes are listed, the former is used when the suffix follows a non-syllabic consonant and the latter when it follows a syllabic consonant or vowel unless otherwise indicated.
+    \item[2] If the latter suffix is used following a front vowel, that vowel is backed.
+    \item[3] If the latter suffix is used following a back vowel, that vowel is fronted. Fronting of rounded vowels is allophonic and not reflected orthographically.
+    \item[4] Unlike the other listed suffixes, for the abstract noun class the latter vowelless allomorph is only used following a true vowel, and the former suffix is used following a syllabic consonant.
+\end{tablenotes}
+\end{threeparttable}
     \caption{Person/Animacy Markers}
     \label{tab:my_label}
 \end{table}
@@ -530,14 +538,29 @@ These markers agree in person and animacy with the syntactic \emph{object} rathe
 
 If both the subject and object are of the same noun class and it is thus ambiguous which entity in the sentence the agreement marking is referring to, the appropriate standalone pronoun can be placed directly after the subject. However, this is only done if the sentence would be obviously ambiguous otherwise.
 
-\ex
+\pex
+\a
 \begingl
-A\l k[dog]
-\vs u[\sc 3.anim]
+\glpreamble
+`Yesterday, I saw the dog and the cat fighting, and then...
+\endpreamble
 de{\vz}[cat]
+a\l k[dog]
+\vs u[\sc 3.anim]
 bo\vl[strike]@
--\vs u[\sc ->3.anim]
-\glft `The dog hit the cat.'
+-\vs u[\sc -3.anim]
+\glft ...the dog hit the cat.'
+\endgl
+\a 
+\begingl
+\glpreamble
+`I told my dog to stay, but then when I turned around...
+\endpreamble
+de{\vz}[cat]
+a\l k[dog]
+bo\vl[strike]@
+-\vs u[\sc -3.anim]
+\glft ...the dog hit the cat.'
 \endgl
 \xe
 
@@ -552,7 +575,7 @@ For verbs in which the single argument does not initiate or is not actively resp
 Geob[goblin]
 es[\sc 3.abst] 
 \l emp[trip]@
--eog[\sc ->3.gob]
+-eog[\sc -3.gob]
 \glft `The goblin trips.' (lit., `It trips the goblin.')
 \endgl
 \xe
@@ -564,7 +587,7 @@ There does not have to be an unspoken agent or cause of the action described by 
 Beu[berry]
 es[\sc 3.abst]
 ka\l[red]@
--a\vn[\sc ->3.quas]
+-a\vn[\sc -3.quas]
 \glft `The berry is red.' (lit., `It reddens the berry.')
 \endgl
 \xe
@@ -577,7 +600,7 @@ Many verbs, particularly those of position and motion, contrast this dummy-subje
 Geob[goblin]
 es[\sc 3.abst]
 ot[sit]@
--eog[\sc ->3.gob]
+-eog[\sc -3.gob]
 \glft `The goblin is sitting.' (lit., `It seats the goblin.')
 \endgl
 \a
@@ -585,7 +608,7 @@ ot[sit]@
 Geob[goblin]
 geog[\sc 3.gob.refl]
 ot[sit]@
--eog[\sc ->3.gob]
+-eog[\sc -3.gob]
 \glft `The goblin sits down.' (lit., `Himself seats the goblin.')
 \endgl
 \xe
@@ -600,7 +623,7 @@ For would-be intransitive verbs where the argument explicitly represents an agen
 -stu[\sc -nmz]
 geob[goblin]
 \'se[do]@
--s[\sc ->3.abst]
+-s[\sc -3.abst]
 \glft  `The goblin is running.' (lit., `The goblin does running.')
 \endgl
 \xe
@@ -612,7 +635,7 @@ For certain motion verbs, both the nominalization and reflexive strategies are b
 Geob[goblin]
 geog[\sc 3.gob.refl]
 \vr im[run]@
--eog[\sc ->3.gob]
+-eog[\sc -3.gob]
 \glft `The goblin gets himself running.'
 \endgl
 \xe
@@ -623,7 +646,7 @@ The reflexive strategy is not necessarily appropriate for all would-be intransit
 \begingl
 Karkar[\sc 2.refl]
 bol[strike]@
--ar[\sc ->2]
+-ar[\sc -2]
 \glft  `You're hitting yourself.' (\emph{not} `You're getting yourself to hit things.')
 \endgl
 \xe
@@ -679,7 +702,7 @@ kle[two]@
 -es[\sc -3.abst]
 te{\vd}[1]
 \'se[do]@
--s[\sc ->3.abst]
+-s[\sc -3.abst]
 \glft `I ran twice.' (lit., `I did two running.')
 \endgl
 \xe
@@ -696,7 +719,7 @@ kle[two]@
 -\vs u[\sc -3.anim]
 te\vd[1]
 \vr u[cook]@
--\vs u[\sc ->3.anim]
+-\vs u[\sc -3.anim]
 \glft `I cooked two different eels.'
 \endgl
 \a
@@ -710,7 +733,7 @@ kle[two]@
 -es[\sc -3.abst]
 te\vd[1]
 \vr u[cook]@
--\vs u[\sc ->3.anim]
+-\vs u[\sc -3.anim]
 \glft `I cooked one eel twice.'
 \endgl
 \xe
@@ -737,7 +760,7 @@ If the postposition would only be preceded by a pronoun, it can be omitted and t
 \vn u\'noh[elf]
 meum[\sc 3.dom.refl]
 \vr im[run]@
--eu[\sc ->3.dom]
+-eu[\sc -3.dom]
 \glft `The elf ran away from me.'
 \endgl
 \xe
@@ -752,7 +775,7 @@ u\vt[\sc med]@
 -\vs u[\sc -3.anim]
 kar[2]
 bo\vs[eat]@
--\vs u[\sc ->3.anim]
+-\vs u[\sc -3.anim]
 \glft `You ate that fish.'
 \endgl
 \a 
@@ -762,7 +785,7 @@ bo\vs[eat]@
 -\vs u[\sc -3.anim]
 kar[2]
 bol[strike]@
--e\vd[\sc ->1]
+-e\vd[\sc -1]
 \glft `You hit me with a fish.'
 \endgl
 \a \ljudge* \textit{\Engma u{\vz} u\vt\vs u \vc o\vs u kar bole\vd} \\
@@ -787,7 +810,7 @@ de{\vz}[cat]
 \vc o[\sc ins]@
 -\vs u[\sc -3.anim]
 \'cneu[give]@
--meu[\sc ->3.dom]
+-meu[\sc -3.dom]
 \glft `The goblin gave my mother a cat.'
 \endgl
 \xe
@@ -806,7 +829,7 @@ te{\vd}[1]
 \vr u[cook]@
 -keo[-{\sc neg.dir}]@
 -tu[-{\sc ben}]@
--g[-{\sc >3.gob}]
+-g[-{\sc 3.gob}]
 \glft `I won't cook eel for your mother.'
 \endgl
 \xe
@@ -822,14 +845,14 @@ Meo[mother]@
 eog[\sc 3.gob]
 de\vn\vr e[sing]@
 -tu[\sc -ben]@
--g[\sc ->3.gob]
+-g[\sc -3.gob]
 \glft `Skreek sings for his mother.'
 \endgl
 \xe
 
 \section{`Adjectives'}
 
-Strictly speaking, there is not a separate syntactic class known as `adjectives' in Geobo{\engma}. However, the equivalent of adjectives are realized by adverbs or uninflected verbs placed directly before the nouns they modify.
+Strictly speaking, there is not a separate syntactic class known as `adjectives' in Geobo{\engma}. What appear to be adjectives are actually verb forms---an uninflected verb can be used attributively by placing it directly before the noun it modifies.
 
 \pex
 \a
@@ -843,7 +866,7 @@ Strictly speaking, there is not a separate syntactic class known as `adjectives'
 \vT\'nel[stick]
 ban[sun]
 \'cre\'z[alive]@
--im[\sc ->3.inan]
+-im[\sc -3.inan]
 \glft `The sun made the branch flourish.'
 \endgl
 \xe
@@ -876,14 +899,33 @@ As we've already seen in earlier examples, originally causative verbs can serve 
 \ex
 \begingl
 \Engma u\vz[fish]
-es[\sc 3.abstr]
+es[\sc 3.abst]
 nono\vn[enlarge]@
--\vs u[\sc ->3.animl]
-\glft `The fish is big.' (lit., `It enlargens the fish.')
+-\vs u[\sc -3.anim]
+\glft `The fish is big.' (lit., `It enlarges the fish.')
 \endgl
 \xe
 
-By default, bare verbs used attributively (i.e., as adjectives in the above examples) carry the meaning characteristic to the \textit{object} of that verb---e.g., \textit{\'cre\'z} means `alive'/`flourishing' not `live-giving', \textit{uh} means `dead' not `deadly', etc. Adjectives with meanings more characteristic of the subjects of these verbs can be formed using the causative derivational prefix \textit{(o)c-} (e.g., \textit{oc\'cre\'z} `live-giving', \textit{cuh} `deadly', etc.). While this prefix technically also derives a causative verb, due to the nature of Geobo{\engma} verbs, the resulting verb is probably more often used as an attributive or predicative adjective than as a causative verb proper. 
+By default, bare verbs used attributively (i.e., as adjectives in the above examples) carry the meaning characteristic to the \textit{object} of that verb---e.g., \textit{\'cre\'z} means `alive'/`flourishing' not `live-giving', \textit{uh} means `dead' not `deadly', etc. In this respect, they could be called `passive participles.' Corresponding active participles, with meanings more characteristic of the subjects of these verbs, can be formed using the causative derivational prefix \textit{(o)c-} (e.g., \textit{oc\'cre\'z} `live-giving', \textit{cuh} `deadly', etc.). While this prefix technically also derives a causative verb, due to the nature of Geobo{\engma} verbs, the resulting verb is probably more often used as an attributive or predicative adjective than as a causative verb proper.
+
+\pex
+\a
+\begingl
+oz[\sc caus]@
+-zdeu[-bite]
+\engma u\vz[fish]
+\glft `That bitey fish'
+\endgl
+\a
+\begingl
+\engma u\vz[fish]
+es[\sc 3.abst]
+oz[\sc caus]@
+-zdeu[-bite]@
+-\vs u[\sc -3.anim]
+\glft `That fish tends to bite.' (lit., `It makes that fish bite.')
+\endgl
+\xe
 
 Geobo{\engma} lacks separate comparative forms of the verb. In order to make predicative comparisons, the verb is turned into a benefactive ditranstive using the affix \textit{-tu-}. The `lesser' of the compared items then serves as the syntactic object of the verb, with the `greater' item as the optional instrumental argument, and the dummy pronoun remains the syntactic subject.
 
@@ -892,13 +934,13 @@ Geobo{\engma} lacks separate comparative forms of the verb. In order to make pre
 Reu[house]@
 -\l[\sc -poss]@
 -e\vd[\sc -1]
-es[\sc 3.abstr]
+es[\sc 3.abst]
 \engma u\vz[fish] 
 \vc o[\sc ins]@
--\vs u[\sc -3.animl]
+-\vs u[\sc -3.anim]
 nonon[enlarge]@
 -tu[\sc -ben]@
--m[\sc ->3.inan]
+-m[\sc -3.inan]
 \glft `The fish is bigger than my house.' (lit., `It enlarges the fish for my house.')
 \endgl
 \xe
@@ -915,8 +957,7 @@ In any given sentence, whichever argument is the focus is moved to a sentence-in
 \begingl
 A\l k[dog]
 \vS krik[Skreek]
-bo\vl[strike]@
--\vs u[{\sc >3.animl}]
+bo\vl\vs u[strike:{\sc 3.anim}]
 \glft `It was the dog that Skreek hit.'
 \endgl
 \xe
@@ -925,8 +966,7 @@ bo\vl[strike]@
 \begingl
 \vS krik[Skreek]
 a\l k[dog]
-bo\vl[strike]@
--\vs u[-{\sc >3.animl}]
+bo\vl\vs u[strike:{\sc 3.anim}]
 \glft `It was Skreek who hit the dog.'
 \endgl
 \xe
@@ -939,12 +979,12 @@ Before this movement, the sentence is underlyingly SOV, so if a complement other
 \vc om[\sc ins:3.inan]
 \vS krik[Skreek]
 a\l k[dog]
-bo\vl\vs u[strike:{\sc >3.animl}]
+bo\vl\vs u[strike:{\sc 3.anim}]
 \glft `It was with a stick that Skreek hit the dog.'
 \endgl
 \xe
 
-Only arguments can be fronted like this, so if the verb or an adjunct is the focus, the object is moved to this position in their stead. 
+Only arguments can be fronted like this, so if the verb or an adjunct is the focus, the object is moved to this position in their stead. If one wishes to emphatically focus a non-argument, a preceding clause can be formed with the verb \textit{\'se} `to do, to make, to cause'
 
 \pex Q: `When did Skreek hit the dog?'
 \a \ljudge*
@@ -952,15 +992,27 @@ Only arguments can be fronted like this, so if the verb or an adjunct is the foc
 Da\'s[yesterday]
 \vS krik[Skreek]
 a\l k[dog]
-bo\vl\vs u[strike:{\sc >3.animl}]
+bo\vl\vs u[strike:{\sc 3.anim}]
 \endgl
 \a 
 \begingl
 A\l k[dog]
 \vS krik[Skreek] 
 da\'s[yesterday]
-bo\vl\vs u[strike:{\sc >3.animl}]
+bo\vl\vs u[strike:{\sc 3.anim}]
 \glft A: `Skreek hit the dog yesterday.'
+\endgl
+\a 
+\begingl
+Es[\sc 3.abst]
+da\'s[yesterday]
+\'se[do]@
+s[\sc :3.abst]
+\nogloss{,}
+a\l k[dog]
+\vS krik[Skreek]
+bo\vl\vs u[strike:{\sc 3.anim}]
+\glft A: `It was \emph{yesterday} that Shreek hit the dog.'
 \endgl
 \xe
 
@@ -973,7 +1025,7 @@ Ip[yes]
 \vt\vn e{\vl}[stick]
 \vc om[\sc ins:3.inan]
 eog[{\sc 3.gob}]
-bo\vl\vs u[strike:{\sc >3.animl}]
+bo\vl\vs u[strike:{\sc 3.animl}]
 \glft `Yes, it was with a stick that he hit (it).'
 \endgl
 \xe
@@ -988,22 +1040,22 @@ Geobo{\engma} relative clauses are formed via adjoined clauses. The relativized 
 Deo{\l}[{\sc c}]
 oh[person]
 te{\vd}[1]
-\vz e\'zeog[see:{\sc >3.gob}]
+\vz e\'zeog[see:{\sc 3.gob}]
 \nogloss{,}
 oh[person]
 \'no\vd eog[{\sc dist:3.gob}]
 reu[home]
-eumim[go.to:{\sc >3.inan}]
+eumim[go.to:{\sc 3.inan}]
 \endgl
 \a
 \begingl
 Deo{\l}[{\sc c}]
 oh[person]
 te{\vd}[1]
-\vz e\'zeog[see:{\sc >3.gob}]
+\vz e\'zeog[see:{\sc 3.gob}]
 eog[{\sc 3.gob}]
 reu[home]
-eumim[go.to:{\sc >3.inan}]
+eumim[go.to:{\sc 3.inan}]
 \glft `The person who I saw went home.'
 \endgl
 \xe
@@ -1014,12 +1066,12 @@ The order of the relativized and main clause is determined by whether the relati
 \begingl
 Meo\l e\vd[mother:{\sc poss:1}]
 reu[home]
-eumim[go.to:{\sc >3.inan}]
+eumim[go.to:{\sc 3.inan}]
 \nogloss{,}
 deo{\l}[{\sc c}]
 eog[{\sc 3.gob}]
 geob[goblin]
-\vz eog[\sc cop:>3.gob]
+\vz eog[\sc cop:3.gob]
 \glft `My mother, who is a goblin, went home.'
 \endgl
 \xe
@@ -1031,11 +1083,11 @@ Content clauses, in which the subordinate clause serves as an argument of the ma
 Deo{\l}[{\sc c}] 
 geob[goblin]
 meo\l ar[mother:{\sc poss:2}]
-\vz eog[\sc cop:>3.gob]
+\vz eog[\sc cop:3.gob]
 \nogloss{,}
 as[{\sc c}]
 te{\vd}[1]
-\vz e\'zes[see:{\sc >3.abstr}]
+\vz e\'zes[see:{\sc 3.abst}]
 \glft `I saw that your mother is a goblin.' (lit., `I saw the fact that your mother is a goblin.')
 \endgl
 \xe
@@ -1047,19 +1099,19 @@ Most other subordinating conjunctions in English are approximated by using the a
 Deo\l[\sc c]
 dizd[salt]
 \engma u\vz[fish]
-pidim[possess:{\sc >3.inan}]
+pidim[possess:{\sc 3.inan}]
 \nogloss{,}
 as[\sc c]
-euźdes[due\_to:{\sc 3.abstr}]
+euźdes[due\_to:{\sc 3.abst}]
 te\vd[\sc 1] 
-bo\vs kem[consume:{\sc neg.dir:>3.inan}]
+bo\vs kem[consume:{\sc neg.dir:3.inan}]
 \glft `I didn't eat the fish because it was salty.' (lit., `Due to the fact that the fish had salt, I didn't eat it.')
 \endgl
 \xe 
 
-\chapter{Semantics}
+%\chapter{Semantics}
 
-\section{TAM Particles}
+\section{Aspect Particles}
 
 Geobo{\engma} is tenseless, only specifying tense if doing so is necessary in context and doing so using temporal adverbs, which are typically placed before the verb.
 
@@ -1069,7 +1121,7 @@ Geobo{\engma} is tenseless, only specifying tense if doing so is necessary in co
 bostu[eat:{\sc nmz}]
 te\vd[1]
 da\'s[yesterday]
-\'ses[do:{\sc >3.abstr}]
+\'ses[do:{\sc 3.abst}]
 \glft `I ate yesterday.'
 \endgl
 \a 
@@ -1077,48 +1129,50 @@ da\'s[yesterday]
 bostu[eat:{\sc nmz}]
 te\vd[1]
 \vs a\vl\vn[someday]
-\'ses[do:{\sc >3.abstr}]
+\'ses[do:{\sc 3.abstr}]
 \glft `I'll eat later.'
 \endgl 
 \xe
 
-In addition to adverbs, Geobo{\engma} also possesses several particles that indicate aspect, mood, or some combination thereof. These are distinct from ordinary adverbs in that they come after the verb rather than beforehand.
+However, Geoboŋ does systematically mark aspect through use of particles, which occur at the beginning of the subject-less VP (that is, after the subject and before the object and other arguments should they not be fronted or otherwise moved).
 
-\subsubsection{Gnomic---\textit{go}}
+%insert a syntax tree or smth here eventually
 
-The gnomic particle \textit{go} is placed after the verb when the predicate describes a general truth, something that always holds true.
+\subsubsection{Habitual--\textit{go}}
+
+This particle indicates that something is always or virtually always the state of affairs. It is used in contexts where a gnomic or generic would be used in other languages:
 
 \ex
 \begingl
 Eu\engma r[sky]
 es[\sc 3.abstr]
-peoda\vn[blue:{\sc >3.ntfrc}]
-go[\sc gno]
+go[\sc hab]
+peoda\vn[blue:{\sc 3.ntfrc}]
 \glft `The sky is blue'
 \endgl
 \xe
 
-It's also often exaggeratedly used to simply mean `always' or to describe habitual actions that still go on in the present.
+as well as in contexts that describe habitual actions that still go on in the present and are expected to continue to go on for the foreseeable future:
 
 \ex 
 \begingl
 \Engma u\vz[fish]
 kar[\sc 2]
-\vr um[cook:{\sc >3.inan}]
-go[\sc gno]
+go[\sc hab]
+\vr um[cook:{\sc 3.inan}]
 \nogloss{!}
 \glft `You \emph{always} cook fish!'
 \endgl
 \xe
 
-Since TAM particles scope over negation, applying \textit{go} to a sentence in containing negation turns this `always' into a `never'. If one wants to scope negation over the gnomic particle, the whole clause must be embedded under a negative verb.
+Since aspect particles scope over negation, applying \textit{go} to a negated verb means `never'. If one wants to scope negation over the aspect, the whole clause must be embedded under a negative verb.
 
 \pex 
 \a 
 \begingl
 \Engma u\vz[fish]
 meo[mother]
-\vr ukem[cook:{\sc neg.dir:>3.inan}]
+\vr ukem[cook:{\sc neg.dir:3.inan}]
 go[\sc gno]
 \glft `Mom never cooks fish.'
 \endgl
@@ -1127,12 +1181,12 @@ go[\sc gno]
 Deo\l[\sc c]
 \engma u\vz[fish]
 te\vd[\sc 1]
-\vr um[cook:{\sc >3.inan}]
+\vr um[cook:{\sc 3.inan}]
 go[\sc gno]
 \nogloss{,}
 as[\sc c]
 es[\sc 3.abstr]
-his\engma keos[real:{\sc neg.dir:>3.abstr}]
+his\engma keos[real:{\sc neg.dir:3.abstr}]
 \glft `It's not the case that I always cook fish.'
 \endgl
 \xe
@@ -1145,8 +1199,8 @@ The completive particle \textit{o\'sk} is used when discussing an eventuality th
 \begingl
 Bostu[eat:{\sc nmz}]
 te\vd[\sc 1]
-\'ses[do:{\sc >3.abstr}]
 o\'sk[\sc cmpl]
+\'ses[do:{\sc 3.abstr}]
 \glft `I've already eaten/drunk.'
 \endgl
 \xe
@@ -1157,8 +1211,8 @@ When used with a negative verb, it can be more accurately translated as `still h
 \begingl
 Bostu[eat:{\sc nmz}]
 te\vd[\sc 1]
-\'sekeos[do:{\sc neg.dir:>3.abstr}]
 o\'sk[\sc cmpl]
+\'sekeos[do:{\sc neg.dir:3.abstr}]
 \glft `You still haven't eaten.'
 \endgl
 \xe
@@ -1171,21 +1225,21 @@ The retrospective habitual particle \textit{pu} is used to describe an eventuali
 \begingl
 \Engma u\vz[fish]
 te\vd[\sc 1]
-\vr um[cook:{\sc >3.inan}]
 pu[\sc rhab]
+\vr um[cook:{\sc 3.inan}]
 \glft `I used to cook fish' (but I've since stopped for some reason)
 \endgl
 \xe
 
-This particle scopes over negation, so using it with a negative verb conveys that it used to be the case that they generally did not do a thing, but that now they do that thing (or at least have done so once). To merely negate the habituality of an action, one must embed the whole clause under a negative verb, just as one must do to force negation to scope over the gnomic particle.
+This particle scopes over negation, so using it with a negative verb conveys that it used to be the case that they generally did not do a thing, but that now they do that thing (or at least have done so once). To merely negate the former habituality of an action, one must embed the whole clause under a negative verb, just as one must do to force negation to scope over the habitual particle.
 
 \pex 
 \a
 \begingl 
 \vS\vr eo\vd[snake]
 te\vd[\sc 1]
-bolkeo\vs u[strike:{\sc neg.dir:>3.animl}]
 pu[\sc rhab]
+bolkeo\vs u[strike:{\sc neg.dir:3.animl}]
 \glft `I used to never fight snakes.' (but now I've started doing it)
 \endgl 
 \a
@@ -1193,29 +1247,29 @@ pu[\sc rhab]
 Deo\l[\sc c]
 \vs\vr eo\vd[snake]
 te\vd[\sc 1]
-bo\vl\vs u[strike:{\sc >3.animl}]
 pu[\sc rhab]
+bo\vl\vs u[strike:{\sc 3.animl}]
 \nogloss{,}
 as[\sc c]
 es[\sc 3.abstr]
-his\engma keos[real:{\sc neg.dir:>3.abstr}]
+his\engma keos[real:{\sc neg.dir:3.abstr}]
 \glft `I didn't used to fight snakes.' (I never stopped fighting snakes!)
 \endgl 
 \xe
 
 \subsubsection{Change-of-state---\textit{\vl i}}
 
-The change-of-state particle \textit{\vl i} indicates that an eventuality is new or novel in some way, a change to the previous status-quo. 
+The change-of-state particle \textit{\vl i} indicates that an eventuality is new or novel in some way, a change to the previous status-quo or otherwise contrastive to the prior context.
 
 \ex
 \begingl
 \vS\vr eo\vd[snake]
-\'zreo\vn\vz eog[scare:{\sc >3.gob}]
+\'zreo\vn\vz eog[scare:{\sc 3.gob}]
 go[\sc gno]
 eo[and]
 eog[\sc 3.gob]
-zdeu\vs u[bite:{\sc >3.animl}]
 \vl i[\sc cos]
+zdeu\vs u[bite:{\sc 3.animl}]
 \glft `Snakes scare him, but he bit (one)!'
 \endgl
 \xe
@@ -1226,33 +1280,42 @@ It's often contrasted with a status quo or former status quo expressed with the 
 \begingl
 \Engma u\vz[fish]
 te\vd[\sc 1]
-bo\vs im[eat:{\sc >3.inan}]
 \vl i[\sc cos]
+bo\vs im[eat:{\sc 3.inan}]
 \glft `I eat fish now' (we both know I used to be a vegetarian)
 \endgl
 \xe
 
-In these contexts, it's often translated with `now' or `anymore'.
+In these contexts, it's often translated with `now' or `anymore'. 
 
-By extension, some use this particle whenever a statement contradicts a previous statement, though the acceptability of doing this varies by region. Those who use it this way treat it as a discourse particle rather than a TAM particle, allowing it to be preceded by some other TAM particles.
+In most dialects, the aspect particles are mutually exclusive. However, in some dialects \textit{\vl i} can be combined with other aspectual particles, in which case it directly precedes them.
 
 \ex \ljudge{?}
 \begingl
 \Engma u\vz[fish]
 \vS krik[Skreek]
-bo\vs kem[eat:{\sc neg.dir:>3.inan}]
 pu[\sc rhab]
+bo\vs kem[eat:{\sc neg.dir:3.inan}]
 eo[and]
 \vs\vr eo\vd[eel]
 eog[\sc 3.gob]
-bo\vs im[eat:{\sc >3.inan}]
-go[\sc gno]
 \vl i[\sc cos]
+go[\sc hab]
+bo\vs im[eat:{\sc 3.inan}]
 \glft `Skreek never used to eat fish but he's always eaten eels.'
 \endgl
 \xe
 
-This usage of \textit{\vl i} is fairly novel however and even in the regions in which it's accepted, it's seen as dialectical.
+However, this usage of \textit{\vl i} is markedly dialectical and not more generally acceptable.
+
+\section{Modality}
+
+Modal affixes are placed directly following the verb stem, prior to negation (if present).
+
+\section{Discourse Markers}
+
+%%%%%%%%%%%
+
 
 \subsubsection{Possibility---\textit{\vz i}}
 
@@ -1267,7 +1330,7 @@ Q: What can Skreek cook?
 \nogloss{\normalfont A:}
 \Engma u\vz[fish]
 eog[\sc 3.gob]
-\vr um[cook:{\sc >3.inan}]
+\vr um[cook:{\sc 3.inan}]
 \vz i[\sc psbl]
 \glft \phantom{A: }`He is able to cook fish.'
 \endgl
@@ -1279,7 +1342,7 @@ Q: What do you think Skreek is doing right now?
 \nogloss{\normalfont A:}
 \Engma u\vz[fish]
 eog[\sc 3.gob]
-\vr um[cook:{\sc >3.inan}]
+\vr um[cook:{\sc 3.inan}]
 \vz i[\sc psbl]
 \glft \phantom{A: }`He could be cooking fish.'
 \endgl
@@ -1297,7 +1360,7 @@ The question particle \textit{\'ne\l} is appended to the end of a sentence when 
 \begingl
 Meo\l ar[mother:{\sc poss:2}]
 reu[home]
-eumim[go\_to:{\sc >3.inan}]
+eumim[go\_to:{\sc 3.inan}]
 o\'sk[\sc cmpl]
 \'ne\l[\sc q]
 \glft `Did your mother already go home?' or `Your mother already went home, right?'
@@ -1313,13 +1376,13 @@ Note that \textit{\'ne\l} is only used if the speaker is seeking information or 
 Deo\l[\sc c]
 meo\l ar[mother:{\sc poss:2}]
 reu[home]
-eumim[go\_to:{\sc >3.inan}]
+eumim[go\_to:{\sc 3.inan}]
 o\'sk[\sc cmpl]
 \'ne\l[\sc q]
 \nogloss{,}
 as[\sc c]
 te\vd[\sc 1]
-\vt\vl irckeos[know:{\sc neg.dir:>3.abstr}]
+\vt\vl irckeos[know:{\sc neg.dir:3.abstr}]
 \glft `I don't know whether your mother already went home.'
 \endgl
 \xe
@@ -1331,13 +1394,13 @@ Emphatic questions can be unambiguously asked by turning the entire clause, incl
 Deo\l[\sc c]
 meo\l ar[mother:{\sc poss:2}]
 reu[home]
-eumim[go\_to:{\sc >3.inan}]
+eumim[go\_to:{\sc 3.inan}]
 o\'sk[\sc cmpl]
 \'ne\l[\sc q]
 \nogloss{,}
 as[\sc c]
 es[\sc es]
-hisnes[real:{\sc >3.abstr}]
+hisnes[real:{\sc 3.abstr}]
 \'ne\l[\sc q]
 \glft `Did your mother already go home?' (lit., `Is it true whether your mother already went home?')
 \endgl 
@@ -1356,7 +1419,7 @@ The request particle is appended to the end of a sentence when the speaker wants
 Disd[salt]
 \vc om[\sc ins:3.inan]
 kar[\sc 2]
-\'cneu\vd[give:{\sc >1}]
+\'cneu\vd[give:{\sc 1}]
 \vr o[\sc req]
 \glft `Would you please hand me the salt?' or `How about you hand me the salt?'
 \endgl
@@ -1378,7 +1441,7 @@ It can be even further abstracted, used with sentences that do not directly refe
 \begingl
 Meo\l ar[mother:{\sc poss:2}]
 reu[home]
-eumim[go\_to:{\sc >3.inan}]
+eumim[go\_to:{\sc 3.inan}]
 \vr o[\sc req]
 \glft `Your mother went home, hint-hint.'
 \endgl
@@ -1392,13 +1455,13 @@ Deo\l[\sc c]
 disd[salt]
 \vc om[\sc ins:3.inan]
 kar[\sc 2]
-\'cneu\vd[give:{\sc >1}]
+\'cneu\vd[give:{\sc 1}]
 \vr o[\sc req]
 \nogloss{,}
 as[\sc c]
 \vc os[\sc ins:3.abstr]
 te\vd[\sc 1]
-\vr o\'sog\'zar[request:{\sc neg.inv:>2}]
+\vr o\'sog\'zar[request:{\sc neg.inv:2}]
 \glft `I'm not asking you to pass me the salt.'
 \endgl
 \xe
@@ -1412,7 +1475,7 @@ The command particle \textit{\vd et} is appended to the end of a sentence to ind
 Disd[salt]
 \vc om[\sc ins:3.inan]
 kar[\sc 2]
-\'cneu\vd[give:{\sc >1}]
+\'cneu\vd[give:{\sc 1}]
 \vd et[\sc imp]
 \glft `Hand me the salt!'
 \endgl
@@ -1426,7 +1489,7 @@ Unlike \textit{\vr o}, however, \textit{\vd et} cannot be used for negative comm
 Disd[salt]
 \vc om[\sc ins:3.inan]
 kar[\sc 2]
-\'cneukeo\vd[give:{\sc neg.dir:>1}]
+\'cneukeo\vd[give:{\sc neg.dir:1}]
 \vr o[\sc req]
 \glft `Please don't hand me the salt.'
 \endgl
@@ -1435,7 +1498,7 @@ kar[\sc 2]
 Disd[salt]
 \vc om[\sc ins:3.inan]
 kar[\sc 2]
-\'cneukeo\vd[give:{\sc neg.dir:>1}]
+\'cneukeo\vd[give:{\sc neg.dir:1}]
 \vd et[\sc imp]
 \glft Intended: `Don't hand me the salt!'
 \endgl
@@ -1447,7 +1510,7 @@ Just like \textit{\vr o}, \textit{\vd et} can be appended to a mere noun as an o
 \begingl
 Bostu[food]
 de\vz[cat]
-\dbl eo\lam okeom[have:{\sc neg.dir:>3.inan}]
+\dbl eo\lam okeom[have:{\sc neg.dir:3.inan}]
 \vd et[\sc imp]
 \glft `The cat doesn't have food (Feed the cat!)'
 \endgl
@@ -1461,19 +1524,19 @@ Negation can scope over the command particle using the verb \textit{\vd et\'s} `
 Deo\l[\sc c]
 de\vz[cat]
 kar[\sc 2]
-arc\vs u[feed:{\sc >3.animl}]
+arc\vs u[feed:{\sc 3.animl}]
 \vd et[\sc imp]
 \nogloss{,}
 as[\sc c]
 \vc os[\sc ins:3.abstr]
 es[\sc 3.abstr]
-\vd et\'sog\'zar[command:{\sc neg.inv:>2}]
+\vd et\'sog\'zar[command:{\sc neg.inv:2}]
 \endgl
 \a \ljudge{?}
 \begingl
 De\vz[cat]
 kar[\sc 2]
-arckeo\vs u[feed:{\sc neg.dir:>3.animl}]
+arckeo\vs u[feed:{\sc neg.dir:3.animl}]
 \vd et[\sc imp]
 \glft `You don't have to feed the cat.'
 \endgl
@@ -1489,7 +1552,7 @@ The prohibitive particle \textit{iz} is appended to the end of a sentence to ind
 \begingl
 \Engma u\vz[fish]
 kar[\sc 2]
-bo\vs im[eat:{\sc >3.inan}]
+bo\vs im[eat:{\sc 3.inan}]
 iz[\sc proh]
 \glft `Don't eat the fish!'
 \endgl
@@ -1501,7 +1564,7 @@ Like the other deontic particles, it can be used with a single noun, indicating 
 \begingl
 \Engma u\vz[fish]
 te\vd[\sc 1]
-bo\vs im[eat:{\sc >3.inan}]
+bo\vs im[eat:{\sc 3.inan}]
 iz[\sc proh]
 \glft `Don't make me eat fish!'
 \endgl
@@ -1513,7 +1576,7 @@ Related constructions formed with \textit{iz} can often approximate the meanings
 \begingl
 \Engma u\vz[fish]
 kar[\sc 2]
-bo\vs kem[eat:{\sc neg.dir:>3.inan}]
+bo\vs kem[eat:{\sc neg.dir:3.inan}]
 iz[\sc proh]
 \glft `You've got to eat the fish!' (lit., `You mustn't not eat the fish')
 \endgl
@@ -1528,13 +1591,13 @@ Negation can scope over the prohibitive using the verb \textit{i\l\'s} `to forbi
 Deo\l[\sc c]
 \engma u\vz[fish]
 kar[\sc 2]
-bo\vs im[eat:{\sc >3.inan}]
+bo\vs im[eat:{\sc 3.inan}]
 iz[\sc proh]
 \nogloss{,}
 as[\sc c]
 \vc os[\sc ins:3.abstr]
 es[\sc 3.abstr]
-i\l\'sog\'zar[forbid:{\sc neg.inv:>2}]
+i\l\'sog\'zar[forbid:{\sc neg.inv:2}]
 \glft `You're not forbidden from eating fish.'
 \endgl
 \xe
@@ -1551,7 +1614,7 @@ The permissive particle \textit{eu\vs} is appended to the end of a sentence to i
 \begingl
 \vZ leuoh[child]
 \vd eo\'s[tree]
-pogebim[climb:{\sc >3.inan}]
+pogebim[climb:{\sc 3.inan}]
 eu\vs[\sc perm]
 \glft `Children (you) may climb trees.'
 \endgl
@@ -1580,13 +1643,13 @@ Scoping negation over the permissive particle is done via embedding with the ver
 Deo\l[\sc c]
 \vz leuoh[child]
 \vd eo\'s[tree]
-pogebim[climb:{\sc >3.inan}]
+pogebim[climb:{\sc 3.inan}]
 eu\vs[\sc perm]
 \nogloss{,}
 as[\sc c]
 \vc os[\sc ins:3.abstr]
 es[\sc 3.abstr]
-eu\dbl\'sog\'zar[permit:{\sc neg.inv:>2}]
+eu\dbl\'sog\'zar[permit:{\sc neg.inv:2}]
 \glft `Children (you) are not allowed to climb trees.'
 \endgl
 \xe
@@ -1603,7 +1666,7 @@ The positive attitude particle \textit{ip} is appended to the end of a sentence 
 \begingl
 \vS krik[Skreek]
 es[\sc 3.abstr]
-uheog[kill:{\sc >3.gob}]
+uheog[kill:{\sc 3.gob}]
 ip[:-{)}]
 \glft `Yay, Skreek died!'
 \endgl
@@ -1619,7 +1682,7 @@ The negative attitude particle \textit{hu\l} is appended to the end of a sentenc
 \begingl
 \vS krik[Skreek]
 es[\sc 3.abstr]
-uheog[kill:{\sc >3.gob}]
+uheog[kill:{\sc 3.gob}]
 hu\l[:-{(}]
 \glft `Oh no, Skreek died!'
 \endgl
@@ -1649,7 +1712,7 @@ Geob[goblin]
 te\vd[1]
 bol[strike]@
 -keo[-{\sc neg.dir}]@
--g[-{\sc >3.gob}]
+-g[-{\sc 3.gob}]
 \glft `I didn't hit a goblin.'
 \endgl
 \a
@@ -1658,7 +1721,7 @@ Geob[goblin]
 te\vd[1]
 bol[strike]@
 -og\'z[-{\sc neg.inv}]@
--e\vd[-{\sc >1}]
+-e\vd[-{\sc 1}]
 \glft `A goblin didn't hit me.'
 \endgl
 \xe
