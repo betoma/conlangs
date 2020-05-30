@@ -159,23 +159,10 @@
 \newcounter{dictwordcount}
 \newcounter{definition}
 
-\newenvironment{dictroot}[1]%
+\newenvironment{dictentry}[3]%
     {%
-    \subsection{#1}
-    \begin{description}[leftmargin=*]
-    }{%
-    \end{description}
-    }%
-
-\newcommand{\dictsubtitle}[1]{%
-    \end{description}
-    \subsubsection*{#1}
-    \begin{description}[leftmargin=*]
-}%
-
-\newenvironment{dictentry}[2]%
-    {%
-    \item[\textit{\enl{#1}}] $\bullet$ \textit{#2}\hfill
+    \item[\enl{\large #1}]\:\bripa{#2}\hfill\\
+    {\footnotesize #3}
     \setcounter{definition}{0}%
     \refstepcounter{dictwordcount}%
     \begin{description}[align=right,labelwidth=*,font=\normalfont]
@@ -183,17 +170,13 @@
     \end{description}
     }%
 
-\newcommand{\dictdef}[1]{\refstepcounter{definition}%
-\item[\thedefinition.] #1
-}%
-
-\WithSuffix\newcommand\dictdef*[1]{%
-    \item[] #1
-}
-
-\newcommand{\newentry}[2]{%
-\item[#1] $\bullet$ \textit{#2}\hfill
-}%
+    \newcommand{\dictdef}[1]{\refstepcounter{definition}%
+    \item[\thedefinition.] #1
+    }%
+    
+    \WithSuffix\newcommand\dictdef*[1]{%
+        \item[] #1
+    }
 
 %----------------------------
 %----------------------------
@@ -219,11 +202,40 @@
 
 \mainmatter
 
-\part{Grammar}
+\part{\parentlang{} Grammar}
 
-\chapter{World \& Culture}
+\chapter{Context \& Culture}
 
-The word `\lang{}' reportedly comes from the \parentlang{} word \proto{hiːnolamaːlaʔiːna}, a word which roughly means `a long time ago (we) talked like this'. This perception of the language, as some ancient thing that has endured through countless generations unchanged, is common among speakers of \lang{}. However, the language itself and the culture of its speakers has varied dramatically throughout the years, more than its speakers tend to be willing to openly acknowledge.
+\chapter{Phonology}
+
+\begin{table}[ht]
+    \begin{minipage}[b]{.55\linewidth}
+    \centering
+    \begin{tabular}{@{}rcccc@{}}
+                  & Labial & Alveolar & Dorsal & Glottal  \\
+        Stops     &   p    &    t     &   k    & \glotstop \\
+        Non-Stops &   m    &   n  l   &        &    h      
+    \end{tabular}
+    \subcaption{Consonants}\label{tab:oldlang_cons}
+    \end{minipage}
+    \begin{minipage}[b]{.4\linewidth}
+    \centering
+    \begin{tabular}{@{}rcc@{}}
+             &  Front   &   Back   \\
+        High & i i\lgth & o o\lgth \\
+        Low  & \multicolumn{2}{c}{a a\lgth}
+    \end{tabular}
+    \subcaption{Vowels}\label{tab:oldlang_vow}
+    \end{minipage}
+    \caption{\parentlang{} Phoneme Inventory}
+    \label{tab:oldlang_phon}
+\end{table}
+
+\part{\lang{} Grammar}
+
+\chapter{Context \& Culture}
+
+blabla add stuff in about this later
 
 \chapter{Phonology}
 
@@ -278,41 +290,6 @@ The `romanization' of \lang{} is a near-phonemic representation, with the except
 \end{table}
 
 blablabla \enlq{balakana\kh an en olipa\l ika\ta o i\pp anoli ka\ph enpan en\te ilpati a\kk iten } blabla 
-
-\section{\parentlang{} \& the \lang{} orthography}
-
-\subsection{Phonology of \parentlang{}}
-
-\begin{table}[ht]
-    \begin{minipage}[b]{.55\linewidth}
-    \centering
-    \begin{tabular}{@{}rcccc@{}}
-                  & Labial & Alveolar & Dorsal & Glottal  \\
-        Stops     &   p    &    t     &   k    & \glotstop \\
-        Non-Stops &   m    &   n  l   &        &    h      
-    \end{tabular}
-    \subcaption{Consonants}\label{tab:oldlang_cons}
-    \end{minipage}
-    \begin{minipage}[b]{.4\linewidth}
-    \centering
-    \begin{tabular}{@{}rcc@{}}
-             &  Front   &   Back   \\
-        High & i i\lgth & o o\lgth \\
-        Low  & \multicolumn{2}{c}{a a\lgth}
-    \end{tabular}
-    \subcaption{Vowels}\label{tab:oldlang_vow}
-    \end{minipage}
-    \caption{\parentlang{} Phoneme Inventory}
-    \label{tab:oldlang_phon}
-\end{table}
-
-\subsection{Sound changes and their effects on the orthography}
-
-\begin{itemize}
-    \item 
-\end{itemize}
-
-\subsection{Orthographic reform}
 
 \chapter{Morphosyntax}
 
