@@ -111,6 +111,8 @@
 \newcommand{\vless}{̥}
 \newcommand{\upvless}{̊}
 \newcommand{\bck}{̠}
+\newcommand{\dwnwrd}{̞}
+\newcommand{\upwrd}{̝}
 \newcommand{\lamino}{̻}
 \newcommand{\apico}{̺}
 \newcommand{\lowap}{̞}
@@ -140,7 +142,7 @@
 \vspace*{\drop}
 \begin{center}
 {\huge A Grammar of}\\[\baselineskip]
-{\HUGE\sc \lang}\par
+{\HUGE\sc \parentlang}\par
 \end{center}
 \vspace*{3\drop}
 {\large By {\sc Bethany E. Toma}}
@@ -183,8 +185,10 @@
 
 \maxsecnumdepth{subsection}
 
-\newcommand{\lang}{Enłalen}
-\newcommand{\parentlang}{Old Elvish}
+\newcommand{\parentlang}{Enłalen}
+\newcommand{\childlangone}{Daughterlang}
+\newcommand{\childlangtwo}{Sonlang}
+\newcommand{\childlangthree}{Kidlang}
 
 \begin{document}
 
@@ -206,102 +210,105 @@
 
 \chapter{Context \& Culture}
 
-\chapter{Phonology}
-
-\begin{table}[ht]
-    \begin{minipage}[b]{.55\linewidth}
-    \centering
-    \begin{tabular}{@{}rcccc@{}}
-                  & Labial & Alveolar & Dorsal & Glottal  \\
-        Stops     &   p    &    t     &   k    & \glotstop \\
-        Non-Stops &   m    &   n  l   &        &    h      
-    \end{tabular}
-    \subcaption{Consonants}\label{tab:oldlang_cons}
-    \end{minipage}
-    \begin{minipage}[b]{.4\linewidth}
-    \centering
-    \begin{tabular}{@{}rcc@{}}
-             &  Front   &   Back   \\
-        High & i i\lgth & o o\lgth \\
-        Low  & \multicolumn{2}{c}{a a\lgth}
-    \end{tabular}
-    \subcaption{Vowels}\label{tab:oldlang_vow}
-    \end{minipage}
-    \caption{\parentlang{} Phoneme Inventory}
-    \label{tab:oldlang_phon}
-\end{table}
-
-\part{\lang{} Grammar}
-
-\chapter{Context \& Culture}
-
-blabla add stuff in about this later
+Fill in something here eventually
 
 \chapter{Phonology}
 
-\section{Modern \lang{} phonology}
+\section{Phonemics \& Allophony}
 
-\subsection{Phoneme inventory}
+\subsection{Phoneme Inventory}
 
-\begin{table}[ht]
+\begin{table}[h]
     \centering
-    \begin{tabular}{@{}rcccc@{}}
-                    & Labial & Alveolar & Palatal &    Back    \\ \cmidrule(l){2-5}
-     Lenis Stop     &   p    &    t     &         &   k\bck    \\
-     Aspirated Stop & p\asp  &  t\asp   &         & k\bck\asp  \\
-     Ejective Stop  & p\jekt &  t\jekt  &         & k\bck\jekt \\
-     Fricative      &   f    &    s     &         &   \uvux    \\
-     Nasal          &   m    &    n     &         &            \\
-     Lateral        &        &    l     &         &   ʟ\bck    \\
-     Glide          &   w    &          &    j    &     ʕ      \\
-     Vowel          &   o    &          &    i    &     a      
+    \begin{tabular}{@{}rccc@{}}
+    \toprule
+     & Labial & Coronal & Velar \\ \midrule
+    Ejective & pʼ & tʼ & kʼ \\
+    Plosive & p & t & k \\
+    Fricative & f & s & \\
+    Nasal & m & n & ŋ \\
+    Liquid &  & l & \\ \bottomrule
     \end{tabular}
-    \caption{\lang{} Phoneme Inventory}
-    \label{tab:phon-inv}
+    \caption{Consonant Inventory}
+    \label{tab:enl-consonants}
 \end{table}
 
-\subsection{Allophony \& phonotactics}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{@{}rccc@{}}
+    \toprule
+    \multicolumn{1}{l}{} & Front & Central & Back \\ \midrule
+    High & i iː j &  &  \\
+    Mid &  &  & o oː w \\
+    Low &  & a aː \pharox\dwnwrd &  \\ \bottomrule
+    \end{tabular}
+    \caption{Vowel \& Glide Inventory}
+    \label{tab:enl-vowels}
+\end{table}
+
+\parentlang{} possesses the glides \bripa{j, w, \pharox\dwnwrd} in certain positions, but these are analyzed as consonantal allophones of the vowel phonemes.
+
+\subsection{Allophony \& Phonotactics}
+
+To be replaced with better versions of these and such later:
 
 \begin{itemize}
     \item Vowels \phipa{i, o, a} become nasal \bripa{e\nav, o\nav, a\nav} when they precede a nasal
-    \item Front vowels and semivowels \bripa{i, e\nav, j} become central \bripa{\bari, \sche\nav, \velprox} before dorsal sonorants \bripa{\vell\bck, w, \pharox, a} and after dorsal obstruents \bripa{k\bck, k\bck\asp, k\bck\jekt, \uvux}
-    \item Back vowel \bripa{o} becomes central \bripa{\sche} before \bripa{j, i}
+    \item \phipa{l} becomes \bripa{\vell} before a velar consonant and \bripa{\bilav\dwnwrd} before a labial consonant. \phipa{w} is considered velar for these purposes.
+    \item Front vowels and semivowels \bripa{i, e\nav, j} become central \bripa{\bari, \sche\nav, j} before non-palatal dorsal sonorants (including vowels) \bripa{\engma, \vell, w, \pharox\dwnwrd, a} and after non-palatal dorsal obstruents \bripa{k, k\jekt}
+    \item Back vowel \bripa{o} becomes central \bripa{\sche} before \bripa{j, i(\lgth)}
     \item Mid, non-front vowels \bripa{\sche, \sche\nav, o, o\nav} become high \bripa{\bari, \bari\nav, u, u\nav} after a high semivowel \bripa{j, w, \velprox}
-    \item Mid vowels \bripa{o, o\nav, e\nav, \sche, \sche\nav} become low lax \bripa{\ahoh, \ahoh\nav, æ\nav, a, a\nav}
-    \item Aspirated stops \phipa{p\asp, t\asp, k\bck\asp} become unaspirated \bripa{p, t, k\bck} before a nasal vowel.
-    \item Nasal and lateral consonants \phipa{m, n, l, \vell\bck} assimilate in place-of-articulation to a following obstruent -- before labials, \phipa{l} becomes \bripa{l\linglab} and \phipa{\vell\bck} remains \bripa{\vell\bck}.
-    \item \phipa{lw, \vell w} become \bripa{\alvr\lab, \velr\lab}.
-    \item Fricatives \phipa{f, s, \uvux} are voiced \bripa{v, z, \velr} intervocalically and when following a voiced consonant.
-    \item Unaspirated stops \phipa{p, t, k\bck} are voiced \bripa{b, d, g} intervocalically.
-    \item Aspirated stops \phipa{p\asp, t\asp, k\bck\asp} become voiceless fricatives \bripa{f, \tht\bck, \uvux} intervocalically 
-    \item Ejectives \phipa{p\jekt, t\jekt, k\bck\jekt} become unaspirated voiceless stops \bripa{p, t, k\bck} intervocalically 
+    \item Mid vowels \bripa{o, o\nav, e\nav, \sche, \sche\nav} become low lax \bripa{\ahoh, \ahoh\nav, \aesh\nav, a, a\nav} before non-palatal dorsal sonorants (\emph{not} including vowels) \bripa{\engma, \vell, w, \pharox\dwnwrd} and after non-palatal dorsal obstruents \bripa{k, k\jekt}.
+    \item Nasals assimilate in place-of-articulation to a following obstruent.
+    \item In Northern lects only:
+    \begin{itemize}
+        \item Standalone fricatives become debuccalized to \bripa{h} intervocalically. Geminate fricatives become single fricatives.
+        \item Standalone voiceless stops become voiceless fricatives intervocalically. Geminate voiceless stops become single voiceless stops.
+        \item Standalone ejectives become unaspirated voiceless stops intervocalically. Geminate ejectives become single ejectives.
+    \end{itemize}
+    \item In Southern lects only:
+    \begin{itemize}
+        \item Standalone voiceless fricatives become voiced intervocalically. Geminate voiceless fricatives become single voiceless fricatives.
+        \item Standalone voiceless stops become voiced stops intervocalically. Geminate voiceless stops become single voiceless stops.
+        \item Geminate ejectives become single ejectives. Standalone ejectives remain the same intervocalically.
+    \end{itemize}
+\end{itemize}
+
+\section{Structure \& Suprasegmental Features}
+
+\subsection{Syllable Structure}
+
+\subsection{Stress}
+
+Stress in \parentlang{} is weight-sensitive, relying on a principle that classifies syllables containing long vowels as `heavy' and those without long vowels as `light.' Note that this is only the case for the stem---peripherals are considered light even when the nucleus is a long vowel. The determination of stress location is unbounded, so stress may appear anywhere in a given word, with right-headed assignment for heavy syllables and left-headed assignment for light syllables. The result of this is that stress is placed on the rightmost heavy syllable if there is one, or on the first syllable if there are none.
+
+\subsection{Tone}
+
+\section{Prosody}
+
+\section{Transcription}
+
+\subsection{Romanization}
+
+\subsection{Orthography}
+
+\part{\childlangone{} Grammar}
+
+\chapter{Context \& Culture}
+
+\chapter{Phonology}
+
+Daughterlang ideas to save for later:
+
+\begin{itemize}
+    \item \phipa{lw, \vell w} become \bripa{\alvr\lab, \velr\lab}
 \end{itemize}
 
 \subsection{Romanization}
 
-The `romanization' of \lang{} is a near-phonemic representation, with the exception of using \ortho{e} to represent \phipa{i} when it occurs before a nasal (where it is allophonically lowered).
-
-\begin{table}[ht]
-    \centering
-    \begin{tabular}{@{}ccccccccccccccccccccccc@{}}
-        p & t & k\bck & p\asp & t\asp & k\bck\asp & p\jekt & t\jekt & k\bck\jekt & f & s & \uvux & m & n & l & \vell\bck & w & j & \pharox & o & i & a & \bripa{e\nav} \\
-        \enl{p} & \enl{t} & \enl{k} & \enl{\ph} & \enl{\te} & \enl{\kh} & \enl{\pp} & \enl{\ta} & \enl{\kk} & \enl{f} & \enl{s} & \enl{h} & \enl{m} & \enl{n} & \enl{l} & \enl{ł} & \enl{w} & \enl{y} & \enl{q} & \enl{o} & \enl{i} & \enl{a} & \enl{e}
-    \end{tabular}
-\end{table}
-
-blablabla \enlq{balakana\kh an en olipa\l ika\ta o i\pp anoli ka\ph enpan en\te ilpati a\kk iten } blabla 
-
 \chapter{Morphosyntax}
 
-\section{`Parts of Speech'}
-
-\section{Nominalization}
-
-\section{Word order \& sentence structure}
-
 \chapter{Semantics}
-
-\section{Definiteness \& specificity in nominalizers}
 
 \part{Dictionary}
 
