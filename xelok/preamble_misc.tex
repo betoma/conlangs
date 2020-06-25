@@ -1,0 +1,104 @@
+%---generic symbols---%
+\newcommand{\dao}{$\to$}
+\newcommand{\nm}{\symbol{"2205}}
+\newcommand{\ra}{\textgreater}
+\newcommand{\ipkt}{·}
+\newcommand{\til}{\textasciitilde}
+
+\newcommand{\ortho}[1]{$\langle$#1$\rangle$}
+\newcommand{\bripa}[1]{[#1]}
+\newcommand{\phipa}[1]{/#1/}
+
+%---LANG'S ORTHO---%
+%\^{} for lil hat
+%\v{} for the hat that isn't dumb
+%\u{u} for that one letter u
+%\~{} for tilde
+%\l for bar l
+\newcommand{\lam}{λ}
+\newcommand{\lambar}{ƛ}
+\newcommand{\Engma}{Ŋ}
+\newcommand{\espq}[1]{\textit{`#1'}}
+\newcommand{\engq}[1]{``#1''}
+
+%---IPA---%
+%consonants
+\newcommand{\bilaf}{ɸ}
+\newcommand{\bilav}{β}
+\newcommand{\labrox}{ʋ}
+\newcommand{\latfric}{ɬ}
+\newcommand{\latfrivoic}{ɮ}
+\newcommand{\alvr}{ɹ}
+\newcommand{\alvrap}{ɾ}
+\newcommand{\alvlap}{ɺ}
+\newcommand{\esh}{ʃ}
+\newcommand{\ezh}{ʒ}
+\newcommand{\paljstop}{ɟ}
+\newcommand{\paljfric}{ʝ}
+\newcommand{\egna}{ɲ}
+\newcommand{\rette}{ʈ}
+\newcommand{\retde}{ɖ}
+\newcommand{\retesh}{ʂ}
+\newcommand{\retezh}{ʐ}
+\newcommand{\retna}{ɳ}
+\newcommand{\retrap}{ɽ}
+\newcommand{\retel}{ɭ}
+\newcommand{\egh}{ɣ}
+\newcommand{\engma}{ŋ}
+\newcommand{\vell}{ʟ}
+\newcommand{\velr}{ʁ}
+\newcommand{\glotstop}{ʔ}
+\newcommand{\voih}{ɦ}
+%vowels
+\newcommand{\frno}{ø}
+\newcommand{\bari}{ɨ}
+\newcommand{\unru}{ɯ}
+\newcommand{\unro}{ɤ}
+\newcommand{\eps}{ɛ}
+\newcommand{\oeps}{œ}
+\newcommand{\sche}{ɘ}
+\newcommand{\schwa}{ə}
+\newcommand{\centruh}{ɜ}
+\newcommand{\opno}{ɔ}
+\newcommand{\aesh}{æ}
+\newcommand{\oesh}{ɶ}
+\newcommand{\centra}{ɐ}
+\newcommand{\ahoh}{ɒ}
+%diacritics and modifiers
+\newcommand{\asp}{ʰ}
+\newcommand{\lab}{ʷ}
+\newcommand{\pal}{ʲ}
+\newcommand{\jekt}{ʼ}
+\newcommand{\rhot}{˞}
+\newcommand{\sylb}{̩}
+\newcommand{\lgth}{ː}
+\newcommand{\nsylb}{̯}
+\newcommand{\vless}{̥}
+\newcommand{\upvless}{̊}
+\newcommand{\voicd}{̬}
+\newcommand{\retrct}{̬}
+\newcommand{\bckwrd}{̠}
+\newcommand{\lamino}{̻}
+\newcommand{\apico}{̺}
+\newcommand{\lowap}{̞}
+\newcommand{\prstr}{ˈ}
+\newcommand{\scstr}{ˌ}
+\newcommand{\tiebar}{͡} 
+\newcommand{\downstep}{ꜜ}
+
+\lingset{glstyle=nlevel,numoffset=3em,textoffset=1.5em,exskip=.75ex,belowglpreambleskip=.25ex,aboveglftskip=.25ex}
+
+\DTMnewdatestyle{eurodate}{%
+    \renewcommand{\DTMdisplaydate}[4]{%
+        \number##3.\nobreakspace%           day
+        \DTMmonthname{##2}\nobreakspace%    month
+        \number##1%                         year
+    }%
+    \renewcommand{\DTMDisplaydate}{\DTMdisplaydate}%
+}
+
+\DTMsetdatestyle{eurodate}
+
+\newcommand{\peoplegroup}{}
+\newcommand{\twolangname}{X\~{e}\lam \~{o}k}
+\newcommand{\langname}{\twolangname}

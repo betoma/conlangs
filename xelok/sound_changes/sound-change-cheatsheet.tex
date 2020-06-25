@@ -1,0 +1,175 @@
+\documentclass[a4paper,11pt,article,oneside]{memoir}
+\usepackage{fontspec}
+\usepackage{amsmath} % a pretty standard package to enlarge your inventory of symbols
+\usepackage{amssymb} % another common package for symbols
+\usepackage[hidelinks]{hyperref} % enables hyperlinks in your document (no worries -- they show up only on the screen. When you print a hard copy, the colored boxes aren't there)
+\usepackage{url} % helps typeset URLs properly, typically with the command \url
+\usepackage[margin=.5in]{geometry} % page layout
+\usepackage{booktabs} % creates beautiful and professional tables
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{textcomp}
+\usepackage{expex}
+\usepackage{threeparttable}
+\usepackage[calc,english]{datetime2}
+\usepackage{bookmark}
+
+\setmainfont{Charis SIL}[CharacterVariant=43:1]
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1ex}
+%\linespread{1.1}
+
+\input{../preamble_misc.tex}
+
+\title{\langname{} Sound Changes:\\{\Large A Cheat Sheet}}
+\author{Bethany E. Toma}
+\date{\today}
+
+\counterwithout{section}{chapter}
+\maxsecnumdepth{section}
+
+\begin{document}
+
+\maketitle
+
+While \langname{} is distinct enough from its Esperanto ancestor to be reasonably considered a separate language at this juncture, its orthography does not reflect this. While syntactic and semantic changes are reflected to a fairly reasonable extent in the orthography, phonological changes are not accounted for. As a reult, to reasonably approximate the pronunciation of a \langname{} word from how it is written, one must understand which sound changes have occurred from the `original' (hereafter `Zamenhofian') Esperanto. 
+
+Note that some sound changes listed apply only to the Lowlands dialect but not to the Highlands dialect, or vice-versa. This is indicated when it is the case.
+
+\section*{Zamenhofian Esperanto Orthography}
+
+The Esperanto pronunciation of a word tends to be roughly equivalent to its spelling in IPA, with the following exceptions:
+\begin{center}
+\begin{threeparttable}
+\begin{tabular}{ccccccccc}
+    \ortho{c} & \ortho{\^{c}} & \ortho{\^{g}} & \ortho{\^{h}}\tnote{1} & \ortho{\^{j}} & \ortho{\^{s}} & \ortho{r} & \ortho{\u{u}} & \ortho{v}\\[0.2cm]
+    \phipa{t\tiebar s} & \phipa{t\tiebar\esh} & \phipa{d\tiebar\ezh} & \phipa{x} & \phipa{\ezh} & \phipa{\esh} & \phipa{\alvrap} & \phipa{w} & \phipa{\labrox}
+\end{tabular}
+\begin{tablenotes}
+    \item[1] This phoneme is only retained in a very few words at this point (e.g., \espq{eĥo}, \espq{ĥaoso}) and is elsewhere generally replaced with variants with k or h.
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+
+Primary stress falls on the penultimate syllable, and secondary stress \emph{tends} to fall on alternating syllables preceding it.
+
+\section{Sound Changes}
+
+\subsection{0--100 AMC}
+
+\input{sound_change_stages/amc_000.tex}
+
+\subsection{100--200 AMC}
+
+\input{sound_change_stages/amc_100.tex}
+
+\subsection{200--300 AMC}
+
+\input{sound_change_stages/amc_200.tex}
+
+\subsection{300--400 AMC}
+
+\input{sound_change_stages/amc_300.tex}
+
+\subsection{400--500 AMC}
+
+\input{sound_change_stages/amc_400.tex}
+
+\subsection{500--600 AMC}
+
+\input{sound_change_stages/amc_500.tex}
+
+\subsection{600--700 AMC}
+
+\input{sound_change_stages/amc_600.tex}
+
+\subsection{700--800 AMC}
+
+\input{sound_change_stages/amc_700.tex}
+
+\subsection{800--900 AMC}
+
+\input{sound_change_stages/amc_800.tex}
+
+\subsection{900--1000 AMC}
+
+\input{sound_change_stages/amc_900.tex}
+
+\section{Sparky's Transcription}
+
+I'll probably make an in-world orthography later, but regardless of whether I do, I need a roughly phonetic or phonemic transcription which I can use to not have to constantly write in IPA. That'll go here once I actually make it lol.
+
+\clearpage
+\section{Pronunciation Example}
+
+The following is the Zamenhofian Esperanto text of the Lord's Prayer. Given that the text is highly ritualized, it has not been affected by the grammatical and lexical changes to the language, but it remains pronounced differently in the different dialects due to the sound changes that have occurred.
+
+\subsection{Zamenhofican Esperanto c. 0 AMC}
+
+\begin{multicols*}{2}
+    \textit{Patro nia, kiu estas en la ĉielo, \\
+    sanktigata estu Via Nomo. \\
+    Venu Via regno. \\
+    Fariĝu Via volo, \\
+    kiel en la ĉielo, tiel ankaŭ sur la tero.}
+
+    \textit{Nian panon ĉiutagan donu al ni hodiaŭ. \\
+    Kaj pardonu al ni niajn ŝuldojn, \\
+    kiel ankaŭ ni pardonas al niaj ŝuldantoj. \\
+    Kaj ne konduku nin en tenton, \\
+    sed liberigu nin de la malbono.}
+
+    \textit{Ĉar Via estas la regno 
+    kaj la potenco \\
+    kaj la gloro eterne.}
+
+    \textit{Amen.}
+    
+    \columnbreak
+
+    \prstr pa.t\alvrap o \prstr ni.a\\
+    \prstr ki.u \prstr e.stas en la t\tiebar\esh i\prstr e.lo\\
+    \scstr sank.ti\prstr ga.ta \prstr e.stu \prstr \labrox i.a \prstr no.mo\\
+    \prstr\labrox e.nu \prstr\labrox i.a \prstr\alvrap e.gno\\
+    fa\prstr\alvrap i.d\tiebar\ezh u \prstr\labrox i.a \prstr\labrox o.lo\\
+    \prstr ki.el en la t\tiebar\esh i\prstr e.lo\\
+    \prstr ti.el \prstr an.kau\nsylb{} sur la \prstr te.\alvrap o
+
+    \prstr ni.an \prstr pa.non \scstr t\tiebar\esh i.u\prstr ta.gan\\
+    \prstr do.nu al ni ho\prstr di.au\nsylb{}\\
+    kai\nsylb{} pa\alvrap\prstr don.u al ni \prstr ni.ai\nsylb{}n \prstr\esh ul.doi\nsylb{}n\\
+    \prstr ki.el \prstr an.kau\nsylb{} ni pa\alvrap\prstr do.nas\\
+    al \prstr ni.ai\nsylb{} \esh ul\prstr dan.toi\nsylb{}\\
+    kai\nsylb{} ne kon\prstr du.ku nin en \prstr ten.ton\\
+    sed \scstr li.be\prstr\alvrap i.gu nin de la mal\prstr bo.no
+
+    t\tiebar\esh a\alvrap{} \prstr\labrox i.a \prstr e.stas la \prstr \alvrap e.gno\\
+    kai\nsylb{} la po\prstr ten.t\tiebar so\\
+    kai\nsylb{} la \prstr glo.\alvrap o e\prstr te\alvrap.ne
+
+    \prstr a.men
+
+    \end{multicols*}
+
+\subsection{c. 100 AMC}
+
+\subsection{c. 200 AMC}
+
+\subsection{c. 300 AMC}
+
+\subsection{c. 400 AMC}
+
+\subsection{c. 500 AMC}
+
+\subsection{c. 600 AMC}
+
+\subsection{c. 700 AMC}
+
+\subsection{c. 800 AMC}
+
+\subsection{c. 900 AMC}
+
+\subsection{c. 1000 AMC}
+
+\end{document}

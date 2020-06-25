@@ -4,7 +4,7 @@
 \usepackage{amssymb} % another common package for symbols
 \usepackage[hidelinks]{hyperref} % enables hyperlinks in your document (no worries -- they show up only on the screen. When you print a hard copy, the colored boxes aren't there)
 \usepackage{url} % helps typeset URLs properly, typically with the command \url
-\usepackage[margin=.75in]{geometry} % page layout
+\usepackage{geometry} % page layout
 \usepackage{booktabs} % creates beautiful and professional tables
 \usepackage{multirow}
 \usepackage{textcomp}
@@ -13,98 +13,13 @@
 \usepackage[calc,english]{datetime2}
 \usepackage{bookmark}
 
-\setmainfont{Libertinus Serif}[CharacterVariant=43:1]
+\setmainfont{Charis SIL}[CharacterVariant=43:1]
 
 %\setlength{\parindent}{2em}
 \setlength{\parskip}{1ex}
 %\linespread{1.1}
 
-%---generic symbols---%
-\newcommand{\dao}{$\to$}
-\newcommand{\nm}{\symbol{"2205}}
-\newcommand{\ra}{\textgreater}
-\newcommand{\ipkt}{·}
-\newcommand{\til}{\textasciitilde}
-\newcommand{\langbr}{⟨}
-\newcommand{\rangbr}{⟩}
-
-%---LANG'S ORTHO---%
-%\^{} for lil hat
-%\v{} for the hat that isn't dumb
-%\u{u} for that one letter u
-%\~{} for tilde
-%\l for bar l
-\newcommand{\lam}{λ}
-\newcommand{\lambar}{ƛ}
-\newcommand{\Engma}{Ŋ}
-
-%---IPA---%
-%consonants
-\newcommand{\bilaf}{ɸ}
-\newcommand{\bilav}{β}
-\newcommand{\labrox}{ʋ}
-\newcommand{\latfric}{ɬ}
-\newcommand{\latfrivoic}{ɮ}
-\newcommand{\alvr}{ɹ}
-\newcommand{\alvrap}{ɾ}
-\newcommand{\alvlap}{ɺ}
-\newcommand{\esh}{ʃ}
-\newcommand{\ezh}{ʒ}
-\newcommand{\paljstop}{ɟ}
-\newcommand{\paljfric}{ʝ}
-\newcommand{\egna}{ɲ}
-\newcommand{\retesh}{ʂ}
-\newcommand{\retezh}{ʐ}
-\newcommand{\retna}{ɳ}
-\newcommand{\egh}{ɣ}
-\newcommand{\engma}{ŋ}
-\newcommand{\vell}{ʟ}
-\newcommand{\velr}{ʁ}
-\newcommand{\glotstop}{ʔ}
-%vowels
-\newcommand{\frno}{ø}
-\newcommand{\bari}{ɨ}
-\newcommand{\unru}{ɯ}
-\newcommand{\unro}{ɤ}
-\newcommand{\eps}{ɛ}
-\newcommand{\oeps}{œ}
-\newcommand{\sche}{ɘ}
-\newcommand{\schwa}{ə}
-\newcommand{\centruh}{ɜ}
-\newcommand{\opno}{ɔ}
-\newcommand{\aesh}{æ}
-\newcommand{\oesh}{ɶ}
-\newcommand{\centra}{ɐ}
-\newcommand{\ahoh}{ɒ}
-%diacritics and modifiers
-\newcommand{\asp}{ʰ}
-\newcommand{\lab}{ʷ}
-\newcommand{\pal}{ʲ}
-\newcommand{\jekt}{ʼ}
-\newcommand{\rhot}{˞}
-\newcommand{\sylb}{̩}
-\newcommand{\vless}{̥}
-\newcommand{\upvless}{̊}
-\newcommand{\retr}{̠}
-\newcommand{\lamino}{̻}
-\newcommand{\apico}{̺}
-\newcommand{\lowap}{̞}
-\newcommand{\prstr}{ˈ}
-\newcommand{\scstr}{ˌ}
-\newcommand{\tiebar}{͡} %or \t{} for tiebar
-
-\lingset{glstyle=nlevel,numoffset=3em,textoffset=1.5em,exskip=.75ex,belowglpreambleskip=.25ex,aboveglftskip=.25ex}
-
-\DTMnewdatestyle{eurodate}{%
-    \renewcommand{\DTMdisplaydate}[4]{%
-        \number##3.\nobreakspace%           day
-        \DTMmonthname{##2}\nobreakspace%    month
-        \number##1%                         year
-    }%
-    \renewcommand{\DTMDisplaydate}{\DTMdisplaydate}%
-}
-
-\DTMsetdatestyle{eurodate}
+\input{../preamble_misc.tex}
 
 %---TITLEPAGE---%
 \newlength{\drop}% for my convenience
@@ -115,7 +30,7 @@
 \vspace*{\drop}
 {\Huge A GRAMMAR}\\[\baselineskip]
 {\Large OF}\\[\baselineskip]
-{\Huge X\~{e}\lam \~{o}k}\\[\baselineskip]
+{\Huge \langname{}}\\[\baselineskip]
 {\scshape with diachronic progression}\\
 {\scshape from Zamenhofian Esperanto}\\
 {\scshape to the modern language}\\[2.5\drop]
@@ -127,6 +42,8 @@
 
 \maxsecnumdepth{subsection}
 
+\pagestyle{Ruled}
+
 \begin{document}
 \begin{titlingpage}
 \titleAM
@@ -135,24 +52,110 @@
 \frontmatter
 \tableofcontents
 \chapter{A Forward on Design Philosophy}
-\chapter{History \& Timeline of the Sf\~{e}rtø People}
+\chapter{History \& Timeline of the \peoplegroup{} People}
 \mainmatter
-\chapter[\textit{Esperantelo}: The Language of the First Settlers]{\textit{Esperantelo}:\\The Language of the First Settlers}
 
-Upon hearing a \textit{Sf\~{a}rt\~{o}n} speak of \textit{Esperantelo}, the `beautiful Esperanto' spoken by the first Esperanto-speaking settlers of the area, one may be fooled into believing this was `pure' Esperanto as from the mouth of Zamenhof himself. Certainly it isn't difficult to find someone complaining about how, unlike people these days, their ancestors spoke Esperanto how it was \emph{meant} to be spoken.\footnote{They, of course, don't see the irony in complaining about this in their own local \textit{slango}.}
+\setsecnumdepth{chapter}
+\chapter{Timeline of changes from Zamenhofian Esperanto to \langname{}}
 
-This, of course, is pure fiction. While the Esperantists who first settled the area spoke something far closer to the `textbook Esperanto' one might find in resources from the 21st century, their speech had already diverged from this standard within the first years of settling down. Given the mixed language backgrounds of the settlers---a mixture of native speakers and second-language learners of various levels---and how quickly the speakers were wholy cut off from even the rest of the Esperanto-speaking community, it's no wonder that their language changed so quickly.
+\section{0--100 AMC}
 
+\subsection{Sound Changes}
 
+\input{../sound_changes/sound_change_stages/amc_000.tex}
 
-\section{Sound Changes}
+\subsection{Morphosyntactic \& Semantic Changes}
 
-\section{Grammatical Changes}
+\input{../synsem_changes/synsem_stages/amc_000.tex}
 
-\subsection{Verb Forms}
+\section{100--200 AMC}
 
-\section{Lexical Changes}
+\subsection{Sound Changes}
 
-\chapter[\textit{Hejmslango}: X\~{e}\lam\~{o}k]{\textit{Hejmslango}:\\X\~{e}\lam\~{o}k}
+\input{../sound_changes/sound_change_stages/amc_100.tex}
+
+\subsection{Morphosyntactic \& Semantic Changes}
+
+\input{../synsem_changes/synsem_stages/amc_100.tex}
+
+\section{200--300 AMC}
+
+\subsection{Sound Changes}
+
+\input{../sound_changes/sound_change_stages/amc_200.tex}
+
+\subsection{Morphosyntactic \& Semantic Changes}
+
+\input{../synsem_changes/synsem_stages/amc_200.tex}
+
+\section{300--400 AMC}
+
+\subsection{Sound Changes}
+
+\input{../sound_changes/sound_change_stages/amc_300.tex}
+
+\subsection{Morphosyntactic \& Semantic Changes}
+
+\input{../synsem_changes/synsem_stages/amc_300.tex}
+
+\section{400--500 AMC}
+
+\subsection{Sound Changes}
+
+\input{../sound_changes/sound_change_stages/amc_400.tex}
+
+\subsection{Morphosyntactic \& Semantic Changes}
+
+\input{../synsem_changes/synsem_stages/amc_400.tex}
+
+\section{500--600 AMC}
+
+\subsection{Sound Changes}
+
+\input{../sound_changes/sound_change_stages/amc_500.tex}
+
+\subsection{Morphosyntactic \& Semantic Changes}
+
+\input{../synsem_changes/synsem_stages/amc_500.tex}
+
+\section{600--700 AMC}
+
+\subsection{Sound Changes}
+
+\input{../sound_changes/sound_change_stages/amc_600.tex}
+
+\subsection{Morphosyntactic \& Semantic Changes}
+
+\input{../synsem_changes/synsem_stages/amc_600.tex}
+
+\section{700--800 AMC}
+
+\subsection{Sound Changes}
+
+\input{../sound_changes/sound_change_stages/amc_700.tex}
+
+\subsection{Morphosyntactic \& Semantic Changes}
+
+\input{../synsem_changes/synsem_stages/amc_700.tex}
+
+\section{800--900 AMC}
+
+\subsection{Sound Changes}
+
+\input{../sound_changes/sound_change_stages/amc_800.tex}
+
+\subsection{Morphosyntactic \& Semantic Changes}
+
+\input{../synsem_changes/synsem_stages/amc_800.tex}
+
+\section{900--1000 AMC}
+
+\subsection{Sound Changes}
+
+\input{../sound_changes/sound_change_stages/amc_900.tex}
+
+\subsection{Morphosyntactic \& Semantic Changes}
+
+\input{../synsem_changes/synsem_stages/amc_900.tex}
 
 \end{document}
