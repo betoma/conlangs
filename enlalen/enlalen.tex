@@ -22,11 +22,11 @@
 \usepackage{bookmark}
 \usepackage{blindtext}
 \usepackage{phonrule}
+\usepackage[glosses,indexonlyfirst,nonumberlist,toc,nomain,mcolblock,,nogroupskip]{leipzig}
+\usepackage{xifthen}
 
 \setmainfont{Brill}
 %\setmainfont{Charis SIL}[CharacterVariant=43:1]
-\newfontfamily\libert{Libertinus Serif}
-\DeclareTextFontCommand{\textlibert}{\libert}
 
 %\setlength{\parindent}{2em}
 \setlength{\parskip}{1ex}
@@ -44,17 +44,18 @@
 \newcommand{\bripa}[1]{[#1]}
 \newcommand{\phipa}[1]{/#1/}
 \newcommand{\eng}[1]{`#1'}
-\newcommand{\enl}[1]{\textlibert{\small#1}}
+\newcommand{\enl}[1]{}
 \newcommand{\enlq}[1]{\enl{«~#1»}}
 \newcommand{\proto}[1]{\textit{*#1}}
 
 %---Lang Romanization---%
-\newcommand{\ph}{φ}
-\newcommand{\te}{ϑ}
-\newcommand{\kh}{χ}
-\newcommand{\pp}{π}
-\newcommand{\ta}{τ}
-\newcommand{\kk}{κ}
+%\newcommand{\ph}{φ}
+%\newcommand{\te}{ϑ}
+%\newcommand{\kh}{χ}
+\newcommand{\ppa}{π}
+\newcommand{\tta}{τ}
+\newcommand{\kka}{κ}
+\newcommand{\engga}{ng}
 
 %---IPA---%
 %consonants
@@ -64,6 +65,7 @@
 \newcommand{\labrox}{ʋ}
 \newcommand{\latfric}{ɬ}
 \newcommand{\latfrivoic}{ɮ}
+\newcommand{\darkl}{ɫ}
 \newcommand{\alvr}{ɹ}
 \newcommand{\alvrap}{ɾ}
 \newcommand{\alvlap}{ɺ}
@@ -121,6 +123,12 @@
 \newcommand{\tiebar}{͡}
 \newcommand{\lgth}{ː}
 \newcommand{\linglab}{̼}
+%tone letters
+\newcommand{\toneH}{˥}
+\newcommand{\toneM}{˧}
+\newcommand{\toneL}{˩}
+\newcommand{\toneMH}{˦}
+\newcommand{\toneML}{˨}
 
 \lingset{glstyle=nlevel,numoffset=3em,textoffset=1.5em,exskip=.75ex,belowglpreambleskip=.25ex,aboveglftskip=.25ex}
 
@@ -158,30 +166,105 @@
 \@beginparpenalty=10000
 \makeatother
 
+\newcounter{protwordcount}
 \newcounter{dictwordcount}
 \newcounter{definition}
 
-\newenvironment{dictentry}[3]%
+\newenvironment{entrylist}{
+    \begin{description}[leftmargin=*]
+    }{
+    \end{description}
+    }
+
+\makeatletter
+\newenvironment{protentry}[1]%
     {%
-    \item[\enl{\large #1}]\:\bripa{#2}\hfill\\
+    \item[\proto{#1}]\hfill
+    \protected@edef\@currentlabelname{#1}%
+    \setcounter{definition}{0}%
+    \refstepcounter{protwordcount}%
+    \begin{description}[align=right,labelwidth=*,font=\normalfont]
+    }{%
+    \end{description}
+    }%
+\makeatother
+
+\makeatletter
+\newenvironment{simplentry}[1]%
+    {%
+    \item[#1]\hfill
+    \protected@edef\@currentlabelname{#1}%
+    \setcounter{definition}{0}%
+    \begin{description}[align=right,labelwidth=*,font=\normalfont]
+    }{%
+    \end{description}
+    }%
+\makeatother
+
+\makeatletter
+\newenvironment{dictentry}[3][]%
+    {%
+    \item[#2]\ifthenelse{\isempty{#1}}{\hfill}{\:\bripa{#1}\hfill}\\
     {\footnotesize #3}
+    \protected@edef\@currentlabelname{#2}%
     \setcounter{definition}{0}%
     \refstepcounter{dictwordcount}%
     \begin{description}[align=right,labelwidth=*,font=\normalfont]
     }{%
     \end{description}
     }%
+\makeatother
 
-    \newcommand{\dictdef}[1]{\refstepcounter{definition}%
-    \item[\thedefinition.] #1
+\newenvironment{entrysublist}{
+    \vspace{2ex}
+    \item[]\textit{Compounds \& Phrasal Forms}
+    \begin{entrylist}
+        \small
+    }{
+    \end{entrylist}
+    }
+
+\newcommand{\dictdef}[2][]{\refstepcounter{definition}%
+    \item[\thedefinition.] \ifthenelse{\isempty{#1}}{
+        #2
+    }{
+        \textit{#1}\: #2
     }%
-    
-    \WithSuffix\newcommand\dictdef*[1]{%
-        \item[] #1
+    }%
+
+\WithSuffix\newcommand\dictdef*[2][]{%
+    \item[] \ifthenelse{\isempty{#1}}{
+        #2
+    }{
+        \textit{#1} #2
+    }%
     }
 
 %----------------------------
+%---------Glossaries---------
 %----------------------------
+
+\makenoidxglossaries
+
+\newleipzig{test}{tst}{It's a test!}
+
+\glssetwidest{CABBA}
+
+\makeatletter
+\newglossarystyle{fixed-mcols}{%
+    \setglossarystyle{alttree}%
+    \renewenvironment{theglossary}%
+    {%
+        \begin{multicols}{3}%
+            \def\@gls@prevlevel{-1}%
+%           \mbox{}\par
+        }%
+        {\par\end{multicols}}%
+}
+\makeatother
+
+%---------------------------
+%---------------------------
 
 \maxsecnumdepth{subsection}
 
@@ -202,7 +285,9 @@
 \clearpage
 \tableofcontents
 
-\chapter{List of Glossing Abbreviations}
+\setglossarystyle{fixed-mcols}
+
+\printnoidxglossary[type=\leipzigtype,title={Glossing Abbreviations}]
 
 \mainmatter
 
@@ -210,7 +295,9 @@
 
 \chapter{Context \& Culture}
 
-Fill in something here eventually
+Placeholder \\
+\Fsg \\
+\Spl
 
 \chapter{Phonology}
 
@@ -227,7 +314,7 @@ Fill in something here eventually
     Plosive & p & t & k \\
     Fricative & f & s & \\
     Nasal & m & n & ŋ \\
-    Liquid &  & l & \\ \bottomrule
+    Liquid &  & l & ʟ \\ \bottomrule
     \end{tabular}
     \caption{Consonant Inventory}
     \label{tab:enl-consonants}
@@ -238,9 +325,9 @@ Fill in something here eventually
     \begin{tabular}{@{}rccc@{}}
     \toprule
     \multicolumn{1}{l}{} & Front & Central & Back \\ \midrule
-    High & i iː j &  &  \\
-    Mid &  &  & o oː w \\
-    Low &  & a aː \pharox\dwnwrd &  \\ \bottomrule
+    High & i j &  &  \\
+    Mid &  &  & o w \\
+    Low &  & a \pharox\dwnwrd &  \\ \bottomrule
     \end{tabular}
     \caption{Vowel \& Glide Inventory}
     \label{tab:enl-vowels}
@@ -255,6 +342,7 @@ To be replaced with better versions of these and such later:
 \begin{itemize}
     \item Vowels \phipa{i, o, a} become nasal \bripa{e\nav, o\nav, a\nav} when they precede a nasal
     \item \phipa{l} becomes \bripa{\vell} before a velar consonant and \bripa{\bilav\dwnwrd} before a labial consonant. \phipa{w} is considered velar for these purposes.
+    \item \phipa{\vell} becomes \bripa{\darkl} before a coronal consonant and \bripa{w} before a labial consonant. \phipa{w} is considered velar for these purposes.
     \item Front vowels and semivowels \bripa{i, e\nav, j} become central \bripa{\bari, \sche\nav, j} before non-palatal dorsal sonorants (including vowels) \bripa{\engma, \vell, w, \pharox\dwnwrd, a} and after non-palatal dorsal obstruents \bripa{k, k\jekt}
     \item Back vowel \bripa{o} becomes central \bripa{\sche} before \bripa{j, i(\lgth)}
     \item Mid, non-front vowels \bripa{\sche, \sche\nav, o, o\nav} become high \bripa{\bari, \bari\nav, u, u\nav} after a high semivowel \bripa{j, w, \velprox}
@@ -280,7 +368,7 @@ To be replaced with better versions of these and such later:
 
 \subsection{Stress}
 
-Stress in \parentlang{} is weight-sensitive, relying on a principle that classifies syllables containing long vowels as `heavy' and those without long vowels as `light.' Note that this is only the case for the stem---peripherals are considered light even when the nucleus is a long vowel. The determination of stress location is unbounded, so stress may appear anywhere in a given word, with right-headed assignment for heavy syllables and left-headed assignment for light syllables. The result of this is that stress is placed on the rightmost heavy syllable if there is one, or on the first syllable if there are none.
+%Stress in \parentlang{} is weight-sensitive, relying on a principle that classifies syllables containing long vowels as `heavy' and those without long vowels as `light.' Note that this is only the case for the stem---peripherals are considered light even when the nucleus is a long vowel. The determination of stress location is unbounded, so stress may appear anywhere in a given word, with right-headed assignment for heavy syllables and left-headed assignment for light syllables. The result of this is that stress is placed on the rightmost heavy syllable if there is one, or on the first syllable if there are none.
 
 \subsection{Tone}
 
@@ -289,6 +377,17 @@ Stress in \parentlang{} is weight-sensitive, relying on a principle that classif
 \section{Transcription}
 
 \subsection{Romanization}
+
+Enłalen's romanization, used only for documentation purposes, is generally an unremarkable representation of the IPA-phonology, with a few exceptions:
+\begin{itemize}
+    \item \phipa{j} is written as \ortho{y}
+    \item \phipa{\pharox\dwnwrd} is written as \ortho{r}
+    \item \phipa{\vell} is written as \ortho{ł}
+    \item \phipa{i} is written as \ortho{i} in most positions, but is written with \ortho{e} when it precedes a nasal and is realized as \bripa{ẽ}. Nasalization is not otherwise illustrated in the orthography.
+    \item \phipa{\engma} is written as \ortho{n} in contexts in which it does not contrast with \phipa{n} (i.e., when it precedes velar phones as in \enl{enłalen} \bripa{ẽŋ\vell alẽn}) but is written as \ortho{\engga} in positions in which it contrasts with \phipa{n} (as in \enl{ale\engga} \bripa{alẽ\engma}).
+    \item The ejective series \phipa{p\jekt{} t\jekt{} k\jekt{}} is written with the letters \ortho{\ppa{} \tta{} \kka{}}
+    \item Phonemic high tone on a syllable is indicated by placing the acute diacritic on the vowel of that syllable, and phonemic low tone on a syllable is indicated by placing an underdot diacritic on the vowel of that syllable.
+\end{itemize}
 
 \subsection{Orthography}
 
