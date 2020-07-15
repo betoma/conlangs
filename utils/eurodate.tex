@@ -1,0 +1,10 @@
+\DTMnewdatestyle{eurodate}{%
+    \renewcommand{\DTMdisplaydate}[4]{%
+        \number##3.\nobreakspace%           day
+        \DTMmonthname{##2}\nobreakspace%    month
+        \number##1%                         year
+    }%
+    \renewcommand{\DTMDisplaydate}{\DTMdisplaydate}%
+}
+
+\DTMsetdatestyle{eurodate}

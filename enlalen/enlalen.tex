@@ -1,277 +1,35 @@
 \documentclass[a4paper,11pt,oneside,openany]{memoir}
-\usepackage{fontspec}
-\usepackage{amsmath} % a pretty standard package to enlarge your inventory of symbols
-\usepackage{amssymb} % another common package for symbols
-\usepackage[hidelinks]{hyperref} % enables hyperlinks in your document (no worries -- they show up only on the screen. When you print a hard copy, the colored boxes aren't there)
-\usepackage{url} % helps typeset URLs properly, typically with the command \url
-\usepackage[margin=.75in]{geometry} % page layout
-\usepackage{tikz}
-\usepackage{tikz-qtree}
-\usepackage{wrapfig}
-\usepackage{subcaption}
-\usepackage{booktabs} % creates beautiful and professional tables
-\usepackage{multicol}
-\usepackage{multirow}
-\usepackage{textcomp}
-\usepackage{expex}
-\usepackage{enumitem}
-\usepackage{tablefootnote}
-\usepackage[calc,english]{datetime2}
-\usepackage{suffix}
-\usepackage{afterpage}
-\usepackage{bookmark}
-\usepackage{blindtext}
-\usepackage{phonrule}
-\usepackage[glosses,indexonlyfirst,nonumberlist,toc,nomain,mcolblock,,nogroupskip]{leipzig}
-\usepackage{xifthen}
+
+\input{preamble/packages.tex}
 
 \setmainfont{Brill}
-%\setmainfont{Charis SIL}[CharacterVariant=43:1]
+
+\input{../utils/misc_macros.tex}
+
+\input{../utils/ipa_macros.tex}
+
+\input{../utils/lingstyles.tex}
+
+\lingset{lingstyle=default}
+
+\input{../utils/eurodate.tex}
+
+\input{../utils/dict_macros.tex}
+
+\input{preamble/dict_macros.tex}
+
+\input{preamble/leipzig.tex}
+
+%---------------------------
+%---------------------------
+
+\input{preamble/enl_macros.tex}
+
+\maxsecnumdepth{subsection}
 
 %\setlength{\parindent}{2em}
 \setlength{\parskip}{1ex}
 %\linespread{1.1}
-%---generic symbols---%
-\newcommand{\dao}{$\to$}
-\newcommand{\nm}{\symbol{"2205}}
-\newcommand{\ra}{\textgreater}
-\newcommand{\ipkt}{·}
-\newcommand{\til}{\textasciitilde}
-\newcommand{\langbr}{⟨}
-\newcommand{\rangbr}{⟩}
-
-\newcommand{\ortho}[1]{$\langle$#1$\rangle$}
-\newcommand{\bripa}[1]{[#1]}
-\newcommand{\phipa}[1]{/#1/}
-\newcommand{\eng}[1]{`#1'}
-\newcommand{\enl}[1]{}
-\newcommand{\enlq}[1]{\enl{«~#1»}}
-\newcommand{\proto}[1]{\textit{*#1}}
-
-%---Lang Romanization---%
-%\newcommand{\ph}{φ}
-%\newcommand{\te}{ϑ}
-%\newcommand{\kh}{χ}
-\newcommand{\ppa}{π}
-\newcommand{\tta}{τ}
-\newcommand{\kka}{κ}
-\newcommand{\engga}{ng}
-
-%---IPA---%
-%consonants
-\newcommand{\bilaf}{ɸ}
-\newcommand{\bilav}{β}
-\newcommand{\tht}{θ}
-\newcommand{\labrox}{ʋ}
-\newcommand{\latfric}{ɬ}
-\newcommand{\latfrivoic}{ɮ}
-\newcommand{\darkl}{ɫ}
-\newcommand{\alvr}{ɹ}
-\newcommand{\alvrap}{ɾ}
-\newcommand{\alvlap}{ɺ}
-\newcommand{\esh}{ʃ}
-\newcommand{\ezh}{ʒ}
-\newcommand{\alvpalesh}{ɕ}
-\newcommand{\alvpalezh}{ʑ}
-\newcommand{\paljstop}{ɟ}
-\newcommand{\paljfric}{ʝ}
-\newcommand{\egna}{ɲ}
-\newcommand{\retesh}{ʂ}
-\newcommand{\retezh}{ʐ}
-\newcommand{\retna}{ɳ}
-\newcommand{\egh}{ɣ}
-\newcommand{\engma}{ŋ}
-\newcommand{\vell}{ʟ}
-\newcommand{\velr}{ʁ}
-\newcommand{\velprox}{ɰ}
-\newcommand{\uvux}{χ}
-\newcommand{\pharox}{ʕ}
-\newcommand{\glotstop}{ʔ}
-%vowels
-\newcommand{\frno}{ø}
-\newcommand{\bari}{ɨ}
-\newcommand{\unru}{ɯ}
-\newcommand{\unro}{ɤ}
-\newcommand{\eps}{ɛ}
-\newcommand{\oeps}{œ}
-\newcommand{\sche}{ɘ}
-\newcommand{\schwa}{ə}
-\newcommand{\centruh}{ɜ}
-\newcommand{\opno}{ɔ}
-\newcommand{\aesh}{æ}
-\newcommand{\oesh}{ɶ}
-\newcommand{\centra}{ɐ}
-\newcommand{\ahoh}{ɒ}
-%diacritics and modifiers
-\newcommand{\asp}{ʰ}
-\newcommand{\lab}{ʷ}
-\newcommand{\pal}{ʲ}
-\newcommand{\jekt}{ʼ}
-\newcommand{\nav}{̃}
-\newcommand{\rhot}{˞}
-\newcommand{\sylb}{̩}
-\newcommand{\vless}{̥}
-\newcommand{\upvless}{̊}
-\newcommand{\bck}{̠}
-\newcommand{\dwnwrd}{̞}
-\newcommand{\upwrd}{̝}
-\newcommand{\lamino}{̻}
-\newcommand{\apico}{̺}
-\newcommand{\lowap}{̞}
-\newcommand{\prstr}{ˈ}
-\newcommand{\scstr}{ˌ}
-\newcommand{\tiebar}{͡}
-\newcommand{\lgth}{ː}
-\newcommand{\linglab}{̼}
-%tone letters
-\newcommand{\toneH}{˥}
-\newcommand{\toneM}{˧}
-\newcommand{\toneL}{˩}
-\newcommand{\toneMH}{˦}
-\newcommand{\toneML}{˨}
-
-\lingset{glstyle=nlevel,numoffset=3em,textoffset=1.5em,exskip=.75ex,belowglpreambleskip=.25ex,aboveglftskip=.25ex}
-
-\DTMnewdatestyle{eurodate}{%
-    \renewcommand{\DTMdisplaydate}[4]{%
-        \number##3.\nobreakspace%           day
-        \DTMmonthname{##2}\nobreakspace%    month
-        \number##1%                         year
-    }%
-    \renewcommand{\DTMDisplaydate}{\DTMdisplaydate}%
-}
-
-\DTMsetdatestyle{eurodate}
-
-\newlength{\drop}% for my convenience
-\newcommand*{\titleP}{\begingroup%
-%\FSfont{5bo} % FontSite Bergamo (Bembo)
-\drop = 0.12\textheight
-\vspace*{\drop}
-\begin{center}
-{\huge A Grammar of}\\[\baselineskip]
-{\HUGE\sc \parentlang}\par
-\end{center}
-\vspace*{3\drop}
-{\large By {\sc Bethany E. Toma}}
-\vfill
-{\today}
-\vspace*{0.5\drop}
-\endgroup}
-
-%-----DICT COMMANDS------
-%------------------------
-
-\makeatletter
-\@beginparpenalty=10000
-\makeatother
-
-\newcounter{protwordcount}
-\newcounter{dictwordcount}
-\newcounter{definition}
-
-\newenvironment{entrylist}{
-    \begin{description}[leftmargin=*]
-    }{
-    \end{description}
-    }
-
-\makeatletter
-\newenvironment{protentry}[1]%
-    {%
-    \item[\proto{#1}]\hfill
-    \protected@edef\@currentlabelname{#1}%
-    \setcounter{definition}{0}%
-    \refstepcounter{protwordcount}%
-    \begin{description}[align=right,labelwidth=*,font=\normalfont]
-    }{%
-    \end{description}
-    }%
-\makeatother
-
-\makeatletter
-\newenvironment{simplentry}[1]%
-    {%
-    \item[#1]\hfill
-    \protected@edef\@currentlabelname{#1}%
-    \setcounter{definition}{0}%
-    \begin{description}[align=right,labelwidth=*,font=\normalfont]
-    }{%
-    \end{description}
-    }%
-\makeatother
-
-\makeatletter
-\newenvironment{dictentry}[3][]%
-    {%
-    \item[#2]\ifthenelse{\isempty{#1}}{\hfill}{\:\bripa{#1}\hfill}\\
-    {\footnotesize #3}
-    \protected@edef\@currentlabelname{#2}%
-    \setcounter{definition}{0}%
-    \refstepcounter{dictwordcount}%
-    \begin{description}[align=right,labelwidth=*,font=\normalfont]
-    }{%
-    \end{description}
-    }%
-\makeatother
-
-\newenvironment{entrysublist}{
-    \vspace{2ex}
-    \item[]\textit{Compounds \& Phrasal Forms}
-    \begin{entrylist}
-        \small
-    }{
-    \end{entrylist}
-    }
-
-\newcommand{\dictdef}[2][]{\refstepcounter{definition}%
-    \item[\thedefinition.] \ifthenelse{\isempty{#1}}{
-        #2
-    }{
-        \textit{#1}\: #2
-    }%
-    }%
-
-\WithSuffix\newcommand\dictdef*[2][]{%
-    \item[] \ifthenelse{\isempty{#1}}{
-        #2
-    }{
-        \textit{#1} #2
-    }%
-    }
-
-%----------------------------
-%---------Glossaries---------
-%----------------------------
-
-\makenoidxglossaries
-
-\newleipzig{test}{tst}{It's a test!}
-
-\glssetwidest{CABBA}
-
-\makeatletter
-\newglossarystyle{fixed-mcols}{%
-    \setglossarystyle{alttree}%
-    \renewenvironment{theglossary}%
-    {%
-        \begin{multicols}{3}%
-            \def\@gls@prevlevel{-1}%
-%           \mbox{}\par
-        }%
-        {\par\end{multicols}}%
-}
-\makeatother
-
-%---------------------------
-%---------------------------
-
-\maxsecnumdepth{subsection}
-
-\newcommand{\parentlang}{Enłalen}
-\newcommand{\childlangone}{Daughterlang}
-\newcommand{\childlangtwo}{Sonlang}
-\newcommand{\childlangthree}{Kidlang}
 
 \begin{document}
 

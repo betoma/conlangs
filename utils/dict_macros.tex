@@ -1,0 +1,66 @@
+%-----DICT COMMANDS------
+%------------------------
+
+\makeatletter
+\@beginparpenalty=10000
+\makeatother
+
+\newcounter{dictwordcount}
+\newcounter{definition}
+
+\newenvironment{entrylist}{
+    \begin{description}[leftmargin=*]
+    }{
+    \end{description}
+    }
+
+\makeatletter
+\newenvironment{simplentry}[1]%
+    {%
+    \item[#1]\hfill
+    \protected@edef\@currentlabelname{#1}%
+    \setcounter{definition}{0}%
+    \begin{description}[align=right,labelwidth=*,font=\normalfont]
+    }{%
+    \end{description}
+    }%
+\makeatother
+
+\makeatletter
+\newenvironment{dictentry}[3][]%
+    {%
+    \item[#2]\ifthenelse{\isempty{#1}}{\hfill}{\:\bripa{#1}\hfill}\\
+    {\footnotesize #3}
+    \protected@edef\@currentlabelname{#2}%
+    \setcounter{definition}{0}%
+    \refstepcounter{dictwordcount}%
+    \begin{description}[align=right,labelwidth=*,font=\normalfont]
+    }{%
+    \end{description}
+    }%
+\makeatother
+
+\newenvironment{entrysublist}{
+    \vspace{2ex}
+    \item[]\textit{Compounds \& Phrasal Forms}
+    \begin{entrylist}
+        \small
+    }{
+    \end{entrylist}
+    }
+
+\newcommand{\dictdef}[2][]{\refstepcounter{definition}%
+    \item[\thedefinition.] \ifthenelse{\isempty{#1}}{
+        #2
+    }{
+        \textit{#1}\: #2
+    }%
+    }%
+
+\WithSuffix\newcommand\dictdef*[2][]{%
+    \item[] \ifthenelse{\isempty{#1}}{
+        #2
+    }{
+        \textit{#1} #2
+    }%
+    }
