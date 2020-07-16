@@ -14,23 +14,24 @@
     \end{description}
     }
 
-\makeatletter
-\newenvironment{simplentry}[1]%
-    {%
-    \item[#1]\hfill
-    \protected@edef\@currentlabelname{#1}%
-    \setcounter{definition}{0}%
-    \begin{description}[align=right,labelwidth=*,font=\normalfont]
-    }{%
-    \end{description}
-    }%
-\makeatother
+% \makeatletter
+% \newenvironment{simplentry}[1]%
+%     {%
+%     \item[#1]\hfill
+%     \protected@edef\@currentlabelname{#1}%
+%     \setcounter{definition}{0}%
+%     \begin{description}[align=right,labelwidth=*,font=\normalfont]
+%     }{%
+%     \end{description}
+%     }%
+% \makeatother
 
 \makeatletter
 \newenvironment{dictentry}[3][]%
     {%
-    \item[#2]\ifthenelse{\isempty{#1}}{\hfill}{\:\bripa{#1}\hfill}\\
+    \item[#2]\ifblank{#1}{\hfill}{\:\bripa{#1}\hfill}\ifblank{#3}{}{\\
     {\footnotesize #3}
+    }
     \protected@edef\@currentlabelname{#2}%
     \setcounter{definition}{0}%
     \refstepcounter{dictwordcount}%
@@ -49,18 +50,59 @@
     \end{entrylist}
     }
 
-\newcommand{\dictdef}[2][]{\refstepcounter{definition}%
-    \item[\thedefinition.] \ifthenelse{\isempty{#1}}{
-        #2
-    }{
-        \textit{#1}\: #2
-    }%
-    }%
+\newbox\posbox
+\newdimen\cacheleft
+\newdimen\cachewd
 
-\WithSuffix\newcommand\dictdef*[2][]{%
-    \item[] \ifthenelse{\isempty{#1}}{
-        #2
-    }{
-        \textit{#1} #2
+\makeatletter
+\newcommand{\dictdef}[2][]{%
+    \refstepcounter{definition}%
+    \ifblank{#1}{%
+    \item[\thedefinition.] #2
+    }{%
+    \setbox\posbox\hbox{\textit{#1}\,\:}%
+    \itemindent-\wd\posbox
+    \cacheleft\parshapeindent\@ne
+    \cachewd\parshapelength\@ne
+    \advance\cacheleft\wd\posbox
+    \advance\cachewd-\wd\posbox
+    \parshape\@ne\cacheleft\cachewd
+    \advance\cacheleft-\wd\posbox
+    \advance\cachewd\wd\posbox
+    \item[\thedefinition.]
+    \usebox\posbox#2\par
+    \parshape\@ne\cacheleft\cachewd
+    \itemindent\z@
     }%
-    }
+}%
+\makeatother
+
+% \newcommand{\dictdef}[2][]{\refstepcounter{definition}%
+%     \item[\thedefinition.] \ifthenelse{\isempty{#1}}{
+%         #2
+%     }{
+%         \textit{#1}\: #2
+%     }%
+%     }%
+\makeatletter
+\WithSuffix\newcommand\dictdef*[2][]{%
+    \refstepcounter{definition}%
+    \ifblank{#1}{%
+    \item[] #2
+    }{%
+    \setbox\posbox\hbox{\textit{#1}\,\:}%
+    \itemindent-\wd\posbox
+    \cacheleft\parshapeindent\@ne
+    \cachewd\parshapelength\@ne
+    \advance\cacheleft\wd\posbox
+    \advance\cachewd-\wd\posbox
+    \parshape\@ne\cacheleft\cachewd
+    \advance\cacheleft-\wd\posbox
+    \advance\cachewd\wd\posbox
+    \item[]
+    \usebox\posbox#2\par
+    \parshape\@ne\cacheleft\cachewd
+    \itemindent\z@
+    }%
+}%
+\makeatother
