@@ -25,11 +25,10 @@
 
 \input{preamble/enl_macros.tex}
 
-\maxsecnumdepth{subsection}
+\maxsecnumdepth{section}
 
-%\setlength{\parindent}{2em}
-\setlength{\parskip}{1ex}
-%\linespread{1.1}
+\setlength{\parindent}{0pt}
+\nonzeroparskip
 
 \begin{document}
 
@@ -53,9 +52,45 @@
 
 \chapter{Context \& Culture}
 
-Placeholder \\
-\Fsg \\
-\Spl
+\Blindtext[2]
+
+\ex
+\begingl
+\glpreamble
+`Yesterday, I saw the dog and the cat fighting, and then...
+\endpreamble
+I[\Fsg]
+example[example]
+be[\Spl]
+ah[\Acc]
+\glft ...the dog hit the cat.'
+\endgl
+\xe
+
+\Blindtext[3]
+
+\pex
+\a
+\begingl
+\glpreamble
+`Yesterday, I saw the dog and the cat fighting, and then...
+\endpreamble
+I[\Fsg]
+a\l k[dog]
+\glft ...the dog hit the cat.'
+\endgl
+\a 
+\begingl
+\glpreamble
+`I told my dog to stay, but then when I turned around...
+\endpreamble
+a\l k[dog]
+hit[\Sarg]
+\glft ...the dog hit the cat.'
+\endgl
+\xe
+
+\Blindtext[1]
 
 \chapter{Phonology}
 
@@ -151,6 +186,183 @@ write this later.
 
 
 \chapter{Morphology}
+
+\section{Historical Morphophonology}
+
+\subsection{Metrical categories}
+
+Each root in \parentlang{} can be classified into one of five categories based on the sequence of phonemic long and short vowels in its form in Old Elvish. In \parentlang{}, these categories are named for the metrical styles of Old Elvish poetry; in English, we thus use terms for different types of metrical feet from Greek poetry. As such, the categories are as follows:
+\begin{description}[labelindent=30pt,leftmargin=*,rightmargin=30pt]
+    \item[Iambic:] Old Elv. root ends with a long vowel, with a short vowel in the preceding syllable. If the original root contains at least three syllables, the antepenult vowel is long.
+    \item[Anapaestic:] Old Elv. root ends with a long vowel, with short vowels in the preceding two syllables. Words formed from Old Elvish roots that contain only a single syllable with a long vowel are also generally categorized as anapaestic.
+    \item[Dactylic:] Old Elv. root ends with a short vowel preceded by another short vowel
+    \item[Trochaic:] Old Elv. root ends with a short vowel preceded by a long vowel. If the root contains at least four syllables, the fourth-to-last and antepenult vowel form another long-short trochee pattern
+    \item[Quasi-trochaic:] Old Elv. root ends with a short vowel preceded by a long vowel, preceded by two short vowels. Quasi-trochaic roots only occur when a root contains at least four syllables.
+\end{description}
+
+These categorizations matter for \parentlang{} because the final metrical pattern of a root affected the realization of the metrical patterns of affixes, resulting in affixes having different forms depending on the preceding metrical patterns. Further complicating matters is the fact that these affixes are applied sequentially and the application of a given affix can (and usually does) change a word's metrical category.
+
+Based on its own length and phonemic metrical pattern in Old Elvish, a given affix can fall into one of nine categories:
+\begin{description}[labelindent=30pt,leftmargin=*,rightmargin=30pt]
+    \item[Short:] consisted of a single syllable with a short vowel in Old Elvish. Iambic roots become trochaic, dactylic roots become anapaestic, trochaic and quasi-trochaic roots become dactylic, and anapaestic roots become quasi-trochaic \emph{unless} they consisted only of a single long-vowelled syllable in Old Elvish, in which case they become trochaic.
+    \begin{center}
+    \begin{tikzpicture}
+        \node[] at (-0.5,0.75) (a) {A};
+        \node[] at (1,-0.25) (t) {T};
+        \node[] at (0.5,0.75) (d) {D};
+        \node[] at (-1,-0.25) (i) {I};
+        \node[] at (0,-1) (q) {Q};
+        \draw[->] (a) -- (q);
+        \draw[dashed,->] (a) -- (t);
+        \draw[->] (t) -- (d);
+        \draw[->] (q) -- (d);
+        \draw[->] (i) -- (t);
+        \draw[->] (d) -- (a);
+    \end{tikzpicture}
+    \end{center}
+    \item[Long:] consisted of a single syllable with a long vowel in Old Elvish. As with short affixes, iambic roots become trochaic, dactylic roots become anapaestic, anapaestic roots become quasi-trochaic or trochaic (under the same circumstances described above), \emph{but} trochaic and quasi-trochaic roots become iambic rather than dactylic.
+    \begin{center}
+        \begin{tikzpicture}
+            \node[] at (-0.5,0.75) (a) {A};
+            \node[] at (1,-0.25) (t) {T};
+            \node[] at (0.5,0.75) (d) {D};
+            \node[] at (-1,-0.25) (i) {I};
+            \node[] at (0,-1) (q) {Q};
+            \draw[->] (a) -- (q);
+            \draw[dashed,->] (a) -- (t);
+            \draw[->] (t) -- (i);
+            \draw[->] (q) -- (i);
+            \draw[->] (i) -- (t);
+            \draw[->] (d) -- (a);
+        \end{tikzpicture}
+        \end{center}
+    \item[Iambic:] consisted of two syllables, the latter with a long vowel and the former with a short vowel. Anapaestic roots become iambic, iambic roots become dactylic, dactylic roots become quasi-trochaic, and trochaic and quasi-trochaic roots remain trochaic and quasi-trochaic, respectively.
+    \begin{center}
+        \begin{tikzpicture}
+            \node[] at (-0.5,0.75) (a) {A};
+            \node[] at (1,-0.25) (t) {T};
+            \node[] at (0.5,0.75) (d) {D};
+            \node[] at (-1,-0.25) (i) {I};
+            \node[] at (0,-1) (q) {Q};
+            \draw[->] (a) to (i);
+            \draw[->] (t) to [out=0,in=90,loop,looseness=4.8] (t);
+            \draw[->] (q) to [out=-90,in=0,loop,looseness=4.8] (q);
+            \draw[->] (i) to (d);
+            \draw[->] (d) to (q);
+        \end{tikzpicture}
+    \end{center}
+    \item[Trochaic:] consisted of two syllables, the latter with a short vowel and the former with a long vowel. Anapaestic roots become dactylic, dactylic roots become quasi-trochaic, quasi-trochaic roots become trochaic, and iambic and trochaic roots remain iambic and trochaic, respectively.
+    \begin{center}
+        \begin{tikzpicture}
+            \node[] at (-0.5,0.75) (a) {A};
+            \node[] at (1,-0.25) (t) {T};
+            \node[] at (0.5,0.75) (d) {D};
+            \node[] at (-1,-0.25) (i) {I};
+            \node[] at (0,-1) (q) {Q};
+            \draw[->] (a) to (d);
+            \draw[->] (t) to [out=0,in=90,loop,looseness=4.8] (t);
+            \draw[->] (i) to [out=-90,in=180,loop,looseness=4.8] (i);
+            \draw[->] (q) to (t);
+            \draw[->] (d) to (q);
+        \end{tikzpicture}
+    \end{center}
+    \item[Pyrrhic:] consisted of two syllables, both of which contained short vowels. Anapaestic and iambic roots become dactylic, dactylic roots become quasi-trochaic, quasi-trochaic roots become iambic, and trochaic roots remain trochaic.
+    \begin{center}
+        \begin{tikzpicture}
+            \node[] at (-0.5,0.75) (a) {A};
+            \node[] at (1,-0.25) (t) {T};
+            \node[] at (0.5,0.75) (d) {D};
+            \node[] at (-1,-0.25) (i) {I};
+            \node[] at (0,-1) (q) {Q};
+            \draw[->] (a) to (d);
+            \draw[->] (t) to [out=0,in=90,loop,looseness=4.8] (t);
+            \draw[->] (i) to (d);
+            \draw[->] (q) to (i);
+            \draw[->] (d) to (q);
+        \end{tikzpicture}
+    \end{center}
+    \item[Anapaestic:] consisted of three syllables, the last of which was long with the prior two being short. Quasi-trochaic roots become trochaic, trochaic roots become dactylic, dactylic roots become iambic, iambic roots become anapaestic, and anapaestic roots remain anapaestic.
+    \begin{center}
+        \begin{tikzpicture}
+            \node[] at (-0.5,0.75) (a) {A};
+            \node[] at (1,-0.25) (t) {T};
+            \node[] at (0.5,0.75) (d) {D};
+            \node[] at (-1,-0.25) (i) {I};
+            \node[] at (0,-1) (q) {Q};
+            \draw[->] (t) to (d);
+            \draw[->] (a) to [out=90,in=180,loop,looseness=4.8] (a);
+            \draw[->] (i) to (a);
+            \draw[->] (q) to (t);
+            \draw[->] (d) to (i);
+        \end{tikzpicture}
+    \end{center}
+    \item[Amphibrachic:] consisted of three syllables, the middle of which was long with the other two being short. Dactylic roots remain dactylic. All other roots become or remain trochaic.
+    \begin{center}
+        \begin{tikzpicture}
+            \node[] at (-0.5,0.75) (a) {A};
+            \node[] at (1,-0.25) (t) {T};
+            \node[] at (0.5,0.75) (d) {D};
+            \node[] at (-1,-0.25) (i) {I};
+            \node[] at (0,-1) (q) {Q};
+            \draw[->] (t) to [out=-45,in=45,loop,looseness=4.8] (t);
+            \draw[->] (d) to [out=0,in=90,loop,looseness=4.8] (d);
+            \draw[->] (i) to (t);
+            \draw[->] (q) to (t);
+            \draw[->] (a) to (t);
+        \end{tikzpicture}
+    \end{center}
+    \item[Dactylic:] consisted of three syllables, the first of which was long with the other two being short. Anapaestic and iambic roots become trochaic. All other roots become or remain dactylic.
+    \begin{center}
+        \begin{tikzpicture}
+            \node[] at (-0.5,0.75) (a) {A};
+            \node[] at (1,-0.25) (t) {T};
+            \node[] at (0.5,0.75) (d) {D};
+            \node[] at (-1,-0.25) (i) {I};
+            \node[] at (0,-1) (q) {Q};
+            \draw[->] (t) to (d);
+            \draw[->] (d) to [out=0,in=90,loop,looseness=4.8] (d);
+            \draw[->] (i) to (t);
+            \draw[->] (q) to (d);
+            \draw[->] (a) to (t);
+        \end{tikzpicture}
+    \end{center}
+    \item[Cretic:] consisted of three syllables, the first and last of which were long and the middle of which was short. Iambic roots become trochaic, and anapaestic roots remain anapaestic. All other roots become iambic.
+    \begin{center}
+        \begin{tikzpicture}
+            \node[] at (-0.5,0.75) (a) {A};
+            \node[] at (1,-0.25) (t) {T};
+            \node[] at (0.5,0.75) (d) {D};
+            \node[] at (-1,-0.25) (i) {I};
+            \node[] at (0,-1) (q) {Q};
+            \draw[->] (t) to [out=160,in=20] (i);
+            \draw[->] (d) to [out=225,in=45] (i);
+            \draw[->] (i) to [out=-20,in=200] (t);
+            \draw[->] (q) to (i);
+            \draw[->] (a) to [out=90,in=180,loop,looseness=4.8] (a);
+        \end{tikzpicture}
+    \end{center} 
+\end{description}
+While there may be some indicator of which category a given affix falls into based on how it patterns with roots, by and large these cannot be reliably inferred from surface forms without some knowledge of historical forms. Within this grammar, the underlying pattern of a given affix will be listed when relevant. 
+
+Since affixes naturally appear differently in different environments, their differences will be listed when relevant. If in a context where pointing out each individual form is unnecessary or has already been done, the form used with anapaestic roots will be used as the citation form for nouns and the form used with dactylic roots will be used as the citation form for verbs.
+
+\subsection{Historic glottals and vowels}
+
+Sometimes a given affix form will be written out with a superscript \supho{} or \supglot{} preceding or following the affix. This indicates that in Old Elvish there was a historic \proto{h} or \proto{\glotstop} present at that boundary that could affect adjacent phones. When one of these is placed after an affix, a vowel is included as well to indicate what short vowel was present. These factors are listed to account for seemingly irregular behavior at morpheme boundaries.
+
+For example, the form of the inclusive subject clitic that is placed after a dactylic root is \enl{-mạ\supho}, an iambic affix that turns the root quasi-trochaic. The form of the exclusive object clitic that is placed directly after is \enl{-\supglot wạ}. Without these morpheme-boundary indicators, one would expect the form to be \enl{-mạwạ}, but due to their interactions, it's actually \enl{-mạwwạ}. Minor `irregularities' like this frequently result from these interactions, which is why these superscript indicators are included when relevant.
+
+\section{Nominal Morphology}
+
+\section{Verbal Morphology}
+
+\parentlang{} verbal morphology involves the use of affixes to mark tense as well as, in many contexts, using anaphoric clitics to indicate the person of verbal arguments. Tense affixes are mandatory and appear closest to the verb, whereas anaphoric clitics are only included in certain contexts and occur after any tense affix. Historically \parentlang{} possessed a negation affix that occurred even closer to the verb stem than tense marking; however, as negation is now largely indicated analytically, this is only apparent in the derivations of negation particles from \parentlang{} verbs.
+
+\subsection{Tense Marking}
+
+
+
+\subsection{Anaphoric Clitics}
 
 \chapter{Syntax}
 

@@ -50,9 +50,9 @@
     \end{entrylist}
     }
 
-\newbox\posbox
-\newdimen\cacheleft
-\newdimen\cachewd
+\newbox\BETposbox
+\newdimen\BETcacheleft
+\newdimen\BETcachewd
 
 \makeatletter
 \newcommand{\dictdef}[2][]{%
@@ -60,18 +60,18 @@
     \ifblank{#1}{%
     \item[\thedefinition.] #2
     }{%
-    \setbox\posbox\hbox{\textit{#1}\,\:}%
-    \itemindent-\wd\posbox
-    \cacheleft\parshapeindent\@ne
-    \cachewd\parshapelength\@ne
-    \advance\cacheleft\wd\posbox
-    \advance\cachewd-\wd\posbox
-    \parshape\@ne\cacheleft\cachewd
-    \advance\cacheleft-\wd\posbox
-    \advance\cachewd\wd\posbox
+    \setbox\BETposbox\hbox{\textit{#1}\,\:}%
+    \itemindent-\wd\BETposbox
+    \BETcacheleft\parshapeindent\@ne
+    \BETcachewd\parshapelength\@ne
+    \advance\BETcacheleft\wd\BETposbox
+    \advance\BETcachewd-\wd\BETposbox
+    \parshape\@ne\BETcacheleft\BETcachewd
+    \advance\BETcacheleft-\wd\BETposbox
+    \advance\BETcachewd\wd\BETposbox
     \item[\thedefinition.]
-    \usebox\posbox#2\par
-    \parshape\@ne\cacheleft\cachewd
+    \usebox\BETposbox#2\par
+    \parshape\@ne\BETcacheleft\BETcachewd
     \itemindent\z@
     }%
 }%
@@ -90,18 +90,18 @@
     \ifblank{#1}{%
     \item[] #2
     }{%
-    \setbox\posbox\hbox{\textit{#1}\,\:}%
-    \itemindent-\wd\posbox
-    \cacheleft\parshapeindent\@ne
-    \cachewd\parshapelength\@ne
-    \advance\cacheleft\wd\posbox
-    \advance\cachewd-\wd\posbox
-    \parshape\@ne\cacheleft\cachewd
-    \advance\cacheleft-\wd\posbox
-    \advance\cachewd\wd\posbox
+    \setbox\BETposbox\hbox{\textit{#1}\,\:}%
+    \itemindent-\wd\BETposbox
+    \BETcacheleft\parshapeindent\@ne
+    \BETcachewd\parshapelength\@ne
+    \advance\BETcacheleft\wd\BETposbox
+    \advance\BETcachewd-\wd\BETposbox
+    \parshape\@ne\BETcacheleft\BETcachewd
+    \advance\BETcacheleft-\wd\BETposbox
+    \advance\BETcachewd\wd\BETposbox
     \item[]
-    \usebox\posbox#2\par
-    \parshape\@ne\cacheleft\cachewd
+    \usebox\BETposbox#2\par
+    \parshape\@ne\BETcacheleft\BETcachewd
     \itemindent\z@
     }%
 }%
