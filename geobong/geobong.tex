@@ -1,142 +1,30 @@
 \documentclass[a4paper,11pt,oneside,openany]{memoir}
-\usepackage{fontspec}
-\usepackage{amsmath} % a pretty standard package to enlarge your inventory of symbols
-\usepackage{amssymb} % another common package for symbols
-\usepackage[hidelinks]{hyperref} % enables hyperlinks in your document (no worries -- they show up only on the screen. When you print a hard copy, the colored boxes aren't there)
-\usepackage{url} % helps typeset URLs properly, typically with the command \url
-\usepackage[margin=.75in]{geometry} % page layout
-\usepackage{tikz}
-\usepackage{tikz-qtree}
-\usepackage{wrapfig}
-\usepackage{subcaption}
-\usepackage{booktabs} % creates beautiful and professional tables
-\usepackage{multicol}
-\usepackage{multirow}
-\usepackage{textcomp}
-\usepackage{expex}
-\usepackage{enumitem}
-\usepackage{threeparttable}
-\usepackage[calc,english]{datetime2}
-\usepackage{suffix}
-\usepackage{afterpage}
-\usepackage{bookmark}
-\usepackage{blindtext}
-\usepackage{phonrule}
+
+\input{preamble/packages.tex}
 
 \setmainfont{Charis SIL}[CharacterVariant=43:1]
 
-%\setlength{\parindent}{2em}
-\setlength{\parskip}{1ex}
-%\linespread{1.1}
-%---generic symbols---%
-\newcommand{\dao}{$\to$}
-\newcommand{\nm}{\symbol{"2205}}
-\newcommand{\ra}{\textgreater}
-\newcommand{\ipkt}{·}
-\newcommand{\til}{\textasciitilde}
-\newcommand{\langbr}{⟨}
-\newcommand{\rangbr}{⟩}
-
-\newcommand{\ortho}[1]{$\langle$#1$\rangle$}
-\newcommand{\bripa}[1]{[#1]}
-\newcommand{\phipa}[1]{/#1/}
-\newcommand{\eng}[1]{`#1'}
-\newcommand{\gob}[1]{``#1''}
-%\newcommand{\ortho2}[1]{⟨#1⟩}
-
-%---LANG'S ORTHO---%
-\newcommand{\vt}{ť}
-\newcommand{\vd}{ď}
-\newcommand{\vc}{č}
-\newcommand{\vz}{ž}
-\newcommand{\vs}{š}
-\newcommand{\vr}{ř}
-\newcommand{\vl}{ľ}
-\newcommand{\vn}{ň}
-\newcommand{\vT}{Ť}
-\newcommand{\vD}{Ď}
-\newcommand{\vC}{Č}
-\newcommand{\vZ}{Ž}
-\newcommand{\vS}{Š}
-\newcommand{\vR}{Ř}
-\newcommand{\vL}{Ľ}
-\newcommand{\vN}{Ň}
-\newcommand{\Engma}{Ŋ}
-\newcommand{\dbl}{ⱡ}
-\newcommand{\dbL}{Ⱡ}
-\newcommand{\lam}{λ}
-\newcommand{\lambar}{ƛ}
-
+\input{../utils/misc_macros.tex}
 
 \input{../utils/ipa_macros.tex}
 
-\lingset{glstyle=nlevel,numoffset=3em,textoffset=1.5em,exskip=.75ex,belowglpreambleskip=.25ex,aboveglftskip=.25ex}
+\input{../utils/lingstyles.tex}
 
-\DTMnewdatestyle{eurodate}{%
-    \renewcommand{\DTMdisplaydate}[4]{%
-        \number##3.\nobreakspace%           day
-        \DTMmonthname{##2}\nobreakspace%    month
-        \number##1%                         year
-    }%
-    \renewcommand{\DTMDisplaydate}{\DTMdisplaydate}%
-}
+\lingset{lingstyle=default}
 
-\DTMsetdatestyle{eurodate}
+\input{../utils/eurodate.tex}
 
-%-----DICT COMMANDS------
-%------------------------
-
-\makeatletter
-\@beginparpenalty=10000
-\makeatother
-
-\newcounter{dictwordcount}
-\newcounter{definition}
-
-\newenvironment{dictentry}[2]%
-    {%
-    \item[#1]\:\bripa{#2}\hfill
-    \setcounter{definition}{0}%
-    \refstepcounter{dictwordcount}%
-    \begin{description}[align=right,labelwidth=*,font=\normalfont]
-    }{%
-    \end{description}
-    }%
-
-\newcommand{\dictdef}[2]{\refstepcounter{definition}%
-\item[\thedefinition.] \textit{#1} $\bullet$ #2
-}%
-
-\WithSuffix\newcommand\dictdef*[2]{%
-    \item[] $\text{\textit{#1}}\;\bullet\;$#2
-}
-
-\newcommand{\newentry}[2]{%
-\item[#1] $\bullet$ \textit{#2}\hfill
-}%
+\input{../utils/dict_macros.tex}
 
 %----------------------------
 %----------------------------
 
-\newlength{\drop}% for my convenience
-\newcommand*{\titleP}{\begingroup%
-%\FSfont{5bo} % FontSite Bergamo (Bembo)
-\drop = 0.12\textheight
-\vspace*{\drop}
-\hspace*{0.3\textwidth}
-{\HUGE\sc Geobo\engma}\\[\baselineskip]
-\hspace*{0.33\textwidth}
-{\huge A Grammar}\par
-\vspace*{3\drop}
-{\large By {\sc Bethany E. Toma}}
-\vfill
-{\today}
-\vspace*{0.5\drop}
-\endgroup}
+\input{preamble/geob_macros.tex}
 
 \maxsecnumdepth{subsection}
 
 \setlength{\columnsep}{2em}
+\nonzeroparskip
 
 \begin{document}
 
