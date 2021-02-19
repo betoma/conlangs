@@ -1,0 +1,25 @@
+%----------------------------
+%---------Glossaries---------
+%----------------------------
+
+\makenoidxglossaries
+
+\newleipzig{actson}{>}{acts upon}
+\newcommand{\ToFirst}{{\Actson}{\First}}
+\newcommand{\ToSecond}{{\Actson}{\Second}}
+\newcommand{\ToThird}{{\Actson}{\Third}}
+
+\glssetwidest{CABBA}
+
+\makeatletter
+\newglossarystyle{fixed-mcols}{%
+    \setglossarystyle{alttree}%
+    \renewenvironment{theglossary}%
+    {%
+        \begin{multicols}{3}%
+            \def\@gls@prevlevel{-1}%
+%           \mbox{}\par
+        }%
+        {\par\end{multicols}}%
+}
+\makeatother

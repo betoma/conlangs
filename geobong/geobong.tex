@@ -21,6 +21,8 @@
 
 \input{preamble/geob_macros.tex}
 
+\input{preamble/leipzig.tex}
+
 \maxsecnumdepth{subsection}
 
 \setlength{\columnsep}{2em}
@@ -45,9 +47,13 @@ This language is intended to have some deliberately weird elements yet still ret
 \clearpage
 \tableofcontents
 
+\setglossarystyle{fixed-mcols}
+
+\printnoidxglossary[type=\leipzigtype,title={Glossing Abbreviations}]
+
 \chapter{World \& Culture}
 
-To-do.
+To-do. \ToFirst
 
 \mainmatter
 
@@ -57,57 +63,70 @@ To-do.
 
 \section{Phoneme Inventory}
 
-With an inventory of 29 consonants and 6-7 vowels (depending on analysis, Geobo\engma's inventory isn't particularly noteworthy in its size. The distribution of its phonemes, however, could be seen as a bit abnormal, particularly when it comes to the vowels.
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
 
-\subsection{Consonant Inventory}
-
-\begin{table}[h]
-    \centering
-\begin{tabular}{@{}rcccccccc@{}}
-\toprule
-\multicolumn{1}{c}{} & \multirow{2}{*}{Bilabial} & \multicolumn{2}{c}{Laminodental} & \multicolumn{2}{c}{Apical} & \multirow{2}{*}{Palatal} & \multirow{2}{*}{Velar} & \multirow{2}{*}{Glottal} \\
-\multicolumn{1}{l}{} &  & Non-Sibilant & Sibilant & Non-Sibilant & Sibilant &  &  &  \\ \midrule
-Nasal & m & n\lamino &  & n\apico &  & \egna & \engma &  \\
-Stop & p b & t{\lamino} d\lamino & {t\tiebar s\lamino} {d\tiebar z\lamino} &  t{\apico} d\apico & {t\tiebar s\apico} {d\tiebar z\apico}  & c\tiebar ç \paljstop\tiebar\paljfric & k g & \glotstop \\
-Fricative &  & \latfric\lamino & s\lamino & \latfric\apico & s\apico & ç &  &  \\
-Approximant &  & {\alvr\lamino} {l\lamino} &  & {\alvr\apico} {l\apico} &  &  &  &  \\ \bottomrule
-\end{tabular}
-    \caption{Consonants}
+\begin{table}[ht]
+    \centerfloat
+    \begin{tabular}{@{}rccccccccc@{}}
+    \toprule
+     &
+      \multirow{2}{*}{Bilabial} &
+      \multicolumn{2}{c}{Denti-Alveolar} &
+      \multicolumn{2}{c}{Apicoalveolar} &
+      \multirow{2}{*}{Palatoalveolar} &
+      \multirow{2}{*}{Alveolopalatal} &
+      \multirow{2}{*}{Velar} &
+      \multirow{2}{*}{Glottal} \\
+              &   & Non-Sib.      & Sib.    & Non-Sib.     & Sib.   &      &           &        &  \\ \midrule
+    Nasal     & m & n\lamino      &         & n\apico      &        &      &           & \engma &  \\
+    Plosive &
+      p b &
+      t\lamino\;d\lamino &
+      t\tiebar s\lamino\;d\tiebar z\lamino &
+      t\apico\;d\apico &
+      t\tiebar s\apico\;d\tiebar z\apico &
+      t\tiebar\esh\;d\tiebar\ezh &
+      t\tiebar\alvpalesh\;d\tiebar\alvpalezh &
+      k g &
+      \glotstop \\
+    Fricative &   & \latfric\lamino & s\lamino & \latfric\apico & s\apico & \esh       & \alvpalesh      &  &  \\
+    Approx.   &   & l\lamino        &          & l\apico        &          & \alvr\bck & \alvr\bck\pal   &  &  \\ \bottomrule
+    \end{tabular}
+    \caption{Consonant Inventory}
     \label{tab:consonants}
 \end{table}
 
-Geobo\engma's consonant inventory is on the larger size, and distinguishes between six places of articulation. Notably, there is a distinction between laminodental and apicoalveolar coronal consonants, as well as a distinction between sibilant and non-sibilant coronal stops/affricates and fricatives. The result remains, however, a very balanced inventory, and Geobo\engma{} is thus not notable for its consonants.
+\lang{}'s consonant inventory is somewhat large but fairly regular. By far the bulk of the inventory consists of coronals, comprising twenty-four of the thirty-one consonants. \lang{} also distinguishes between a fairly large number of features within the coronals. 
 
-It should be noted that Geobo\engma{} orthography possesses distinct symbols for \bripa{t\tiebar\latfric\lamino}, \bripa{t\tiebar\latfric\apico}, and \bripa{x}. However, due to their distributions, these are generally not analyzed as distinct phonemes but rather as allophonic realizations of other phonemes/clusters of phonemes. This is elaborated on in Section \ref{sec:allophony}. 
+Laminarity appears to be the most fundamental of these distinctions, as all coronals can be classified into laminal and alveolar classes, and each has a counterpart in the other class. Among and overlapping with these classes are two major classes based on place of articulation---the frontmost coronals at the alveolar ridge and the post-alveolar coronals. The laminal alveolar coronals are realized as laminal denti-alveolar, while naturally the apical alveolar coronals are apico-alveolar. Among the postalveolar coronals, the alveolopalatals represent the laminals, whereas the palato-alveolars are grouped with the apical class (though in actuality it is not articulated apically).
 
-\subsection{Vowel Inventory}
+A voicing distinction is made across all stops, with the exception of the glottal stop. However, this distinction is made only across stops---all sonorants are phonemically voiced and all fricatives phonemically voiceless.
 
-\begin{table}[h]
+\begin{wraptable}{r}{.35\linewidth}
     \centering
-\begin{tabular}{@{}rccc@{}}
-\toprule
- & \multicolumn{1}{c}{\multirow{2}{*}{Front}} & \multicolumn{2}{c}{Back} \\
- & \multicolumn{1}{c}{} & \multicolumn{1}{c}{Unrounded} & \multicolumn{1}{c}{Rounded} \\ \midrule
-High & i & \unru & u \\
-Mid-High & e & \unro & o \\ 
- & \multicolumn{3}{c}{\nm{} or \schwa} \\ \bottomrule
-\end{tabular}
-    \caption{Vowels}
+    \begin{tabular}{@{}rccc@{}}
+    \toprule
+        & Front & Back  & Rounded \\ \midrule
+    High & i     & \unru & u       \\
+    Mid  & e     & \unro & o       \\ \bottomrule
+    \end{tabular}
+    \caption{Vowel Inventory}
     \label{tab:vowels}
-\end{table}
+\end{wraptable}
 
-Geobo\engma's vowel inventory is where it is particularly strange. While its size is fairly average, at six or seven vowels, their distribution is strikingly abnormal, with no low vowels whatsoever and six at mid-high or higher. If presented with vowels lower than the canonical six, Goblins will tend to analyze them as though they were mid-high vowels of equivalent front- and roundedness. 
+By contrast with its large consonant inventory, \lang{}'s vowel inventory is reasonably small, with six vowels. Most strikingly, \lang{} lacks any vowels lower than mid-close, resulting in an apparently very lopsided inventory. Some have speculated that this is the case because goblins mouths are naturally shorter or more close than the mouths of other species, but this has yet to be tested empirically.
 
-The existence of a seventh vowel, typically analyzed as \phipa{\schwa}, is fairly contentious. If this consonant exists, it only surfaces on a phonetic level in a very small subset of phonological contexts and is otherwise realized as syllabification\footnote{Though the term `syllabification' is itself a bit of a generalization, since this is realized in various ways depending on the consonant in question.} of the following consonant. 
-Many argue that these syllables are better analyzed as vowelless, with \bripa{\schwa} being epenthetic when it occurs. If this is the case, Geobo\engma{} could be said to have no vowels lower than mid-high whatsoever. Geobo\engma{} orthography, however, uses seven-vowel analysis and writes \phipa{\schwa} as \ortho{a}.
+\lang{} vowels can be grouped into three categories: front, back, and rounded. These categories are based on their behavior when it comes to vowel harmony, as whichever class `sets' the vowel harmony will trigger changes in the vowels of the other classes. More details about \lang{} vowel harmony can be found in \autoref{ssec:vowelharmony}
 
-%The utter lack of phonemically open vowels in Geobo{\engma} could be considered strange. Geobo{\engma} does historically possess a phonemic \phipa{a}; however, whether it can be considered a distinct phoneme in the current language is not clear, as it does occur phonetically in any position in which it contrasts with \phipa{\unro}. One could analyze Geobo{\engma} as possessing an \phipa{a} which does not appear phonetically but causes a following sonorant or continuant to serve as the syllabic nucleus of the relevant syllable. Under this analysis, \phipa{a} has merged with \phipa{\unro} when not followed by a sonorant or continuant, as its realizations \bripa{a\til\centra\til\centruh} do not meaningfully contrast with any of \phipa{\unro}'s realizations and tend to be interpreted as \phipa{\unro} by speakers.
 
 \section{Syllable Structure}
 
-There are two competing analyses of Geobo\engma{} syllable structure, which depend upon one's analysis of so-called vowelless syllables. One analysis posits the widespread permissability of vowelless syllables, in which the first consonant in the rime `takes over' as the nucleus of a vowelless syllable. Others, as previously discussed, posit the existence of a seventh seldom-realized phonemic vowel \phipa{\schwa} to avoid vowelless syllables entirely. Below we discuss both analyses and their implications.
+There are two competing analyses of \lang{} syllable structure, which depend upon one's analysis of so-called vowelless syllables. One analysis posits the widespread permissability of vowelless syllables, in which the first consonant in the rime serves as the nucleus of a vowelless syllable. Others posit the existence of a seventh seldom-realized phonemic vowel \phipa{\schwa} to avoid vowelless syllables entirely. Below we discuss both analyses and their implications.
 
-In both analyses, the onset of a syllable in Geobo\engma{} is optional, at least on a phonemic level, and can consist of any consonant optionally preceded by a sibilant fricative (represented in this section by S) and/or followed by a sonorant or continuant. In Geobo\engma{}, sonorants and continuants (i.e., all non-stop consonants) form a natural class, indicated in this section with the symbol R whenever relevant.
+In both analyses, the onset of a syllable in \lang{} is optional, at least on a phonemic level, and can consist of any consonant optionally preceded by a sibilant fricative (represented in this section by S) and/or followed by a sonorant or continuant. However, one notable point is that \lang{} does not permit vowel hiatus within words, so word-internally vowel-final syllables cannot precede onset-less syllables.
+
+In \lang{}, sonorants and continuants (i.e., all non-stop consonants) form a natural class, indicated in this section with the symbol R whenever relevant.
 
 \subsection{Vowelless Analysis}
 
@@ -120,7 +139,7 @@ In both analyses, the onset of a syllable in Geobo\engma{} is optional, at least
     \label{fig:sylb-struc-vless}
 \end{wrapfigure}
 
-In the `vowelless analysis' of Geobo\engma{} syllable structure, the nucleus of the syllable is analyzed as potentially containing both a vowel and a continuant or sonorant, but with each being optional. However, the nucleus itself is not optional and thus at least one segment, be it a consonant or vowel, must occur therein. The coda is analyzed as optional and consisting of any single consonant.
+In the `vowelless analysis' of \lang{} syllable structure, the nucleus of the syllable is analyzed as potentially containing both a vowel and a continuant or sonorant, but with each being optional. However, the nucleus itself is not optional and thus at least one segment, be it a consonant or vowel, must occur therein. The coda is analyzed as optional and consisting of any single consonant.
 
 This syllable structure can also be expressed in Recursive Baerian Phonotactic Notation\footnote{Described in \url{https://llblumire.github.io/recursive-baerian-phonotactics-notation/Recursive_Baerian_Syntax_Notation.pdf}. Here we make some minor changes to the notation, moving the labels for the blocks to subscripted after the final bracket for readability. We also use $\lambda$ for word-level blocks such that $\omega$ can be freed to be used for the syllable-onset block, in keeping with traditional syllable notation.} as follows:
 \begin{equation*}
@@ -138,7 +157,7 @@ This syllable structure can also be expressed in Recursive Baerian Phonotactic N
     \label{fig:sylb-struc-schwa}
 \end{wrapfigure}
 
-Among those who don't subscribe to an analysis of Geobo\engma{} as possessing vowelless syllables, the dominant approach is to analyze the syllable structure as underlyingly more symmetric and regular, such as that shown in Figure \ref{fig:sylb-struc-schwa}, with a mandatory vowel nucleus and both onset and coda allowing any consonant to cluster with a non-stop. Within this analysis, what phonetically surface as syllabic consonants are really just allophonous realizations of \phipa{\schwa} + consonant clusters. 
+Among those who don't subscribe to an analysis of \lang{} as possessing vowelless syllables, the dominant approach is to analyze the syllable structure as underlyingly more symmetric and regular, such as that shown in Figure \ref{fig:sylb-struc-schwa}, with a mandatory vowel nucleus and both onset and coda allowing any consonant to cluster with a non-stop. Within this analysis, what phonetically surface as syllabic consonants are really just allophonous realizations of \phipa{\schwa} + consonant clusters. 
 
 This structure is expressed in Baerian notation as follows:
 
@@ -148,66 +167,18 @@ This structure is expressed in Baerian notation as follows:
 
 Those who champion this vowelless analysis tend to point to the relative symmetry of this structure compared to the more complicated analysis that allows for vowelless nuclei. However, those who oppose this analysis tend to point to the lack of similarity to surface forms as a point against this analysis. 
 
-In practice, both analyses generally can capture Geobo\engma{} phenomena. In this paper, we will point out where differences between these two analyses become relevant and refer to both analyses in those cases, but by and large we will focus on the actual changes in the surface forms rather than on their theoretical syllabic structure. Where phonemic representations of relevant Geobo\engma{} words are given, a schwa will be included for clarity, but this should not be taken as being wed to the schwa analysis by any means.
+In practice, both analyses generally can capture \lang{} phenomena. In this grammar, we will point out where differences between these two analyses become relevant and refer to both analyses in those cases, but by and large we will focus on the actual changes in the surface forms rather than on their theoretical syllabic structure.
 
 \section{Phonotactics \& Allophony}\label{sec:allophony}
 
-\subsection{Laminarity in Clusters}
+\subsection{Vowel Harmony}\label{ssec:vowelharmony}
 
-Geobo\engma{} coronals can be divided into two distinct places of articulation---one lamino-dental, the other apicoalveolar. While laminarity is certainly phonemically contrastive (see, for example, 
-%\textit{k\vl e} \bripa{kl\apico e} `arm' vs. \textit{kle} \bripa{kl\lamino e} `two'),
- laminal and apical consonant cannot be adjacent to one another. Thus, coronals in clusters persistently assimilate in laminarity to the following consonant. 
+An 
 
-This change is productive and does occur when compounding or inflection would result in adjacent coronals. In addition, syllabic consonants are considered adjacent to the onsets of their syllables---e.g., 
-%\textit{kla\vr} \bripa{kl\lamino\alvr\apico\sylb} would not be a legal syllable in Geobo\engma{}, and a word \phipa{kl\lamino\schwa\alvr\apico} would surface as \bripa{kl\apico\alvr\apico\sylb} and be indistinguishable from \textit{k\vl a\vr} \phipa{kl\apico\schwa\alvr\apico}. 
-In the vowelless analysis, this is the natural extension of the restrictions on clusters, since the syllabic consonant is analyzed as being directly adjacant to the onset, and it serves as a major point in that analysis's favor. In the schwa analysis, this behavior is described as a limited form of laminal harmony. 
+\subsection{Consonant Harmony}\label{ssec:vowelharmony}
 
-\setlength{\tabcolsep}{1pt}
-\begin{center}
-\phonc{\phonfeat[cl]{+&consonantal}}{\phonfeat[cl]{$\alpha$&distributed}}{\phold\phonfeat[cl]{+&consonantal\\$\alpha$&distributed}}
-\end{center}
+\subsection{Laminal Assimilation}
 
-\subsection{Palatals and their Interactions}
-
-When sibilant coronals are preceded by palatals, they become palatalized into alveolopalatal sibilants. 
-
-\begin{center}
-    \phonc{\phonfeat[cl]{+&consonantal\\+&anterior\\+&strident}}{\phonfeat[cl]{+&dorsal\\+&high\\-&low\\+&front\\-&back}}{\phonfeat[cl]{+&dorsal\\+&high\\-&low\\+&front\\-&back}\phold}
-\end{center}
-
-Likewise, when palatal consonants are preceded by alveolar sibilants (including alveolopalatals), they themselves become alveolopalatal sibilants.
-
-\begin{center}
-    \phonc{\phonfeat[cl]{+&consonantal\\+&coronal\\+&dorsal\\+&front}}{\phonfeat[cl]{+&anterior\\+&strident}}{\phonfeat[cl]{+&anterior\\+&strident}\phold}
-\end{center}
-
-Palatal consonants themselves are realized as velars when they precede a non-palatal consonant. Alveolopalatals are considered palatal for these purposes. 
-
-\begin{center}
-    \phonc{\phonfeat[cl]{+&consonantal\\+&coronal\\+&dorsal\\+&front}}{\phonfeat[cl]{-&coronal}}{\phold\phonfeat[cl]{+&consonantal\\$\alpha$&dorsal\\-$\alpha$&front}}
-\end{center}
-\noindent Unlike the other changes in this section, syllabic consonants are not considered adjacent to the last consonant in the onset. So in a word like \textit{\'sas} \phipa{ç\schwa s\lamino}, while the presence of \phipa{ç} triggers realization of \phipa{s\lamino} as \bripa{\alvpalesh}, in a word like \textit{\'sa\l} \phipa{ç\schwa\latfric\lamino} the presence of \phipa{\latfric\lamino} doesn't trigger realization of \phipa{ç} as \bripa{x}.
-
-Palatals also condition a regressive sound change when they follow any consonantal phone that is neither labial nor glottal. Sibilant coronals become alveolopalatal in this context, while non-sibilant coronals and velar consonants are palatalized at their current place of articulation. This palatalization also occurs when these phones follow the vowel \phipa{i} as well.
-
-\begin{center}
-    \phonc{\phonfeat[cl]{+&consonantal\\-&labial\\-&constricted~glottis}}{\phonfeat[cl]{+&dorsal\\+&high\\-&low\\+&front\\-&back}}{\phold\phonfeat[cl]{+&dorsal\\+&high\\-&low\\+&front\\-&back}}
-\end{center}
-\noindent Palatalized coronals are all laminal, so the usual distinction between laminal and apical coronals is not maintained in environments where these phones are palatalized. This is the only aspect of these palatalization changes that is evident from the orthography, as these coronals are written using the laminal symbols---both \phipa{e\latfric\lamino ç} and \phipa{e\latfric\apico ç} would be written as \textit{e\l\'s} and realized as \bripa{e\latfric\lamino\pal ç}.
-
-\subsection{Obstruent Voicing Assimilation}
-
-\subsection{Nasals}
-
-\subsection{Sibilants and Laterals}
-
-\subsection{Changes at Vowel Hiatus}
-
-\subsection{Onsets and Codas with Syllabic Consonants}
-
-\subsection{Syllabic Consonants Before Onset-Less Syllables}
-
-\subsubsection{\phipa{\glotstop} or \bripa{\glotstop}?}
 
 \begin{enumerate}
     \item Coronal consonants persistently assimilate in laminarity to the following consonant.
@@ -265,7 +236,7 @@ Palatals also condition a regressive sound change when they follow any consonant
     \end{itemize}
 \end{enumerate}
 
-\section{Orthography}
+\section{Romanization}
 \setlength{\tabcolsep}{6pt}
 \begin{center}
 
