@@ -25,6 +25,7 @@
 
 \maxsecnumdepth{subsection}
 
+\renewcommand{\arraystretch}{1.2}
 \setlength{\columnsep}{2em}
 \nonzeroparskip
 
@@ -61,10 +62,9 @@ To-do. \ToFirst
 
 \chapter{Phonology}
 
-\section{Phoneme Inventory}
+\section{Phoneme Inventory}\label{sec:phon_inv}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
+\subsection{Consonants}\label{ssec:consonant_inv}
 
 \begin{table}[ht]
     \centerfloat
@@ -99,11 +99,115 @@ To-do. \ToFirst
 
 \lang{}'s consonant inventory is somewhat large but fairly regular. By far the bulk of the inventory consists of coronals, comprising twenty-four of the thirty-one consonants. \lang{} also distinguishes between a fairly large number of features within the coronals. 
 
+\begin{figure}[bt]
+    \centering
+    \footnotesize
+    \begin{forest}
+        [{[coronal]}
+            [{[laminal]}, edge label={node[midway,above left,font=\scriptsize]{+}}
+                [{[nasal]}, edge label={node[midway,above left,font=\scriptsize]{+}}
+                    [{n\lamino}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                    [{[approximant]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                        [{[anterior]}, edge label={node[midway,above left,font=\scriptsize]{+}}
+                            [{l\lamino}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                            [{\alvr\bck\lamino\pal}, edge label={node[midway,above right,font=\scriptsize]{--}}]
+                        ]
+                        [{[sibilant]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                            [{[closed]}, edge label={node[midway,above left,font=\scriptsize]{+}}
+                                [{[continuant]}, edge label={node[midway,above left,font=\scriptsize]{+}}
+                                    [{s\lamino}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                                    [{[voiced]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                                        [{t\tiebar s\lamino}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                                        [{d\tiebar z\lamino}, edge label={node[midway,above right,font=\scriptsize]{--}}]
+                                    ]
+                                ]
+                                [{[continuant]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                                    [{\alvpalesh}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                                    [{[voiced]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                                        [{t\tiebar\alvpalesh}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                                        [{d\tiebar\alvpalezh}, edge label={node[midway,above right,font=\scriptsize]{--}}]
+                                    ]
+                                ]
+                            ]
+                            [{[continuant]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                                [{\latfric\lamino}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                                [{[voiced]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                                    [{t\lamino}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                                    [{d\lamino}, edge label={node[midway,above right,font=\scriptsize]{--}}]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                [{[nasal]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                    [{n\apico}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                    [{[approximant]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                        [{[anterior]}, edge label={node[midway,above left,font=\scriptsize]{+}}
+                            [{l\apico}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                            [{\alvr\bck\apico}, edge label={node[midway,above right,font=\scriptsize]{--}}]
+                        ]
+                        [{[sibilant]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                            [{[closed]}, edge label={node[midway,above left,font=\scriptsize]{+}}
+                                [{[continuant]}, edge label={node[midway,above left,font=\scriptsize]{+}}
+                                    [{s\apico}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                                    [{[voiced]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                                        [{t\tiebar s\apico}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                                        [{d\tiebar z\apico}, edge label={node[midway,above right,font=\scriptsize]{--}}]
+                                    ]
+                                ]
+                                [{[continuant]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                                    [{\esh}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                                    [{[voiced]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                                        [{t\tiebar\esh}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                                        [{d\tiebar\ezh}, edge label={node[midway,above right,font=\scriptsize]{--}}]
+                                    ]
+                                ]
+                            ]
+                            [{[continuant]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                                [{\latfric\apico}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                                [{[voiced]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                                    [{t\apico}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                                    [{d\apico}, edge label={node[midway,above right,font=\scriptsize]{--}}]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+            [{[labial]}, , edge label={node[midway,above right,font=\scriptsize]{--}}
+                [{[nasal]}, edge label={node[midway,above left,font=\scriptsize]{+}}
+                    [{m}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                    [{[voice]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                        [{b}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                        [{p}, , edge label={node[midway,above right,font=\scriptsize]{--}}]
+                    ]
+                ]
+                [{[dorsal]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                    [{[nasal]}, edge label={node[midway,above left,font=\scriptsize]{+}}
+                        [{\engma}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                        [{[voice]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                            [{g}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                            [{k}, edge label={node[midway,above right,font=\scriptsize]{--}}]
+                        ]
+                    ]
+                    [{\glotstop}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                    ]
+                ]
+            ]
+        ]
+    \end{forest}
+    \caption{Contrastive Hierarchy of \lang{} Consonants}
+    \label{fig:cons_hierarchy}
+\end{figure}
+
+
 Laminarity appears to be the most fundamental of these distinctions, as all coronals can be classified into laminal and alveolar classes, and each has a counterpart in the other class. Among and overlapping with these classes are two major classes based on place of articulation---the frontmost coronals at the alveolar ridge and the post-alveolar coronals. The laminal alveolar coronals are realized as laminal denti-alveolar, while naturally the apical alveolar coronals are apico-alveolar. Among the postalveolar coronals, the alveolopalatals represent the laminals, whereas the palato-alveolars are grouped with the apical class (though in actuality it is not articulated apically).
 
-A voicing distinction is made across all stops, with the exception of the glottal stop. However, this distinction is made only across stops---all sonorants are phonemically voiced and all fricatives phonemically voiceless.
+A voicing distinction is made across all stops, with the exception of the glottal stop. However, this distinction is made only across stops---all sonorants and fricatives are phonemically unspecified for voice, with sonorants more often surfacing as voiced and fricatives more often surfacing as unvoiced.
 
-\begin{wraptable}{r}{.35\linewidth}
+\subsection{Vowels}\label{ssec:vowel_inv}
+
+\begin{wraptable}[7]{r}{.35\linewidth}
     \centering
     \begin{tabular}{@{}rccc@{}}
     \toprule
@@ -117,65 +221,183 @@ A voicing distinction is made across all stops, with the exception of the glotta
 
 By contrast with its large consonant inventory, \lang{}'s vowel inventory is reasonably small, with six vowels. Most strikingly, \lang{} lacks any vowels lower than mid-close, resulting in an apparently very lopsided inventory. Some have speculated that this is the case because goblins mouths are naturally shorter or more close than the mouths of other species, but this has yet to be tested empirically.
 
-\lang{} vowels can be grouped into three categories: front, back, and rounded. These categories are based on their behavior when it comes to vowel harmony, as whichever class `sets' the vowel harmony will trigger changes in the vowels of the other classes. More details about \lang{} vowel harmony can be found in \autoref{ssec:vowelharmony}
+\begin{wrapfigure}[11]{l}{.35\linewidth}
+    \centering
+    \footnotesize
+    \begin{forest}
+        [{[high]}
+            [{[back]}, edge label={node[midway,above left,font=\scriptsize]{+}}
+                [{\unru}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                [{[rounded]}, edge label={node[midway,fill=white,font=\scriptsize]{±}}
+                    [{u}, edge label={node[midway,fill=white,font=\scriptsize]{+}}]
+                ]
+                [{i}, edge label={node[midway,above right,font=\scriptsize]{--}}]
+            ]
+            [{[back]}, edge label={node[midway,above right,font=\scriptsize]{--}}
+                [{\unro}, edge label={node[midway,above left,font=\scriptsize]{+}}]
+                [{[rounded]}, edge label={node[midway,fill=white,font=\scriptsize]{±}}
+                    [{o}, edge label={node[midway,fill=white,font=\scriptsize]{+}}]
+                ]
+                [{e}, edge label={node[midway,above right,font=\scriptsize]{--}}]
+            ]
+        ]
+    \end{forest}
+    \caption{Contrastive Hierarchy of \lang{} Consonants}
+    \label{fig:vowel_hierarchy}
+\end{wrapfigure}
+
+\lang{} vowels can be neatly divided into three classes: front, back (unrounded), and (back) rounded. As indicated by the parentheses in the prior sentence, the unroundedness of the back unrounded vowels and the backness of the back rounded vowels are incidental and not phonemically meaningful. As a result, the back rounded vowels never trigger backing as the back unrounded vowels do, and the back unrounded vowels have no effect on rounding, unlike the back rounded vowels.
+
+These classes participate in \lang{}'s system of vowel harmony, in which the leftmost (first) vowel occurring in a phonological word conditions the phonetic realizations of the following vowels. If the first vowel in the phonological word is front, all following vowels in the same phonological word are fronted. If the first vowel in the phonological word is back (unrounded), all following vowels in the same phonological word are backed. If the first vowel in the phonological word is (back) rounded, all following vowels in the same phonological word are rounded. More detail about the exact forms realized can be seen in \autoref{tab:vowel_harm}
+
+\begin{wraptable}[13]{r}{.35\linewidth}
+    \centering
+    \begin{tabular}{@{}rccc@{}}
+    \toprule
+                      & Front         & Back          & Rounded   \\\midrule
+        \phipa{i}     & \bripa{i}     & \bripa{\bari} & \bripa{y} \\
+        \phipa{e}     & \bripa{e}     & \bripa{\sche} & \bripa{ø} \\
+        \phipa{\unru} & \bripa{\bari} & \bripa{\unru} & \bripa{u} \\
+        \phipa{\unro} & \bripa{\sche} & \bripa{\unro} & \bripa{o} \\
+        \phipa{u}     & \bripa{y}     & \bripa{u}     & \bripa{u} \\
+        \phipa{o}     & \bripa{ø}     & \bripa{o}     & \bripa{o} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Realizations of phonemic vowels in different vowel harmony environments}
+    \label{tab:vowel_harm}
+\end{wraptable}
+
+It is noteworthy that, although both the phonemically back vowels and the phonemically rounded vowels are realized as \bripa{u} and \bripa{o} according to this table, speakers generally have no trouble distinguishing between them in context. Explanations for this have varied, with some theorizing that the phonemically rounded vowels are slightly further front than their phonemically backed counterparts and others arguing that there are more complex differences in the articulations that cannot be described as simply frontness or closeness. Yet others argue that this is solely the influence of the surrounding context and that in isolation they would not be so easily distinguished. More research is necessary to determine which of these groups is in the right.
 
 
 \section{Syllable Structure}
 
-There are two competing analyses of \lang{} syllable structure, which depend upon one's analysis of so-called vowelless syllables. One analysis posits the widespread permissability of vowelless syllables, in which the first consonant in the rime serves as the nucleus of a vowelless syllable. Others posit the existence of a seventh seldom-realized phonemic vowel \phipa{\schwa} to avoid vowelless syllables entirely. Below we discuss both analyses and their implications.
-
-In both analyses, the onset of a syllable in \lang{} is optional, at least on a phonemic level, and can consist of any consonant optionally preceded by a sibilant fricative (represented in this section by S) and/or followed by a sonorant or continuant. However, one notable point is that \lang{} does not permit vowel hiatus within words, so word-internally vowel-final syllables cannot precede onset-less syllables.
-
-In \lang{}, sonorants and continuants (i.e., all non-stop consonants) form a natural class, indicated in this section with the symbol R whenever relevant.
-
-\subsection{Vowelless Analysis}
+While there are two competing analyses of \lang{} syllable structure, distinguished by how they treat \lang{}'s syllabic consonant nuclei on a phonemic level. The dominant analysis is the so-called `vowelless' analysis, which analyzes the nucleus as composed of a vowel and any non-stop (that is, sonorant or continuant, represented by R in the figures), both of which are optional but at least one of which must be present. The remaining rime consists of an optional coda consisting of any single consonant. 
 
 \begin{wrapfigure}{r}{0.35\textwidth}
     \centering
-    \begin{tikzpicture}
-        \Tree [.$\sigma$ [.$\omega$ S* C* R* ] [.$\rho$ [.$\nu^{+}$ V* R* ] [.$\kappa$ C* ] ] ]
-    \end{tikzpicture}
+    % \begin{tikzpicture}
+    %     \Tree [.$\sigma$ [.$\omega$ S* C* R* ] [.$\rho$ [.$\nu^{+}$ V* R* ] [.$\kappa$ C* ] ] ]
+    % \end{tikzpicture}
+    \begin{forest}
+        [\(\sigma\),  for tree={parent anchor=south, child anchor=north}
+            [\(\omega\)
+                [S*]
+                [C*]
+                [R*]
+            ]
+            [\(\rho\)
+                [\(\nu^{+}\)
+                    [V*]
+                    [R*]
+                ]
+                [\(\kappa\)
+                    [C*]
+                ]
+            ]
+        ]
+    \end{forest}
     \caption{Syllable Structure in Vowelless Analysis}
     \label{fig:sylb-struc-vless}
 \end{wrapfigure}
 
-In the `vowelless analysis' of \lang{} syllable structure, the nucleus of the syllable is analyzed as potentially containing both a vowel and a continuant or sonorant, but with each being optional. However, the nucleus itself is not optional and thus at least one segment, be it a consonant or vowel, must occur therein. The coda is analyzed as optional and consisting of any single consonant.
+The onset is also optional, at least on a phonemic level, and can consist of any consonant, optionally preceded by a sibilant fricative (represented by S in the figures) and/or followed by a non-stop (that is, sonorant or continuant, represented by R in these diagrams). However, as \lang{} does not permit vowel hiatus, the onset is only optional word-initially or when following a syllable with a coda. A syllable appearing after a coda-less syllable requires an onset to avoid hiatus.
 
-This syllable structure can also be expressed in Recursive Baerian Phonotactic Notation\footnote{Described in \url{https://llblumire.github.io/recursive-baerian-phonotactics-notation/Recursive_Baerian_Syntax_Notation.pdf}. Here we make some minor changes to the notation, moving the labels for the blocks to subscripted after the final bracket for readability. We also use $\lambda$ for word-level blocks such that $\omega$ can be freed to be used for the syllable-onset block, in keeping with traditional syllable notation.} as follows:
+This syllable structure can also be expressed in Recursive Baerian Phonotactic Notation
+\footnote{Described in \url{https://llblumire.github.io/recursive-baerian-phonotactics-notation/Recursive_Baerian_Syntax_Notation.pdf}. Here we make some minor changes to the notation. Simple \(\begin{matrix}\textrm{A}\\\nm\end{matrix}\) stacks are rendered as \((\textrm{A})\) for the sake of simplicity and brevity. The labels for the blocks have been moved for readability, now subscripted after the final bracket. We also use $\lambda$ for word-level blocks such that $\omega$ can be freed to be used for the syllable-onset block, in keeping with traditional syllable notation.}%
+as follows:
+
 \begin{equation*}
-\# \left[\left[\left[\:\begin{matrix}\,\begin{matrix}\textrm{S}\\\nm\end{matrix} \: \textrm{C} \: \begin{matrix}\textrm{R}\\\nm\end{matrix}\\\nm\end{matrix}\right]_\omega\left[\:\begin{matrix}\:\textrm{V} \: \begin{matrix}\textrm{R}\\\nm\end{matrix}\\\textrm{R}\end{matrix}\right]_\nu\left[\begin{matrix}\textrm{C}\\\nm\end{matrix}\right]_\kappa\:\begin{matrix}\sigma\\\nm\end{matrix}\right]_\sigma\:\right]_\lambda \#
+    \#
+    \left[%
+        \begin{matrix}
+            {%
+                \left[%
+                    (\textrm{S}) \: \textrm{C} \: (\textrm{R})
+                \right]_\omega%
+            }%
+            \\
+            \nm
+        \end{matrix}
+        \left[%
+            \left[\:%
+                \begin{matrix}
+                    {\textrm{V} \: (\textrm{R})}
+                    \\
+                    \textrm{R}
+                \end{matrix}
+            \right]_\nu%
+            \:%
+            \begin{matrix}
+                \textrm{C} & 
+                {
+                    \begin{matrix}
+                        (\omega)\:\rho
+                        \\
+                        \nm
+                    \end{matrix}
+                }
+                \\
+                \nm & 
+                {
+                    \begin{matrix}
+                        \omega\:\rho
+                        \\
+                        \nm
+                    \end{matrix}
+                }
+            \end{matrix}
+        \right]_\rho%
+    \right]_\lambda%
+    \#
 \end{equation*}
+% \begin{equation*}
+% \# \left[{\color{cyan}\begin{matrix}{\left[\:\textcolor{black}{(\textrm{S}) \: \textrm{C} \: (\textrm{R})}\right]_\omega}\\\nm\end{matrix}}{\color{magenta}\left[\:\textcolor{black}{\begin{matrix}\:\textrm{V} \: (\textrm{R})\\\textrm{R}\end{matrix}\begin{matrix}\textrm{C} \: \begin{matrix} \textcolor{cyan}{(\omega)} \, \textcolor{magenta}{\rho} \\ \nm\end{matrix}\\\nm \: \begin{matrix} \textcolor{cyan}{\omega} \, \textcolor{magenta}{\rho} \\ \nm\end{matrix}\end{matrix}}\right]_\rho}\:\right]_\lambda\#
+% \end{equation*}
 
-\subsection{\phipa{\schwa} Analysis}
+\subsection{Underlying Vowel Analysis}
 
-\begin{wrapfigure}{L}{0.35\textwidth}
+\begin{wrapfigure}[14]{L}{0.35\textwidth}
     \centering
-    \begin{tikzpicture}
-        \Tree [.$\sigma$ [.$\omega$ S* C* R* ] [.$\rho$ [.$\nu$ V$^{+}$ ] [.$\kappa$ R* C* ] ] ]
-    \end{tikzpicture}
+    \begin{forest}
+        [\(\sigma\),  for tree={parent anchor=south, child anchor=north}
+            [\(\omega\)
+                [S*]
+                [C*]
+                [R*]
+            ]
+            [\(\rho\)
+                [\(\nu\)
+                    [V\(^{+}\)]
+                ]
+                [\(\kappa\)
+                    [R*]
+                    [C*]
+                ]
+            ]
+        ]
+    \end{forest}
     \caption{Syllable Structure in Vowelless Analysis}
     \label{fig:sylb-struc-schwa}
 \end{wrapfigure}
 
-Among those who don't subscribe to an analysis of \lang{} as possessing vowelless syllables, the dominant approach is to analyze the syllable structure as underlyingly more symmetric and regular, such as that shown in Figure \ref{fig:sylb-struc-schwa}, with a mandatory vowel nucleus and both onset and coda allowing any consonant to cluster with a non-stop. Within this analysis, what phonetically surface as syllabic consonants are really just allophonous realizations of \phipa{\schwa} + consonant clusters. 
+Among those who don't subscribe to an analysis of \lang{} as possessing vowelless syllables, the dominant approach is to analyze the syllable structure as underlyingly more symmetric and regular, such as that shown in \autoref{fig:sylb-struc-schwa}, with a mandatory vowel nucleus and both onset and coda allowing any consonant to cluster with a non-stop. Within this analysis, what phonetically surface as syllabic consonants are really just allophonous realizations of an underlying unrealized vowel + consonant clusters. 
 
-This structure is expressed in Baerian notation as follows:
+In Baerian notation this is structured identically to the vowelless analysis, except that the \(\nu\) block is replaced with a simple \(\textrm{V}\:(\textrm{R})\), with allophony and an underlying seventh vowel accounting for realization of the nucleus as a syllabic consonant phonetically in some contexts.
 
-\begin{equation*}
-\# \left[\left[\left[\:\begin{matrix}\,\begin{matrix}\textrm{S}\\\nm\end{matrix} \: \textrm{C} \: \begin{matrix}\textrm{R}\\\nm\end{matrix}\\\nm\end{matrix}\right]_\omega \textrm{V}\,\: \left[\begin{matrix}\,\begin{matrix}\textrm{R}\\\nm\end{matrix} \: \textrm{C}\\\nm\end{matrix}\right]_\kappa\:\begin{matrix}\sigma\\\nm\end{matrix}\right]_\sigma\:\right]_\lambda \#
-\end{equation*}
-
-Those who champion this vowelless analysis tend to point to the relative symmetry of this structure compared to the more complicated analysis that allows for vowelless nuclei. However, those who oppose this analysis tend to point to the lack of similarity to surface forms as a point against this analysis. 
+Those who champion this underlying vowel analysis tend to point to the relative symmetry of this structure compared to the more complicated analysis that allows for vowelless nuclei. However, those who oppose this analysis tend to consider the lack of similarity to surface forms as a point against this analysis. 
 
 In practice, both analyses generally can capture \lang{} phenomena. In this grammar, we will point out where differences between these two analyses become relevant and refer to both analyses in those cases, but by and large we will focus on the actual changes in the surface forms rather than on their theoretical syllabic structure.
 
 \section{Phonotactics \& Allophony}\label{sec:allophony}
 
-\subsection{Vowel Harmony}\label{ssec:vowelharmony}
 
-An 
 
-\subsection{Consonant Harmony}\label{ssec:vowelharmony}
+\subsection{Consonant Harmony}\label{ssec:consonant_harmony}
+
+In addition to vowel harmony, \lang{} also possesses consonant harmony involving hissing vs. hushing sibilants. Unlike vowel harmony, this harmony is triggered by the rightmost occurrence of a relevant segment within a phonological word. If the last coronal sibilant in a phonological word is post-alveolar, all preceding sibilants within that phonological word will also be post-alveolar. `Laminarity' is retained, so denti-alveolar sibilants become palatoalveolar while apicoalveolar sibilants become alveolopalatal. If the last coronal sibilant is alveolar, it similarly causes all preceding sibilants within that phonological word to be alveolar rather than post-alveolar, maintaining laminarity where possible.
+
+While this consonant harmony is only triggered by sibilants, it also affects liquids, causing \phipa{l\lamino} and \phipa{l\apico} to pattern with the hissing sibilants and \phipa{r\bck} and \phipa{r\bck\pal} to pattern with the hushing sibilants. However, the liquids never trigger this harmony and only conform to it if sibilants are present later on in the word, so they can co-occur with the `wrong' sibilant under some circumstances.
 
 \subsection{Laminal Assimilation}
 
@@ -237,65 +459,131 @@ An
 \end{enumerate}
 
 \section{Romanization}
-\setlength{\tabcolsep}{6pt}
+
+
+
 \begin{center}
-
-Coronals
-
-% \begin{tabular}{cccccccccccccccccccc}
-%     \ortho{t} & \ortho{\vt} & \ortho{d} & \ortho{\vd} & \ortho{c} & \ortho{\vc} & \ortho{z} & \ortho{\vz} & \ortho{s} & \ortho{\vs} & \ortho{n} & \ortho{\vn} & \ortho{r} & \ortho{\vr} & \ortho{l} & \ortho{\vl} & \ortho{\l} & \ortho{\dbl} & \ortho{\lam} & \ortho{\lambar} \\
-%    \bripa{t\lamino} & \bripa{t\apico} & \bripa{d\lamino} & \bripa{d\apico} & \bripa{t\tiebar s\lamino} & \bripa{t\tiebar s\apico} & \bripa{d\tiebar z\lamino} & \bripa{d\tiebar z\apico} & \bripa{s\lamino} & \bripa{s\apico} & \bripa{n\lamino} & \bripa{n\apico} & \bripa{\alvr\lamino} & \bripa{\alvr\apico} & \bripa{l\lamino} & \bripa{l\apico} & \bripa{\latfric\lamino} & \bripa{\latfric\apico} & \bripa{t\tiebar\latfric\lamino} & \bripa{t\tiebar\latfric\apico}
-% \end{tabular}
-
-\vspace{1em}
-
-Non-Coronal Consonants
-
-\begin{tabular}{cccccccccccc}
-    \ortho{p} & \ortho{b} & \ortho{m} & \ortho{\'c} & \ortho{\'z} & \ortho{\'s} & \ortho{\'n} & \ortho{k} & \ortho{g} & \ortho{\engma} & \ortho{h} & \ortho{x} \\
-    \bripa{p} & \bripa{b} & \bripa{m} & \bripa{c\tiebar ç} & \bripa{\paljstop\tiebar\paljfric} & \bripa{ç} & \bripa{\egna} & \bripa{k} & \bripa{g} & \bripa{\engma} & \bripa{\glotstop} & \bripa{x}
-\end{tabular}
-
-\vspace{1em}
-
-Vowels
-
-\begin{tabular}{ccccccc}
-    \ortho{i} & \ortho{e} & \ortho{u} & \ortho{o} & \ortho{eu} & \ortho{eo} & \ortho{a} \\
-    \bripa{i} & \bripa{e} & \bripa{u} & \bripa{o} & \bripa{\unru} & \bripa{\unro} & \phipa{a} or \nm 
-\end{tabular}
-
+    
+    \begin{tabular}{cc}
+        \toprule
+        Roman. & Phon. \\\midrule
+        %coronals
+        %apical
+        \ortho{t} & \bripa{t\apico}\\
+        \ortho{d} & \bripa{d\apico}\\
+        \ortho{c} & \bripa{t\tiebar s\apico}\\
+        \ortho{z} & \bripa{d\tiebar z\apico}\\
+        \ortho{s} & \bripa{s\apico}\\
+        \ortho{n} & \bripa{n\apico}\\
+        \ortho{\l} & \bripa{\latfric\apico}\\
+        \ortho{l} & \bripa{l\apico}\\
+        %laminal
+        \ortho{ty} & \bripa{t\lamino}\\
+        \ortho{dy} & \bripa{d\lamino}\\
+        \ortho{cy} & \bripa{t\tiebar s\lamino}\\
+        \ortho{zy} & \bripa{d\tiebar z\lamino}\\
+        \ortho{sy} & \bripa{s\lamino}\\
+        \ortho{ny} & \bripa{n\lamino}\\
+        \ortho{\l y} & \bripa{\latfric\lamino}\\
+        \ortho{ly} & \bripa{l\lamino}\\
+        \bottomrule
+    \end{tabular}
+    \hspace{1em}
+    \begin{tabular}{cc}
+        \toprule
+        Roman. & Phon. \\\midrule
+        %pal-alv
+        \ortho{ch} & \bripa{t\tiebar\esh}\\
+        \ortho{j} & \bripa{d\tiebar\ezh}\\
+        \ortho{sh} & \bripa{\esh}\\
+        \ortho{r} & \bripa{\alvr\bck\apico}\\
+        %alv-pal
+        \ortho{chy} & \bripa{t\tiebar\alvpalesh}\\
+        \ortho{jy} & \bripa{d\tiebar\alvpalezh}\\
+        \ortho{shy} & \bripa{\alvpalesh}\\
+        \ortho{ry} & \bripa{\alvr\bck\apico\pal}\\
+        %labials
+        \ortho{p} & \bripa{p}\\
+        \ortho{b} & \bripa{b}\\
+        \ortho{m} & \bripa{m}\\
+        %back consonants
+        \ortho{k} & \bripa{k}\\
+        \ortho{g} & \bripa{g}\\
+        \ortho{\engma} & \bripa{\engma}\\
+        \ortho{\okina} & \bripa{\glotstop}\\
+        \bottomrule
+    \end{tabular}
+    \hspace{1em}
+    \begin{tabular}{cc}
+        \toprule
+        Roman. & Phon. \\\midrule
+        \ortho{ee} & \bripa{i}\\
+        \ortho{e} & \bripa{e}\\
+        \ortho{eu} & \bripa{\unru}\\
+        \ortho{eo} & \bripa{\unro}\\
+        \ortho{u} & \bripa{u}\\
+        \ortho{o} & \bripa{o}\\
+        \ortho{iu} & \bripa{y}\\
+        \ortho{io} & \bripa{ø}\\
+        \ortho{i} & \bripa{\bari}\\
+        \ortho{a} & \bripa{\sche}\\
+        \bottomrule
+    \end{tabular}
 \end{center}
 
-\chapter{Syntax}
+When multiple laminal consonants occur in the same cluster, only a single \ortho{y} at the end of the cluster is used.
 
-\section{Noun Classes}
+\chapter{Morphology}
 
-Geobo{\engma} has six noun classes. The assignment of nouns to a particular noun class is largely semantic, and the descriptions of these classes is as follows
+\section{Nominal Morphology}
+
+\subsection{Noun Class \& Agreement}
+
+\subsubsection{Classes}
+
+\lang{} has roughly five to seven noun classes, depending on how one analyzes the behavior of plural nouns. As a compromise, the `plural classes' are often indicated as sub-classes of the appropriate noun class, which is the approach taken here. These classes are \emph{largely} determined by the semantics of the lexical item, but there are often apparent exceptions and strange behavior according to outsiders.
 
 \paragraph{Class I: Dominant Forces}
 
-This class contains anything that is `animate' and so much more powerful than a goblin that an individual goblin can't do much but annoy it at best. This includes natural forces like celestial bodies, weather events, fire, explosions, etc., but also non-goblin humanoids, mythical beasts, particularly enormous or unfamiliar predators, massive moving structures like ships, and later particularly powerful weapons such as cannons. This class could also be described as `dangerous things,' but given the goblin notion of danger, the label `dominant' is a bit easier for most to parse
+Perhaps the most apparently eclectic of the \lang{} noun classes, this class contains nouns that refer to anything markedly more powerful than a goblin, to the extent that an individual goblin doesn't have much hope against it on its own. This includes natural forces, such as celestial bodies, weather events, fire, explosions, etc., but it also includes most non-goblin humanoids, mythical beasts, particularly dangerous or enormous animals, massive moving structures like ships, and later powerful weapons like cannons. This class is even used to refer to some goblins when those goblins have a particularly high degree of power or skill to the extent that they become threatening enough for this class. In this case, the noun class assignment ends up serving as a sort of honorific.
+
+\paragraph{Class I-a: Collectives}
+
+One of the `plural classes', this class encompasses large groups of animate creatures acting as one. `Animate' here is used rather loosely, referring to anything that can act on its own power. Since \lang{} pluralization is solely derivational, the plural forms of many nouns from classes II-III and even some from other classes are sorted into this class and are treated like Class I nouns in terms of agreement. For instance, the plural of the class II noun \emph{geob} `goblin', \emph{geogeob} `a large group of goblins' is a class I-a noun.
 
 \paragraph{Class II: Goblins}
 
-This class is pretty self-explanatory---it includes goblins, parts of goblins, and anything else sufficiently intelligent and goblin-like to be considered a person by goblins. This generally does not include so-called `tall people,' who usually fall in Class I, but goblins have been heard referring to elf or human children who are old enough to talk and communicate but young enough to not pose a threat using this class.
+This class is fairly self-explanatory---it includes goblins, parts of goblins, and anything else sufficiently intelligent but non-threatening enough to be considered sufficiently goblin-like by a goblin. This generally does not include so-called `tall people', who are usually placed into Class I, but goblins have been heard referring to elf or human children who are old enough to talk and communicate but young enough to not pose a threat using this class.
 
 \paragraph{Class III: Animals}
 
-This class includes all non-intelligent animals, as well as any parts thereof. This includes parts of a dead animal's body that are being used for things---for instance, a pelt or a piece of meat.
+Any creature that not intelligent enough for speech and weak enough that a single goblin could potentially at least defend itself against it successfully is sorted into this noun class. This includes many wild animals, but also babies even of intelligent species. Whether a dead animal is considered part of this class, however, depends on the context. Portions of a dead animal that are to be used for food or other purposes tend to be re-categorized into Class IV or V, but corpses of creatures that were particularly beloved or which had the potential of becoming intelligence (such as infants) tend to stay in this class.
 
-\paragraph{Class IV: Quasi-animate/Useful Things}
+\paragraph{Class IV: Quasi-Animate Things}
 
-This class contains things that aren't considered `alive' per se, but which are more alive than things considered inanimate by nature of being made by intelligent/living creatures, or by otherwise being useful or consumable. Plants are in this class, but not all parts thereof are---the usefulness or quasi-livingness of the individual part is taken into account.
+This class contains things that aren't considered fully animate, since they cannot act on their own will, but which can have strong effects (positive or negative) on the world if used by a truly animate being. Most tools fall into this category, as do most plants and their parts, as well as any particularly potent consumables such as medicine or drugs. 
 
 \paragraph{Class V: Inanimate Objects}
 
-This class contains the remainder of all inanimate objects---anything that's part of the physical world but not animate-esque enough to get into Class IV falls here.
+This class consist of the remainder of inanimate objects---anything which is part of the physical world but which doesn't have a strong enough effect on the world even in the hands of others to be classified as class IV. 
 
-\paragraph{Class VI: Abstract Concepts}
+\paragraph{Class VI: One-in-Many Objects}
 
-This class is generally limited to words formed through particular grammatical operations, such as nominalized verbs and other such matters. Some things traditionally considered abstract concepts, like `chaos,' are notably not in this class, but generally speaking this class captures most things that can't be said to have a physical form.
+By far the smallest of the noun classes, this class is often ignored as being purely the product of plural inflection, as it contains the derivational plurals of several words that belong to Classes IV and V. This class consists of inanimate objects that are composed of a multitude of objects, but which are not inherently threatening enough for Class I-a. For instance, the word \emph{shyopa} `sand' (which, incidentally, is not derived from any other noun) is in Class VI, while the word \emph{keershyiope} `sandstorm' is in Class I.
+
+\chapter{Syntax}
+
+\chapter{Semantics}
+
+\include{dictionary}
+
+\end{document}
+
+
+
+
+\section{Verbal Morphology}
+
 
 \subsection{Animacy Hierarchy}
 
@@ -1524,16 +1812,11 @@ The negative attitude particle \textit{hu\l} is appended to the end of a sentenc
 
 %\subsubsection{Desiderative---\textit{oc}}
 
-\part{Dictionary}
 
-\pagestyle{headings}
-\nouppercaseheads
-
-\include{dictionary}
 
 \part{Sample Texts \& Translations}
 
-\end{document}
+
 
 As one of the few relics of the animacy hierarchy, there are different morphemes for verbal negation depending on the noun classes of the subject and object. If the subject is equal to or higher on the animacy hierarchy than the object, the affix \textit{-(o)keo-} is placed directly after the root. If the subject is lower on the animacy hierarchy than the object, the affix \textit{-og\'z(u)-} is used instead. 
 
