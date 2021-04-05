@@ -1,10 +1,6 @@
 #vscode stuff
 .vscode
 
-#excel files cause they're a pain:
-*.xls
-*.xlsx
-
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

@@ -2,7 +2,8 @@
 
 \input{preamble/packages.tex}
 
-\setmainfont{Charis SIL}[CharacterVariant=43:1]
+\setmainfont[StylisticSet=07]{Libertinus Serif}
+%\setmainfont{Charis SIL}[CharacterVariant=43:1]
 
 \input{../utils/misc_macros.tex}
 
@@ -572,7 +573,7 @@ This class consist of the remainder of inanimate objects---anything which is par
 
 By far the smallest of the noun classes, this class is often ignored as being purely the product of plural inflection, as it contains the derivational plurals of several words that belong to Classes IV and V. This class consists of inanimate objects that are composed of a multitude of objects, but which are not inherently threatening enough for Class I-a. For instance, the word \emph{shyopa} `sand' (which, incidentally, is not derived from any other noun) is in Class VI, while the word \emph{keershyiope} `sandstorm' is in Class I.
 
-\subsubsection{Agreement}
+\subsubsection{Agreement}\label{sssec:noun_class_agreement}
 
 Agreement with noun class occurs in several places in \lang{} grammar. Different elements of the grammar treat this agreement somewhat differently, however, and distinguishing these differences is important for grammatical agreement in \lang{}. Three major classes of elements in \lang{} grammar agree with the class of some noun: verbs and postpositions, nominal possessives, and pronouns. Nominal possessives are discussed further in \autoref{ssec:possession}, while the other two classes are discussed here.
 
@@ -628,16 +629,54 @@ Certain nouns are obligatorily possessed and do not exist in isolation without a
 \end{center}
 
 \noindent As they generally occur in the leftmost position, these prefixes can and do affect the vowel harmony of the rest of the word, and are likewise affected by the rest of the word in respect to consonant harmony.
-
+\newpage
 To give an example, the \lang{} word for `mother' \textit{-meo} is obligatorily possessed (like, in fact, most terms referring to familial relationships). \textit{-meo} never surfaces in isolation and only occurs with one of these prefixes: \textit{dyemu} `my mother', \textit{karmeo} `your mother', \textit{eogmeo} `their mother', etc. Obligatorily possessed words tend to be words who tend to involve some form of lexically-inherent inalienable possession, such as body parts and family members.
 
-Possessive inflection for standalone nouns involves addition of the suffix \textit{-(a)\l}, which derivationally forms a postposition meaning `possessing [noun]'. This is then inflected just as any other postposition, with the possessor serving as the object of the postposition. This resulting postpositional phrase can still be used as an argument, as technically all postpositional phrases can, but like other postpositional phrases, verbal agreement is with the object of the preposition. 
+Possessive inflection for standalone nouns involves addition of the suffix \textit{-(a)\l}, which derivationally forms a postposition meaning `possessing [noun]'. This is then inflected just as any other postposition, with the possessor serving as the object of the postposition. \textsc{poss} \textsc{foss} \textsc{ooss}
+
+\ex
+\begingl
+kar[\Second.\Poss]@
+-meo[-mother]
+jryeshy[rucksack]@
+-a\l y[-\Poss]@
+-ug[-\ToGob]
+\glft
+``Your mother's rucksack''
+\endgl
+\xe
+
+This resulting postpositional phrase can still be used as an argument, as technically all postpositional phrases can, but like other postpositional phrases, verbal agreement is with the \emph{object} of the preposition, not the noun from which the postposition is derived.
+
+\pex
+\a
+\begingl
+jryeshy[rucksack(\Inan)]
+es oom[there.is]@
+\textbf{-ios}[\textbf{-\ToInan}]
+\glft
+``There's a rucksack.''
+\endgl
+\a
+\begingl
+karmeo[your.mother(\Gob)]
+jryeshya\l yug[her.rucksack]
+es oom[there.is]@
+\textbf{-og}[\textbf{-\ToGob}]
+\glft
+``There's your mother's rucksack.''
+\endgl
+\xe
+
+These possessive derived postpositions are not used exclusively for what we would traditionally consider possessives and are often used for purposes most would consider somewhat orthogonal to possession, such as quantification. Such further uses of this construction are discussed in \autoref{chap:semantics}.
 
 \subsection{Other Derivational Operations}
 
-\chapter{Syntax}
+\section{Verbal Morphology}
 
-\chapter{Semantics}
+\chapter{Syntax}\label{chap:syntax}
+
+\chapter{Semantics}\label{chap:semantics}
 
 \include{dictionary}
 
