@@ -480,22 +480,37 @@ Four different persons are distinguished in \parentlang{}---\gls{excl}, \gls{inc
 
 \begin{figure}[htb]
     \centering
-    \begin{tikzpicture}
-        \Tree [.CP ContrFoc [.C' [.C C \node(t2){T}; ] [.TP Top [.T' [.\node(t){T}; T \node(v2){V}; ] [.VP NP [.V' [.\node(v){V}; V \edge[dashed]; {Adv} ] NP ] ] ] ] ] ]
-        \draw[->,dashed] (v).. controls +(west:1) and +(south:1)..(v2);
-        \draw[->,dashed] (t).. controls +(west:1) and +(south:1)..(t2);
-    \end{tikzpicture}
-    \caption{Basic structure of the \parentlang{} syntax}
+    \begin{forest}
+        for tree={align=center}
+        [CP
+            [{\(\uparrow=\downarrow\)\\C}]
+            [{\((\uparrow\text{FOC})=\downarrow\)\\\textit{Contrastive/Interrogative Focus}\\(XP)}]
+            [{\(\uparrow=\downarrow\)\\IP}
+                [{\(\downarrow_{\in}(\uparrow\text{ADJUNCT})\)\\\(\text{Adv}_\text{Temp}\)}]
+                [{\(\uparrow=\downarrow\)\\IP}
+                    [{\(\uparrow=\downarrow\)\\Infl}]
+                    [\(\downarrow_{\in}(\uparrow\text{DF})\)\\\textit{Topic/Focus}\\NP]
+                    [{\(\uparrow=\downarrow\)\\S}
+                        [{\(\downarrow_{\in}(\uparrow\text{ADJUNCT})\)\\\(\text{Adv}_\text{Manner}\)}]
+                        [{\(\uparrow=\downarrow\)\\S}
+                            [{\(\uparrow=\downarrow\)\\V}]
+                            [{\((\uparrow\text{SUBJ})=\downarrow\)\\NP}]
+                            [{\((\uparrow\text{OBJ})=\downarrow\)\\NP}]
+                        ]
+                        [{\(\downarrow_{\in}(\uparrow\text{ADJUNCT})\)\\\(\text{Adv}_\text{Manner}\)}]
+                    ]
+                ]
+                [{\(\downarrow_{\in}(\uparrow\text{ADJUNCT})\)\\\(\text{Adv}_\text{Temp}\)}]
+            ]
+        ]
+    \end{forest}
+    \caption{Basic c-structure of \parentlang{} syntax}
     \label{fig:syntaxtree}
 \end{figure}
 
 \section{Underlying Word Order}
 
-\parentlang{} syntax is largely head-initial and is highly discourse-configurational, with the syntax prioritizing the notions of topic and focus over the notions of subject and object when it comes to constituents' positions in the syntax and any movement operations applied to them. 
-
-Even the underlying configuration of the verb and arguments prior to any movement, which could be superficially called SVO, is in fact not dependent on which argument is more agent-like or more patient-like, but rather on how salient/given they are in the discourse. The argument that has more clearly established itself in the common ground, be it through being previously mentioned or through being more salient in the discourse context, inhabits the `subject' slot, and the argument that is less suitable for this position takes the `object' position. This, of course, is only relevant for transitive verbs, as the single argument of an intransitive verb is necessarily the most salient/given of the verb's arguments. Since the traditional syntactic subject is more often the more salient of a verb's two arguments, `subject' and `object' will be used for the higher and lower argument respectively for the sake of having the simplest possible terminology, but it's certainly worth noting that the distinction here is closer to the prototypical proximate-obviate distinction than it is to the protoypical distinction between syntactic subject and object.
-
-Note that this is not true of the use of `subject' and `object' in terms of the anaphoric clitics mentioned in \autoref{subsec:morph_ana_clit}, which do correspond to the more traditional morphosyntactic alignment that is expressed through the morphology. The references above refer solely to the use of these terms in reference to the underlying word order.
+blablablablabla
 
 \subsection{Head Movement}
 
@@ -529,7 +544,7 @@ Note that this is not true of the use of `subject' and `object' in terms of the 
 
 % \chapter{Semantics}
 
-\part{Dictionary}
+\part{Dictionaries}
 
 \include{dict/dictionary}
 
