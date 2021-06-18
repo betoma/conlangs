@@ -1,0 +1,112 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{dictionary}
+
+\RequirePackage{xparse}
+\RequirePackage{hyperref}
+
+% I have barely a clue how this works
+% Credit goes to Henrik @ tex.stackexchange.com/questions/18191
+\newcommand{\@DictLabel}[2]{%
+  \protected@write\@auxout{}{\string\newlabel{#1}{{#2}{\thepage}{#2}{#1}{}}}%
+  \hypertarget{#1}{}%
+}
+
+\@beginparpenalty=10000
+
+% Default values for dictionary styles, can be overridden
+\newcommand{\DictionaryHeadwordFormat}[1]{\textbf{\textit{#1}}}
+\newcommand{\DictionaryWordFormat}[1]{\textit{#1}}
+\newcommand{\DictionaryMeaningFormat}[1]{`#1'}
+
+\newcounter{sense}
+\newcounter{dictwordcount}
+
+% Defines the main entry command.
+% This only produces the very first line, not the senses.
+\NewDocumentCommand{\entry}{momomo}{{%
+  \@DictLabel{lex:\IfValueTF{#6}{#6}{#1}}{% Full reference link
+    \DictionaryWordFormat{#1}~\DictionaryMeaningFormat{#5}%
+  }%
+  \@DictLabel{lex*:\IfValueTF{#6}{#6}{#1}}{% Starred reference link
+    \DictionaryWordFormat{#1}%
+  }%
+  \par\noindent% Start the entry line
+  \DictionaryHeadwordFormat{#1}% Headword
+  \IfValueT{#2}{%
+    \quad{}[#2]% IPA
+  }
+  \quad\textit{#3}% Word class
+  \IfValueT{#4}{#4}% If something was added to the line, display it
+  \setcounter{sense}{1}% Reset sense counter
+  \refstepcounter{dictwordcount}%
+}}
+
+% \newbox\BETposbox
+% \newdimen\BETcacheleft
+% \newdimen\BETcachewd
+
+% Defines the sense command for adding numbered meaning-explanation lines.
+\NewDocumentCommand{\sense}{smo}{%
+  \IfBooleanTF{#1}%
+    {{%
+    % \IfBooleanTF{#3}{%
+    \item[] {\small #2}
+    % }{%
+    % \setbox\BETposbox\hbox{\textit{#3}\,\:}%
+    % \itemindent-\wd\BETposbox
+    % \BETcacheleft\parshapeindent\@ne
+    % \BETcachewd\parshapelength\@ne
+    % \advance\BETcacheleft\wd\BETposbox
+    % \advance\BETcachewd-\wd\BETposbox
+    % \parshape\@ne\BETcacheleft\BETcachewd
+    % \advance\BETcacheleft-\wd\BETposbox
+    % \advance\BETcachewd\wd\BETposbox
+    % \item[\stepcounter{sense}.]
+    % \usebox\BETposbox#2\par
+    % \parshape\@ne\BETcacheleft\BETcachewd
+    % \itemindent\z@
+    % }%
+    }}
+    {{%
+    % \ifblank{#3}{%
+    \item[\thesense] {\small #2}
+    \refstepcounter{sense}
+    % }{%
+    % \setbox\BETposbox\hbox{\textit{#3}\,\:}%
+    % \itemindent-\wd\BETposbox
+    % \BETcacheleft\parshapeindent\@ne
+    % \BETcachewd\parshapelength\@ne
+    % \advance\BETcacheleft\wd\BETposbox
+    % \advance\BETcachewd-\wd\BETposbox
+    % \parshape\@ne\BETcacheleft\BETcachewd
+    % \advance\BETcacheleft-\wd\BETposbox
+    % \advance\BETcachewd\wd\BETposbox
+    % \item[]
+    % \usebox\BETposbox#2\par
+    % \parshape\@ne\BETcacheleft\BETcachewd
+    % \itemindent\z@
+    % }%
+  }}
+}
+
+% Defines the principal part command intended for the optional entry arg
+\newcommand{\ppt}[2]{%
+  \quad{}#1\enspace{}\DictionaryWordFormat{#2}%
+}
+
+% Defines the entry referencing commands
+\NewDocumentCommand{\lex}{sm}{%
+  \IfBooleanTF{#1}%
+    {\ref{lex*:#2}}%
+    {\ref{lex:#2}}%
+}
+
+\NewDocumentCommand{\etym}{m}{%
+  {\footnotesize #1}
+}
+
+\newenvironment{senses}{%
+  \begin{description}[align=right,labelwidth=*,topsep=0pt]
+}{%
+  \end{description}%
+}
